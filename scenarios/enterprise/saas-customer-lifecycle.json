@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-saas-customer-lifecycle",
+  "title": "SaaS signup, support, and renewal",
+  "description": "A fictional subscription progresses through signup, service, support, billing, and renewal.",
+  "archetype": "saas",
+  "journey": "saas-lifecycle",
+  "seed": 52002,
+  "scale": 3,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "renew",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "Usage and renewal behavior are synthetic research assumptions."
+  ]
+}

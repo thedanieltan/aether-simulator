@@ -7,10 +7,14 @@ import {
 } from "../packages/evidence-bridge/src/index.mjs";
 import {
   baselineOperationsModule,
+  buildEnterpriseScenario,
   canonicalJson,
+  compareEnterpriseRuns,
   compareRuns,
+  enterpriseOperationsModule,
   migrateLegacyWorld,
   SimulationKernel,
+  summarizeEnterpriseRun,
 } from "../src/index.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -83,4 +87,90 @@ for (const [name, value] of Object.entries(expectedArtifacts)) {
 
 process.stdout.write(
   `Validated ${fixtureNames.length} legacy world fixture(s), kernel replay, lifecycle fixtures, and migration.\n`,
+);
+
+const enterpriseScenarioDirectory = resolve(root, "scenarios", "enterprise");
+const enterpriseFixtureDirectory = resolve(fixtureDirectory, "enterprise");
+const enterpriseScenarioNames = (await readdir(enterpriseScenarioDirectory))
+  .filter((name) => name.endsWith(".json"))
+  .sort();
+const fullEnterpriseFixtures = new Set([
+  "professional-services-customer-engagement.json",
+  "retail-order-to-cash.json",
+  "saas-customer-lifecycle.json",
+]);
+const enterpriseKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule],
+});
+const enterpriseSummary = [];
+for (const name of enterpriseScenarioNames) {
+  const config = JSON.parse(
+    await readFile(resolve(enterpriseScenarioDirectory, name), "utf8"),
+  );
+  const scenario = buildEnterpriseScenario(config);
+  const exported = enterpriseKernel.run(scenario);
+  enterpriseSummary.push(summarizeEnterpriseRun(config, exported));
+  if (fullEnterpriseFixtures.has(name)) {
+    const committed = await readFile(
+      resolve(
+        enterpriseFixtureDirectory,
+        name.replace(".json", ".export.json"),
+      ),
+      "utf8",
+    );
+    if (canonicalJson(exported) !== committed) {
+      throw new Error(`${name} enterprise export fixture is not reproducible`);
+    }
+  }
+}
+const committedSummary = await readFile(
+  resolve(enterpriseFixtureDirectory, "acceptance-summary.json"),
+  "utf8",
+);
+if (canonicalJson(enterpriseSummary) !== committedSummary) {
+  throw new Error("enterprise acceptance summary is not reproducible");
+}
+
+const branchConfig = JSON.parse(
+  await readFile(
+    resolve(enterpriseScenarioDirectory, "retail-intervention-baseline.json"),
+    "utf8",
+  ),
+);
+const branchScenario = buildEnterpriseScenario(branchConfig);
+const enterpriseCheckpoint = enterpriseKernel.checkpoint(branchScenario, 10);
+const enterpriseOriginal = enterpriseKernel.run(branchScenario);
+const enterpriseIntervention = JSON.parse(
+  await readFile(
+    resolve(
+      root,
+      "scenarios",
+      "interventions",
+      "enterprise-inventory-buffer.json",
+    ),
+    "utf8",
+  ),
+);
+const enterpriseBranch = enterpriseKernel.branch(
+  branchScenario,
+  enterpriseCheckpoint,
+  enterpriseIntervention.interventions,
+);
+const enterpriseComparison = compareEnterpriseRuns(
+  enterpriseOriginal,
+  enterpriseBranch,
+);
+for (const [name, value] of Object.entries({
+  "retail-intervention.checkpoint.json": enterpriseCheckpoint,
+  "retail-intervention.branch.json": enterpriseBranch,
+  "retail-intervention.comparison.json": enterpriseComparison,
+})) {
+  const committed = await readFile(resolve(enterpriseFixtureDirectory, name), "utf8");
+  if (canonicalJson(value) !== committed) {
+    throw new Error(`${name} is not reproducible`);
+  }
+}
+
+process.stdout.write(
+  `Validated ${enterpriseScenarioNames.length} enterprise scenarios, ${fullEnterpriseFixtures.size} full exports, and intervention lifecycle fixtures.\n`,
 );

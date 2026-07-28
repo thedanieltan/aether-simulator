@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-retail-intervention",
+  "title": "Retail inventory intervention baseline",
+  "description": "A fictional retail order provides a checkpoint and branch for an inventory intervention comparison.",
+  "archetype": "retail",
+  "journey": "intervention-baseline",
+  "seed": 52008,
+  "scale": 1,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "complete",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "The intervention changes a synthetic inventory outcome only."
+  ]
+}

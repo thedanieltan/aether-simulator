@@ -5,10 +5,11 @@ execution realism.
 
 | Depth | Definition | Public status |
 |---|---|---|
-| Enterprise | One realistic synthetic enterprise | Implemented as a minimal, tested research demonstration |
+| Enterprise | One realistic synthetic enterprise | Implemented and tested as configurable research scenarios across five archetypes |
 | Ecosystem | Enterprises interacting with customers, vendors, workers, institutions, and service providers | Unimplemented |
 | Economy | Many enterprises and citizens interacting through markets, finance, taxation, regulation, formation, failure, and shocks | Unimplemented |
 
-The enterprise demonstration is not evidence that the broader enterprise model
-is complete. It proves deterministic generation, export, workflow, and lineage
-for one bounded fixture.
+Enterprise Depth includes stateful operational, workforce, financial,
+inventory, capacity, incident, and data-lineage journeys. Its assumptions remain
+simplified and synthetic. Customer and supplier boundary contexts are not
+independent enterprises; their presence does not implement Ecosystem Depth.

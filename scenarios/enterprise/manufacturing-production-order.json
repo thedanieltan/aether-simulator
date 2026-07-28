@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-manufacturing-production-order",
+  "title": "Manufacturing production order to cash",
+  "description": "A fictional order triggers production capacity, finished inventory, fulfilment, invoicing, and payment consequences.",
+  "archetype": "manufacturing",
+  "journey": "order-to-cash",
+  "seed": 52009,
+  "scale": 2,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "complete",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "Production, utilisation, and backlog are simplified deterministic research measures."
+  ]
+}

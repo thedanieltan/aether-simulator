@@ -9,6 +9,12 @@ import test from "node:test";
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const cli = resolve(root, "src", "cli.mjs");
 const scenario = resolve(root, "scenarios", "kernel-baseline.json");
+const enterpriseConfig = resolve(
+  root,
+  "scenarios",
+  "enterprise",
+  "retail-order-to-cash.json",
+);
 
 function run(args) {
   return execFileSync(process.execPath, [cli, ...args], {
@@ -65,4 +71,23 @@ test("CLI fails closed for an unsupported contract", () => {
   );
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, /unsupported contract version/);
+});
+
+test("CLI lists, validates, and runs enterprise archetypes", async () => {
+  const archetypes = JSON.parse(run(["enterprise-archetypes"]));
+  assert.equal(archetypes.length, 5);
+  const validation = JSON.parse(
+    run(["enterprise-validate", enterpriseConfig]),
+  );
+  assert.equal(validation.valid, true);
+  assert.equal(validation.archetype, "retail");
+
+  const directory = await mkdtemp(resolve(tmpdir(), "aether-enterprise-cli-"));
+  const output = resolve(directory, "enterprise-run.json");
+  run(["enterprise-run", enterpriseConfig, "--output", output]);
+  const exported = JSON.parse(await readFile(output, "utf8"));
+  assert.equal(exported.contract_version, "aether-export.v1");
+  assert.ok(
+    exported.world.projected_state.module_state["enterprise-operations"],
+  );
 });

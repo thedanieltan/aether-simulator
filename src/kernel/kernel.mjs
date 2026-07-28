@@ -425,6 +425,24 @@ export function compareRuns(left, right) {
         (rightBalances.get(id) ?? 0) - (leftBalances.get(id) ?? 0),
     }))
     .filter((entry) => entry.left !== entry.right);
+  const leftModuleState = left.world.projected_state.module_state;
+  const rightModuleState = right.world.projected_state.module_state;
+  const moduleIds = [
+    ...new Set([...Object.keys(leftModuleState), ...Object.keys(rightModuleState)]),
+  ].sort();
+  const moduleStateDifferences = moduleIds
+    .map((moduleId) => {
+      const leftState = leftModuleState[moduleId] ?? null;
+      const rightState = rightModuleState[moduleId] ?? null;
+      return {
+        module_id: moduleId,
+        left_digest: sha256(leftState),
+        right_digest: sha256(rightState),
+        semantically_equal:
+          canonicalCompactJson(leftState) === canonicalCompactJson(rightState),
+      };
+    })
+    .filter((entry) => !entry.semantically_equal);
 
   return {
     contract_version: CONTRACTS.comparison,
@@ -438,6 +456,7 @@ export function compareRuns(left, right) {
       right: collectionCounts(right.world),
     },
     balance_differences: balanceDifferences,
+    module_state_differences: moduleStateDifferences,
     semantically_equal: left.digest === right.digest,
   };
 }

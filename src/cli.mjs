@@ -13,8 +13,18 @@ import {
 import { migrateLegacyWorld } from "./kernel/migration.mjs";
 import { assertContract } from "./kernel/validation.mjs";
 import { baselineOperationsModule } from "./modules/baseline-operations.mjs";
+import {
+  assertEnterpriseConfig,
+  buildEnterpriseScenario,
+  enterpriseOperationsModule,
+  listEnterpriseArchetypes,
+  validateEnterpriseInvariants,
+} from "./index.mjs";
 
 const kernel = new SimulationKernel({ modules: [baselineOperationsModule] });
+const enterpriseKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule],
+});
 
 function usage() {
   return `Aether Simulator CLI
@@ -27,6 +37,9 @@ Usage:
   aether branch <scenario.json> <checkpoint.json> <interventions.json> [--until <tick>] [--output <file>]
   aether compare <left-export.json> <right-export.json> [--output <file>]
   aether migrate <legacy-world.json> [--output <file>]
+  aether enterprise-archetypes
+  aether enterprise-validate <enterprise-config.json>
+  aether enterprise-run <enterprise-config.json> [--output <file>]
 `;
 }
 
@@ -82,6 +95,48 @@ async function execute(argv) {
     return;
   }
   const { positional, options } = parseArguments(rest);
+
+  if (command === "enterprise-archetypes") {
+    if (positional.length !== 0) {
+      throw new TypeError("enterprise-archetypes accepts no positional arguments");
+    }
+    await emit(listEnterpriseArchetypes(), options.output);
+    return;
+  }
+
+  if (command === "enterprise-validate") {
+    if (positional.length !== 1) {
+      throw new TypeError("enterprise-validate requires one enterprise config");
+    }
+    const config = await readJson(positional[0]);
+    assertEnterpriseConfig(config);
+    const scenario = buildEnterpriseScenario(config);
+    enterpriseKernel.validateScenario(scenario);
+    await emit({
+      valid: true,
+      contract_version: config.contract_version,
+      scenario_contract_version: scenario.contract_version,
+      archetype: config.archetype,
+      journey: config.journey,
+    });
+    return;
+  }
+
+  if (command === "enterprise-run") {
+    if (positional.length !== 1) {
+      throw new TypeError("enterprise-run requires one enterprise config");
+    }
+    const scenario = buildEnterpriseScenario(await readJson(positional[0]));
+    const exported = enterpriseKernel.run(scenario);
+    const invariants = validateEnterpriseInvariants(exported);
+    if (!invariants.valid) {
+      throw new TypeError(
+        `enterprise invariant failure: ${invariants.errors.join("; ")}`,
+      );
+    }
+    await emit(exported, options.output);
+    return;
+  }
 
   if (command === "validate") {
     if (positional.length !== 1) throw new TypeError("validate requires one artifact");

@@ -25,6 +25,12 @@ lockfile. The committed people, organizations, systems, accounts, and lineage
 records are synthetic scenario facts; no copied real identifier was identified.
 No owner name or local absolute path occurs in public file content.
 
+The Enterprise Depth review additionally covered all nine configurations,
+three full exports, the acceptance summary, intervention checkpoint and branch,
+causal records, journal entries, record-lineage observations, and benchmark
+documentation. All names remain generic fictional labels and all output remains
+synthetic and non-authoritative.
+
 Gitleaks and TruffleHog executables were not installed in the local environment,
 so they were not represented as completed checks. The repository's explicit
 scanner and public-tree policy both passed with zero findings. `npm audit

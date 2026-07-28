@@ -86,10 +86,42 @@ preserves provenance, emits only factual fields, and keeps every result
 non-authoritative and quarantined until an explicit review transition. It
 cannot determine legal, regulatory, audit, or compliance outcomes.
 
+## Enterprise Depth
+
+Enterprise Depth is a configuration and module layer on the same kernel:
+
+```mermaid
+flowchart LR
+  Config["Enterprise config v1"] --> Archetype["Archetype definition"]
+  Archetype --> Builder["Deterministic scenario builder"]
+  Builder --> Kernel["Shared world kernel"]
+  Kernel --> Domain["Enterprise module projection"]
+  Domain --> Workflow["Workflow state machines"]
+  Domain --> Finance["Journals / invoices / payments"]
+  Domain --> Operations["Inventory / capacity / outcomes"]
+  Domain --> Workforce["Employment / payroll"]
+  Domain --> Data["Record lifecycle / event-backed lineage"]
+  Domain --> Causality["Actor-to-evidence causal chain"]
+```
+
+The five archetypes change departments, roles, systems, assets, offerings,
+constraints, resources, capacities, transaction values, workflows, and
+outcomes. The scenario builder produces ordinary `aether-scenario.v1` input;
+there is no second engine.
+
+Every enterprise event records a deterministic causal step linking actor,
+action, workflow, system, resource, financial, and data consequences.
+Projection rejects undeclared workflow transitions, unbalanced journals,
+negative inventory without backorder permission, capacity violations, payroll
+without active employment, invoice overpayment, and missing causal
+predecessors. Data events emit PII-lineage observations referencing their
+actual simulation event.
+
 ## Product-depth boundary
 
 The kernel is infrastructure for later product depths; it is not evidence that
-those depths exist. A bounded enterprise example is present. Comprehensive
-enterprise depth is partial, and ecosystem and economy depth are unimplemented.
+those depths exist. Enterprise Depth is implemented as configurable, tested
+research scenarios with explicit simplifications. Ecosystem and economy depth
+are unimplemented.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.

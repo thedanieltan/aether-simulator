@@ -1,0 +1,173 @@
+[
+  {
+    "archetype": "logistics",
+    "capacity_available": 48,
+    "causal_step_count": 18,
+    "entity_count": 13,
+    "event_count": 24,
+    "export_digest": "86ba87bda980260320f3c1f608418c2769a16f4cdb87614f9969cb9d12f79e2c",
+    "final_workflow_states": {
+      "workflow_a7cbef9f078b0cd3042b99c3e5e29df4": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 0,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "delivery-exception",
+    "lineage_observation_count": 1,
+    "scenario_id": "enterprise-logistics-delivery-exception",
+    "world_id": "world_0a7a4595b8cd3a56abd05db8d1d254fe"
+  },
+  {
+    "archetype": "manufacturing",
+    "capacity_available": 192,
+    "causal_step_count": 16,
+    "entity_count": 15,
+    "event_count": 24,
+    "export_digest": "ae95deeb4aecb24d50675777259b0a8cd8f8dfd009a6900e519fe6aded2a8a03",
+    "final_workflow_states": {
+      "workflow_e630a04591dc9eb4f4e3b6458d8891fe": "departed"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 90,
+    "invoice_count": 0,
+    "journal_count": 1,
+    "journey": "employee-lifecycle",
+    "lineage_observation_count": 4,
+    "scenario_id": "enterprise-manufacturing-employee-lifecycle",
+    "world_id": "world_749622558464eb727bc8f241221dc79c"
+  },
+  {
+    "archetype": "manufacturing",
+    "capacity_available": 128,
+    "causal_step_count": 11,
+    "entity_count": 14,
+    "event_count": 16,
+    "export_digest": "3c74c8ade9f7bcebd0aebc295c391a8a3a82529b65fffc454ab20ebdff98b577",
+    "final_workflow_states": {
+      "workflow_6196a31f1392d14340ddadc02ee71a32": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 72,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "procurement-to-payment",
+    "lineage_observation_count": 1,
+    "scenario_id": "enterprise-manufacturing-procurement",
+    "world_id": "world_1d54992b14940398d9437734fa23e66b"
+  },
+  {
+    "archetype": "manufacturing",
+    "capacity_available": 128,
+    "causal_step_count": 21,
+    "entity_count": 14,
+    "event_count": 30,
+    "export_digest": "08dd878cafe01154372a44ccc52ef9538edf2edaea040ac0224e8ecc4ab65b38",
+    "final_workflow_states": {
+      "workflow_dd8bd1040f4c8d59f66bc4f9c446c85b": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 60,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "order-to-cash",
+    "lineage_observation_count": 1,
+    "scenario_id": "enterprise-manufacturing-production-order",
+    "world_id": "world_520c7b8525ab3690da760fe5af404558"
+  },
+  {
+    "archetype": "professional-services",
+    "capacity_available": 320,
+    "causal_step_count": 18,
+    "entity_count": 13,
+    "event_count": 27,
+    "export_digest": "c803f49c25a3506ca69faa8e47d3f32744caf47099f47429ef9c5cb4482d960d",
+    "final_workflow_states": {
+      "workflow_822372b6975ae55f25f9711e86b3f543": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 0,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "customer-engagement",
+    "lineage_observation_count": 4,
+    "scenario_id": "enterprise-professional-services-engagement",
+    "world_id": "world_2afb9f13bb5fcbc9c32723f6dad4a5f7"
+  },
+  {
+    "archetype": "retail",
+    "capacity_available": 40,
+    "causal_step_count": 15,
+    "entity_count": 12,
+    "event_count": 21,
+    "export_digest": "fc6f18f22147df663b69fcb6887615a98374ec8b0dcaef10cc165472a875e456",
+    "final_workflow_states": {
+      "workflow_1722fdf60d36b91b551c7dc79111a5e7": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 75,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "intervention-baseline",
+    "lineage_observation_count": 1,
+    "scenario_id": "enterprise-retail-intervention",
+    "world_id": "world_e644c02b7f34e0e7ade97e3d58175986"
+  },
+  {
+    "archetype": "retail",
+    "capacity_available": 80,
+    "causal_step_count": 15,
+    "entity_count": 13,
+    "event_count": 21,
+    "export_digest": "cacbf87fc0b8095c2269a9aa99588027cd7920653a2a2f1556f0fd29c3c2c557",
+    "final_workflow_states": {
+      "workflow_d44a5f0b0185efe0b80036625889595c": "paid"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 150,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "order-to-cash",
+    "lineage_observation_count": 1,
+    "scenario_id": "enterprise-retail-order-to-cash",
+    "world_id": "world_f0c5554bf0a655c7f4ae48baa05792dc"
+  },
+  {
+    "archetype": "saas",
+    "capacity_available": 3000,
+    "causal_step_count": 15,
+    "entity_count": 14,
+    "event_count": 24,
+    "export_digest": "1dd8fdadb71a373909142ff50c69c0fef6080249872df708c04585afe1c34875",
+    "final_workflow_states": {
+      "workflow_705a4615b3182a2ad4aaf81317b292e8": "renewed"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 0,
+    "invoice_count": 1,
+    "journal_count": 2,
+    "journey": "saas-lifecycle",
+    "lineage_observation_count": 4,
+    "scenario_id": "enterprise-saas-customer-lifecycle",
+    "world_id": "world_e64cb83e90438e17f52fabf9f4c07733"
+  },
+  {
+    "archetype": "saas",
+    "capacity_available": 2000,
+    "causal_step_count": 12,
+    "entity_count": 13,
+    "event_count": 16,
+    "export_digest": "022d7b32e41824df2fba200dfdedad740d2f7e3dd35a288716afd348eed262bc",
+    "final_workflow_states": {
+      "workflow_2d27b17a7f3bd30d4579d15008b93af7": "restored"
+    },
+    "invariants_valid": true,
+    "inventory_quantity": 0,
+    "invoice_count": 0,
+    "journal_count": 0,
+    "journey": "outage-remediation",
+    "lineage_observation_count": 3,
+    "scenario_id": "enterprise-saas-outage-remediation",
+    "world_id": "world_6f7ab880a1485f731f6af8220485d498"
+  }
+]

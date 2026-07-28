@@ -44,8 +44,12 @@ const required = [
   "docs/EXCLUDED_PRIVATE_SURFACES.md",
   "docs/DEPENDENCIES.md",
   "docs/MIGRATION_V0.1_TO_V1.md",
+  "docs/ENTERPRISE_DEPTH.md",
+  "docs/ENTERPRISE_BENCHMARKS.md",
   "docs/adr/ADR-0001-world-kernel.md",
+  "docs/adr/ADR-0002-enterprise-depth-modules.md",
   "docs/work-packages/WP-AES-01-ACCEPTANCE.md",
+  "docs/work-packages/WP-AES-02-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
 ];
 const allowedGithubFiles = new Set([".github/workflows/ci.yml"]);

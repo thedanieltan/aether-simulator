@@ -19,3 +19,22 @@ export {
   validateScenarioSemantics,
 } from "./kernel/validation.mjs";
 export { baselineOperationsModule } from "./modules/baseline-operations.mjs";
+export {
+  ENTERPRISE_ARCHETYPE_IDS,
+  getEnterpriseArchetype,
+  listEnterpriseArchetypes,
+} from "./enterprise/archetypes.mjs";
+export {
+  enterpriseState,
+  compareEnterpriseRuns,
+  summarizeEnterpriseRun,
+  traceEnterpriseCausality,
+  validateEnterpriseInvariants,
+} from "./enterprise/analysis.mjs";
+export { buildEnterpriseScenario } from "./enterprise/scenario-builder.mjs";
+export {
+  assertEnterpriseConfig,
+  enterpriseConfigSchema,
+  validateEnterpriseConfig,
+} from "./enterprise/validation.mjs";
+export { enterpriseOperationsModule } from "./modules/enterprise-operations.mjs";

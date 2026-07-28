@@ -1,0 +1,93 @@
+{
+  "assumptions": {
+    "authoritative": false,
+    "right_branch_intervention_digest": "bf45a8f581c32220f968b778e063539e03f2024c43dbb29ce71e322b329c294d",
+    "synthetic": true
+  },
+  "contract_version": "aether-enterprise-comparison.v1",
+  "generic_comparison": {
+    "balance_differences": [],
+    "collection_counts": {
+      "left": {
+        "accounts": 7,
+        "assets": 3,
+        "balances": 7,
+        "contracts": 5,
+        "households": 1,
+        "institutions": 0,
+        "metrics": 1,
+        "observations": 2,
+        "organizations": 3,
+        "people": 1,
+        "relationships": 3,
+        "resources": 4,
+        "systems": 4
+      },
+      "right": {
+        "accounts": 7,
+        "assets": 3,
+        "balances": 7,
+        "contracts": 5,
+        "households": 1,
+        "institutions": 0,
+        "metrics": 1,
+        "observations": 2,
+        "organizations": 3,
+        "people": 1,
+        "relationships": 3,
+        "resources": 4,
+        "systems": 4
+      }
+    },
+    "contract_version": "aether-comparison.v1",
+    "left_event_count": 21,
+    "left_export_id": "export_8fd5db41c9f66c771e3ec66a7313fbc9",
+    "module_state_differences": [
+      {
+        "left_digest": "bd99ed316583037ddcf4b9a22c687024d09f23036348bbb1d21d11b60c155faa",
+        "module_id": "enterprise-operations",
+        "right_digest": "3f32c7c7b12d779af584aa01c91667f91b2ddc5a0bf8e8c69abc8a5e4de41820",
+        "semantically_equal": false
+      }
+    ],
+    "right_event_count": 22,
+    "right_export_id": "export_abb1c48d2319f21f393f87a69ca1e0d8",
+    "semantically_equal": false,
+    "shared_event_count": 5
+  },
+  "left_export_id": "export_8fd5db41c9f66c771e3ec66a7313fbc9",
+  "materially_equal": false,
+  "observed_synthetic_outcomes": {
+    "capacity": {
+      "difference": 0,
+      "left": 40,
+      "resource_id": "resource_bbd8ed4c9032b6f88e163e88151c0b9d",
+      "right": 40
+    },
+    "inventory": {
+      "difference": 20,
+      "left": 75,
+      "resource_id": "resource_4855d40c2337fd201ffd1dc05e324311",
+      "right": 95
+    },
+    "left_operational_outcomes": [
+      {
+        "event_id": "event_2b0320ba317b359b6e6507e6499087dd",
+        "kind": "service-level",
+        "unit": "ratio",
+        "value": 0.96
+      }
+    ],
+    "right_operational_outcomes": [
+      {
+        "event_id": "event_2b0320ba317b359b6e6507e6499087dd",
+        "kind": "service-level",
+        "unit": "ratio",
+        "value": 0.96
+      }
+    ],
+    "workflow_differences": []
+  },
+  "right_export_id": "export_abb1c48d2319f21f393f87a69ca1e0d8",
+  "shared_event_count": 5
+}

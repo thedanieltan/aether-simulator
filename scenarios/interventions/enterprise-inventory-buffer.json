@@ -1,0 +1,28 @@
+{
+  "interventions": [
+    {
+      "tick": 11,
+      "module_id": "enterprise-operations",
+      "event_type": "enterprise.inventory.changed",
+      "entity_id": "organization_b39f1eeaa8998630bb950c6a747ac12b",
+      "payload": {
+        "resource_id": "resource_4855d40c2337fd201ffd1dc05e324311",
+        "delta": 20,
+        "causal": {
+          "step_id": "step_049aed20211a22beaf628c077459644a",
+          "previous_step_id": "step_a331fbf85d4959666c16218c35cfa5e9",
+          "actor_id": "person_cc006e377da7c7adc9c0a917c13b2a80",
+          "action": "add-inventory-buffer",
+          "workflow_id": "workflow_1722fdf60d36b91b551c7dc79111a5e7",
+          "system_id": "system_cdb31de6e413ce42ede964d7d13a4371",
+          "resource_consequence": {
+            "resource_id": "resource_4855d40c2337fd201ffd1dc05e324311",
+            "delta": 20
+          },
+          "financial_consequence": null,
+          "data_consequence": null
+        }
+      }
+    }
+  ]
+}

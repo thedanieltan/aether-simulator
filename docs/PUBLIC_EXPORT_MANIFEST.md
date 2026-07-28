@@ -23,6 +23,13 @@ reviewers.
 | Local demonstration | `scripts/demo.mjs` | Credential-free byte-identical run |
 | Build, schemas, fixtures, policy, and scanning | `scripts/`, `.github/workflows/ci.yml` | Canonical `npm run verify` |
 | Public research documentation | `README.md`, `docs/` | Public-tree policy |
+| Enterprise configuration contract | `schemas/enterprise/`, `src/enterprise/validation.mjs` | Schema and fail-closed tests |
+| Five enterprise archetypes | `src/enterprise/archetypes.mjs` | Material-difference tests |
+| Enterprise scenario construction | `src/enterprise/scenario-builder.mjs` | Nine end-to-end scenarios |
+| Enterprise event projections and invariants | `src/modules/enterprise-operations.mjs`, `src/enterprise/analysis.mjs` | Domain invariant tests |
+| Enterprise scenarios and interventions | `scenarios/enterprise/`, `scenarios/interventions/enterprise-inventory-buffer.json` | Determinism and branch tests |
+| Enterprise canonical fixtures | `fixtures/enterprise/` | Full-export, summary, checkpoint, branch, and comparison validation |
+| Enterprise benchmarks | `scripts/benchmark-enterprise.mjs`, `docs/ENTERPRISE_BENCHMARKS.md` | Configurable scale profiles |
 
 Private repository identifiers, internal source locations, commit hashes,
 branches, tags, authorship metadata, operational details, and private artifacts

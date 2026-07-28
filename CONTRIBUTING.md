@@ -16,7 +16,7 @@ Before submitting a change:
 6. Keep enterprise events causally linked and preserve balanced accounting,
    capacity, inventory, employment, invoice, workflow, and lineage invariants.
 7. Document compatibility, migration, dependency, and research-status impact.
-8. Run the same canonical command used by CI: `npm run verify`.
+8. Run the same canonical command used by CI: `npm run verify:ci`.
 9. Confirm the contribution is yours to license under Apache-2.0.
 
 Do not add external credentials, provider account references, copied customer

@@ -22,6 +22,7 @@ reviewers.
 | Optional evidence normalization | `packages/evidence-bridge/`, `fixtures/kernel-baseline.evidence.json` | Boundary, quarantine, and facts-only tests |
 | Local demonstration | `scripts/demo.mjs` | Credential-free byte-identical run |
 | Build, schemas, fixtures, policy, and scanning | `scripts/`, `.github/workflows/ci.yml` | Canonical `npm run verify` |
+| CI/CD quality gate and dependency maintenance | `.github/workflows/ci.yml`, `.github/dependabot.yml`, `docs/CI_CD.md` | Canonical `npm run verify:ci` and workflow policy |
 | Public research documentation | `README.md`, `docs/` | Public-tree policy |
 | Enterprise configuration contract | `schemas/enterprise/`, `src/enterprise/validation.mjs` | Schema and fail-closed tests |
 | Five enterprise archetypes | `src/enterprise/archetypes.mjs` | Material-difference tests |

@@ -12,6 +12,10 @@
 - Added formal enterprise configuration validation, CLI commands, canonical
   fixtures, invariant tests, scale benchmarks, ADR, and acceptance evidence.
 - Extended run comparison with deterministic module-state differences.
+- Expanded CI into a read-only, SHA-pinned quality gate with minimum/current
+  Node.js coverage, Windows portability, deterministic fixture-drift checks,
+  package-boundary validation, dependency audit, and weekly dependency update
+  proposals.
 
 ## 0.2.0 - world-kernel research preview
 

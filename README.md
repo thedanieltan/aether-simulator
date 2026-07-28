@@ -50,7 +50,7 @@ required.
 npm ci
 npm run demo
 npm run demo:enterprise
-npm run verify
+npm run verify:ci
 ```
 
 The demonstration writes `fixtures/kernel-baseline.export.json` and
@@ -96,5 +96,6 @@ simplified research assumptions rather than calibrated digital twins.
 Repository status: **active research**.
 
 See [architecture](docs/ARCHITECTURE.md),
+[CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

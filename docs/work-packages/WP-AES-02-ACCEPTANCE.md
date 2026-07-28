@@ -55,3 +55,16 @@ acceptance are excluded.
 - Live acceptance: not performed.
 - Hosted CI: account billing/spending configuration must permit the workflow;
   local canonical verification remains mandatory.
+
+## CI/CD gate
+
+The work-package branch adds a read-only, SHA-pinned quality gate covering the
+minimum supported Node.js release, current Node.js releases, Windows
+portability, deterministic fixture regeneration, package boundaries,
+dependency audit, repository policy, and sensitive-content scanning. The exact
+local parity command is `npm run verify:ci`.
+
+Continuous deployment is intentionally absent because this work package has no
+deployed product or live-acceptance target. Private-repository branch
+protection is unavailable on the current repository plan, so the owner must
+not merge while any check is missing or failing.

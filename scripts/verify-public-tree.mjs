@@ -34,6 +34,7 @@ const required = [
   "CODE_OF_CONDUCT.md",
   "CHANGELOG.md",
   "docs/ARCHITECTURE.md",
+  "docs/CI_CD.md",
   "docs/RESEARCH_STATUS.md",
   "docs/PRODUCT_DEPTH_MODEL.md",
   "docs/EXECUTION_REALISM_MODES.md",
@@ -51,8 +52,12 @@ const required = [
   "docs/work-packages/WP-AES-01-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-02-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
+  ".github/dependabot.yml",
 ];
-const allowedGithubFiles = new Set([".github/workflows/ci.yml"]);
+const allowedGithubFiles = new Set([
+  ".github/dependabot.yml",
+  ".github/workflows/ci.yml",
+]);
 const blockedNames = [
   /^\.env(?:\.|$)/i,
   /\.(?:pem|key|p12|pfx|crt|cer|db|sqlite|dump|log)$/i,

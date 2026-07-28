@@ -125,3 +125,12 @@ research scenarios with explicit simplifications. Ecosystem and economy depth
 are unimplemented.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.
+
+## Engineering quality gate
+
+The minimum supported Node.js release runs the complete `npm run verify:ci`
+gate: deterministic acceptance, formal contracts, fixture validation and
+regeneration, repository and workflow policy, sensitive-content scanning,
+package-boundary validation, and dependency audit. Additional jobs exercise
+current Node.js releases and Windows portability. Actions use read-only
+permissions and commit-pinned dependencies. See `docs/CI_CD.md`.

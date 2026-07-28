@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/kernel/aether-world.v1.schema.json",
+  "title": "Aether projected deterministic world",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "scenario_contract_version",
+    "world_id",
+    "scenario_id",
+    "seed",
+    "clock",
+    "provenance",
+    "entities",
+    "relationships",
+    "contracts",
+    "accounts",
+    "resources",
+    "balances",
+    "event_log",
+    "projected_state",
+    "metrics",
+    "observations",
+    "limitations",
+    "research_status",
+    "module_versions",
+    "branch"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-world.v1" },
+    "scenario_contract_version": { "const": "aether-scenario.v1" },
+    "world_id": { "$ref": "#/$defs/stableId" },
+    "scenario_id": { "type": "string", "minLength": 1 },
+    "seed": {
+      "oneOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "clock": {
+      "type": "object",
+      "required": ["start_tick", "current_tick", "end_tick", "tick_duration_ms"],
+      "properties": {
+        "start_tick": { "type": "integer", "minimum": 0 },
+        "current_tick": { "type": "integer", "minimum": 0 },
+        "end_tick": { "type": "integer", "minimum": 0 },
+        "tick_duration_ms": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["origin", "tier", "authoritative", "external_credentials_used", "scenario_digest"],
+      "properties": {
+        "origin": { "const": "deterministic-kernel" },
+        "tier": { "const": "synthetic" },
+        "authoritative": { "const": false },
+        "external_credentials_used": { "const": false },
+        "scenario_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "entities": {
+      "type": "object",
+      "required": ["people", "households", "organizations", "institutions", "systems", "assets"],
+      "properties": {
+        "people": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "households": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "organizations": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "institutions": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "systems": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "assets": { "type": "array", "items": { "$ref": "#/$defs/entity" } }
+      },
+      "additionalProperties": false
+    },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "contracts": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "accounts": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "resources": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "balances": { "type": "array", "items": { "$ref": "#/$defs/balance" } },
+    "event_log": {
+      "type": "array",
+      "items": { "$ref": "https://aether-simulator.invalid/schemas/kernel/aether-event.v1.schema.json" }
+    },
+    "projected_state": {
+      "type": "object",
+      "required": ["event_count", "last_event_id", "module_state"],
+      "properties": {
+        "event_count": { "type": "integer", "minimum": 0 },
+        "last_event_id": {
+          "oneOf": [
+            { "$ref": "#/$defs/stableId" },
+            { "type": "null" }
+          ]
+        },
+        "module_state": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "metrics": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "observations": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "research_status": { "enum": ["experimental", "research-preview"] },
+    "module_versions": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "branch": {
+      "type": "object",
+      "required": ["branch_id", "parent_checkpoint_id", "intervention_digest"],
+      "properties": {
+        "branch_id": { "$ref": "#/$defs/stableId" },
+        "parent_checkpoint_id": {
+          "oneOf": [
+            { "$ref": "#/$defs/stableId" },
+            { "type": "null" }
+          ]
+        },
+        "intervention_digest": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    },
+    "entity": {
+      "type": "object",
+      "required": ["id", "kind", "attributes"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "type": "string", "minLength": 1 },
+        "attributes": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "record": {
+      "type": "object",
+      "required": ["id", "kind", "attributes"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "type": "string", "minLength": 1 },
+        "attributes": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "balance": {
+      "type": "object",
+      "required": ["id", "account_id", "resource", "amount"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "account_id": { "$ref": "#/$defs/stableId" },
+        "resource": { "type": "string", "minLength": 1 },
+        "amount": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

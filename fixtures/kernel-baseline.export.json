@@ -1,0 +1,296 @@
+{
+  "contract_version": "aether-export.v1",
+  "digest": "d6d241af609e3a4911afc25d8bb943d370f526cb6016cbafd16a1d22db98eaf0",
+  "export_id": "export_23b7176755034c6a39321cdf1414dab8",
+  "scenario_digest": "07e25cc66dab291c0f1d132fca09bed465d480647165bfca6b36da77c216205c",
+  "world": {
+    "accounts": [
+      {
+        "attributes": {
+          "owner_id": "organization_ae274b81366a470401dc33efae35cdf4"
+        },
+        "id": "account_e9052c6994ba7334929d222791a3e2ef",
+        "kind": "synthetic-operating-account"
+      }
+    ],
+    "balances": [
+      {
+        "account_id": "account_e9052c6994ba7334929d222791a3e2ef",
+        "amount": 430,
+        "id": "balance_b84570ad5983c74b604239fcd2c77410",
+        "resource": "synthetic-credit"
+      }
+    ],
+    "branch": {
+      "branch_id": "branch_bbca389c9964f4f0066cae9c7fa37556",
+      "intervention_digest": null,
+      "parent_checkpoint_id": null
+    },
+    "clock": {
+      "current_tick": 10,
+      "end_tick": 10,
+      "start_tick": 0,
+      "tick_duration_ms": 900000
+    },
+    "contract_version": "aether-world.v1",
+    "contracts": [
+      {
+        "attributes": {
+          "active": true,
+          "party_ids": [
+            "person_b1ed124c86e400c1b64d1d48145730c5",
+            "organization_ae274b81366a470401dc33efae35cdf4"
+          ]
+        },
+        "id": "contract_bbb5d5b2c4dd942f15e8cbd50fa51df3",
+        "kind": "synthetic-employment-contract"
+      }
+    ],
+    "entities": {
+      "assets": [
+        {
+          "attributes": {
+            "assigned_to": "person_b1ed124c86e400c1b64d1d48145730c5"
+          },
+          "id": "asset_40f679739cadf2875ed8051629701b44",
+          "kind": "synthetic-device"
+        }
+      ],
+      "households": [
+        {
+          "attributes": {
+            "member_ids": [
+              "person_b1ed124c86e400c1b64d1d48145730c5"
+            ]
+          },
+          "id": "household_75ec76dd69f5c6df24c6a5488c5d7dec",
+          "kind": "synthetic-household"
+        }
+      ],
+      "institutions": [
+        {
+          "attributes": {
+            "fictional": true
+          },
+          "id": "institution_15e427c6119c2fd783bb4c6185209df0",
+          "kind": "synthetic-research-institution"
+        }
+      ],
+      "organizations": [
+        {
+          "attributes": {
+            "display_name": "Aster Vale Research Cooperative",
+            "fictional": true
+          },
+          "id": "organization_ae274b81366a470401dc33efae35cdf4",
+          "kind": "synthetic-enterprise"
+        }
+      ],
+      "people": [
+        {
+          "attributes": {
+            "display_name": "Synthetic Person 001",
+            "fictional": true
+          },
+          "id": "person_b1ed124c86e400c1b64d1d48145730c5",
+          "kind": "synthetic-worker"
+        }
+      ],
+      "systems": [
+        {
+          "attributes": {
+            "external": false,
+            "surface": "operations"
+          },
+          "id": "system_0f74034762d99e3a0fc3e3aff47295ab",
+          "kind": "synthetic-work-system"
+        }
+      ]
+    },
+    "event_log": [
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "event_id": "event_08d6ace4a99e4a47d0aaee848e2afab3",
+        "event_type": "scenario.started",
+        "module_id": "core",
+        "payload": {
+          "note": "Synthetic kernel baseline started."
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 1
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "event_id": "event_4437a801d6431c8c22fde040ac9bfa82",
+        "event_type": "baseline.activity.started",
+        "module_id": "baseline-operations",
+        "payload": {
+          "account_id": "account_e9052c6994ba7334929d222791a3e2ef",
+          "balance_id": "balance_b84570ad5983c74b604239fcd2c77410"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 2
+      },
+      {
+        "causes": [
+          "event_4437a801d6431c8c22fde040ac9bfa82"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "event_id": "event_ed1b742c24415db988f1dd7c95aaa57d",
+        "event_type": "core.balance.adjusted",
+        "module_id": "baseline-operations",
+        "payload": {
+          "balance_id": "balance_b84570ad5983c74b604239fcd2c77410",
+          "delta": 430
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 3
+      },
+      {
+        "causes": [
+          "event_4437a801d6431c8c22fde040ac9bfa82"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "event_id": "event_695699091a02ccdfeb4f60501bc2cd09",
+        "event_type": "core.metric.recorded",
+        "module_id": "baseline-operations",
+        "payload": {
+          "record": {
+            "attributes": {
+              "source_event_id": "event_4437a801d6431c8c22fde040ac9bfa82",
+              "unit": "synthetic-credit",
+              "value": 430
+            },
+            "id": "metric_9aa51015cb4ae3035ccfaa051b196a6c",
+            "kind": "synthetic-activity-value"
+          }
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 4
+      }
+    ],
+    "limitations": [
+      "Synthetic outputs do not establish legal, regulatory, audit, or compliance conclusions.",
+      "This fixture proves kernel mechanics, not enterprise-depth completeness."
+    ],
+    "metrics": [
+      {
+        "attributes": {
+          "source_event_id": "event_4437a801d6431c8c22fde040ac9bfa82",
+          "unit": "synthetic-credit",
+          "value": 430
+        },
+        "id": "metric_9aa51015cb4ae3035ccfaa051b196a6c",
+        "kind": "synthetic-activity-value"
+      }
+    ],
+    "module_versions": {
+      "baseline-operations": "1.0.0",
+      "core": "1.0.0"
+    },
+    "observations": [
+      {
+        "attributes": {
+          "access_role_ids": [
+            "synthetic-operations-role"
+          ],
+          "copied_from": null,
+          "fields": [
+            {
+              "data_category": "identifier",
+              "field_path": "synthetic_name"
+            }
+          ],
+          "provenance_tier": "synthetic",
+          "retention_state": "active",
+          "role_context": "worker",
+          "simulation_tick": 0,
+          "source_record_ref": "synthetic-person-record",
+          "subject_ref": "subject_3f3d6d4aa6482b8702f996ea49480f71",
+          "system_ref": "system_0f74034762d99e3a0fc3e3aff47295ab",
+          "system_surface": "operations",
+          "transformed_by": null
+        },
+        "id": "observation_71f93b22026e047f4d31c956cd5a84f4",
+        "kind": "pii-lineage"
+      },
+      {
+        "attributes": {
+          "value": "synthetic and non-authoritative"
+        },
+        "id": "observation_a1b624a7f62f11058a16449c38226ae0",
+        "kind": "research-boundary"
+      }
+    ],
+    "projected_state": {
+      "event_count": 4,
+      "last_event_id": "event_695699091a02ccdfeb4f60501bc2cd09",
+      "module_state": {
+        "baseline-operations": {
+          "configured_balance_id": "balance_b84570ad5983c74b604239fcd2c77410",
+          "handled_events": 3,
+          "last_event_type": "core.metric.recorded"
+        }
+      }
+    },
+    "provenance": {
+      "authoritative": false,
+      "external_credentials_used": false,
+      "origin": "deterministic-kernel",
+      "scenario_digest": "07e25cc66dab291c0f1d132fca09bed465d480647165bfca6b36da77c216205c",
+      "tier": "synthetic"
+    },
+    "relationships": [
+      {
+        "attributes": {
+          "active": true,
+          "from_entity_id": "person_b1ed124c86e400c1b64d1d48145730c5",
+          "to_entity_id": "organization_ae274b81366a470401dc33efae35cdf4"
+        },
+        "id": "relationship_4f1ed1b10c649dd4505d397c2bc460b2",
+        "kind": "employment"
+      }
+    ],
+    "research_status": "experimental",
+    "resources": [
+      {
+        "attributes": {
+          "available_units": 8,
+          "owner_id": "organization_ae274b81366a470401dc33efae35cdf4"
+        },
+        "id": "resource_e8cbd17b246d7d1de3471f1713b2c63e",
+        "kind": "synthetic-capacity"
+      }
+    ],
+    "scenario_contract_version": "aether-scenario.v1",
+    "scenario_id": "kernel-baseline",
+    "seed": 424242,
+    "world_id": "world_dad3713d2482007f0fe601ac21dc6eca"
+  }
+}

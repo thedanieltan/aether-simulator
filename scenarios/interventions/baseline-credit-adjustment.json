@@ -1,0 +1,14 @@
+{
+  "interventions": [
+    {
+      "tick": 4,
+      "module_id": "core",
+      "event_type": "core.balance.adjusted",
+      "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+      "payload": {
+        "balance_id": "balance_b84570ad5983c74b604239fcd2c77410",
+        "delta": 75
+      }
+    }
+  ]
+}

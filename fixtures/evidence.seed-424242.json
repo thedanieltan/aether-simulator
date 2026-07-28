@@ -1,0 +1,646 @@
+{
+  "authority": "research-only",
+  "envelopes": [
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-88e8f17308a34267",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-1506cb85",
+      "subject_refs": [
+        "subject-f7f4fcbb"
+      ],
+      "system_refs": [
+        "system-a0815c20"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-9c1a0281945f064e",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-1f12ef2c",
+      "subject_refs": [
+        "subject-f7f4fcbb"
+      ],
+      "system_refs": [
+        "system-8761a40f"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-a4f411daab5f3a78",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-30556f71",
+      "subject_refs": [
+        "subject-c2a6565e"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-7b6ab72351f1e28d",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-32b422a2",
+      "subject_refs": [
+        "subject-f7f4fcbb"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-8c4f473c2cf62663",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-46ae948c",
+      "subject_refs": [
+        "subject-6e427a39"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-1d9a21f35a313e19",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-4b9b1ce2",
+      "subject_refs": [
+        "subject-4ad310da"
+      ],
+      "system_refs": [
+        "system-a8ff4de4"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-14fa60700d761682",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-54ba560d",
+      "subject_refs": [
+        "subject-d675dc68"
+      ],
+      "system_refs": [
+        "system-fc69c886"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-03b7d40e8c1fb648",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-5b65999b",
+      "subject_refs": [
+        "subject-d675dc68"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-a110dd5d773d704a",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-6eff4202",
+      "subject_refs": [
+        "subject-6e427a39"
+      ],
+      "system_refs": [
+        "system-fc69c886"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-34dd86184fabd68c",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-719abcad",
+      "subject_refs": [
+        "subject-4ad310da"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-db97468ac8b2f0b0",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-71d49320",
+      "subject_refs": [
+        "subject-4ad310da"
+      ],
+      "system_refs": [
+        "system-a0815c20"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-21f0dd1561cdcdc9",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-bb70282e",
+      "subject_refs": [
+        "subject-0f196b15"
+      ],
+      "system_refs": [
+        "system-fc69c886"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-f7d7f86206210a30",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-c3bbd858",
+      "subject_refs": [
+        "subject-0f196b15"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-d1920298e83dbcdc",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-bb70282e",
+        "tier": "synthetic",
+        "transformed_by": "directory-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-0a415b9c",
+      "subject_refs": [
+        "subject-0f196b15"
+      ],
+      "system_refs": [
+        "system-63df6ff3"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-ee7e41618c55b662",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-54ba560d",
+        "tier": "synthetic",
+        "transformed_by": "directory-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-18de817f",
+      "subject_refs": [
+        "subject-d675dc68"
+      ],
+      "system_refs": [
+        "system-63df6ff3"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-1562697f90037e17",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-d9dcf46f",
+        "tier": "synthetic",
+        "transformed_by": "directory-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-77b4f3e1",
+      "subject_refs": [
+        "subject-c2a6565e"
+      ],
+      "system_refs": [
+        "system-63df6ff3"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-fbeeedee5a5709bc",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-1f12ef2c",
+        "tier": "synthetic",
+        "transformed_by": "billing-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-aa827f1b",
+      "subject_refs": [
+        "subject-f7f4fcbb"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-39996ecb17eff3d2",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-6eff4202",
+        "tier": "synthetic",
+        "transformed_by": "directory-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-d6535858",
+      "subject_refs": [
+        "subject-6e427a39"
+      ],
+      "system_refs": [
+        "system-63df6ff3"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-b01ad827a9cb6429",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": "lineage-ea9b532b",
+        "tier": "synthetic",
+        "transformed_by": "billing-sync"
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-copy-e5362e70",
+      "subject_refs": [
+        "subject-4ad310da"
+      ],
+      "system_refs": [
+        "system-b5376a45"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-22109f9aee3e11b5",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-d9dcf46f",
+      "subject_refs": [
+        "subject-c2a6565e"
+      ],
+      "system_refs": [
+        "system-fc69c886"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-0f4dd6e90361e829",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-e2db9bc5",
+      "subject_refs": [
+        "subject-f7f4fcbb"
+      ],
+      "system_refs": [
+        "system-a8ff4de4"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    },
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-cc6ba80b34bb35f0",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 103,
+      "source_record_ref": "lineage-ea9b532b",
+      "subject_refs": [
+        "subject-4ad310da"
+      ],
+      "system_refs": [
+        "system-8761a40f"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    }
+  ],
+  "release_state": "quarantined",
+  "schema_version": "aether-evidence-bundle.v1",
+  "source_world_ref": "world-39b8e495"
+}

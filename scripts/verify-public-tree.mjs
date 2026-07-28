@@ -1,0 +1,108 @@
+import { lstat, readdir, readFile } from "node:fs/promises";
+import { dirname, relative, resolve, sep } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const allowedTopLevel = new Set([
+  ".git",
+  ".gitattributes",
+  ".github",
+  ".gitignore",
+  "CHANGELOG.md",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "LICENSE",
+  "README.md",
+  "SECURITY.md",
+  "docs",
+  "examples",
+  "fixtures",
+  "package-lock.json",
+  "package.json",
+  "packages",
+  "scenarios",
+  "schemas",
+  "scripts",
+  "src",
+  "tests",
+]);
+const required = [
+  "README.md",
+  "LICENSE",
+  "SECURITY.md",
+  "CONTRIBUTING.md",
+  "CODE_OF_CONDUCT.md",
+  "CHANGELOG.md",
+  "docs/ARCHITECTURE.md",
+  "docs/RESEARCH_STATUS.md",
+  "docs/PRODUCT_DEPTH_MODEL.md",
+  "docs/EXECUTION_REALISM_MODES.md",
+  "docs/PRIVACY_AND_SYNTHETIC_DATA.md",
+  "docs/PUBLIC_EXPORT_MANIFEST.md",
+  "docs/SENSITIVE_CONTENT_AUDIT.md",
+  "docs/LICENCE_REVIEW.md",
+  "docs/EXCLUDED_PRIVATE_SURFACES.md",
+  "docs/DEPENDENCIES.md",
+  "docs/MIGRATION_V0.1_TO_V1.md",
+  "docs/adr/ADR-0001-world-kernel.md",
+  "docs/work-packages/WP-AES-01-ACCEPTANCE.md",
+  ".github/workflows/ci.yml",
+];
+const allowedGithubFiles = new Set([".github/workflows/ci.yml"]);
+const blockedNames = [
+  /^\.env(?:\.|$)/i,
+  /\.(?:pem|key|p12|pfx|crt|cer|db|sqlite|dump|log)$/i,
+  /authorization.*receipt/i,
+  /governance.*ledger/i,
+  /review.*pack/i,
+];
+const forbiddenWords = [
+  Buffer.from("Y29tb3M=", "base64").toString("utf8"),
+  Buffer.from("c2Vz", "base64").toString("utf8"),
+];
+
+async function walk(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const results = [];
+  for (const entry of entries) {
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    const path = resolve(directory, entry.name);
+    const stat = await lstat(path);
+    if (stat.isSymbolicLink()) throw new Error(`symbolic link is not allowed: ${path}`);
+    if (entry.isDirectory()) results.push(...(await walk(path)));
+    else results.push(path);
+  }
+  return results;
+}
+
+const topLevel = await readdir(root);
+for (const entry of topLevel) {
+  if (entry === "node_modules") continue;
+  if (!allowedTopLevel.has(entry)) throw new Error(`unexpected top-level entry: ${entry}`);
+}
+
+const files = await walk(root);
+const relativeFiles = new Set(files.map((file) => relative(root, file).split(sep).join("/")));
+for (const expected of required) {
+  if (!relativeFiles.has(expected)) throw new Error(`required file missing: ${expected}`);
+}
+for (const file of relativeFiles) {
+  if (file.startsWith(".github/") && !allowedGithubFiles.has(file)) {
+    throw new Error(`unexpected GitHub configuration: ${file}`);
+  }
+}
+
+for (const file of files) {
+  const rel = relative(root, file).split(sep).join("/");
+  if (blockedNames.some((pattern) => pattern.test(rel))) {
+    throw new Error(`blocked filename: ${rel}`);
+  }
+  const content = await readFile(file, "utf8");
+  for (const word of forbiddenWords) {
+    if (new RegExp(`\\b${word}\\b`, "i").test(content)) {
+      throw new Error(`prohibited product reference in ${rel}`);
+    }
+  }
+}
+
+process.stdout.write(`Public-tree policy passed for ${files.length} file(s).\n`);

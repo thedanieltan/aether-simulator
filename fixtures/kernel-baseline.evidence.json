@@ -1,0 +1,37 @@
+{
+  "authority": "research-only",
+  "envelopes": [
+    {
+      "contradictions": [],
+      "custody": "local_research_fixture",
+      "envelope_id": "evidence-858a3675438f2dfb",
+      "limitations": [
+        "synthetic fact only",
+        "does not establish a legal, regulatory, or compliance conclusion"
+      ],
+      "origin_mode": "deterministic_synthetic",
+      "promotion_state": "quarantined",
+      "provenance": {
+        "copied_from": null,
+        "tier": "synthetic",
+        "transformed_by": null
+      },
+      "redaction_state": "synthetic_identifiers_only",
+      "schema_version": "evidence-envelope.v1",
+      "simulation_tick": 0,
+      "source_record_ref": "observation_71f93b22026e047f4d31c956cd5a84f4",
+      "subject_refs": [
+        "subject_3f3d6d4aa6482b8702f996ea49480f71"
+      ],
+      "system_refs": [
+        "system_0f74034762d99e3a0fc3e3aff47295ab"
+      ],
+      "transformation_stage": "world_to_normalized_evidence",
+      "transformation_version": "evidence-bridge.v0.1",
+      "verification_status": "derived"
+    }
+  ],
+  "release_state": "quarantined",
+  "schema_version": "aether-evidence-bundle.v1",
+  "source_world_ref": "world_dad3713d2482007f0fe601ac21dc6eca"
+}

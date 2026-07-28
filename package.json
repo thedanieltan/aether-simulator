@@ -1,0 +1,40 @@
+{
+  "name": "aether-simulator",
+  "version": "0.2.0",
+  "description": "Deterministic synthetic-world research simulator",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "aether": "./src/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./evidence-bridge": "./packages/evidence-bridge/src/index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "cli": "node src/cli.mjs",
+    "demo": "node scripts/demo.mjs",
+    "test": "node --test",
+    "test:replay": "node --test tests/determinism.test.mjs",
+    "test:bridge": "node --test tests/evidence-bridge.test.mjs",
+    "validate:fixtures": "node scripts/validate-fixtures.mjs",
+    "validate:schemas": "node scripts/validate-schemas.mjs",
+    "verify:public": "node scripts/verify-public-tree.mjs",
+    "scan:sensitive": "node scripts/scan-sensitive-content.mjs",
+    "verify": "npm run build && npm test && npm run validate:schemas && npm run validate:fixtures && npm run verify:public && npm run scan:sensitive"
+  },
+  "keywords": [
+    "simulation",
+    "synthetic-data",
+    "deterministic",
+    "research"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ajv": "8.20.0"
+  }
+}

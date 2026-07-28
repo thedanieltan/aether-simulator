@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/kernel/aether-export.v1.schema.json",
+  "title": "Aether deterministic run export",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "export_id",
+    "scenario_digest",
+    "world",
+    "digest"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-export.v1" },
+    "export_id": { "$ref": "#/$defs/stableId" },
+    "scenario_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "world": { "$ref": "https://aether-simulator.invalid/schemas/kernel/aether-world.v1.schema.json" },
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/kernel/aether-event.v1.schema.json",
+  "title": "Aether append-only simulation event",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "event_id",
+    "tick",
+    "priority",
+    "module_id",
+    "event_type",
+    "entity_id",
+    "causes",
+    "payload",
+    "provenance"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-event.v1" },
+    "event_id": { "$ref": "#/$defs/stableId" },
+    "tick": { "type": "integer", "minimum": 0 },
+    "priority": { "type": "integer" },
+    "module_id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "event_type": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "entity_id": {
+      "oneOf": [
+        { "$ref": "#/$defs/stableId" },
+        { "type": "null" }
+      ]
+    },
+    "causes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/stableId" },
+      "uniqueItems": true
+    },
+    "payload": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": ["origin", "tier", "authoritative"],
+      "properties": {
+        "origin": { "enum": ["scenario", "module", "intervention", "migration"] },
+        "tier": { "const": "synthetic" },
+        "authoritative": { "const": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    }
+  }
+}

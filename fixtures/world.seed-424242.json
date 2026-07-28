@@ -1,0 +1,733 @@
+{
+  "company": {
+    "fictional": true,
+    "id": "enterprise-39b8e495",
+    "name": "Aster Vale Research Cooperative",
+    "operating_model": "synthetic business-services enterprise"
+  },
+  "contract_version": "aether-world.v0.1",
+  "people": [
+    {
+      "department": "operations",
+      "display_name": "Synthetic Person 001",
+      "id": "person-dc2deaeb",
+      "kind": "employee",
+      "role": "analyst",
+      "subject_id": "subject-0f196b15"
+    },
+    {
+      "department": "people",
+      "display_name": "Synthetic Person 002",
+      "id": "person-db2de958",
+      "kind": "employee",
+      "role": "analyst",
+      "subject_id": "subject-d675dc68"
+    },
+    {
+      "department": "people",
+      "display_name": "Synthetic Person 003",
+      "id": "person-de2dee11",
+      "kind": "employee",
+      "role": "analyst",
+      "subject_id": "subject-c2a6565e"
+    },
+    {
+      "department": "finance",
+      "display_name": "Synthetic Person 004",
+      "id": "person-dd2dec7e",
+      "kind": "employee",
+      "role": "manager",
+      "subject_id": "subject-6e427a39"
+    },
+    {
+      "department": "external",
+      "display_name": "Synthetic Person 005",
+      "id": "person-b663bcff",
+      "kind": "customer",
+      "role": "customer",
+      "subject_id": "subject-f7f4fcbb"
+    },
+    {
+      "department": "external",
+      "display_name": "Synthetic Person 006",
+      "id": "person-b563bb6c",
+      "kind": "customer",
+      "role": "customer",
+      "subject_id": "subject-4ad310da"
+    }
+  ],
+  "pii_lineage": {
+    "citizens": [
+      {
+        "citizen_id": "person-b563bb6c",
+        "data_subject_id": "subject-4ad310da",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "customer",
+          "application_user",
+          "support_requester"
+        ]
+      },
+      {
+        "citizen_id": "person-b663bcff",
+        "data_subject_id": "subject-f7f4fcbb",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "customer",
+          "application_user",
+          "support_requester"
+        ]
+      },
+      {
+        "citizen_id": "person-db2de958",
+        "data_subject_id": "subject-d675dc68",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "employee"
+        ]
+      },
+      {
+        "citizen_id": "person-dc2deaeb",
+        "data_subject_id": "subject-0f196b15",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "employee"
+        ]
+      },
+      {
+        "citizen_id": "person-dd2dec7e",
+        "data_subject_id": "subject-6e427a39",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "employee"
+        ]
+      },
+      {
+        "citizen_id": "person-de2dee11",
+        "data_subject_id": "subject-c2a6565e",
+        "provenance_tier": "synthetic",
+        "role_contexts": [
+          "employee"
+        ]
+      }
+    ],
+    "records": [
+      {
+        "access_role_ids": [
+          "role-support-specialist"
+        ],
+        "citizen_id": "person-b663bcff",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-f7f4fcbb",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "requester_reference"
+          },
+          {
+            "data_category": "content",
+            "field_path": "attachment_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-1506cb85",
+        "retention_state": "active",
+        "role_context": "support_requester",
+        "system_id": "system-a0815c20",
+        "system_surface": "support"
+      },
+      {
+        "access_role_ids": [
+          "role-sales-operations"
+        ],
+        "citizen_id": "person-b663bcff",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-f7f4fcbb",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "customer_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-1f12ef2c",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-8761a40f",
+        "system_surface": "sales"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-de2dee11",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-c2a6565e",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "payment_account_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "synthetic_compensation"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-30556f71",
+        "retention_state": "hold",
+        "role_context": "employee",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-b663bcff",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-f7f4fcbb",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "billing_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-32b422a2",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-dd2dec7e",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-6e427a39",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "payment_account_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "synthetic_compensation"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-46ae948c",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-product-analyst"
+        ],
+        "citizen_id": "person-b563bb6c",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-4ad310da",
+        "fields": [
+          {
+            "data_category": "device",
+            "field_path": "device_reference"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "network_address_field"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-4b9b1ce2",
+        "retention_state": "active",
+        "role_context": "application_user",
+        "system_id": "system-a8ff4de4",
+        "system_surface": "product"
+      },
+      {
+        "access_role_ids": [
+          "role-people-operations"
+        ],
+        "citizen_id": "person-db2de958",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-d675dc68",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "role_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-54ba560d",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-fc69c886",
+        "system_surface": "people"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-db2de958",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-d675dc68",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "payment_account_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "synthetic_compensation"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-5b65999b",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-people-operations"
+        ],
+        "citizen_id": "person-dd2dec7e",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-6e427a39",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "role_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-6eff4202",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-fc69c886",
+        "system_surface": "people"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-b563bb6c",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-4ad310da",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "billing_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-719abcad",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-support-specialist"
+        ],
+        "citizen_id": "person-b563bb6c",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-4ad310da",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "requester_reference"
+          },
+          {
+            "data_category": "content",
+            "field_path": "attachment_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-71d49320",
+        "retention_state": "active",
+        "role_context": "support_requester",
+        "system_id": "system-a0815c20",
+        "system_surface": "support"
+      },
+      {
+        "access_role_ids": [
+          "role-people-operations"
+        ],
+        "citizen_id": "person-dc2deaeb",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-0f196b15",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "role_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-bb70282e",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-fc69c886",
+        "system_surface": "people"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-dc2deaeb",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-0f196b15",
+        "fields": [
+          {
+            "data_category": "financial",
+            "field_path": "payment_account_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "synthetic_compensation"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-c3bbd858",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance"
+      },
+      {
+        "access_role_ids": [
+          "role-security-operations"
+        ],
+        "citizen_id": "person-dc2deaeb",
+        "copied_from": "lineage-bb70282e",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-0f196b15",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-0a415b9c",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-63df6ff3",
+        "system_surface": "security",
+        "transformed_by": "directory-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-security-operations"
+        ],
+        "citizen_id": "person-db2de958",
+        "copied_from": "lineage-54ba560d",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-d675dc68",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-18de817f",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-63df6ff3",
+        "system_surface": "security",
+        "transformed_by": "directory-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-security-operations"
+        ],
+        "citizen_id": "person-de2dee11",
+        "copied_from": "lineage-d9dcf46f",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-c2a6565e",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-77b4f3e1",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-63df6ff3",
+        "system_surface": "security",
+        "transformed_by": "directory-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-b663bcff",
+        "copied_from": "lineage-1f12ef2c",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-f7f4fcbb",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "customer_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-aa827f1b",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance",
+        "transformed_by": "billing-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-security-operations"
+        ],
+        "citizen_id": "person-dd2dec7e",
+        "copied_from": "lineage-6eff4202",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-6e427a39",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-d6535858",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-63df6ff3",
+        "system_surface": "security",
+        "transformed_by": "directory-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-finance-operations"
+        ],
+        "citizen_id": "person-b563bb6c",
+        "copied_from": "lineage-ea9b532b",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-4ad310da",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "customer_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-copy-e5362e70",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-b5376a45",
+        "system_surface": "finance",
+        "transformed_by": "billing-sync"
+      },
+      {
+        "access_role_ids": [
+          "role-people-operations"
+        ],
+        "citizen_id": "person-de2dee11",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-c2a6565e",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "worker_reference"
+          },
+          {
+            "data_category": "employment",
+            "field_path": "role_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-d9dcf46f",
+        "retention_state": "active",
+        "role_context": "employee",
+        "system_id": "system-fc69c886",
+        "system_surface": "people"
+      },
+      {
+        "access_role_ids": [
+          "role-product-analyst"
+        ],
+        "citizen_id": "person-b663bcff",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-f7f4fcbb",
+        "fields": [
+          {
+            "data_category": "device",
+            "field_path": "device_reference"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "network_address_field"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-e2db9bc5",
+        "retention_state": "active",
+        "role_context": "application_user",
+        "system_id": "system-a8ff4de4",
+        "system_surface": "product"
+      },
+      {
+        "access_role_ids": [
+          "role-sales-operations"
+        ],
+        "citizen_id": "person-b563bb6c",
+        "created_at_simulation_tick": 103,
+        "data_subject_id": "subject-4ad310da",
+        "fields": [
+          {
+            "data_category": "identifier",
+            "field_path": "synthetic_name"
+          },
+          {
+            "data_category": "identifier",
+            "field_path": "customer_reference"
+          }
+        ],
+        "provenance_tier": "synthetic",
+        "record_id": "lineage-ea9b532b",
+        "retention_state": "active",
+        "role_context": "customer",
+        "system_id": "system-8761a40f",
+        "system_surface": "sales"
+      }
+    ],
+    "seed_ref": "seed-424242"
+  },
+  "provenance": {
+    "external_credentials_used": false,
+    "origin": "deterministic-generator",
+    "tier": "synthetic"
+  },
+  "research_status": "experimental",
+  "seed": 424242,
+  "simulation_tick": 103,
+  "systems": [
+    {
+      "external": false,
+      "id": "system-fc69c886",
+      "kind": "people-records",
+      "name": "Synthetic people system",
+      "surface": "people"
+    },
+    {
+      "external": false,
+      "id": "system-b5376a45",
+      "kind": "finance-ledger",
+      "name": "Synthetic finance system",
+      "surface": "finance"
+    },
+    {
+      "external": false,
+      "id": "system-8761a40f",
+      "kind": "customer-records",
+      "name": "Synthetic sales system",
+      "surface": "sales"
+    },
+    {
+      "external": false,
+      "id": "system-a8ff4de4",
+      "kind": "product-analytics",
+      "name": "Synthetic product system",
+      "surface": "product"
+    },
+    {
+      "external": false,
+      "id": "system-a0815c20",
+      "kind": "support-workspace",
+      "name": "Synthetic support system",
+      "surface": "support"
+    },
+    {
+      "external": false,
+      "id": "system-63df6ff3",
+      "kind": "identity-directory",
+      "name": "Synthetic security system",
+      "surface": "security"
+    }
+  ],
+  "workflows": [
+    {
+      "cross_system": true,
+      "id": "workflow-b97da594",
+      "kind": "customer-support-handoff",
+      "status": "completed",
+      "steps": [
+        {
+          "action": "request-recorded",
+          "actor_id": "person-b663bcff",
+          "sequence": 1,
+          "simulation_tick": 100,
+          "system_id": "system-8761a40f"
+        },
+        {
+          "action": "work-assigned",
+          "actor_id": "person-dc2deaeb",
+          "sequence": 2,
+          "simulation_tick": 101,
+          "system_id": "system-fc69c886"
+        },
+        {
+          "action": "account-updated",
+          "actor_id": "person-dc2deaeb",
+          "sequence": 3,
+          "simulation_tick": 102,
+          "system_id": "system-a8ff4de4"
+        },
+        {
+          "action": "response-prepared",
+          "actor_id": "person-dc2deaeb",
+          "sequence": 4,
+          "simulation_tick": 103,
+          "system_id": "system-a0815c20"
+        }
+      ]
+    }
+  ],
+  "world_ref": "world-39b8e495"
+}

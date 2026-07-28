@@ -1,0 +1,192 @@
+{
+  "contract_version": "aether-scenario.v1",
+  "scenario_id": "kernel-baseline",
+  "title": "World kernel baseline",
+  "description": "A bounded synthetic scenario exercising every world-model collection and deterministic module lifecycle.",
+  "seed": 424242,
+  "clock": {
+    "start_tick": 0,
+    "end_tick": 10,
+    "tick_duration_ms": 900000
+  },
+  "provenance": {
+    "origin": "scenario-specification",
+    "tier": "synthetic",
+    "authoritative": false,
+    "external_credentials_used": false
+  },
+  "research_status": "experimental",
+  "limitations": [
+    "This fixture proves kernel mechanics, not enterprise-depth completeness.",
+    "Synthetic outputs do not establish legal, regulatory, audit, or compliance conclusions."
+  ],
+  "modules": [
+    {
+      "module_id": "baseline-operations",
+      "config": {
+        "activity_tick": 2,
+        "organization_id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "account_id": "account_e9052c6994ba7334929d222791a3e2ef",
+        "balance_id": "balance_b84570ad5983c74b604239fcd2c77410"
+      }
+    }
+  ],
+  "initial_state": {
+    "people": [
+      {
+        "id": "person_b1ed124c86e400c1b64d1d48145730c5",
+        "kind": "synthetic-worker",
+        "attributes": {
+          "display_name": "Synthetic Person 001",
+          "fictional": true
+        }
+      }
+    ],
+    "households": [
+      {
+        "id": "household_75ec76dd69f5c6df24c6a5488c5d7dec",
+        "kind": "synthetic-household",
+        "attributes": {
+          "member_ids": [
+            "person_b1ed124c86e400c1b64d1d48145730c5"
+          ]
+        }
+      }
+    ],
+    "organizations": [
+      {
+        "id": "organization_ae274b81366a470401dc33efae35cdf4",
+        "kind": "synthetic-enterprise",
+        "attributes": {
+          "display_name": "Aster Vale Research Cooperative",
+          "fictional": true
+        }
+      }
+    ],
+    "institutions": [
+      {
+        "id": "institution_15e427c6119c2fd783bb4c6185209df0",
+        "kind": "synthetic-research-institution",
+        "attributes": {
+          "fictional": true
+        }
+      }
+    ],
+    "systems": [
+      {
+        "id": "system_0f74034762d99e3a0fc3e3aff47295ab",
+        "kind": "synthetic-work-system",
+        "attributes": {
+          "surface": "operations",
+          "external": false
+        }
+      }
+    ],
+    "assets": [
+      {
+        "id": "asset_40f679739cadf2875ed8051629701b44",
+        "kind": "synthetic-device",
+        "attributes": {
+          "assigned_to": "person_b1ed124c86e400c1b64d1d48145730c5"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "relationship_4f1ed1b10c649dd4505d397c2bc460b2",
+        "kind": "employment",
+        "attributes": {
+          "from_entity_id": "person_b1ed124c86e400c1b64d1d48145730c5",
+          "to_entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+          "active": true
+        }
+      }
+    ],
+    "contracts": [
+      {
+        "id": "contract_bbb5d5b2c4dd942f15e8cbd50fa51df3",
+        "kind": "synthetic-employment-contract",
+        "attributes": {
+          "party_ids": [
+            "person_b1ed124c86e400c1b64d1d48145730c5",
+            "organization_ae274b81366a470401dc33efae35cdf4"
+          ],
+          "active": true
+        }
+      }
+    ],
+    "accounts": [
+      {
+        "id": "account_e9052c6994ba7334929d222791a3e2ef",
+        "kind": "synthetic-operating-account",
+        "attributes": {
+          "owner_id": "organization_ae274b81366a470401dc33efae35cdf4"
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "resource_e8cbd17b246d7d1de3471f1713b2c63e",
+        "kind": "synthetic-capacity",
+        "attributes": {
+          "owner_id": "organization_ae274b81366a470401dc33efae35cdf4",
+          "available_units": 8
+        }
+      }
+    ],
+    "balances": [
+      {
+        "id": "balance_b84570ad5983c74b604239fcd2c77410",
+        "account_id": "account_e9052c6994ba7334929d222791a3e2ef",
+        "resource": "synthetic-credit",
+        "amount": 0
+      }
+    ],
+    "metrics": [],
+    "observations": [
+      {
+        "id": "observation_a1b624a7f62f11058a16449c38226ae0",
+        "kind": "research-boundary",
+        "attributes": {
+          "value": "synthetic and non-authoritative"
+        }
+      },
+      {
+        "id": "observation_71f93b22026e047f4d31c956cd5a84f4",
+        "kind": "pii-lineage",
+        "attributes": {
+          "source_record_ref": "synthetic-person-record",
+          "subject_ref": "subject_3f3d6d4aa6482b8702f996ea49480f71",
+          "system_ref": "system_0f74034762d99e3a0fc3e3aff47295ab",
+          "role_context": "worker",
+          "system_surface": "operations",
+          "fields": [
+            {
+              "field_path": "synthetic_name",
+              "data_category": "identifier"
+            }
+          ],
+          "access_role_ids": [
+            "synthetic-operations-role"
+          ],
+          "retention_state": "active",
+          "copied_from": null,
+          "transformed_by": null,
+          "simulation_tick": 0,
+          "provenance_tier": "synthetic"
+        }
+      }
+    ]
+  },
+  "scheduled_events": [
+    {
+      "tick": 1,
+      "module_id": "core",
+      "event_type": "scenario.started",
+      "entity_id": "organization_ae274b81366a470401dc33efae35cdf4",
+      "payload": {
+        "note": "Synthetic kernel baseline started."
+      }
+    }
+  ]
+}

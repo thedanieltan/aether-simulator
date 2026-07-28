@@ -1,0 +1,7 @@
+{
+  "scenario_version": "aether-scenario.v0.1",
+  "id": "minimal-enterprise",
+  "seed": 424242,
+  "fictional": true,
+  "description": "A deterministic fictional enterprise with synthetic people, role contexts, a cross-system workflow, and PII-lineage facts."
+}

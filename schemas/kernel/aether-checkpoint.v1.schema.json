@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/kernel/aether-checkpoint.v1.schema.json",
+  "title": "Aether deterministic checkpoint",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "checkpoint_id",
+    "scenario_digest",
+    "tick",
+    "world",
+    "pending_events",
+    "digest"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-checkpoint.v1" },
+    "checkpoint_id": { "$ref": "#/$defs/stableId" },
+    "scenario_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "tick": { "type": "integer", "minimum": 0 },
+    "world": { "$ref": "https://aether-simulator.invalid/schemas/kernel/aether-world.v1.schema.json" },
+    "pending_events": {
+      "type": "array",
+      "items": { "$ref": "https://aether-simulator.invalid/schemas/kernel/aether-event.v1.schema.json" }
+    },
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    }
+  }
+}

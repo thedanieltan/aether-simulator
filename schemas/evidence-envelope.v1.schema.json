@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aether-enterprise-simulator/schemas/evidence-envelope.v1.schema.json",
+  "title": "Non-authoritative synthetic evidence envelope",
+  "type": "object",
+  "required": [
+    "envelope_id",
+    "schema_version",
+    "source_record_ref",
+    "origin_mode",
+    "transformation_stage",
+    "transformation_version",
+    "custody",
+    "simulation_tick",
+    "subject_refs",
+    "system_refs",
+    "verification_status",
+    "contradictions",
+    "limitations",
+    "redaction_state",
+    "promotion_state",
+    "provenance"
+  ],
+  "properties": {
+    "envelope_id": { "type": "string", "minLength": 1 },
+    "schema_version": { "const": "evidence-envelope.v1" },
+    "source_record_ref": { "type": "string", "minLength": 1 },
+    "origin_mode": { "const": "deterministic_synthetic" },
+    "transformation_stage": { "const": "world_to_normalized_evidence" },
+    "transformation_version": { "type": "string", "minLength": 1 },
+    "custody": { "const": "local_research_fixture" },
+    "simulation_tick": { "type": "integer", "minimum": 0 },
+    "subject_refs": { "type": "array", "items": { "type": "string" } },
+    "system_refs": { "type": "array", "items": { "type": "string" } },
+    "verification_status": { "enum": ["derived", "contradicted", "unknown"] },
+    "contradictions": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "redaction_state": { "const": "synthetic_identifiers_only" },
+    "promotion_state": { "enum": ["quarantined", "reviewed", "rejected"] },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,49 @@
+{
+  "balance_differences": [
+    {
+      "balance_id": "balance_b84570ad5983c74b604239fcd2c77410",
+      "difference": 75,
+      "left": 430,
+      "right": 505
+    }
+  ],
+  "collection_counts": {
+    "left": {
+      "accounts": 1,
+      "assets": 1,
+      "balances": 1,
+      "contracts": 1,
+      "households": 1,
+      "institutions": 1,
+      "metrics": 1,
+      "observations": 2,
+      "organizations": 1,
+      "people": 1,
+      "relationships": 1,
+      "resources": 1,
+      "systems": 1
+    },
+    "right": {
+      "accounts": 1,
+      "assets": 1,
+      "balances": 1,
+      "contracts": 1,
+      "households": 1,
+      "institutions": 1,
+      "metrics": 1,
+      "observations": 2,
+      "organizations": 1,
+      "people": 1,
+      "relationships": 1,
+      "resources": 1,
+      "systems": 1
+    }
+  },
+  "contract_version": "aether-comparison.v1",
+  "left_event_count": 4,
+  "left_export_id": "export_23b7176755034c6a39321cdf1414dab8",
+  "right_event_count": 5,
+  "right_export_id": "export_b687fe52e442f32d82a57b27e32314c4",
+  "semantically_equal": false,
+  "shared_event_count": 4
+}

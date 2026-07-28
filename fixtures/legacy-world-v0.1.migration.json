@@ -1,0 +1,1885 @@
+{
+  "export": {
+    "contract_version": "aether-export.v1",
+    "digest": "af7148ee58879158e8425866d5927226df6c0840cbe4d067e8970d5dda70b86b",
+    "export_id": "export_952240e3a23bf2649e5e935d0f27fe00",
+    "scenario_digest": "e359f5299c5a2b5f366e2082bed7595368d467a253b43e49e66eb30cfd05074d",
+    "world": {
+      "accounts": [],
+      "balances": [],
+      "branch": {
+        "branch_id": "branch_cb8927b7f40616b2e2761171328cf9f3",
+        "intervention_digest": null,
+        "parent_checkpoint_id": null
+      },
+      "clock": {
+        "current_tick": 103,
+        "end_tick": 103,
+        "start_tick": 0,
+        "tick_duration_ms": 900000
+      },
+      "contract_version": "aether-world.v1",
+      "contracts": [],
+      "entities": {
+        "assets": [],
+        "households": [],
+        "institutions": [],
+        "organizations": [
+          {
+            "attributes": {
+              "display_name": "Aster Vale Research Cooperative",
+              "fictional": true,
+              "legacy_id": "enterprise-39b8e495",
+              "operating_model": "synthetic business-services enterprise"
+            },
+            "id": "organization_9fafa8bbc9f7f34dffaf30450eef8979",
+            "kind": "enterprise"
+          }
+        ],
+        "people": [
+          {
+            "attributes": {
+              "department": "external",
+              "display_name": "Synthetic Person 005",
+              "legacy_id": "person-b663bcff",
+              "role": "customer",
+              "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951"
+            },
+            "id": "person_0f001902f11ea8f70fe5d7c342acce66",
+            "kind": "customer"
+          },
+          {
+            "attributes": {
+              "department": "external",
+              "display_name": "Synthetic Person 006",
+              "legacy_id": "person-b563bb6c",
+              "role": "customer",
+              "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427"
+            },
+            "id": "person_2d7cd65a37a3ad65a2a99b05ae1beb26",
+            "kind": "customer"
+          },
+          {
+            "attributes": {
+              "department": "operations",
+              "display_name": "Synthetic Person 001",
+              "legacy_id": "person-dc2deaeb",
+              "role": "analyst",
+              "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88"
+            },
+            "id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+            "kind": "employee"
+          },
+          {
+            "attributes": {
+              "department": "finance",
+              "display_name": "Synthetic Person 004",
+              "legacy_id": "person-dd2dec7e",
+              "role": "manager",
+              "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b"
+            },
+            "id": "person_533a1180b9e3d5fba059b768a307f29b",
+            "kind": "employee"
+          },
+          {
+            "attributes": {
+              "department": "people",
+              "display_name": "Synthetic Person 002",
+              "legacy_id": "person-db2de958",
+              "role": "analyst",
+              "subject_ref": "subject_9977574c05a3027a405157f09ba0581f"
+            },
+            "id": "person_8a24052e985b37c85302cd60b7dbcaf5",
+            "kind": "employee"
+          },
+          {
+            "attributes": {
+              "department": "people",
+              "display_name": "Synthetic Person 003",
+              "legacy_id": "person-de2dee11",
+              "role": "analyst",
+              "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd"
+            },
+            "id": "person_fcdf51a6a2def8f7241e92d5ed19536a",
+            "kind": "employee"
+          }
+        ],
+        "systems": [
+          {
+            "attributes": {
+              "display_name": "Synthetic people system",
+              "external": false,
+              "legacy_id": "system-fc69c886",
+              "surface": "people"
+            },
+            "id": "system_109e28f3fce3918bf4e19654499591f6",
+            "kind": "people-records"
+          },
+          {
+            "attributes": {
+              "display_name": "Synthetic product system",
+              "external": false,
+              "legacy_id": "system-a8ff4de4",
+              "surface": "product"
+            },
+            "id": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "kind": "product-analytics"
+          },
+          {
+            "attributes": {
+              "display_name": "Synthetic security system",
+              "external": false,
+              "legacy_id": "system-63df6ff3",
+              "surface": "security"
+            },
+            "id": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "kind": "identity-directory"
+          },
+          {
+            "attributes": {
+              "display_name": "Synthetic sales system",
+              "external": false,
+              "legacy_id": "system-8761a40f",
+              "surface": "sales"
+            },
+            "id": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "kind": "customer-records"
+          },
+          {
+            "attributes": {
+              "display_name": "Synthetic finance system",
+              "external": false,
+              "legacy_id": "system-b5376a45",
+              "surface": "finance"
+            },
+            "id": "system_ef274189e8de764f5d318e9c632c623d",
+            "kind": "finance-ledger"
+          },
+          {
+            "attributes": {
+              "display_name": "Synthetic support system",
+              "external": false,
+              "legacy_id": "system-a0815c20",
+              "surface": "support"
+            },
+            "id": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "kind": "support-workspace"
+          }
+        ]
+      },
+      "event_log": [
+        {
+          "causes": [],
+          "contract_version": "aether-event.v1",
+          "entity_id": "person_0f001902f11ea8f70fe5d7c342acce66",
+          "event_id": "event_fa5f0cfd21f114dba4f82cb5b880b5bc",
+          "event_type": "legacy.workflow.step",
+          "module_id": "core",
+          "payload": {
+            "action": "request-recorded",
+            "cross_system": true,
+            "status": "completed",
+            "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+          },
+          "priority": 1,
+          "provenance": {
+            "authoritative": false,
+            "origin": "scenario",
+            "tier": "synthetic"
+          },
+          "tick": 100
+        },
+        {
+          "causes": [],
+          "contract_version": "aether-event.v1",
+          "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+          "event_id": "event_238be57c32631adc2158055c1afc9763",
+          "event_type": "legacy.workflow.step",
+          "module_id": "core",
+          "payload": {
+            "action": "work-assigned",
+            "cross_system": true,
+            "status": "completed",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+          },
+          "priority": 2,
+          "provenance": {
+            "authoritative": false,
+            "origin": "scenario",
+            "tier": "synthetic"
+          },
+          "tick": 101
+        },
+        {
+          "causes": [],
+          "contract_version": "aether-event.v1",
+          "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+          "event_id": "event_36e768043940e2843092b4ca179c00db",
+          "event_type": "legacy.workflow.step",
+          "module_id": "core",
+          "payload": {
+            "action": "account-updated",
+            "cross_system": true,
+            "status": "completed",
+            "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+          },
+          "priority": 3,
+          "provenance": {
+            "authoritative": false,
+            "origin": "scenario",
+            "tier": "synthetic"
+          },
+          "tick": 102
+        },
+        {
+          "causes": [],
+          "contract_version": "aether-event.v1",
+          "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+          "event_id": "event_a5fdae83f986c516d594bbe142033eed",
+          "event_type": "legacy.workflow.step",
+          "module_id": "core",
+          "payload": {
+            "action": "response-prepared",
+            "cross_system": true,
+            "status": "completed",
+            "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+          },
+          "priority": 4,
+          "provenance": {
+            "authoritative": false,
+            "origin": "scenario",
+            "tier": "synthetic"
+          },
+          "tick": 103
+        }
+      ],
+      "limitations": [
+        "Compatibility migration preserves synthetic facts, not prior identifier values.",
+        "No legal, regulatory, audit, or compliance conclusion is produced."
+      ],
+      "metrics": [],
+      "module_versions": {
+        "core": "1.0.0"
+      },
+      "observations": [
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-c3bbd858",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_0b0c7ed500da2488b68cba76d12d6ea2",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "hold",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-30556f71",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_18a2a9663ac5ea169b8d370fb2363b3a",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-54ba560d",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_1e935dfd22856afdff0b4a15a451f5c3",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-support-specialist"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "requester_reference"
+              },
+              {
+                "data_category": "content",
+                "field_path": "attachment_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "support_requester",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-71d49320",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "system_surface": "support",
+            "transformed_by": null
+          },
+          "id": "observation_24a07b67014ed028faecae58de0f2f56",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "billing_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-719abcad",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_251937f6285a1d998aa319f2b15d8e3d",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-product-analyst"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "device",
+                "field_path": "device_reference"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "network_address_field"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "application_user",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-4b9b1ce2",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "system_surface": "product",
+            "transformed_by": null
+          },
+          "id": "observation_29a4761fccacb895239869241975df0a",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-sales-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-ea9b532b",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "system_surface": "sales",
+            "transformed_by": null
+          },
+          "id": "observation_2fa9b57b79c236e14419717be2ad704a",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-sales-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-1f12ef2c",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "system_surface": "sales",
+            "transformed_by": null
+          },
+          "id": "observation_37406f5a7dd22e3c8d85d26eea9b7604",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-bb70282e",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-0a415b9c",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_43efc6a94e6955a7d6d146259aae8363",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-bb70282e",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_4a1c9a18081392b8fdf06c6d7b8e3f15",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": "lineage-ea9b532b",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-e5362e70",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": "billing-sync"
+          },
+          "id": "observation_59a031972e2207b65b15f800d845b425",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-5b65999b",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_661c10a9c73e259fba4f8ad629828906",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-support-specialist"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "requester_reference"
+              },
+              {
+                "data_category": "content",
+                "field_path": "attachment_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "support_requester",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-1506cb85",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "system_surface": "support",
+            "transformed_by": null
+          },
+          "id": "observation_76f9047ec519d6ace55a8e08ae91f9b1",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-d9dcf46f",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-77b4f3e1",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_8a3b9672e58a500ba69bf64e683b5edc",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-d9dcf46f",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_8eaa5f9a7646dc2e292de126cfc31cdf",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-46ae948c",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_8ed0c3e03bad2486b3cf04f2625f3b69",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-product-analyst"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "device",
+                "field_path": "device_reference"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "network_address_field"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "application_user",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-e2db9bc5",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "system_surface": "product",
+            "transformed_by": null
+          },
+          "id": "observation_9c5a110cff9a68ed302e882ce48252f1",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-6eff4202",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_a5611837a12e213beafc216101c30323",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-54ba560d",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-18de817f",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_aa0c9912d21c3648e67457206229abb9",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "billing_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-32b422a2",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_c8d43447fcbe514ef3fd8ef99068dfeb",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-6eff4202",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-d6535858",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_f27152ceb3bc412638fe01e42022feb0",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": "lineage-1f12ef2c",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-aa827f1b",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": "billing-sync"
+          },
+          "id": "observation_ffabee91359e20b3bd3f0413671f2fc9",
+          "kind": "pii-lineage"
+        }
+      ],
+      "projected_state": {
+        "event_count": 4,
+        "last_event_id": "event_a5fdae83f986c516d594bbe142033eed",
+        "module_state": {}
+      },
+      "provenance": {
+        "authoritative": false,
+        "external_credentials_used": false,
+        "origin": "deterministic-kernel",
+        "scenario_digest": "e359f5299c5a2b5f366e2082bed7595368d467a253b43e49e66eb30cfd05074d",
+        "tier": "synthetic"
+      },
+      "relationships": [
+        {
+          "attributes": {
+            "from_entity_id": "person_0f001902f11ea8f70fe5d7c342acce66",
+            "legacy_role": "customer",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_16bf6a85a63d55ea0f4aa51a35cf0201",
+          "kind": "customer"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_2d7cd65a37a3ad65a2a99b05ae1beb26",
+            "legacy_role": "customer",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_82a18d95fc06a1b9da691a4aeb6f796a",
+          "kind": "customer"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_8a24052e985b37c85302cd60b7dbcaf5",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_b8a6a149028c3798943f23b5ba5dbd97",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_533a1180b9e3d5fba059b768a307f29b",
+            "legacy_role": "manager",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_d9f5226af631ccf4934cbb4913a2704e",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_e8ebd107781511d8e37549a4f4c6a5a0",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_fcdf51a6a2def8f7241e92d5ed19536a",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_eacdef7179ebe95d2814d8945c70608e",
+          "kind": "employment"
+        }
+      ],
+      "research_status": "experimental",
+      "resources": [],
+      "scenario_contract_version": "aether-scenario.v1",
+      "scenario_id": "migrated-world-39b8e495",
+      "seed": 424242,
+      "world_id": "world_53160edea05137d8b3bce2fab32a3160"
+    }
+  },
+  "migration_version": "aether-world-v0.1-to-v1.v1",
+  "scenario": {
+    "clock": {
+      "end_tick": 103,
+      "start_tick": 0,
+      "tick_duration_ms": 900000
+    },
+    "contract_version": "aether-scenario.v1",
+    "description": "Deterministic compatibility migration from the public v0.1 fixture.",
+    "initial_state": {
+      "accounts": [],
+      "assets": [],
+      "balances": [],
+      "contracts": [],
+      "households": [],
+      "institutions": [],
+      "metrics": [],
+      "observations": [
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-support-specialist"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "requester_reference"
+              },
+              {
+                "data_category": "content",
+                "field_path": "attachment_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "support_requester",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-1506cb85",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "system_surface": "support",
+            "transformed_by": null
+          },
+          "id": "observation_76f9047ec519d6ace55a8e08ae91f9b1",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-sales-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-1f12ef2c",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "system_surface": "sales",
+            "transformed_by": null
+          },
+          "id": "observation_37406f5a7dd22e3c8d85d26eea9b7604",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "hold",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-30556f71",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_18a2a9663ac5ea169b8d370fb2363b3a",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "billing_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-32b422a2",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_c8d43447fcbe514ef3fd8ef99068dfeb",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-46ae948c",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_8ed0c3e03bad2486b3cf04f2625f3b69",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-product-analyst"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "device",
+                "field_path": "device_reference"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "network_address_field"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "application_user",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-4b9b1ce2",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "system_surface": "product",
+            "transformed_by": null
+          },
+          "id": "observation_29a4761fccacb895239869241975df0a",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-54ba560d",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_1e935dfd22856afdff0b4a15a451f5c3",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-5b65999b",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_661c10a9c73e259fba4f8ad629828906",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-6eff4202",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_a5611837a12e213beafc216101c30323",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "billing_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-719abcad",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_251937f6285a1d998aa319f2b15d8e3d",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-support-specialist"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "requester_reference"
+              },
+              {
+                "data_category": "content",
+                "field_path": "attachment_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "support_requester",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-71d49320",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+            "system_surface": "support",
+            "transformed_by": null
+          },
+          "id": "observation_24a07b67014ed028faecae58de0f2f56",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-bb70282e",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_4a1c9a18081392b8fdf06c6d7b8e3f15",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "financial",
+                "field_path": "payment_account_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "synthetic_compensation"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-c3bbd858",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": null
+          },
+          "id": "observation_0b0c7ed500da2488b68cba76d12d6ea2",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-bb70282e",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-0a415b9c",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_43efc6a94e6955a7d6d146259aae8363",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-54ba560d",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-18de817f",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_aa0c9912d21c3648e67457206229abb9",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-d9dcf46f",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-77b4f3e1",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_8a3b9672e58a500ba69bf64e683b5edc",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": "lineage-1f12ef2c",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-aa827f1b",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": "billing-sync"
+          },
+          "id": "observation_ffabee91359e20b3bd3f0413671f2fc9",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-security-operations"
+            ],
+            "copied_from": "lineage-6eff4202",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-d6535858",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b",
+            "system_ref": "system_a6472468d2fd8bf6db62da0662536e6e",
+            "system_surface": "security",
+            "transformed_by": "directory-sync"
+          },
+          "id": "observation_f27152ceb3bc412638fe01e42022feb0",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-finance-operations"
+            ],
+            "copied_from": "lineage-ea9b532b",
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-copy-e5362e70",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ef274189e8de764f5d318e9c632c623d",
+            "system_surface": "finance",
+            "transformed_by": "billing-sync"
+          },
+          "id": "observation_59a031972e2207b65b15f800d845b425",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-people-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "worker_reference"
+              },
+              {
+                "data_category": "employment",
+                "field_path": "role_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "employee",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-d9dcf46f",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd",
+            "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+            "system_surface": "people",
+            "transformed_by": null
+          },
+          "id": "observation_8eaa5f9a7646dc2e292de126cfc31cdf",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-product-analyst"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "device",
+                "field_path": "device_reference"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "network_address_field"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "application_user",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-e2db9bc5",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951",
+            "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+            "system_surface": "product",
+            "transformed_by": null
+          },
+          "id": "observation_9c5a110cff9a68ed302e882ce48252f1",
+          "kind": "pii-lineage"
+        },
+        {
+          "attributes": {
+            "access_role_ids": [
+              "role-sales-operations"
+            ],
+            "copied_from": null,
+            "fields": [
+              {
+                "data_category": "identifier",
+                "field_path": "synthetic_name"
+              },
+              {
+                "data_category": "identifier",
+                "field_path": "customer_reference"
+              }
+            ],
+            "provenance_tier": "synthetic",
+            "retention_state": "active",
+            "role_context": "customer",
+            "simulation_tick": 103,
+            "source_record_ref": "lineage-ea9b532b",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427",
+            "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+            "system_surface": "sales",
+            "transformed_by": null
+          },
+          "id": "observation_2fa9b57b79c236e14419717be2ad704a",
+          "kind": "pii-lineage"
+        }
+      ],
+      "organizations": [
+        {
+          "attributes": {
+            "display_name": "Aster Vale Research Cooperative",
+            "fictional": true,
+            "legacy_id": "enterprise-39b8e495",
+            "operating_model": "synthetic business-services enterprise"
+          },
+          "id": "organization_9fafa8bbc9f7f34dffaf30450eef8979",
+          "kind": "enterprise"
+        }
+      ],
+      "people": [
+        {
+          "attributes": {
+            "department": "operations",
+            "display_name": "Synthetic Person 001",
+            "legacy_id": "person-dc2deaeb",
+            "role": "analyst",
+            "subject_ref": "subject_37d8d3c10a76d3e8b226e678360cdb88"
+          },
+          "id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+          "kind": "employee"
+        },
+        {
+          "attributes": {
+            "department": "people",
+            "display_name": "Synthetic Person 002",
+            "legacy_id": "person-db2de958",
+            "role": "analyst",
+            "subject_ref": "subject_9977574c05a3027a405157f09ba0581f"
+          },
+          "id": "person_8a24052e985b37c85302cd60b7dbcaf5",
+          "kind": "employee"
+        },
+        {
+          "attributes": {
+            "department": "people",
+            "display_name": "Synthetic Person 003",
+            "legacy_id": "person-de2dee11",
+            "role": "analyst",
+            "subject_ref": "subject_1db6a87e18dec411ab74577c12571dfd"
+          },
+          "id": "person_fcdf51a6a2def8f7241e92d5ed19536a",
+          "kind": "employee"
+        },
+        {
+          "attributes": {
+            "department": "finance",
+            "display_name": "Synthetic Person 004",
+            "legacy_id": "person-dd2dec7e",
+            "role": "manager",
+            "subject_ref": "subject_01a621fb34bc3b28a2b076764174384b"
+          },
+          "id": "person_533a1180b9e3d5fba059b768a307f29b",
+          "kind": "employee"
+        },
+        {
+          "attributes": {
+            "department": "external",
+            "display_name": "Synthetic Person 005",
+            "legacy_id": "person-b663bcff",
+            "role": "customer",
+            "subject_ref": "subject_fddc3c4f956465d32a394723c4b9b951"
+          },
+          "id": "person_0f001902f11ea8f70fe5d7c342acce66",
+          "kind": "customer"
+        },
+        {
+          "attributes": {
+            "department": "external",
+            "display_name": "Synthetic Person 006",
+            "legacy_id": "person-b563bb6c",
+            "role": "customer",
+            "subject_ref": "subject_c06e7bfb1a512834cb3af311cf057427"
+          },
+          "id": "person_2d7cd65a37a3ad65a2a99b05ae1beb26",
+          "kind": "customer"
+        }
+      ],
+      "relationships": [
+        {
+          "attributes": {
+            "from_entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_e8ebd107781511d8e37549a4f4c6a5a0",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_8a24052e985b37c85302cd60b7dbcaf5",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_b8a6a149028c3798943f23b5ba5dbd97",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_fcdf51a6a2def8f7241e92d5ed19536a",
+            "legacy_role": "analyst",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_eacdef7179ebe95d2814d8945c70608e",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_533a1180b9e3d5fba059b768a307f29b",
+            "legacy_role": "manager",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_d9f5226af631ccf4934cbb4913a2704e",
+          "kind": "employment"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_0f001902f11ea8f70fe5d7c342acce66",
+            "legacy_role": "customer",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_16bf6a85a63d55ea0f4aa51a35cf0201",
+          "kind": "customer"
+        },
+        {
+          "attributes": {
+            "from_entity_id": "person_2d7cd65a37a3ad65a2a99b05ae1beb26",
+            "legacy_role": "customer",
+            "to_entity_id": "organization_9fafa8bbc9f7f34dffaf30450eef8979"
+          },
+          "id": "relationship_82a18d95fc06a1b9da691a4aeb6f796a",
+          "kind": "customer"
+        }
+      ],
+      "resources": [],
+      "systems": [
+        {
+          "attributes": {
+            "display_name": "Synthetic people system",
+            "external": false,
+            "legacy_id": "system-fc69c886",
+            "surface": "people"
+          },
+          "id": "system_109e28f3fce3918bf4e19654499591f6",
+          "kind": "people-records"
+        },
+        {
+          "attributes": {
+            "display_name": "Synthetic finance system",
+            "external": false,
+            "legacy_id": "system-b5376a45",
+            "surface": "finance"
+          },
+          "id": "system_ef274189e8de764f5d318e9c632c623d",
+          "kind": "finance-ledger"
+        },
+        {
+          "attributes": {
+            "display_name": "Synthetic sales system",
+            "external": false,
+            "legacy_id": "system-8761a40f",
+            "surface": "sales"
+          },
+          "id": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+          "kind": "customer-records"
+        },
+        {
+          "attributes": {
+            "display_name": "Synthetic product system",
+            "external": false,
+            "legacy_id": "system-a8ff4de4",
+            "surface": "product"
+          },
+          "id": "system_841f6996ed61468ac0c46bcdffe5696e",
+          "kind": "product-analytics"
+        },
+        {
+          "attributes": {
+            "display_name": "Synthetic support system",
+            "external": false,
+            "legacy_id": "system-a0815c20",
+            "surface": "support"
+          },
+          "id": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+          "kind": "support-workspace"
+        },
+        {
+          "attributes": {
+            "display_name": "Synthetic security system",
+            "external": false,
+            "legacy_id": "system-63df6ff3",
+            "surface": "security"
+          },
+          "id": "system_a6472468d2fd8bf6db62da0662536e6e",
+          "kind": "identity-directory"
+        }
+      ]
+    },
+    "limitations": [
+      "Compatibility migration preserves synthetic facts, not prior identifier values.",
+      "No legal, regulatory, audit, or compliance conclusion is produced."
+    ],
+    "modules": [],
+    "provenance": {
+      "authoritative": false,
+      "external_credentials_used": false,
+      "origin": "scenario-specification",
+      "tier": "synthetic"
+    },
+    "research_status": "experimental",
+    "scenario_id": "migrated-world-39b8e495",
+    "scheduled_events": [
+      {
+        "entity_id": "person_0f001902f11ea8f70fe5d7c342acce66",
+        "event_type": "legacy.workflow.step",
+        "module_id": "core",
+        "payload": {
+          "action": "request-recorded",
+          "cross_system": true,
+          "status": "completed",
+          "system_ref": "system_ddd59f02b066391c6ea0a0c3261cfad0",
+          "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+        },
+        "priority": 1,
+        "tick": 100
+      },
+      {
+        "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+        "event_type": "legacy.workflow.step",
+        "module_id": "core",
+        "payload": {
+          "action": "work-assigned",
+          "cross_system": true,
+          "status": "completed",
+          "system_ref": "system_109e28f3fce3918bf4e19654499591f6",
+          "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+        },
+        "priority": 2,
+        "tick": 101
+      },
+      {
+        "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+        "event_type": "legacy.workflow.step",
+        "module_id": "core",
+        "payload": {
+          "action": "account-updated",
+          "cross_system": true,
+          "status": "completed",
+          "system_ref": "system_841f6996ed61468ac0c46bcdffe5696e",
+          "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+        },
+        "priority": 3,
+        "tick": 102
+      },
+      {
+        "entity_id": "person_49e47991f0635e9b78fa5cf6c10ea4ea",
+        "event_type": "legacy.workflow.step",
+        "module_id": "core",
+        "payload": {
+          "action": "response-prepared",
+          "cross_system": true,
+          "status": "completed",
+          "system_ref": "system_f76155ef9c7d9bff3d41ba665510c6b7",
+          "workflow_ref": "workflow_60c87a20429610a48eea1890a09f3982"
+        },
+        "priority": 4,
+        "tick": 103
+      }
+    ],
+    "seed": 424242,
+    "title": "Migrated deterministic enterprise fixture"
+  },
+  "source_contract_version": "aether-world.v0.1",
+  "target_contract_version": "aether-world.v1"
+}

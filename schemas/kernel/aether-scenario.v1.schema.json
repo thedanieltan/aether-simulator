@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/kernel/aether-scenario.v1.schema.json",
+  "title": "Aether deterministic scenario specification",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "scenario_id",
+    "seed",
+    "clock",
+    "provenance",
+    "research_status",
+    "limitations",
+    "modules",
+    "initial_state",
+    "scheduled_events"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-scenario.v1" },
+    "scenario_id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "seed": {
+      "oneOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "clock": {
+      "type": "object",
+      "required": ["start_tick", "end_tick", "tick_duration_ms"],
+      "properties": {
+        "start_tick": { "type": "integer", "minimum": 0 },
+        "end_tick": { "type": "integer", "minimum": 0 },
+        "tick_duration_ms": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["origin", "tier", "authoritative", "external_credentials_used"],
+      "properties": {
+        "origin": { "const": "scenario-specification" },
+        "tier": { "const": "synthetic" },
+        "authoritative": { "const": false },
+        "external_credentials_used": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "research_status": { "enum": ["experimental", "research-preview"] },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["module_id"],
+        "properties": {
+          "module_id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+          "config": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "initial_state": { "$ref": "#/$defs/stateCollections" },
+    "scheduled_events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/eventIntent" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    },
+    "entity": {
+      "type": "object",
+      "required": ["id", "kind", "attributes"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "type": "string", "minLength": 1 },
+        "attributes": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "record": {
+      "type": "object",
+      "required": ["id", "kind", "attributes"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "type": "string", "minLength": 1 },
+        "attributes": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "balance": {
+      "type": "object",
+      "required": ["id", "account_id", "resource", "amount"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "account_id": { "$ref": "#/$defs/stableId" },
+        "resource": { "type": "string", "minLength": 1 },
+        "amount": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "stateCollections": {
+      "type": "object",
+      "required": [
+        "people",
+        "households",
+        "organizations",
+        "institutions",
+        "systems",
+        "assets",
+        "relationships",
+        "contracts",
+        "accounts",
+        "resources",
+        "balances",
+        "metrics",
+        "observations"
+      ],
+      "properties": {
+        "people": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "households": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "organizations": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "institutions": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "systems": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "assets": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "relationships": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "contracts": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "accounts": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "resources": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "balances": { "type": "array", "items": { "$ref": "#/$defs/balance" } },
+        "metrics": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "observations": { "type": "array", "items": { "$ref": "#/$defs/record" } }
+      },
+      "additionalProperties": false
+    },
+    "eventIntent": {
+      "type": "object",
+      "required": ["tick", "module_id", "event_type", "payload"],
+      "properties": {
+        "tick": { "type": "integer", "minimum": 0 },
+        "priority": { "type": "integer", "default": 0 },
+        "module_id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "event_type": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "entity_id": {
+          "oneOf": [
+            { "$ref": "#/$defs/stableId" },
+            { "type": "null" }
+          ]
+        },
+        "causes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stableId" },
+          "uniqueItems": true
+        },
+        "payload": { "type": "object" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

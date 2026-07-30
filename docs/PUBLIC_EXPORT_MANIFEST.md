@@ -31,6 +31,11 @@ reviewers.
 | Enterprise scenarios and interventions | `scenarios/enterprise/`, `scenarios/interventions/enterprise-inventory-buffer.json` | Determinism and branch tests |
 | Enterprise canonical fixtures | `fixtures/enterprise/` | Full-export, summary, checkpoint, branch, and comparison validation |
 | Enterprise benchmarks | `scripts/benchmark-enterprise.mjs`, `docs/ENTERPRISE_BENCHMARKS.md` | Configurable scale profiles |
+| Ecosystem configuration and event contracts | `schemas/ecosystem/`, `src/ecosystem/validation.mjs` | Formal schema and fail-closed tests |
+| Ecosystem construction and shared-kernel composition | `src/ecosystem/scenario-builder.mjs`, `src/modules/ecosystem-operations.mjs` | Seven deterministic scenarios |
+| Cross-boundary reconciliation and causal analysis | `src/ecosystem/analysis.mjs` | Contract, payment, delivery, identity, lineage, and cascade tests |
+| Ecosystem scenarios, fixtures, and intervention | `scenarios/ecosystem/`, `fixtures/ecosystem/`, `scenarios/interventions/ecosystem-capacity-restoration.json` | Replay, branch, comparison, and fixture validation |
+| Ecosystem benchmarks | `scripts/benchmark-ecosystem.mjs`, `docs/ECOSYSTEM_BENCHMARKS.md` | Configurable scale profiles |
 
 Private repository identifiers, internal source locations, commit hashes,
 branches, tags, authorship metadata, operational details, and private artifacts

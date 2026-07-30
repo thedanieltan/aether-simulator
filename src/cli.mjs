@@ -14,8 +14,11 @@ import { migrateLegacyWorld } from "./kernel/migration.mjs";
 import { assertContract } from "./kernel/validation.mjs";
 import { baselineOperationsModule } from "./modules/baseline-operations.mjs";
 import {
+  assertEcosystemConfig,
   assertEnterpriseConfig,
+  buildEcosystemScenario,
   buildEnterpriseScenario,
+  ecosystemOperationsModule,
   enterpriseOperationsModule,
   listEnterpriseArchetypes,
   validateEnterpriseInvariants,
@@ -24,6 +27,9 @@ import {
 const kernel = new SimulationKernel({ modules: [baselineOperationsModule] });
 const enterpriseKernel = new SimulationKernel({
   modules: [enterpriseOperationsModule],
+});
+const ecosystemKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule, ecosystemOperationsModule],
 });
 
 function usage() {
@@ -40,6 +46,8 @@ Usage:
   aether enterprise-archetypes
   aether enterprise-validate <enterprise-config.json>
   aether enterprise-run <enterprise-config.json> [--output <file>]
+  aether ecosystem-validate <ecosystem-config.json>
+  aether ecosystem-run <ecosystem-config.json> [--output <file>]
 `;
 }
 
@@ -135,6 +143,33 @@ async function execute(argv) {
       );
     }
     await emit(exported, options.output);
+    return;
+  }
+
+  if (command === "ecosystem-validate") {
+    if (positional.length !== 1) {
+      throw new TypeError("ecosystem-validate requires one ecosystem config");
+    }
+    const config = await readJson(positional[0]);
+    assertEcosystemConfig(config);
+    const scenario = buildEcosystemScenario(config);
+    ecosystemKernel.validateScenario(scenario);
+    await emit({
+      valid: true,
+      contract_version: config.contract_version,
+      scenario_contract_version: scenario.contract_version,
+      scenario_kind: config.scenario_kind,
+      scale: config.scale,
+    });
+    return;
+  }
+
+  if (command === "ecosystem-run") {
+    if (positional.length !== 1) {
+      throw new TypeError("ecosystem-run requires one ecosystem config");
+    }
+    const scenario = buildEcosystemScenario(await readJson(positional[0]));
+    await emit(ecosystemKernel.run(scenario), options.output);
     return;
   }
 

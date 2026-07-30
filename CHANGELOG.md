@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.0 - Ecosystem Depth research preview
+
+- Added contract-gated multi-organization simulation using the shared world
+  kernel and Enterprise Depth archetypes.
+- Added versioned ecosystem configuration and event payload schemas.
+- Added seven scenarios covering service networks, supply and fulfilment,
+  subcontracting, vendor outage, customer default, cross-organization data
+  requests, and intervention comparison.
+- Added reconciled multiparty contracts, payments, deliveries, shared-citizen
+  contexts, lineage, obligations, and queryable causal cascades.
+- Added deterministic partition-equivalence tests, fixtures, CLI commands,
+  benchmarks, architecture documentation, ADR, and acceptance evidence.
+
 ## 0.3.0 - Enterprise Depth research preview
 
 - Added configurable professional-services, SaaS, retail, logistics, and

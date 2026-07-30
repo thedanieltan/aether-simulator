@@ -6,7 +6,7 @@ The repository uses one read-only GitHub Actions workflow:
 
 | Check | Environment | Required behavior |
 |---|---|---|
-| `acceptance (node 20)` | Ubuntu, minimum supported Node.js | Clean locked install, build, 38-test suite, schemas, fixtures, deterministic fixture regeneration, public-tree policy, sensitive-content scan, package boundary, and dependency audit |
+| `acceptance (node 20)` | Ubuntu, minimum supported Node.js | Clean locked install, build, complete test suite, schemas, fixtures, deterministic fixture regeneration, public-tree policy, sensitive-content scan, package boundary, and dependency audit |
 | `runtime (node 22)` | Ubuntu | Canonical deterministic acceptance |
 | `runtime (node 24)` | Ubuntu | Canonical deterministic acceptance |
 | `portability (windows, node 20)` | Windows | Canonical deterministic acceptance |

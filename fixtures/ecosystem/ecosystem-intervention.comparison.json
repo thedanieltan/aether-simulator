@@ -1,0 +1,78 @@
+{
+  "assumptions": {
+    "authoritative": false,
+    "intervention": {
+      "kind": "capacity-restoration"
+    },
+    "synthetic": true
+  },
+  "balance_differences": [],
+  "collection_counts": {
+    "left": {
+      "accounts": 4,
+      "assets": 4,
+      "balances": 4,
+      "contracts": 1,
+      "households": 1,
+      "institutions": 1,
+      "metrics": 0,
+      "observations": 1,
+      "organizations": 4,
+      "people": 1,
+      "relationships": 4,
+      "resources": 6,
+      "systems": 8
+    },
+    "right": {
+      "accounts": 4,
+      "assets": 4,
+      "balances": 4,
+      "contracts": 1,
+      "households": 1,
+      "institutions": 1,
+      "metrics": 0,
+      "observations": 1,
+      "organizations": 4,
+      "people": 1,
+      "relationships": 4,
+      "resources": 6,
+      "systems": 8
+    }
+  },
+  "contract_version": "aether-comparison.v1",
+  "ecosystem_state_equal": false,
+  "left_event_count": 30,
+  "left_export_id": "export_9a9145f800f0182ee084d34fd22e8fea",
+  "module_state_differences": [
+    {
+      "left_digest": "fba687221444fb62c3f11a7f9edc25a0898fec7ce6f649efe518dc21a591a29d",
+      "module_id": "ecosystem-operations",
+      "right_digest": "82ac8666ce00f24c20676211b2db7ba1ae71622f5e069e12ab0216b89e81a8c6",
+      "semantically_equal": false
+    }
+  ],
+  "observed_synthetic_outcomes": [
+    {
+      "baseline": -100,
+      "difference": 0,
+      "intervention": -100,
+      "kind": "capacity-reduction"
+    },
+    {
+      "baseline": 0,
+      "difference": 75,
+      "intervention": 75,
+      "kind": "capacity-restoration"
+    },
+    {
+      "baseline": -100,
+      "difference": 0,
+      "intervention": -100,
+      "kind": "upstream-capacity-change"
+    }
+  ],
+  "right_event_count": 31,
+  "right_export_id": "export_05caeac578e780e9b9575e9c158fb391",
+  "semantically_equal": false,
+  "shared_event_count": 30
+}

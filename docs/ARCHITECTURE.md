@@ -117,12 +117,31 @@ without active employment, invoice overpayment, and missing causal
 predecessors. Data events emit PII-lineage observations referencing their
 actual simulation event.
 
+## Ecosystem Depth
+
+Ecosystem configurations reuse Enterprise Depth archetype structure and
+register `enterprise-operations` plus `ecosystem-operations` on the same
+kernel. Cross-boundary events are rejected unless an active declared contract
+covers the owner and every affected organization.
+
+```mermaid
+flowchart LR
+  Enterprise["Enterprise archetypes"] --> Builder["Ecosystem scenario builder"]
+  Builder --> Kernel["Shared deterministic kernel"]
+  Kernel --> Boundary["Contract-gated boundary events"]
+  Boundary --> Reconcile["Payments / deliveries / obligations"]
+  Boundary --> Identity["Shared citizen / separate contexts"]
+  Boundary --> Lineage["Cross-organization lineage"]
+  Boundary --> Cascade["Queryable causal cascades"]
+```
+
+Construction batching is deterministic and absent from semantic configuration,
+so partition size cannot change scenario or world output.
+
 ## Product-depth boundary
 
-The kernel is infrastructure for later product depths; it is not evidence that
-those depths exist. Enterprise Depth is implemented as configurable, tested
-research scenarios with explicit simplifications. Ecosystem and economy depth
-are unimplemented.
+Enterprise and Ecosystem Depth are implemented as configurable, tested research
+scenarios with explicit simplifications. Economy Depth is unimplemented.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.
 

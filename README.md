@@ -14,9 +14,9 @@ authority.
    employment, consumption, supply chains, finance, taxation, regulation,
    business formation, failure, and shocks.
 
-This repository implements the deterministic world kernel and configurable
-Enterprise Depth research scenarios. Ecosystem and economy depth are not
-implemented.
+This repository implements the deterministic world kernel, configurable
+Enterprise Depth, and contract-gated Ecosystem Depth research scenarios.
+Economy Depth is not implemented.
 
 ## What is implemented
 
@@ -32,14 +32,16 @@ implemented.
   incident, remediation, and intervention journeys.
 - Enforced accounting, inventory, capacity, payroll, invoice, workflow, and
   lineage invariants.
+- Deterministic multi-organization contracts, intermediated payments,
+  deliveries, shared-citizen contexts, record transfers, and causal cascades.
 - Deterministic migration from the public `aether-world.v0.1` fixture.
 - An optional evidence bridge that converts synthetic lineage observations into
   quarantined, facts-only, non-authoritative envelopes.
 
-Cross-enterprise ecosystems, economy behavior, local OSS realism, and connected
-calibration remain future research. External customer and supplier entries in
-Enterprise Depth are boundary contexts, not independently simulated
-organizations. Connected-provider performance is not universally validated.
+Economy behavior, local OSS realism, and connected calibration remain future
+research. Enterprise-only customer and supplier entries remain boundary
+contexts; Ecosystem Depth scenarios independently simulate declared
+counterparties. Connected-provider performance is not universally validated.
 
 ## Five-minute demonstration
 
@@ -50,6 +52,7 @@ required.
 npm ci
 npm run demo
 npm run demo:enterprise
+npm run demo:ecosystem
 npm run verify:ci
 ```
 
@@ -64,6 +67,7 @@ node src/cli.mjs validate scenarios/kernel-baseline.json
 node src/cli.mjs run scenarios/kernel-baseline.json
 node src/cli.mjs checkpoint scenarios/kernel-baseline.json --tick 2
 node src/cli.mjs enterprise-run scenarios/enterprise/retail-order-to-cash.json
+node src/cli.mjs ecosystem-run scenarios/ecosystem/saas-service-network.json
 ```
 
 Run `node src/cli.mjs help` for replay, branch, compare, and migrate examples.
@@ -92,6 +96,8 @@ synthetic records. No real personal data is included or accepted by the
 demonstration. Synthetic output does not establish real-world compliance.
 Provider-connected execution is not included. Enterprise models are explicit,
 simplified research assumptions rather than calibrated digital twins.
+Cross-boundary facts and cascade outcomes are also synthetic and
+non-authoritative.
 
 Repository status: **active research**.
 

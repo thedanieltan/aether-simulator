@@ -1,5 +1,6 @@
 import { spawnSync } from "node:child_process";
-import { dirname, resolve } from "node:path";
+import { readFile, readdir } from "node:fs/promises";
+import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -19,20 +20,42 @@ function run(command, args) {
   return result.stdout;
 }
 
+async function filesUnder(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const path = resolve(directory, entry.name);
+    if (entry.isDirectory()) files.push(...(await filesUnder(path)));
+    else files.push(path);
+  }
+  return files;
+}
+
+async function snapshot() {
+  const directories = [
+    resolve(root, "fixtures"),
+    resolve(root, "scenarios", "interventions"),
+  ];
+  const files = (await Promise.all(directories.map(filesUnder))).flat().sort();
+  return new Map(
+    await Promise.all(
+      files.map(async (path) => [
+        relative(root, path).replaceAll("\\", "/"),
+        await readFile(path, "utf8"),
+      ]),
+    ),
+  );
+}
+
+const before = await snapshot();
 run(process.execPath, ["scripts/demo.mjs"]);
 run(process.execPath, ["scripts/generate-enterprise-fixtures.mjs"]);
-
-const status = run("git", [
-  "status",
-  "--porcelain",
-  "--untracked-files=all",
-  "--",
-  "fixtures",
-]);
-if (status.trim()) {
-  throw new Error(
-    `Committed fixtures do not match deterministic regeneration:\n${status.trim()}`,
-  );
+run(process.execPath, ["scripts/generate-ecosystem-fixtures.mjs"]);
+const after = await snapshot();
+const paths = [...new Set([...before.keys(), ...after.keys()])].sort();
+const changed = paths.filter((path) => before.get(path) !== after.get(path));
+if (changed.length > 0) {
+  throw new Error(`Deterministic fixture drift:\n${changed.join("\n")}`);
 }
 
 process.stdout.write("Deterministic fixture regeneration produced no drift.\n");

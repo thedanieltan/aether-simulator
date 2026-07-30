@@ -34,6 +34,12 @@ import {
   serializeProject,
 } from "./project-store.mjs";
 import { buildUnifiedEntityIndex } from "../src/entities/unified.mjs";
+import {
+  compileScenarioBlueprint,
+  createScenarioBlueprint,
+  serializeScenarioBlueprint,
+  validateScenarioBlueprint,
+} from "../src/scenarios/blueprint.mjs";
 
 const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
 const form = document.querySelector("#scenario-form");
@@ -59,6 +65,17 @@ const projectCount = document.querySelector("#project-count");
 const projectSave = document.querySelector("#project-save");
 const projectExport = document.querySelector("#project-export");
 const projectImport = document.querySelector("#project-import");
+const blueprintForm = document.querySelector("#blueprint-form");
+const blueprintGraph = document.querySelector("#blueprint-graph");
+const blueprintDepth = document.querySelector("#blueprint-depth");
+const blueprintScenario = document.querySelector("#blueprint-scenario");
+const blueprintScale = document.querySelector("#blueprint-scale");
+const blueprintDuration = document.querySelector("#blueprint-duration");
+const blueprintIntervention = document.querySelector("#blueprint-intervention");
+const blueprintSeed = document.querySelector("#blueprint-seed");
+const blueprintStatus = document.querySelector("#blueprint-status");
+const blueprintApply = document.querySelector("#blueprint-apply");
+const blueprintExport = document.querySelector("#blueprint-export");
 let studioState = { ...initialStudioState };
 let projectRepository = null;
 let localProjects = [];
@@ -105,6 +122,7 @@ function applyProjectConfig(config) {
   form.querySelector("#scale").value = String(config.scale);
   form.querySelector("#duration").value = String(config.duration);
   form.querySelector("#intervention").value = String(config.intervention);
+  syncBlueprintFromRun();
 }
 
 function renderProjectEditor() {
@@ -315,6 +333,90 @@ function populateScenarios() {
   }
 }
 
+function blueprintConfiguration() {
+  return {
+    depth: blueprintDepth.value,
+    scenario: blueprintScenario.value,
+    scale: Number(blueprintScale.value),
+    duration: Number(blueprintDuration.value),
+    intervention: Number(blueprintIntervention.value),
+    seed: blueprintSeed.value,
+  };
+}
+
+function populateBlueprintScenarios() {
+  const previous = blueprintScenario.value;
+  blueprintScenario.replaceChildren();
+  for (const [value, label] of scenarioCatalog[blueprintDepth.value]) {
+    const option = element("option", "", label);
+    option.value = value;
+    blueprintScenario.append(option);
+  }
+  if ([...blueprintScenario.options].some(({ value }) => value === previous)) {
+    blueprintScenario.value = previous;
+  }
+}
+
+function setBlueprintStatus(message, state = "default") {
+  blueprintStatus.textContent = message;
+  blueprintStatus.dataset.state = state;
+}
+
+function renderBlueprint() {
+  blueprintGraph.replaceChildren();
+  try {
+    const blueprint = createScenarioBlueprint(blueprintConfiguration());
+    const validation = validateScenarioBlueprint(blueprint, scenarioCatalog);
+    if (!validation.valid) throw new TypeError(validation.errors.join("; "));
+    const values = {
+      premise: `${blueprint.configuration.depth} · ${blueprint.configuration.scenario}`,
+      population: `${blueprint.configuration.scale}× construction scale`,
+      time: `${blueprint.configuration.duration} logical ticks`,
+      intervention: String(blueprint.configuration.intervention),
+      reproducibility: blueprint.configuration.seed,
+    };
+    const focusTargets = {
+      premise: blueprintDepth,
+      population: blueprintScale,
+      time: blueprintDuration,
+      intervention: blueprintIntervention,
+      reproducibility: blueprintSeed,
+    };
+    for (const node of blueprint.nodes) {
+      const item = element("li", "blueprint-node");
+      const button = element("button");
+      button.type = "button";
+      button.dataset.blueprintNode = node.node_id;
+      button.append(
+        element("span", "index-number", String(node.order).padStart(2, "0")),
+        element("strong", "", node.label),
+        element("span", "", values[node.node_id]),
+      );
+      button.addEventListener("click", () => focusTargets[node.node_id].focus());
+      item.append(button);
+      blueprintGraph.append(item);
+    }
+    blueprintApply.disabled = false;
+    blueprintExport.disabled = false;
+    setBlueprintStatus("Blueprint valid and ready to compile.", "success");
+  } catch (error) {
+    blueprintApply.disabled = true;
+    blueprintExport.disabled = true;
+    setBlueprintStatus(error.message, "error");
+  }
+}
+
+function syncBlueprintFromRun() {
+  blueprintDepth.value = depthInput.value;
+  populateBlueprintScenarios();
+  blueprintScenario.value = scenarioInput.value;
+  blueprintScale.value = form.querySelector("#scale").value;
+  blueprintDuration.value = form.querySelector("#duration").value;
+  blueprintIntervention.value = form.querySelector("#intervention").value;
+  blueprintSeed.value = form.querySelector("#seed").value;
+  renderBlueprint();
+}
+
 function populateGallery() {
   gallery.replaceChildren();
   const cards = [
@@ -333,6 +435,7 @@ function populateGallery() {
       depthInput.value = depth;
       populateScenarios();
       scenarioInput.value = scenario;
+      syncBlueprintFromRun();
       globalThis.location.hash = productRouteHref("run");
       form.querySelector("#seed").focus();
     });
@@ -805,6 +908,47 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+blueprintDepth.addEventListener("change", () => {
+  populateBlueprintScenarios();
+  renderBlueprint();
+});
+blueprintForm.addEventListener("input", (event) => {
+  if (event.target !== blueprintDepth) renderBlueprint();
+});
+blueprintForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  try {
+    const configuration = compileScenarioBlueprint(
+      createScenarioBlueprint(blueprintConfiguration()),
+      scenarioCatalog,
+    );
+    applyProjectConfig(configuration);
+    await saveActiveConfiguration();
+    setBlueprintStatus(
+      activeProject
+        ? "Blueprint compiled and saved to the active project."
+        : "Blueprint compiled into the run workspace.",
+      "success",
+    );
+    globalThis.location.hash = productRouteHref("run");
+  } catch (error) {
+    setBlueprintStatus(error.message, "error");
+  }
+});
+blueprintExport.addEventListener("click", () => {
+  try {
+    const blueprint = createScenarioBlueprint(blueprintConfiguration());
+    const filename = `${blueprint.configuration.depth}-${blueprint.configuration.scenario}.blueprint.json`;
+    textDownload(
+      filename,
+      serializeScenarioBlueprint(blueprint, scenarioCatalog),
+    );
+    setBlueprintStatus("Canonical blueprint prepared for download.", "success");
+  } catch (error) {
+    setBlueprintStatus(error.message, "error");
+  }
+});
+
 projectForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!projectRepository) return;
@@ -873,6 +1017,7 @@ projectImport.addEventListener("change", async () => {
 });
 
 form.addEventListener("change", () => {
+  syncBlueprintFromRun();
   void saveActiveConfiguration();
 });
 
@@ -896,7 +1041,9 @@ async function initializeProjects() {
 }
 
 populateScenarios();
+populateBlueprintScenarios();
 populateGallery();
+syncBlueprintFromRun();
 populateProductNavigation();
 globalThis.addEventListener("hashchange", () => applyProductRoute({ focus: true }));
 if (!globalThis.location.hash) {

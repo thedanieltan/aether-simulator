@@ -20,6 +20,7 @@ database, or network provider is required.
 
 1. Choose Enterprise, Ecosystem, or Economy Depth and a representative scenario.
 2. Set the seed, scale, duration, and intervention value.
+   The visual blueprint exposes these inputs as a validated five-node pipeline.
 3. Run the world locally in a Web Worker.
 4. Inspect its graph, causal timeline, projected state, and lineage facts.
    Use the Entities view to inspect fictional citizens and their role contexts.

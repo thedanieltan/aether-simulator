@@ -230,6 +230,24 @@ flowchart LR
   Index --> Explorer["Citizen and entity explorer"]
 ```
 
+## Scenario blueprint
+
+`src/scenarios/blueprint.mjs` validates a fixed visual topology and compiles it
+to the existing browser runtime payload.
+
+```mermaid
+flowchart LR
+  Premise["Depth + committed scenario"] --> Population["Scale"]
+  Population --> Time["Logical duration"]
+  Time --> Intervention["Intervention value"]
+  Intervention --> Seed["Root seed"]
+  Seed --> Validate["Fail-closed validation"]
+  Validate --> Run["Existing runtime configuration"]
+```
+
+The blueprint is declarative JSON and cannot contain user code, provider
+configuration, or executable nodes.
+
 ## Engineering quality gate
 
 The minimum supported Node.js release runs the complete `npm run verify:ci`

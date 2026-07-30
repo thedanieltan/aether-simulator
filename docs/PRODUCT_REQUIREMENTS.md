@@ -44,7 +44,7 @@ The product should let a user move through one continuous reasoning loop:
 | Export | Implemented after a run | canonical local artifact downloads |
 | Project workspace | Implemented in WP-AES-07 | local project lifecycle, recovery, import, and export |
 | Citizen and entity records | Implemented in WP-AES-08 | unified synthetic identity, role context, event, lineage, and provenance view |
-| Visual scenario builder | Planned for WP-AES-09 | explicit model composition and validation |
+| Visual scenario builder | Implemented in WP-AES-09 | constrained visual model composition, validation, compilation, and export |
 | Scenario laboratory | Planned for WP-AES-10 | experiment definitions and comparison sets |
 | Scale and runtime control | Planned for WP-AES-11 | bounded execution and progress |
 | Semantic zoom | Planned for WP-AES-12 | economy-to-enterprise-to-citizen exploration |

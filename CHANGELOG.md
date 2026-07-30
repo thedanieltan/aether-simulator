@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.10.0-alpha.1 - visual scenario builder
+
+- Added the constrained `aether-scenario-blueprint.v1` contract.
+- Added premise, population, time, intervention, and reproducibility nodes with
+  deterministic required edges.
+- Added fail-closed topology, scenario, numeric, and seed validation.
+- Added exact compilation to the existing run configuration and canonical
+  blueprint export.
+- Added live visual builder states, project synchronization, node focus, and
+  browser acceptance coverage.
+
 ## 0.9.0-alpha.1 - unified citizen and entity model
 
 - Added deterministic unified records for people, households, organizations,

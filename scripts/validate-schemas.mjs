@@ -3,9 +3,15 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   assertContract,
+  assertEcosystemConfig,
+  assertEcosystemEvent,
   assertEnterpriseConfig,
   baselineOperationsModule,
   buildEnterpriseScenario,
+  buildEcosystemScenario,
+  ecosystemConfigSchema,
+  ecosystemEventSchema,
+  ecosystemOperationsModule,
   enterpriseConfigSchema,
   enterpriseOperationsModule,
   registeredSchemas,
@@ -74,6 +80,53 @@ enterpriseKernel.validateScenario(enterpriseScenario);
 const enterpriseExport = enterpriseKernel.run(enterpriseScenario);
 assertContract("export", enterpriseExport);
 
+const ecosystemSchemaDirectory = resolve(root, "schemas", "ecosystem");
+const committedEcosystemConfigSchema = JSON.parse(
+  await readFile(
+    resolve(
+      ecosystemSchemaDirectory,
+      "aether-ecosystem-config.v1.schema.json",
+    ),
+    "utf8",
+  ),
+);
+const committedEcosystemEventSchema = JSON.parse(
+  await readFile(
+    resolve(
+      ecosystemSchemaDirectory,
+      "aether-ecosystem-event.v1.schema.json",
+    ),
+    "utf8",
+  ),
+);
+if (
+  JSON.stringify(committedEcosystemConfigSchema) !==
+    JSON.stringify(ecosystemConfigSchema()) ||
+  JSON.stringify(committedEcosystemEventSchema) !==
+    JSON.stringify(ecosystemEventSchema())
+) {
+  throw new Error("registered ecosystem schemas differ from committed schemas");
+}
+const ecosystemConfig = JSON.parse(
+  await readFile(
+    resolve(root, "scenarios", "ecosystem", "saas-service-network.json"),
+    "utf8",
+  ),
+);
+assertEcosystemConfig(ecosystemConfig);
+const ecosystemScenario = buildEcosystemScenario(ecosystemConfig);
+const ecosystemKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule, ecosystemOperationsModule],
+});
+ecosystemKernel.validateScenario(ecosystemScenario);
+const ecosystemExport = ecosystemKernel.run(ecosystemScenario);
+for (const event of ecosystemExport.world.event_log) {
+  if (event.event_type.startsWith("ecosystem.")) {
+    assertEcosystemEvent(event.payload);
+  }
+}
+assertContract("export", ecosystemExport);
+
 process.stdout.write(
-  `Validated ${schemaNames.length + 1} schemas and representative contracts.\n`,
+  `Validated ${schemaNames.length + 3} schemas and representative contracts.\n`,
 );

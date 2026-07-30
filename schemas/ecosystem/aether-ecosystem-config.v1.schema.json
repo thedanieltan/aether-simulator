@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/ecosystem/aether-ecosystem-config.v1.schema.json",
+  "title": "Aether ecosystem scenario configuration",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "scenario_id",
+    "title",
+    "description",
+    "scenario_kind",
+    "seed",
+    "scale",
+    "limitations"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-ecosystem-config.v1" },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "scenario_kind": {
+      "enum": [
+        "saas-service-network",
+        "retail-supply-network",
+        "professional-services-network",
+        "vendor-outage-cascade",
+        "customer-default-cascade",
+        "cross-organization-data-request",
+        "ecosystem-intervention-baseline"
+      ]
+    },
+    "seed": {
+      "oneOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "scale": { "type": "integer", "minimum": 1 },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

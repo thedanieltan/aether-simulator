@@ -1,0 +1,12 @@
+{
+  "contract_version": "aether-ecosystem-config.v1",
+  "scenario_id": "ecosystem-vendor-outage-cascade",
+  "title": "Critical vendor outage cascade",
+  "description": "A fictional vendor outage propagates through customer, logistics, and payment relationships.",
+  "scenario_kind": "vendor-outage-cascade",
+  "seed": 63004,
+  "scale": 1,
+  "limitations": [
+    "Impact magnitudes are synthetic and not reliability forecasts."
+  ]
+}

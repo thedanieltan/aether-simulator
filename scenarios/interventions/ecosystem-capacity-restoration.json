@@ -1,0 +1,45 @@
+{
+  "interventions": [
+    {
+      "entity_id": "organization_d79ce35829972fed55317f1c36dab678",
+      "event_type": "ecosystem.cascade.propagated",
+      "module_id": "ecosystem-operations",
+      "payload": {
+        "boundary": {
+          "affected_organization_ids": [
+            "organization_8f76847fe6a7d95f96ebdc3f4f92c434",
+            "organization_358d498b61b68e3b01d648efacd44a92",
+            "organization_b8eaf22ec4f1f3bee7a1076f10d77a3e"
+          ],
+          "contract_id": "contract_d2adde3f69f961b7aa3d87b7b8e97611",
+          "owner_organization_id": "organization_d79ce35829972fed55317f1c36dab678"
+        },
+        "cascade_id": "cascade_9a75973f1dfabaf41198230a53c4abf3",
+        "causal": {
+          "action": "restore-upstream-capacity",
+          "actor_id": "person_df9eb8b362b39714492f7a25c663150f",
+          "data_consequence": null,
+          "financial_consequence": null,
+          "operational_consequence": {
+            "impact_kind": "capacity-restoration",
+            "value": 75
+          },
+          "organization_ids": [
+            "organization_8f76847fe6a7d95f96ebdc3f4f92c434",
+            "organization_d79ce35829972fed55317f1c36dab678",
+            "organization_358d498b61b68e3b01d648efacd44a92",
+            "organization_b8eaf22ec4f1f3bee7a1076f10d77a3e"
+          ],
+          "previous_step_id": "step_573f536a6967fe1b8b3a21bd16b77888",
+          "step_id": "step_dbe7add9f876f7691355c268b55fa75a"
+        },
+        "contract_version": "aether-ecosystem-event.v1",
+        "event_kind": "cascade",
+        "impact_kind": "capacity-restoration",
+        "organization_id": "organization_d79ce35829972fed55317f1c36dab678",
+        "value": 75
+      },
+      "tick": 51
+    }
+  ]
+}

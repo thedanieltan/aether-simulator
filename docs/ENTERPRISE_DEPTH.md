@@ -33,7 +33,9 @@ The committed corpus covers:
 
 External customers and suppliers are boundary contexts. They reconcile the
 enterprise side of a journey but do not have independently mutable private
-state. Cross-enterprise simulation remains Ecosystem Depth and is unimplemented.
+state. Ecosystem Depth is implemented separately by composing independently
+simulated organizations through declared contracts and events; these boundary
+contexts do not become independent merely because Ecosystem Depth is available.
 
 ## State and invariants
 

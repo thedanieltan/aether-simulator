@@ -31,6 +31,11 @@ causal records, journal entries, record-lineage observations, and benchmark
 documentation. All names remain generic fictional labels and all output remains
 synthetic and non-authoritative.
 
+The Ecosystem Depth review covers all seven configurations, multiparty
+contracts, shared-citizen contexts, three full exports, intervention artifacts,
+cross-organization lineage, and benchmark documentation. All counterparties,
+identifiers, transactions, and cascade effects are fictional.
+
 Gitleaks and TruffleHog executables were not installed in the local environment,
 so they were not represented as completed checks. The repository's explicit
 scanner and public-tree policy both passed with zero findings. `npm audit

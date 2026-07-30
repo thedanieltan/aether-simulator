@@ -38,3 +38,24 @@ export {
   validateEnterpriseConfig,
 } from "./enterprise/validation.mjs";
 export { enterpriseOperationsModule } from "./modules/enterprise-operations.mjs";
+export {
+  assertEcosystemConfig,
+  assertEcosystemEvent,
+  ecosystemConfigSchema,
+  ecosystemEventSchema,
+  validateEcosystemConfig,
+  validateEcosystemEvent,
+} from "./ecosystem/validation.mjs";
+export {
+  buildEcosystemIntervention,
+  buildEcosystemScenario,
+  ecosystemScenarioMetadata,
+} from "./ecosystem/scenario-builder.mjs";
+export {
+  compareEcosystemRuns,
+  ecosystemState,
+  summarizeEcosystemRun,
+  traceEcosystemCascade,
+  validateEcosystemInvariants,
+} from "./ecosystem/analysis.mjs";
+export { ecosystemOperationsModule } from "./modules/ecosystem-operations.mjs";

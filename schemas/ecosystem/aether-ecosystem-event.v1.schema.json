@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/ecosystem/aether-ecosystem-event.v1.schema.json",
+  "title": "Aether ecosystem domain event payload",
+  "type": "object",
+  "required": ["contract_version", "event_kind", "causal"],
+  "properties": {
+    "contract_version": { "const": "aether-ecosystem-event.v1" },
+    "event_kind": {
+      "enum": [
+        "contract",
+        "transaction",
+        "payment",
+        "delivery",
+        "identity-context",
+        "data-transfer",
+        "obligation",
+        "cascade"
+      ]
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["owner_organization_id", "affected_organization_ids", "contract_id"],
+      "properties": {
+        "owner_organization_id": { "$ref": "#/$defs/stableId" },
+        "affected_organization_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stableId" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "contract_id": { "$ref": "#/$defs/stableId" }
+      },
+      "additionalProperties": false
+    },
+    "causal": {
+      "type": "object",
+      "required": [
+        "step_id",
+        "previous_step_id",
+        "actor_id",
+        "action",
+        "organization_ids",
+        "operational_consequence",
+        "financial_consequence",
+        "data_consequence"
+      ],
+      "properties": {
+        "step_id": { "$ref": "#/$defs/stableId" },
+        "previous_step_id": {
+          "oneOf": [{ "$ref": "#/$defs/stableId" }, { "type": "null" }]
+        },
+        "actor_id": { "$ref": "#/$defs/stableId" },
+        "action": { "type": "string", "minLength": 1 },
+        "organization_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stableId" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "operational_consequence": {},
+        "financial_consequence": {},
+        "data_consequence": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$"
+    }
+  }
+}

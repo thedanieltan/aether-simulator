@@ -7,14 +7,19 @@ import {
 } from "../packages/evidence-bridge/src/index.mjs";
 import {
   baselineOperationsModule,
+  buildEcosystemScenario,
   buildEnterpriseScenario,
   canonicalJson,
   compareEnterpriseRuns,
+  compareEcosystemRuns,
   compareRuns,
   enterpriseOperationsModule,
+  ecosystemOperationsModule,
+  ecosystemScenarioMetadata,
   migrateLegacyWorld,
   SimulationKernel,
   summarizeEnterpriseRun,
+  summarizeEcosystemRun,
 } from "../src/index.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -173,4 +178,90 @@ for (const [name, value] of Object.entries({
 
 process.stdout.write(
   `Validated ${enterpriseScenarioNames.length} enterprise scenarios, ${fullEnterpriseFixtures.size} full exports, and intervention lifecycle fixtures.\n`,
+);
+
+const ecosystemScenarioDirectory = resolve(root, "scenarios", "ecosystem");
+const ecosystemFixtureDirectory = resolve(fixtureDirectory, "ecosystem");
+const ecosystemScenarioNames = (await readdir(ecosystemScenarioDirectory))
+  .filter((name) => name.endsWith(".json"))
+  .sort();
+const fullEcosystemFixtures = new Set([
+  "retail-supply-network.json",
+  "saas-service-network.json",
+  "vendor-outage-cascade.json",
+]);
+const ecosystemKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule, ecosystemOperationsModule],
+});
+const ecosystemSummary = [];
+for (const name of ecosystemScenarioNames) {
+  const config = JSON.parse(
+    await readFile(resolve(ecosystemScenarioDirectory, name), "utf8"),
+  );
+  const ecosystemScenario = buildEcosystemScenario(config);
+  const exported = ecosystemKernel.run(ecosystemScenario);
+  ecosystemSummary.push(summarizeEcosystemRun(config, exported));
+  if (fullEcosystemFixtures.has(name)) {
+    const committed = await readFile(
+      resolve(ecosystemFixtureDirectory, name.replace(".json", ".export.json")),
+      "utf8",
+    );
+    if (canonicalJson(exported) !== committed) {
+      throw new Error(`${name} ecosystem export fixture is not reproducible`);
+    }
+  }
+}
+const committedEcosystemSummary = await readFile(
+  resolve(ecosystemFixtureDirectory, "acceptance-summary.json"),
+  "utf8",
+);
+if (canonicalJson(ecosystemSummary) !== committedEcosystemSummary) {
+  throw new Error("ecosystem acceptance summary is not reproducible");
+}
+const ecosystemBranchConfig = JSON.parse(
+  await readFile(
+    resolve(ecosystemScenarioDirectory, "ecosystem-intervention-baseline.json"),
+    "utf8",
+  ),
+);
+const ecosystemBranchScenario = buildEcosystemScenario(ecosystemBranchConfig);
+const ecosystemMetadata = ecosystemScenarioMetadata(ecosystemBranchConfig);
+const ecosystemCheckpoint = ecosystemKernel.checkpoint(
+  ecosystemBranchScenario,
+  ecosystemMetadata.next_tick - 1,
+);
+const ecosystemBaseline = ecosystemKernel.run(ecosystemBranchScenario);
+const ecosystemIntervention = JSON.parse(
+  await readFile(
+    resolve(
+      root,
+      "scenarios",
+      "interventions",
+      "ecosystem-capacity-restoration.json",
+    ),
+    "utf8",
+  ),
+);
+const ecosystemBranch = ecosystemKernel.branch(
+  ecosystemBranchScenario,
+  ecosystemCheckpoint,
+  ecosystemIntervention.interventions,
+);
+const ecosystemComparison = compareEcosystemRuns(
+  ecosystemBaseline,
+  ecosystemBranch,
+  { kind: "capacity-restoration" },
+);
+for (const [name, value] of Object.entries({
+  "ecosystem-intervention.checkpoint.json": ecosystemCheckpoint,
+  "ecosystem-intervention.branch.json": ecosystemBranch,
+  "ecosystem-intervention.comparison.json": ecosystemComparison,
+})) {
+  const committed = await readFile(resolve(ecosystemFixtureDirectory, name), "utf8");
+  if (canonicalJson(value) !== committed) {
+    throw new Error(`${name} is not reproducible`);
+  }
+}
+process.stdout.write(
+  `Validated ${ecosystemScenarioNames.length} ecosystem scenarios, ${fullEcosystemFixtures.size} full exports, and intervention lifecycle fixtures.\n`,
 );

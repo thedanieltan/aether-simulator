@@ -15,6 +15,12 @@ const enterpriseConfig = resolve(
   "enterprise",
   "retail-order-to-cash.json",
 );
+const ecosystemConfig = resolve(
+  root,
+  "scenarios",
+  "ecosystem",
+  "saas-service-network.json",
+);
 
 function run(args) {
   return execFileSync(process.execPath, [cli, ...args], {
@@ -89,5 +95,21 @@ test("CLI lists, validates, and runs enterprise archetypes", async () => {
   assert.equal(exported.contract_version, "aether-export.v1");
   assert.ok(
     exported.world.projected_state.module_state["enterprise-operations"],
+  );
+});
+
+test("CLI validates and runs ecosystem scenarios", async () => {
+  const validation = JSON.parse(
+    run(["ecosystem-validate", ecosystemConfig]),
+  );
+  assert.equal(validation.valid, true);
+  assert.equal(validation.scenario_kind, "saas-service-network");
+  const directory = await mkdtemp(resolve(tmpdir(), "aether-ecosystem-cli-"));
+  const output = resolve(directory, "ecosystem-run.json");
+  run(["ecosystem-run", ecosystemConfig, "--output", output]);
+  const exported = JSON.parse(await readFile(output, "utf8"));
+  assert.equal(exported.world.provenance.authoritative, false);
+  assert.ok(
+    exported.world.projected_state.module_state["ecosystem-operations"],
   );
 });

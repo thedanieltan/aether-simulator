@@ -1,0 +1,12 @@
+{
+  "contract_version": "aether-ecosystem-config.v1",
+  "scenario_id": "ecosystem-intervention-baseline",
+  "title": "Ecosystem capacity intervention baseline",
+  "description": "A fictional supply network provides a checkpoint for an upstream capacity-restoration intervention.",
+  "scenario_kind": "ecosystem-intervention-baseline",
+  "seed": 63007,
+  "scale": 1,
+  "limitations": [
+    "The intervention changes synthetic outcomes only."
+  ]
+}

@@ -1,0 +1,2317 @@
+{
+  "contract_version": "aether-export.v1",
+  "digest": "45c49e8fc5c22e7a9361946652db7b35b60475c233972489c0f09eac668ee22f",
+  "export_id": "export_195bf10bf1e3931f35b713b837355b22",
+  "scenario_digest": "eb17d969acc9af145143ec1cf8cb75273275bba460b25af05fdb4b1dd2d2f3cc",
+  "world": {
+    "accounts": [
+      {
+        "attributes": {
+          "fictional": true,
+          "owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+        },
+        "id": "account_0b9e340e3b8f37b0c50e9ed57bafc78d",
+        "kind": "synthetic-operating-account"
+      },
+      {
+        "attributes": {
+          "fictional": true,
+          "owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+        },
+        "id": "account_72d18fadfcf9e7f167352bdf60830786",
+        "kind": "synthetic-operating-account"
+      },
+      {
+        "attributes": {
+          "fictional": true,
+          "owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+        },
+        "id": "account_79f7eb3253f45cf0cfd0c788f161ff63",
+        "kind": "synthetic-operating-account"
+      },
+      {
+        "attributes": {
+          "fictional": true,
+          "owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+        },
+        "id": "account_92b00ee300a598775b79cbf81f7f6c1a",
+        "kind": "synthetic-operating-account"
+      }
+    ],
+    "balances": [
+      {
+        "account_id": "account_92b00ee300a598775b79cbf81f7f6c1a",
+        "amount": 9900,
+        "id": "balance_24f12eea8930399485d6f760b69d58d7",
+        "resource": "synthetic-credit"
+      },
+      {
+        "account_id": "account_72d18fadfcf9e7f167352bdf60830786",
+        "amount": 10000,
+        "id": "balance_59af7636972c2013c12b9cbc6797bd7e",
+        "resource": "synthetic-credit"
+      },
+      {
+        "account_id": "account_79f7eb3253f45cf0cfd0c788f161ff63",
+        "amount": 10100,
+        "id": "balance_acb71e54a03367a3b5ba6104c5358c94",
+        "resource": "synthetic-credit"
+      },
+      {
+        "account_id": "account_0b9e340e3b8f37b0c50e9ed57bafc78d",
+        "amount": 10000,
+        "id": "balance_f634db49372fcc72f83e5e8962d041de",
+        "resource": "synthetic-credit"
+      }
+    ],
+    "branch": {
+      "branch_id": "branch_0d6ba9fd1652d557ca32351ffb43ba85",
+      "intervention_digest": null,
+      "parent_checkpoint_id": null
+    },
+    "clock": {
+      "current_tick": 47,
+      "end_tick": 47,
+      "start_tick": 0,
+      "tick_duration_ms": 1000
+    },
+    "contract_version": "aether-world.v1",
+    "contracts": [
+      {
+        "attributes": {
+          "active": true,
+          "authoritative": false,
+          "party_ids": [
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e",
+            "organization_20b04a74d924ef1260b2f2541d38fc46"
+          ]
+        },
+        "id": "contract_40dbce2f0f8913e84f356424813fecb9",
+        "kind": "synthetic-multiparty-network-contract"
+      }
+    ],
+    "entities": {
+      "assets": [
+        {
+          "attributes": {
+            "operational": true,
+            "owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "id": "asset_099f574970ef249fe91c8a75b63f37f8",
+          "kind": "synthetic-service-cluster"
+        },
+        {
+          "attributes": {
+            "operational": true,
+            "owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+          },
+          "id": "asset_7f256ba5f8f4adf6c556983c94a41484",
+          "kind": "synthetic-production-line"
+        },
+        {
+          "attributes": {
+            "operational": true,
+            "owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+          },
+          "id": "asset_97935d80e54a2bbcd81110caf8fd7de2",
+          "kind": "synthetic-delivery-vehicle"
+        },
+        {
+          "attributes": {
+            "operational": true,
+            "owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+          },
+          "id": "asset_cc8d7636d18a63529075ea23d4f6a6cf",
+          "kind": "synthetic-workstation"
+        }
+      ],
+      "households": [
+        {
+          "attributes": {
+            "fictional": true,
+            "member_ids": [
+              "person_2e73748bd64f64c1e45b0950898828eb"
+            ]
+          },
+          "id": "household_4148b99128cc90a74fa1ccb5390c4754",
+          "kind": "synthetic-household"
+        }
+      ],
+      "institutions": [
+        {
+          "attributes": {
+            "fictional": true,
+            "role": "market-and-service-observer"
+          },
+          "id": "institution_0d9f87588fd1e9374e589ffd2d05611e",
+          "kind": "synthetic-public-institution"
+        }
+      ],
+      "organizations": [
+        {
+          "attributes": {
+            "archetype": "professional-services",
+            "constraints": [
+              "billable-capacity",
+              "approval-before-invoice"
+            ],
+            "departments": [
+              "client-services",
+              "delivery",
+              "finance",
+              "people"
+            ],
+            "display_name": "Synthetic payment provider 1",
+            "fictional": true,
+            "independently_simulated": true,
+            "offerings": [
+              "advisory-engagement",
+              "managed-research-service"
+            ]
+          },
+          "id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "kind": "synthetic-payment-provider"
+        },
+        {
+          "attributes": {
+            "archetype": "manufacturing",
+            "constraints": [
+              "material-availability",
+              "production-capacity",
+              "quality-release"
+            ],
+            "departments": [
+              "sales",
+              "production",
+              "procurement",
+              "finance",
+              "people"
+            ],
+            "display_name": "Synthetic customer enterprise 1",
+            "fictional": true,
+            "independently_simulated": true,
+            "offerings": [
+              "synthetic-component",
+              "assembly-service"
+            ]
+          },
+          "id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "kind": "synthetic-customer-enterprise"
+        },
+        {
+          "attributes": {
+            "archetype": "logistics",
+            "constraints": [
+              "vehicle-capacity",
+              "delivery-window"
+            ],
+            "departments": [
+              "dispatch",
+              "fleet",
+              "customer-operations",
+              "finance"
+            ],
+            "display_name": "Synthetic logistics provider 1",
+            "fictional": true,
+            "independently_simulated": true,
+            "offerings": [
+              "synthetic-delivery",
+              "exception-handling"
+            ]
+          },
+          "id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "kind": "synthetic-logistics-provider"
+        },
+        {
+          "attributes": {
+            "archetype": "saas",
+            "constraints": [
+              "service-capacity",
+              "subscription-entitlement"
+            ],
+            "departments": [
+              "product",
+              "engineering",
+              "customer-success",
+              "finance"
+            ],
+            "display_name": "Synthetic critical vendor 1",
+            "fictional": true,
+            "independently_simulated": true,
+            "offerings": [
+              "synthetic-subscription",
+              "support-plan"
+            ]
+          },
+          "id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "kind": "synthetic-critical-vendor"
+        }
+      ],
+      "people": [
+        {
+          "attributes": {
+            "display_name": "Synthetic Citizen 1",
+            "fictional": true
+          },
+          "id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "kind": "synthetic-shared-citizen"
+        }
+      ],
+      "systems": [
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+          },
+          "id": "system_172f766f5d5d17a2a69d727ec755a3c1",
+          "kind": "synthetic-relationship-management"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "id": "system_2d85740c9edc40b1131e83ed8f255a66",
+          "kind": "synthetic-support-desk"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+          },
+          "id": "system_4944b9ffd35550699173b42cd9dd9e80",
+          "kind": "synthetic-sales-orders"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "id": "system_84a5a4184d7a77217ec3349518c08fd4",
+          "kind": "synthetic-subscription-platform"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+          },
+          "id": "system_a85e0b868a860af8e63fea2bd07e3065",
+          "kind": "synthetic-route-planning"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+          },
+          "id": "system_c56b8e1e2ac5ec1c5bbe2e100351190c",
+          "kind": "synthetic-project-delivery"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+          },
+          "id": "system_c6c3e4569a8a0e1127bf282a5c657f35",
+          "kind": "synthetic-dispatch"
+        },
+        {
+          "attributes": {
+            "external": false,
+            "fictional": true,
+            "owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+          },
+          "id": "system_f9a56c48b52176ab8c3b6c707302ed9a",
+          "kind": "synthetic-production-planning"
+        }
+      ]
+    },
+    "event_log": [
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+        "event_id": "event_c7532d20f7722a3cdc938c9c4e86f90e",
+        "event_type": "ecosystem.identity.context-added",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "causal": {
+            "action": "add-critical-vendor-context",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+            ],
+            "previous_step_id": null,
+            "step_id": "step_e079ec4cafdd27cdb5b7c8bda44e387b"
+          },
+          "context_id": "context_7b3b436de4c44feac4433ca82e6229ae",
+          "context_owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "identity-context",
+          "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "role": "employee"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 1
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+        "event_id": "event_1ab206d519e391e5100d151a8dbe5947",
+        "event_type": "ecosystem.identity.context-added",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "causal": {
+            "action": "add-customer-enterprise-context",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+            ],
+            "previous_step_id": "step_e079ec4cafdd27cdb5b7c8bda44e387b",
+            "step_id": "step_a8097edcb31a0aef098a9245a9863be0"
+          },
+          "context_id": "context_b6954de033fcacca834d624571d2c205",
+          "context_owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "identity-context",
+          "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "role": "customer"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 3
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+        "event_id": "event_0cf4050e270fad7266ebc0a46c34152e",
+        "event_type": "ecosystem.identity.context-added",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "causal": {
+            "action": "add-logistics-provider-context",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_7a4c202f64ffd93c6fa461726e2b127e"
+            ],
+            "previous_step_id": "step_a8097edcb31a0aef098a9245a9863be0",
+            "step_id": "step_a6e6c16a6dedc50be287e4c3ad284804"
+          },
+          "context_id": "context_56aafbac279649c858eadefd03dccc69",
+          "context_owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "identity-context",
+          "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "role": "director"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 5
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+        "event_id": "event_0473ecc4311f8a08782d40b5b1cc6ce9",
+        "event_type": "ecosystem.identity.context-added",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "causal": {
+            "action": "add-payment-provider-context",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_a6e6c16a6dedc50be287e4c3ad284804",
+            "step_id": "step_194e7d5d5fe7fa6aeea7ebb3c6f27de0"
+          },
+          "context_id": "context_3a68dea42f59af312e1a244146f93d98",
+          "context_owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "identity-context",
+          "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "role": "vendor-representative"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 7
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+        "event_id": "event_02f190c93bf12bad40e1278f9d890923",
+        "event_type": "ecosystem.identity.context-added",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "causal": {
+            "action": "add-household-context",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+            ],
+            "previous_step_id": "step_194e7d5d5fe7fa6aeea7ebb3c6f27de0",
+            "step_id": "step_03d4da11b86d7d72b3c3e94770daa9ba"
+          },
+          "context_id": "context_7edbe5342a2c7e2b7403e9ec610f2c04",
+          "context_owner_id": "household_4148b99128cc90a74fa1ccb5390c4754",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "identity-context",
+          "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "role": "household-member"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 9
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_58978caa1c111f2c7d947cb41da797ab",
+        "event_type": "ecosystem.contract.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "action": "formed",
+          "causal": {
+            "action": "form-network-contract",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_03d4da11b86d7d72b3c3e94770daa9ba",
+            "step_id": "step_365da5e5415c102e6cfd3cd3b434e925"
+          },
+          "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+          "contract_kind": "multiparty-service-network",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "contract",
+          "party_ids": [
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e",
+            "organization_20b04a74d924ef1260b2f2541d38fc46"
+          ]
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 11
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_fc4268c0eed78fb769ef3698962d5b32",
+        "event_type": "ecosystem.transaction.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "amount": 100,
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "record-subscription",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": 100,
+              "unit": "synthetic-credit"
+            },
+            "operational_consequence": {
+              "status": "recorded",
+              "transaction_kind": "subscription"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_365da5e5415c102e6cfd3cd3b434e925",
+            "step_id": "step_048db52cdff910aed9fbf12dab417462"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "transaction",
+          "status": "recorded",
+          "transaction_id": "transaction_b3d1c42fad3e541a7535cecfd88b1d0c",
+          "transaction_kind": "subscription"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 13
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_08064ef0dd7a11340bb72042e2183227",
+        "event_type": "ecosystem.transaction.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "amount": 100,
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "record-usage",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": 100,
+              "unit": "synthetic-credit"
+            },
+            "operational_consequence": {
+              "status": "recorded",
+              "transaction_kind": "usage"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_048db52cdff910aed9fbf12dab417462",
+            "step_id": "step_5d4a99b8dba780ee399a078a5ee4b253"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "transaction",
+          "status": "recorded",
+          "transaction_id": "transaction_78b0e1068986567db9bafc1e92fc6ef3",
+          "transaction_kind": "usage"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 15
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_5a49c7161f448b21c9124255113e78cb",
+        "event_type": "ecosystem.transaction.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "amount": 100,
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "record-support",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": 100,
+              "unit": "synthetic-credit"
+            },
+            "operational_consequence": {
+              "status": "recorded",
+              "transaction_kind": "support"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_5d4a99b8dba780ee399a078a5ee4b253",
+            "step_id": "step_49b6829e681bdb086642e59ad0e0dcdc"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "transaction",
+          "status": "recorded",
+          "transaction_id": "transaction_f8e1a1c8b7facb199d79aed1e7d1248c",
+          "transaction_kind": "support"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 17
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_071997a1b907926b75b88cd9574ff632",
+        "event_type": "ecosystem.transaction.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "amount": 100,
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "record-service-credit",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": 100,
+              "unit": "synthetic-credit"
+            },
+            "operational_consequence": {
+              "status": "recorded",
+              "transaction_kind": "service-credit"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_49b6829e681bdb086642e59ad0e0dcdc",
+            "step_id": "step_f10415d82d11315eefa290618c86be15"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "transaction",
+          "status": "recorded",
+          "transaction_id": "transaction_502e74362d615048f1c26d0232df26dc",
+          "transaction_kind": "service-credit"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 19
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_69fa92083c0213ff5024484143f3cce4",
+        "event_type": "ecosystem.payment.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "settle-intermediated-payment",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": 100,
+              "reconciled": true
+            },
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_f10415d82d11315eefa290618c86be15",
+            "step_id": "step_83f0ed6d40c937883ad8519139c17c1f"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "payment",
+          "legs": [
+            {
+              "amount": -100,
+              "organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+            },
+            {
+              "amount": 0,
+              "organization_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+            },
+            {
+              "amount": 0,
+              "organization_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+            },
+            {
+              "amount": 100,
+              "organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+            }
+          ],
+          "payment_id": "payment_d2554187227df2fac628596071e44953"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 21
+      },
+      {
+        "causes": [
+          "event_69fa92083c0213ff5024484143f3cce4"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+        "event_id": "event_98c64ad9af8cb8c17edce3591b16c58d",
+        "event_type": "core.balance.adjusted",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "balance_id": "balance_acb71e54a03367a3b5ba6104c5358c94",
+          "delta": 100
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 22
+      },
+      {
+        "causes": [
+          "event_69fa92083c0213ff5024484143f3cce4"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+        "event_id": "event_652d507d78fed1d409ad459227080ab6",
+        "event_type": "core.balance.adjusted",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "balance_id": "balance_59af7636972c2013c12b9cbc6797bd7e",
+          "delta": 0
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 22
+      },
+      {
+        "causes": [
+          "event_69fa92083c0213ff5024484143f3cce4"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+        "event_id": "event_ebe904bba5cf1b6ca0f5c6dada30f6da",
+        "event_type": "core.balance.adjusted",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "balance_id": "balance_f634db49372fcc72f83e5e8962d041de",
+          "delta": 0
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 22
+      },
+      {
+        "causes": [
+          "event_69fa92083c0213ff5024484143f3cce4"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_9e1b3b299a1d601aec121430070e0db6",
+        "event_type": "core.balance.adjusted",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "balance_id": "balance_24f12eea8930399485d6f760b69d58d7",
+          "delta": -100
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 22
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_9bafb19338485c1450470190c73c5258",
+        "event_type": "ecosystem.delivery.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "carrier_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "causal": {
+            "action": "accept-network-delivery",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": {
+              "quantity": 1,
+              "status": "accepted"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e"
+            ],
+            "previous_step_id": "step_83f0ed6d40c937883ad8519139c17c1f",
+            "step_id": "step_6f1d6c14fb3cc08b50721aee30965fce"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "delivery_id": "delivery_f2397cfb093b0b3161d35fc94f7638aa",
+          "event_kind": "delivery",
+          "recipient_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "sender_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "status": "accepted"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 23
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_9d4a0a2cbfce37ca79f52a41b9c74fe7",
+        "event_type": "ecosystem.data.transferred",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "transfer-synthetic-record",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": {
+              "lineage_preserved": true,
+              "operation": "copied"
+            },
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_6f1d6c14fb3cc08b50721aee30965fce",
+            "step_id": "step_0699085b36cbed8a5160fad11df260a1"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "data-transfer",
+          "from_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "operation": "copied",
+          "record_id": "record_967ba9f0887e0501d4eab505c3b20e8f",
+          "to_organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "transfer_id": "transfer_323aeeefd00a0a30ba44a5bd186c38bf"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 25
+      },
+      {
+        "causes": [
+          "event_9d4a0a2cbfce37ca79f52a41b9c74fe7"
+        ],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+        "event_id": "event_2125e40eeeafd5e20ba75a4f449e2d99",
+        "event_type": "core.observation.recorded",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "record": {
+            "attributes": {
+              "authoritative": false,
+              "from_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "operation": "copied",
+              "provenance_tier": "synthetic",
+              "record_id": "record_967ba9f0887e0501d4eab505c3b20e8f",
+              "source_event_id": "event_9d4a0a2cbfce37ca79f52a41b9c74fe7",
+              "to_organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+              "transfer_id": "transfer_323aeeefd00a0a30ba44a5bd186c38bf"
+            },
+            "id": "observation_3b1318e28f6328a9f50cd2d1b08949c8",
+            "kind": "cross-organization-pii-lineage"
+          }
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "module",
+          "tier": "synthetic"
+        },
+        "tick": 26
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_cedfe97cd73b0befc69ec8ad0263e17b",
+        "event_type": "ecosystem.obligation.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "record-network-deadline",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": {
+              "deadline_tick": 33,
+              "status": "notified"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_0699085b36cbed8a5160fad11df260a1",
+            "step_id": "step_0b517db44070a02b8c9a1a65d4c1fbd8"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "deadline_tick": 33,
+          "event_kind": "obligation",
+          "obligation_id": "obligation_407c57fa478bc904925286aa5aafde7b",
+          "obligation_kind": "notification-and-remediation",
+          "status": "notified"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 27
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_a9ae82b664bf507cd2c78cac5441588b",
+        "event_type": "ecosystem.obligation.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "causal": {
+            "action": "remediate-network-obligation",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": {
+              "deadline_met": true,
+              "status": "remediated"
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_0b517db44070a02b8c9a1a65d4c1fbd8",
+            "step_id": "step_9d4703f891be51360449eaee78e08674"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "deadline_tick": 33,
+          "event_kind": "obligation",
+          "obligation_id": "obligation_407c57fa478bc904925286aa5aafde7b",
+          "obligation_kind": "notification-and-remediation",
+          "status": "remediated"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 29
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_20840ad0174cdf923e3f1c280369af00",
+        "event_type": "ecosystem.contract.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "action": "amended",
+          "causal": {
+            "action": "amend-network-contract",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_9d4703f891be51360449eaee78e08674",
+            "step_id": "step_6bd0094715c78052c0234b82425b9eaf"
+          },
+          "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+          "contract_kind": "multiparty-service-network",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "contract",
+          "party_ids": [
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e",
+            "organization_20b04a74d924ef1260b2f2541d38fc46"
+          ]
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 31
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_b81f35e9f88ef5cd2d78d10f6b3cfe18",
+        "event_type": "ecosystem.contract.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "action": "renewed",
+          "causal": {
+            "action": "renew-network-contract",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_6bd0094715c78052c0234b82425b9eaf",
+            "step_id": "step_9ab61a5e34b157b8874831951e1a93d4"
+          },
+          "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+          "contract_kind": "multiparty-service-network",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "contract",
+          "party_ids": [
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e",
+            "organization_20b04a74d924ef1260b2f2541d38fc46"
+          ]
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 33
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_8b34ee9715df1fc55be378cf6b185f21",
+        "event_type": "ecosystem.cascade.propagated",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+          },
+          "cascade_id": "cascade_a9c74ae2b2fa25c92e795fb73bce0909",
+          "causal": {
+            "action": "propagate-vendor-outage-1",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": -10
+            },
+            "operational_consequence": {
+              "impact_kind": "vendor-outage",
+              "sequence": 1
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_9ab61a5e34b157b8874831951e1a93d4",
+            "step_id": "step_a63179baadb330a47a2e10c1df488a74"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "cascade",
+          "impact_kind": "vendor-outage",
+          "organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "value": -10
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 35
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+        "event_id": "event_44f9a040a23604e9bfd86055da9bd88c",
+        "event_type": "ecosystem.cascade.propagated",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+          },
+          "cascade_id": "cascade_a9c74ae2b2fa25c92e795fb73bce0909",
+          "causal": {
+            "action": "propagate-vendor-outage-2",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": -20
+            },
+            "operational_consequence": {
+              "impact_kind": "vendor-outage",
+              "sequence": 2
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_a63179baadb330a47a2e10c1df488a74",
+            "step_id": "step_2f347cb7b96d4228e4a11426889154e2"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "cascade",
+          "impact_kind": "vendor-outage",
+          "organization_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "value": -20
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 37
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+        "event_id": "event_8288d50731127e3c92eb1ab528f5d775",
+        "event_type": "ecosystem.cascade.propagated",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+          },
+          "cascade_id": "cascade_a9c74ae2b2fa25c92e795fb73bce0909",
+          "causal": {
+            "action": "propagate-vendor-outage-3",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": -30
+            },
+            "operational_consequence": {
+              "impact_kind": "vendor-outage",
+              "sequence": 3
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_2f347cb7b96d4228e4a11426889154e2",
+            "step_id": "step_07223bbabfe3a9ebab23ce70acdf9958"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "cascade",
+          "impact_kind": "vendor-outage",
+          "organization_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "value": -30
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 39
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+        "event_id": "event_95a7d3686fb4dcbbd102c254184442d6",
+        "event_type": "ecosystem.cascade.propagated",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "boundary": {
+            "affected_organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e"
+            ],
+            "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+            "owner_organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+          },
+          "cascade_id": "cascade_a9c74ae2b2fa25c92e795fb73bce0909",
+          "causal": {
+            "action": "propagate-vendor-outage-4",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": {
+              "amount": -40
+            },
+            "operational_consequence": {
+              "impact_kind": "vendor-outage",
+              "sequence": 4
+            },
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_07223bbabfe3a9ebab23ce70acdf9958",
+            "step_id": "step_8d335b782bd8ff8be77e47452be5b75b"
+          },
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "cascade",
+          "impact_kind": "vendor-outage",
+          "organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "value": -40
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 41
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+        "event_id": "event_b5e208ac2c5aa0b3d94eb5bb172fa4e7",
+        "event_type": "ecosystem.contract.changed",
+        "module_id": "ecosystem-operations",
+        "payload": {
+          "action": "disputed",
+          "causal": {
+            "action": "dispute-outage-impact",
+            "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+            "data_consequence": null,
+            "financial_consequence": null,
+            "operational_consequence": null,
+            "organization_ids": [
+              "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "organization_20b04a74d924ef1260b2f2541d38fc46"
+            ],
+            "previous_step_id": "step_8d335b782bd8ff8be77e47452be5b75b",
+            "step_id": "step_56cc9cbf94f102cdf38754919671eff6"
+          },
+          "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+          "contract_kind": "multiparty-service-network",
+          "contract_version": "aether-ecosystem-event.v1",
+          "event_kind": "contract",
+          "party_ids": [
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e",
+            "organization_20b04a74d924ef1260b2f2541d38fc46"
+          ]
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 43
+      }
+    ],
+    "limitations": [
+      "Cross-boundary outputs are synthetic and non-authoritative.",
+      "Impact magnitudes are synthetic and not reliability forecasts.",
+      "Institution and provider behavior uses explicit simplified assumptions."
+    ],
+    "metrics": [],
+    "module_versions": {
+      "core": "1.0.0",
+      "ecosystem-operations": "1.0.0",
+      "enterprise-operations": "1.0.0"
+    },
+    "observations": [
+      {
+        "attributes": {
+          "authoritative": false,
+          "from_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "operation": "copied",
+          "provenance_tier": "synthetic",
+          "record_id": "record_967ba9f0887e0501d4eab505c3b20e8f",
+          "source_event_id": "event_9d4a0a2cbfce37ca79f52a41b9c74fe7",
+          "to_organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "transfer_id": "transfer_323aeeefd00a0a30ba44a5bd186c38bf"
+        },
+        "id": "observation_3b1318e28f6328a9f50cd2d1b08949c8",
+        "kind": "cross-organization-pii-lineage"
+      }
+    ],
+    "projected_state": {
+      "event_count": 27,
+      "last_event_id": "event_b5e208ac2c5aa0b3d94eb5bb172fa4e7",
+      "module_state": {
+        "ecosystem-operations": {
+          "balance_ids": {
+            "organization_20b04a74d924ef1260b2f2541d38fc46": "balance_acb71e54a03367a3b5ba6104c5358c94",
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0": "balance_59af7636972c2013c12b9cbc6797bd7e",
+            "organization_7a4c202f64ffd93c6fa461726e2b127e": "balance_f634db49372fcc72f83e5e8962d041de",
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8": "balance_24f12eea8930399485d6f760b69d58d7"
+          },
+          "cascades": {
+            "cascade_a9c74ae2b2fa25c92e795fb73bce0909": {
+              "cascade_id": "cascade_a9c74ae2b2fa25c92e795fb73bce0909",
+              "steps": [
+                {
+                  "causal_step_id": "step_a63179baadb330a47a2e10c1df488a74",
+                  "event_id": "event_8b34ee9715df1fc55be378cf6b185f21",
+                  "impact_kind": "vendor-outage",
+                  "organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                  "value": -10
+                },
+                {
+                  "causal_step_id": "step_2f347cb7b96d4228e4a11426889154e2",
+                  "event_id": "event_44f9a040a23604e9bfd86055da9bd88c",
+                  "impact_kind": "vendor-outage",
+                  "organization_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                  "value": -20
+                },
+                {
+                  "causal_step_id": "step_07223bbabfe3a9ebab23ce70acdf9958",
+                  "event_id": "event_8288d50731127e3c92eb1ab528f5d775",
+                  "impact_kind": "vendor-outage",
+                  "organization_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                  "value": -30
+                },
+                {
+                  "causal_step_id": "step_8d335b782bd8ff8be77e47452be5b75b",
+                  "event_id": "event_95a7d3686fb4dcbbd102c254184442d6",
+                  "impact_kind": "vendor-outage",
+                  "organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+                  "value": -40
+                }
+              ]
+            }
+          },
+          "causal_steps": {
+            "step_03d4da11b86d7d72b3c3e94770daa9ba": {
+              "action": "add-household-context",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_02f190c93bf12bad40e1278f9d890923",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+              ],
+              "previous_step_id": "step_194e7d5d5fe7fa6aeea7ebb3c6f27de0",
+              "tick": 9
+            },
+            "step_048db52cdff910aed9fbf12dab417462": {
+              "action": "record-subscription",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_fc4268c0eed78fb769ef3698962d5b32",
+              "financial_consequence": {
+                "amount": 100,
+                "unit": "synthetic-credit"
+              },
+              "operational_consequence": {
+                "status": "recorded",
+                "transaction_kind": "subscription"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_365da5e5415c102e6cfd3cd3b434e925",
+              "tick": 13
+            },
+            "step_0699085b36cbed8a5160fad11df260a1": {
+              "action": "transfer-synthetic-record",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": {
+                "lineage_preserved": true,
+                "operation": "copied"
+              },
+              "event_id": "event_9d4a0a2cbfce37ca79f52a41b9c74fe7",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_6f1d6c14fb3cc08b50721aee30965fce",
+              "tick": 25
+            },
+            "step_07223bbabfe3a9ebab23ce70acdf9958": {
+              "action": "propagate-vendor-outage-3",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_8288d50731127e3c92eb1ab528f5d775",
+              "financial_consequence": {
+                "amount": -30
+              },
+              "operational_consequence": {
+                "impact_kind": "vendor-outage",
+                "sequence": 3
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_2f347cb7b96d4228e4a11426889154e2",
+              "tick": 39
+            },
+            "step_0b517db44070a02b8c9a1a65d4c1fbd8": {
+              "action": "record-network-deadline",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_cedfe97cd73b0befc69ec8ad0263e17b",
+              "financial_consequence": null,
+              "operational_consequence": {
+                "deadline_tick": 33,
+                "status": "notified"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_0699085b36cbed8a5160fad11df260a1",
+              "tick": 27
+            },
+            "step_194e7d5d5fe7fa6aeea7ebb3c6f27de0": {
+              "action": "add-payment-provider-context",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_0473ecc4311f8a08782d40b5b1cc6ce9",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_a6e6c16a6dedc50be287e4c3ad284804",
+              "tick": 7
+            },
+            "step_2f347cb7b96d4228e4a11426889154e2": {
+              "action": "propagate-vendor-outage-2",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_44f9a040a23604e9bfd86055da9bd88c",
+              "financial_consequence": {
+                "amount": -20
+              },
+              "operational_consequence": {
+                "impact_kind": "vendor-outage",
+                "sequence": 2
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_a63179baadb330a47a2e10c1df488a74",
+              "tick": 37
+            },
+            "step_365da5e5415c102e6cfd3cd3b434e925": {
+              "action": "form-network-contract",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_58978caa1c111f2c7d947cb41da797ab",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_03d4da11b86d7d72b3c3e94770daa9ba",
+              "tick": 11
+            },
+            "step_49b6829e681bdb086642e59ad0e0dcdc": {
+              "action": "record-support",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_5a49c7161f448b21c9124255113e78cb",
+              "financial_consequence": {
+                "amount": 100,
+                "unit": "synthetic-credit"
+              },
+              "operational_consequence": {
+                "status": "recorded",
+                "transaction_kind": "support"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_5d4a99b8dba780ee399a078a5ee4b253",
+              "tick": 17
+            },
+            "step_56cc9cbf94f102cdf38754919671eff6": {
+              "action": "dispute-outage-impact",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_b5e208ac2c5aa0b3d94eb5bb172fa4e7",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_8d335b782bd8ff8be77e47452be5b75b",
+              "tick": 43
+            },
+            "step_5d4a99b8dba780ee399a078a5ee4b253": {
+              "action": "record-usage",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_08064ef0dd7a11340bb72042e2183227",
+              "financial_consequence": {
+                "amount": 100,
+                "unit": "synthetic-credit"
+              },
+              "operational_consequence": {
+                "status": "recorded",
+                "transaction_kind": "usage"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_048db52cdff910aed9fbf12dab417462",
+              "tick": 15
+            },
+            "step_6bd0094715c78052c0234b82425b9eaf": {
+              "action": "amend-network-contract",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_20840ad0174cdf923e3f1c280369af00",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_9d4703f891be51360449eaee78e08674",
+              "tick": 31
+            },
+            "step_6f1d6c14fb3cc08b50721aee30965fce": {
+              "action": "accept-network-delivery",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_9bafb19338485c1450470190c73c5258",
+              "financial_consequence": null,
+              "operational_consequence": {
+                "quantity": 1,
+                "status": "accepted"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e"
+              ],
+              "previous_step_id": "step_83f0ed6d40c937883ad8519139c17c1f",
+              "tick": 23
+            },
+            "step_83f0ed6d40c937883ad8519139c17c1f": {
+              "action": "settle-intermediated-payment",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_69fa92083c0213ff5024484143f3cce4",
+              "financial_consequence": {
+                "amount": 100,
+                "reconciled": true
+              },
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_f10415d82d11315eefa290618c86be15",
+              "tick": 21
+            },
+            "step_8d335b782bd8ff8be77e47452be5b75b": {
+              "action": "propagate-vendor-outage-4",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_95a7d3686fb4dcbbd102c254184442d6",
+              "financial_consequence": {
+                "amount": -40
+              },
+              "operational_consequence": {
+                "impact_kind": "vendor-outage",
+                "sequence": 4
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_07223bbabfe3a9ebab23ce70acdf9958",
+              "tick": 41
+            },
+            "step_9ab61a5e34b157b8874831951e1a93d4": {
+              "action": "renew-network-contract",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_b81f35e9f88ef5cd2d78d10f6b3cfe18",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_6bd0094715c78052c0234b82425b9eaf",
+              "tick": 33
+            },
+            "step_9d4703f891be51360449eaee78e08674": {
+              "action": "remediate-network-obligation",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_a9ae82b664bf507cd2c78cac5441588b",
+              "financial_consequence": null,
+              "operational_consequence": {
+                "deadline_met": true,
+                "status": "remediated"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_0b517db44070a02b8c9a1a65d4c1fbd8",
+              "tick": 29
+            },
+            "step_a63179baadb330a47a2e10c1df488a74": {
+              "action": "propagate-vendor-outage-1",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_8b34ee9715df1fc55be378cf6b185f21",
+              "financial_consequence": {
+                "amount": -10
+              },
+              "operational_consequence": {
+                "impact_kind": "vendor-outage",
+                "sequence": 1
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_9ab61a5e34b157b8874831951e1a93d4",
+              "tick": 35
+            },
+            "step_a6e6c16a6dedc50be287e4c3ad284804": {
+              "action": "add-logistics-provider-context",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_0cf4050e270fad7266ebc0a46c34152e",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_7a4c202f64ffd93c6fa461726e2b127e"
+              ],
+              "previous_step_id": "step_a8097edcb31a0aef098a9245a9863be0",
+              "tick": 5
+            },
+            "step_a8097edcb31a0aef098a9245a9863be0": {
+              "action": "add-customer-enterprise-context",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_1ab206d519e391e5100d151a8dbe5947",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+              ],
+              "previous_step_id": "step_e079ec4cafdd27cdb5b7c8bda44e387b",
+              "tick": 3
+            },
+            "step_e079ec4cafdd27cdb5b7c8bda44e387b": {
+              "action": "add-critical-vendor-context",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_c7532d20f7722a3cdc938c9c4e86f90e",
+              "financial_consequence": null,
+              "operational_consequence": null,
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+              ],
+              "previous_step_id": null,
+              "tick": 1
+            },
+            "step_f10415d82d11315eefa290618c86be15": {
+              "action": "record-service-credit",
+              "actor_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "data_consequence": null,
+              "event_id": "event_071997a1b907926b75b88cd9574ff632",
+              "financial_consequence": {
+                "amount": 100,
+                "unit": "synthetic-credit"
+              },
+              "operational_consequence": {
+                "status": "recorded",
+                "transaction_kind": "service-credit"
+              },
+              "organization_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "previous_step_id": "step_49b6829e681bdb086642e59ad0e0dcdc",
+              "tick": 19
+            }
+          },
+          "contract_views": {
+            "organization_20b04a74d924ef1260b2f2541d38fc46": {
+              "contract_40dbce2f0f8913e84f356424813fecb9": {
+                "counterparty_ids": [
+                  "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                  "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                  "organization_7a4c202f64ffd93c6fa461726e2b127e"
+                ],
+                "status": "disputed"
+              }
+            },
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0": {
+              "contract_40dbce2f0f8913e84f356424813fecb9": {
+                "counterparty_ids": [
+                  "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                  "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                  "organization_20b04a74d924ef1260b2f2541d38fc46"
+                ],
+                "status": "disputed"
+              }
+            },
+            "organization_7a4c202f64ffd93c6fa461726e2b127e": {
+              "contract_40dbce2f0f8913e84f356424813fecb9": {
+                "counterparty_ids": [
+                  "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                  "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                  "organization_20b04a74d924ef1260b2f2541d38fc46"
+                ],
+                "status": "disputed"
+              }
+            },
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8": {
+              "contract_40dbce2f0f8913e84f356424813fecb9": {
+                "counterparty_ids": [
+                  "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                  "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                  "organization_20b04a74d924ef1260b2f2541d38fc46"
+                ],
+                "status": "disputed"
+              }
+            }
+          },
+          "contracts": {
+            "contract_40dbce2f0f8913e84f356424813fecb9": {
+              "contract_id": "contract_40dbce2f0f8913e84f356424813fecb9",
+              "contract_kind": "multiparty-service-network",
+              "history": [
+                {
+                  "action": "formed",
+                  "event_id": "event_58978caa1c111f2c7d947cb41da797ab",
+                  "tick": 11
+                },
+                {
+                  "action": "amended",
+                  "event_id": "event_20840ad0174cdf923e3f1c280369af00",
+                  "tick": 31
+                },
+                {
+                  "action": "renewed",
+                  "event_id": "event_b81f35e9f88ef5cd2d78d10f6b3cfe18",
+                  "tick": 33
+                },
+                {
+                  "action": "disputed",
+                  "event_id": "event_b5e208ac2c5aa0b3d94eb5bb172fa4e7",
+                  "tick": 43
+                }
+              ],
+              "party_ids": [
+                "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+                "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+                "organization_7a4c202f64ffd93c6fa461726e2b127e",
+                "organization_20b04a74d924ef1260b2f2541d38fc46"
+              ],
+              "status": "disputed"
+            }
+          },
+          "data_transfers": {
+            "transfer_323aeeefd00a0a30ba44a5bd186c38bf": {
+              "active": true,
+              "from_organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "operation": "copied",
+              "record_id": "record_967ba9f0887e0501d4eab505c3b20e8f",
+              "source_event_id": "event_9d4a0a2cbfce37ca79f52a41b9c74fe7",
+              "to_organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+            }
+          },
+          "deliveries": {
+            "delivery_f2397cfb093b0b3161d35fc94f7638aa": {
+              "carrier_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "delivery_id": "delivery_f2397cfb093b0b3161d35fc94f7638aa",
+              "history": [
+                {
+                  "event_id": "event_9bafb19338485c1450470190c73c5258",
+                  "status": "accepted",
+                  "tick": 23
+                }
+              ],
+              "recipient_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "sender_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "status": "accepted"
+            }
+          },
+          "employment_movements": [],
+          "identity_contexts": {
+            "context_3a68dea42f59af312e1a244146f93d98": {
+              "context_owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+              "event_id": "event_0473ecc4311f8a08782d40b5b1cc6ce9",
+              "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "role": "vendor-representative"
+            },
+            "context_56aafbac279649c858eadefd03dccc69": {
+              "context_owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "event_id": "event_0cf4050e270fad7266ebc0a46c34152e",
+              "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "role": "director"
+            },
+            "context_7b3b436de4c44feac4433ca82e6229ae": {
+              "context_owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "event_id": "event_c7532d20f7722a3cdc938c9c4e86f90e",
+              "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "role": "employee"
+            },
+            "context_7edbe5342a2c7e2b7403e9ec610f2c04": {
+              "context_owner_id": "household_4148b99128cc90a74fa1ccb5390c4754",
+              "event_id": "event_02f190c93bf12bad40e1278f9d890923",
+              "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "role": "household-member"
+            },
+            "context_b6954de033fcacca834d624571d2c205": {
+              "context_owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "event_id": "event_1ab206d519e391e5100d151a8dbe5947",
+              "person_id": "person_2e73748bd64f64c1e45b0950898828eb",
+              "role": "customer"
+            }
+          },
+          "obligations": {
+            "obligation_407c57fa478bc904925286aa5aafde7b": {
+              "deadline_tick": 33,
+              "event_id": "event_a9ae82b664bf507cd2c78cac5441588b",
+              "kind": "notification-and-remediation",
+              "status": "remediated"
+            }
+          },
+          "organization_balances": {
+            "organization_20b04a74d924ef1260b2f2541d38fc46": 10100,
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0": 10000,
+            "organization_7a4c202f64ffd93c6fa461726e2b127e": 10000,
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8": 9900
+          },
+          "organizations": {
+            "organization_20b04a74d924ef1260b2f2541d38fc46": {
+              "archetype": "professional-services",
+              "id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+              "key": "payment-provider"
+            },
+            "organization_4183c0209e38d94f31c8aca3f7cf39a0": {
+              "archetype": "manufacturing",
+              "id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+              "key": "customer-enterprise"
+            },
+            "organization_7a4c202f64ffd93c6fa461726e2b127e": {
+              "archetype": "logistics",
+              "id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+              "key": "logistics-provider"
+            },
+            "organization_b01b143d6ed5ab664f5967ee5ab5add8": {
+              "archetype": "saas",
+              "id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+              "key": "critical-vendor"
+            }
+          },
+          "outcomes": {
+            "vendor-outage": -100
+          },
+          "payments": {
+            "payment_d2554187227df2fac628596071e44953": {
+              "amount": 100,
+              "event_id": "event_69fa92083c0213ff5024484143f3cce4",
+              "legs": [
+                {
+                  "amount": -100,
+                  "organization_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+                },
+                {
+                  "amount": 0,
+                  "organization_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+                },
+                {
+                  "amount": 0,
+                  "organization_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+                },
+                {
+                  "amount": 100,
+                  "organization_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+                }
+              ]
+            }
+          },
+          "people": {
+            "person_2e73748bd64f64c1e45b0950898828eb": {
+              "id": "person_2e73748bd64f64c1e45b0950898828eb"
+            }
+          },
+          "processed_ecosystem_events": 22,
+          "transactions": {
+            "transaction_502e74362d615048f1c26d0232df26dc": {
+              "amount": 100,
+              "event_id": "event_071997a1b907926b75b88cd9574ff632",
+              "status": "recorded",
+              "transaction_kind": "service-credit"
+            },
+            "transaction_78b0e1068986567db9bafc1e92fc6ef3": {
+              "amount": 100,
+              "event_id": "event_08064ef0dd7a11340bb72042e2183227",
+              "status": "recorded",
+              "transaction_kind": "usage"
+            },
+            "transaction_b3d1c42fad3e541a7535cecfd88b1d0c": {
+              "amount": 100,
+              "event_id": "event_fc4268c0eed78fb769ef3698962d5b32",
+              "status": "recorded",
+              "transaction_kind": "subscription"
+            },
+            "transaction_f8e1a1c8b7facb199d79aed1e7d1248c": {
+              "amount": 100,
+              "event_id": "event_5a49c7161f448b21c9124255113e78cb",
+              "status": "recorded",
+              "transaction_kind": "support"
+            }
+          }
+        },
+        "enterprise-operations": {
+          "allow_backorders": false,
+          "archetype": "ecosystem-composite",
+          "capacity": {
+            "available": 100,
+            "resource_id": "resource_8cbfd5c5a5d20e3086c0a99eeecff4c4",
+            "total": 100
+          },
+          "causal_steps": {},
+          "constraints": [],
+          "employment": {},
+          "incidents": {},
+          "inventory": {
+            "quantity": 0,
+            "resource_id": "resource_c56aa6166443bece6146d8d3ba04e0f3"
+          },
+          "invoices": {},
+          "ledger": [],
+          "operational_outcomes": [],
+          "payments": [],
+          "processed_enterprise_events": 0,
+          "records": {},
+          "state_machines": [],
+          "workflows": {}
+        }
+      }
+    },
+    "provenance": {
+      "authoritative": false,
+      "external_credentials_used": false,
+      "origin": "deterministic-kernel",
+      "scenario_digest": "eb17d969acc9af145143ec1cf8cb75273275bba460b25af05fdb4b1dd2d2f3cc",
+      "tier": "synthetic"
+    },
+    "relationships": [
+      {
+        "attributes": {
+          "declared": true,
+          "from_entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "to_entity_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0"
+        },
+        "id": "relationship_523030dc639825a87a5b6b04147aaab6",
+        "kind": "critical-service"
+      },
+      {
+        "attributes": {
+          "declared": true,
+          "from_entity_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "to_entity_id": "organization_20b04a74d924ef1260b2f2541d38fc46"
+        },
+        "id": "relationship_562dfe2544d7abf00d3584fa324c7a4c",
+        "kind": "payment-service"
+      },
+      {
+        "attributes": {
+          "declared": true,
+          "from_entity_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "to_entity_id": "organization_7a4c202f64ffd93c6fa461726e2b127e"
+        },
+        "id": "relationship_63f1efd41da0048ac2dd18a3120bcc1c",
+        "kind": "fulfilment-service"
+      },
+      {
+        "attributes": {
+          "context_count": 5,
+          "from_entity_id": "person_2e73748bd64f64c1e45b0950898828eb",
+          "to_entity_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8"
+        },
+        "id": "relationship_cb4cba17fdecca4da73acac869167bfd",
+        "kind": "multi-context-citizen"
+      }
+    ],
+    "research_status": "research-preview",
+    "resources": [
+      {
+        "attributes": {
+          "capacity": 64,
+          "owner_id": "organization_4183c0209e38d94f31c8aca3f7cf39a0",
+          "quantity": 30
+        },
+        "id": "resource_05d5044b9e1ae25bf8f941e9e10c4cca",
+        "kind": "finished-unit"
+      },
+      {
+        "attributes": {
+          "capacity": 24,
+          "owner_id": "organization_7a4c202f64ffd93c6fa461726e2b127e",
+          "quantity": 0
+        },
+        "id": "resource_5d3c9052beb7d4dc7720b1d59789eff1",
+        "kind": "delivery-slot"
+      },
+      {
+        "attributes": {
+          "total": 100
+        },
+        "id": "resource_8cbfd5c5a5d20e3086c0a99eeecff4c4",
+        "kind": "ecosystem-composite-capacity"
+      },
+      {
+        "attributes": {
+          "capacity": 1000,
+          "owner_id": "organization_b01b143d6ed5ab664f5967ee5ab5add8",
+          "quantity": 0
+        },
+        "id": "resource_9dd93fa60281410b38b696ecc085843f",
+        "kind": "service-unit"
+      },
+      {
+        "attributes": {
+          "quantity": 0
+        },
+        "id": "resource_c56aa6166443bece6146d8d3ba04e0f3",
+        "kind": "ecosystem-composite-inventory"
+      },
+      {
+        "attributes": {
+          "capacity": 160,
+          "owner_id": "organization_20b04a74d924ef1260b2f2541d38fc46",
+          "quantity": 0
+        },
+        "id": "resource_f4ba5e7ebe5953508eabc4d933984247",
+        "kind": "consulting-hour"
+      }
+    ],
+    "scenario_contract_version": "aether-scenario.v1",
+    "scenario_id": "ecosystem-vendor-outage-cascade",
+    "seed": 63004,
+    "world_id": "world_903eed771c5397d8e09dce8cb313c2da"
+  }
+}

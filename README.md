@@ -56,6 +56,8 @@ runs the same kernel locally in a Web Worker.
   elapsed time, and cancellation that terminates and replaces active work.
 - Deterministic semantic zoom from a synthetic world into an organization and
   the stable citizen records with declared contexts inside it.
+- A descriptive analysis workspace for emitted measures, explicit cohorts,
+  declared event ancestry, limitations, and canonical analysis export.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -147,6 +149,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [local project workspace](docs/LOCAL_PROJECT_WORKSPACE.md),
 [unified entity model](docs/UNIFIED_ENTITY_MODEL.md),
 [semantic zoom](docs/SEMANTIC_ZOOM.md),
+[analysis workspace](docs/ANALYSIS_WORKSPACE.md),
 [visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
 [scenario laboratory](docs/SCENARIO_LABORATORY.md),
 [runtime scale and control](docs/RUNTIME_SCALE_AND_CONTROL.md),

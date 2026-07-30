@@ -269,6 +269,17 @@ The projection never clones a citizen, infers a real identity, or invents a
 membership. A citizen can appear in several enterprise paths while retaining
 one kernel identifier and one unified record.
 
+## Analysis projection
+
+`src/analysis/workspace.mjs` derives `aether-analysis.v1` from a completed
+synthetic world export. It counts emitted entities, events, relationships,
+observations, lineage facts, entity kinds, event kinds, and explicit `causes`
+edges. The result is deterministic for the same canonical world.
+
+The projection does not fit a statistical model, calibrate parameters, infer
+missing links, or estimate causal effects. World limitations are carried into
+the analysis result and the browser keeps that interpretation boundary visible.
+
 ## Scenario laboratory
 
 ```mermaid

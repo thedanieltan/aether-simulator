@@ -11,7 +11,7 @@ test("product routes have unique stable identifiers and resolvable targets", () 
   assert.equal(new Set(productRoutes.map(({ id }) => id)).size, productRoutes.length);
   assert.deepEqual(
     productRoutes.map(({ id }) => id),
-    ["overview", "projects", "design", "run", "lab", "explore", "compare", "export", "boundary"],
+    ["overview", "projects", "design", "run", "lab", "explore", "analysis", "compare", "export", "boundary"],
   );
   for (const route of productRoutes) {
     assert.equal(parseProductRoute(productRouteHref(route.id)).id, route.id);
@@ -29,5 +29,6 @@ test("route parser supports result deep links and fails safely to overview", () 
   assert.equal(parseProductRoute("#/unknown").id, "overview");
   assert.equal(routeForView("lineage"), "#/explore/lineage");
   assert.equal(routeForView("zoom"), "#/explore/zoom");
+  assert.equal(routeForView("analysis"), "#/analysis");
   assert.equal(routeForView("exports"), "#/export");
 });

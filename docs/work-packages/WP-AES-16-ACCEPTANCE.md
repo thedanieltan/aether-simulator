@@ -32,7 +32,15 @@ standalone local research product.
 
 ## Disposition
 
-Implemented locally on the work-package branch. Protected integration,
-candidate deployment, hosted acceptance, and the final release tag remain
-pending.
+Integrated and live accepted on 2026-07-30.
 
+- Protected pull request: `#26`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable candidate deployment:
+  `https://aec25119.aether-simulator.pages.dev`.
+- Hosted acceptance: thirteen Playwright journeys passed across the complete
+  standalone product workflow.
+- Product contract: ten routes, sixteen committed scenarios, and WP-AES-06
+  through WP-AES-16 passed.
+
+The final release tag is created only after this closeout record is merged.

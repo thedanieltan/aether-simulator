@@ -23,8 +23,10 @@ Playwright Chromium runtime.
 - Workflow permissions are read-only.
 - Action dependencies are pinned to full commit SHAs.
 - Checkout does not persist GitHub credentials.
-- Dependency installation uses the committed lockfile and disables lifecycle
-  scripts.
+- Every runner asserts that the committed npm lockfile is version 3 and matches
+  the package identity before dependency installation.
+- Dependency installation runs from the explicit workspace directory and
+  disables lifecycle scripts.
 - Pull requests run with `pull_request`, never `pull_request_target`.
 - Concurrent runs for an obsolete revision are cancelled.
 - Every job has a timeout.

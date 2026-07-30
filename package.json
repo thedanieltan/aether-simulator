@@ -55,6 +55,7 @@
     "verify:fixtures:drift": "node scripts/verify-fixture-drift.mjs",
     "verify:validators:drift": "node scripts/generate-standalone-validators.mjs --check",
     "verify:package": "node scripts/verify-package.mjs",
+    "verify:lockfile": "node scripts/verify-lockfile.mjs",
     "verify:workflows": "node scripts/verify-workflows.mjs",
     "verify:public": "node scripts/verify-public-tree.mjs",
     "scan:sensitive": "node scripts/scan-sensitive-content.mjs",

@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    working-directory: ${{ github.workspace }}
+
 concurrency:
   group: quality-gate-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -31,8 +35,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Verify locked manifest
+        run: npm run verify:lockfile
       - name: Install locked dependencies
-        run: npm --prefix "${{ github.workspace }}" ci --ignore-scripts
+        run: npm ci --ignore-scripts
       - name: Run canonical CI acceptance
         run: npm run verify:ci
 
@@ -56,8 +62,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
+      - name: Verify locked manifest
+        run: npm run verify:lockfile
       - name: Install locked dependencies
-        run: npm --prefix "${{ github.workspace }}" ci --ignore-scripts
+        run: npm ci --ignore-scripts
       - name: Run deterministic acceptance
         run: npm run verify
 
@@ -75,8 +83,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Verify locked manifest
+        run: npm run verify:lockfile
       - name: Install locked dependencies
-        run: npm --prefix "${{ github.workspace }}" ci --ignore-scripts
+        run: npm ci --ignore-scripts
       - name: Run deterministic acceptance
         run: npm run verify
 
@@ -94,8 +104,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Verify locked manifest
+        run: npm run verify:lockfile
       - name: Install locked dependencies
-        run: npm --prefix "${{ github.workspace }}" ci --ignore-scripts
+        run: npm ci --ignore-scripts
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Build the browser studio

@@ -34,10 +34,13 @@ providers.
 
 ## Status
 
-- Implementation: complete on `codex/wp-aes-03-ecosystem-depth`.
-- Integration: pending protected PR review and merge.
-- Deployment: not performed.
-- Live acceptance: not performed.
+- Implementation: complete.
+- Integration: complete through protected pull-request review and required
+  checks.
+- Deployment: included in the static browser scenario gallery delivered by
+  WP-AES-05.
+- Live acceptance: not separately performed for an ecosystem browser journey;
+  deterministic local and hosted-CI acceptance is complete.
 
 The ecosystem model remains simplified research software. Cross-boundary facts
 are synthetic and non-authoritative.

@@ -29,9 +29,12 @@ synthetic economy whose aggregate indicators derive from entity-level activity.
 
 ## Status
 
-- Implementation: complete on the WP-AES-04 branch, pending protected review.
-- Integration: pending protected CI and merge.
-- Deployment: not performed.
-- Live acceptance: not performed.
+- Implementation: complete.
+- Integration: complete through protected pull-request review and required
+  checks.
+- Deployment: included in the static browser scenario gallery delivered by
+  WP-AES-05.
+- Live acceptance: not separately performed for an economy browser journey;
+  deterministic local and hosted-CI acceptance is complete.
 
 This research model is not a forecast, investment tool, or policy authority.

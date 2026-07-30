@@ -53,8 +53,12 @@ source is part of the implementation.
 
 ## Status
 
-- Implementation: complete in the clean release candidate, pending owner review.
-- Deployment: not performed.
-- Live acceptance: not performed.
-- Product depth: kernel implemented; complete enterprise depth remains partial;
-  ecosystem and economy depth remain unimplemented.
+- Implementation: complete.
+- Integration: complete through protected pull-request review and required
+  checks.
+- Deployment: the kernel is included in the static browser research build
+  delivered by WP-AES-05.
+- Live acceptance: complete only through the WP-AES-05 browser lifecycle; the
+  command-line and library interfaces are not separate live services.
+- Product depth: enterprise, ecosystem, and economy research models were
+  subsequently implemented by WP-AES-02 through WP-AES-04.

@@ -49,12 +49,15 @@ acceptance are excluded.
 
 ## Status
 
-- Implementation: complete on `codex/wp-aes-02-enterprise-depth`.
-- Integration: pending draft-PR review and merge.
-- Deployment: not performed.
-- Live acceptance: not performed.
+- Implementation: complete.
+- Integration: complete through protected pull-request review and required
+  checks.
+- Deployment: included in the static browser research build delivered by
+  WP-AES-05.
+- Live acceptance: complete for the hosted default enterprise browser journey;
+  the command-line and library interfaces are not separate live services.
 - Hosted CI: all required Ubuntu Node.js 20, 22, and 24 checks and the Windows
-  Node.js 20 portability check passed on 2026-07-30.
+  Node.js 20 portability check pass on `main`.
 
 ## CI/CD gate
 
@@ -64,7 +67,7 @@ portability, deterministic fixture regeneration, package boundaries,
 dependency audit, repository policy, and sensitive-content scanning. The exact
 local parity command is `npm run verify:ci`.
 
-Continuous deployment is intentionally absent because this work package has no
-deployed product or live-acceptance target. The protected `main` branch
-requires all four runner-backed checks, an up-to-date branch, pull-request
+Credential-bearing continuous deployment is intentionally absent. Static
+deployment is a documented, explicit owner action. The protected `main` branch
+requires all five runner-backed checks, an up-to-date branch, pull-request
 integration, conversation resolution, and linear history.

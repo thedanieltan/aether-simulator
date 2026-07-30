@@ -16,7 +16,8 @@ authority.
 
 This repository implements the deterministic world kernel, configurable
 Enterprise Depth, contract-gated Ecosystem Depth, and entity-derived Economy
-Depth research scenarios.
+Depth research scenarios. It also includes a static browser studio that runs
+the same kernel locally in a Web Worker.
 
 ## What is implemented
 
@@ -40,6 +41,9 @@ Depth research scenarios.
 - Deterministic migration from the public `aether-world.v0.1` fixture.
 - An optional evidence bridge that converts synthetic lineage observations into
   quarantined, facts-only, non-authoritative envelopes.
+- A credential-free browser studio for configuration, local execution, graph
+  and timeline inspection, replay, checkpoint/resume, branching, comparison,
+  lineage review, and canonical export.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -77,6 +81,17 @@ node src/cli.mjs economy-run scenarios/economy/stable-baseline.json
 
 Run `node src/cli.mjs help` for replay, branch, compare, and migrate examples.
 
+For the browser demonstration:
+
+```bash
+npm run build:studio
+npm run preview:studio
+```
+
+Open the printed local URL, select a scenario, and choose **Run synthetic
+world**. The browser product requires no account, credential, Docker service,
+or external provider.
+
 ## Architecture
 
 ```mermaid
@@ -92,6 +107,8 @@ flowchart LR
   Checkpoint --> Branch["Branch and compare"]
   Export --> Bridge["Optional evidence bridge"]
   Bridge --> Evidence["Quarantined non-authoritative envelopes"]
+  Scenario --> Worker["Browser Web Worker"]
+  Worker --> Studio["Graph / timeline / lineage / exports"]
 ```
 
 ## Privacy and limitations
@@ -102,11 +119,14 @@ demonstration. Synthetic output does not establish real-world compliance.
 Provider-connected execution is not included. Enterprise models are explicit,
 simplified research assumptions rather than calibrated digital twins.
 Cross-boundary facts and cascade outcomes are also synthetic and
-non-authoritative.
+non-authoritative. The browser studio has no upload, telemetry, authentication,
+or server-side persistence surface. Pause checkpoints a completed synchronous
+run rather than interrupting an event reducer.
 
 Repository status: **active research**.
 
 See [architecture](docs/ARCHITECTURE.md),
+[browser product](docs/PUBLIC_PRODUCT.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

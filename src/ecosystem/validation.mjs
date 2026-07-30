@@ -1,32 +1,9 @@
-import { readFileSync } from "node:fs";
-import Ajv2020 from "ajv/dist/2020.js";
-
-const configSchema = JSON.parse(
-  readFileSync(
-    new URL(
-      "../../schemas/ecosystem/aether-ecosystem-config.v1.schema.json",
-      import.meta.url,
-    ),
-    "utf8",
-  ),
-);
-const eventSchema = JSON.parse(
-  readFileSync(
-    new URL(
-      "../../schemas/ecosystem/aether-ecosystem-event.v1.schema.json",
-      import.meta.url,
-    ),
-    "utf8",
-  ),
-);
-const ajv = new Ajv2020({
-  allErrors: true,
-  strict: true,
-  validateFormats: false,
-});
-const validateConfig = ajv.compile(configSchema);
-const validateEvent = ajv.compile(eventSchema);
-
+import {
+  ecosystemConfig as validateConfig,
+  ecosystemEvent as validateEvent,
+} from "../validation/standalone.mjs";
+import configSchema from "../../schemas/ecosystem/aether-ecosystem-config.v1.schema.json" with { type: "json" };
+import eventSchema from "../../schemas/ecosystem/aether-ecosystem-event.v1.schema.json" with { type: "json" };
 function result(validator, value) {
   const valid = validator(value);
   return {

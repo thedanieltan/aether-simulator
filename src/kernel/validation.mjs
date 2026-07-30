@@ -1,42 +1,31 @@
-import { readFileSync } from "node:fs";
-import Ajv2020 from "ajv/dist/2020.js";
+import {
+  kernelCheckpoint,
+  kernelEvent,
+  kernelExport,
+  kernelScenario,
+  kernelWorld,
+} from "../validation/standalone.mjs";
+import checkpointSchema from "../../schemas/kernel/aether-checkpoint.v1.schema.json" with { type: "json" };
+import eventSchema from "../../schemas/kernel/aether-event.v1.schema.json" with { type: "json" };
+import exportSchema from "../../schemas/kernel/aether-export.v1.schema.json" with { type: "json" };
+import scenarioSchema from "../../schemas/kernel/aether-scenario.v1.schema.json" with { type: "json" };
+import worldSchema from "../../schemas/kernel/aether-world.v1.schema.json" with { type: "json" };
 
-const schemaFiles = {
-  event: "aether-event.v1.schema.json",
-  scenario: "aether-scenario.v1.schema.json",
-  world: "aether-world.v1.schema.json",
-  checkpoint: "aether-checkpoint.v1.schema.json",
-  export: "aether-export.v1.schema.json",
+const schemas = {
+  event: eventSchema,
+  scenario: scenarioSchema,
+  world: worldSchema,
+  checkpoint: checkpointSchema,
+  export: exportSchema,
 };
 
-const schemas = Object.fromEntries(
-  Object.entries(schemaFiles).map(([kind, filename]) => [
-    kind,
-    JSON.parse(
-      readFileSync(
-        new URL(`../../schemas/kernel/${filename}`, import.meta.url),
-        "utf8",
-      ),
-    ),
-  ]),
-);
-
-const ajv = new Ajv2020({
-  allErrors: true,
-  strict: true,
-  validateFormats: false,
-});
-
-for (const schema of Object.values(schemas)) {
-  ajv.addSchema(schema);
-}
-
-const validators = Object.fromEntries(
-  Object.entries(schemas).map(([kind, schema]) => [
-    kind,
-    ajv.getSchema(schema.$id),
-  ]),
-);
+const validators = {
+  event: kernelEvent,
+  scenario: kernelScenario,
+  world: kernelWorld,
+  checkpoint: kernelCheckpoint,
+  export: kernelExport,
+};
 
 function formatErrors(errors = []) {
   return errors

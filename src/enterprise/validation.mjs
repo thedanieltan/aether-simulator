@@ -1,22 +1,5 @@
-import { readFileSync } from "node:fs";
-import Ajv2020 from "ajv/dist/2020.js";
-
-const schema = JSON.parse(
-  readFileSync(
-    new URL(
-      "../../schemas/enterprise/aether-enterprise-config.v1.schema.json",
-      import.meta.url,
-    ),
-    "utf8",
-  ),
-);
-
-const ajv = new Ajv2020({
-  allErrors: true,
-  strict: true,
-  validateFormats: false,
-});
-const validate = ajv.compile(schema);
+import { enterpriseConfig as validate } from "../validation/standalone.mjs";
+import schema from "../../schemas/enterprise/aether-enterprise-config.v1.schema.json" with { type: "json" };
 
 function formatErrors(errors = []) {
   return errors

@@ -4,14 +4,14 @@ Repository recommendation: **active research**.
 
 | Classification | Capability or finding |
 |---|---|
-| Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, and optional evidence normalization |
-| Tested | 64 tests covering kernel determinism and lifecycle, nine enterprise, seven ecosystem, and seven economy scenarios, accounting and cross-party reconciliation, identity and mutation boundaries, household/firm/bank/tax reconciliation, aggregates, partition equivalence, fixtures, policy, and sensitive scanning |
+| Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a local browser simulation studio |
+| Tested | 67 Node tests covering kernel determinism and lifecycle, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; five Playwright browser journeys cover lifecycle, accessibility, and responsive behavior |
 | Partially implemented | All product-depth models use explicit simplified research assumptions; partitioned construction is deterministic, while worker-parallel and calibrated behavior are excluded |
 | Planned | Larger scenario corpus; worker-parallel deterministic execution; local OSS realism; connected calibration |
 | Rejected | Real personal data, external credentials, implicit authority, provider state in deterministic core, and arbitrary product scale caps |
 | Product-invalidated | Treating synthetic output, provider output, or evidence normalization as proof of real-world compliance |
-| Not live accepted | Every capability in this repository; no deployment or connected workflow was performed or accepted |
-| Unimplemented | Worker-parallel execution, connected-provider validation, and a public browser product |
+| Not live accepted | Connected-provider execution and any capability not exercised against a recorded hosted revision |
+| Unimplemented | Worker-parallel execution and connected-provider validation |
 
 ## Work-package state
 
@@ -21,10 +21,17 @@ Repository recommendation: **active research**.
   work-package branch and merged through protected CI.
 - **Ecosystem Depth:** WP-AES-03 implemented and locally verified on its
   work-package branch and merged through protected CI.
-- **Economy Depth:** WP-AES-04 implemented and locally verified on its
-  work-package branch, pending protected review and merge.
-- **Deployment:** not performed and not claimed.
-- **Live acceptance:** not performed and not claimed.
+- **Economy Depth:** WP-AES-04 implemented, reviewed, merged, and verified
+  through protected CI.
+- **Public browser product:** WP-AES-05 implemented, verified, reviewed, and
+  integrated through the protected pull-request gate; deployment and live
+  acceptance are recorded separately below.
+- **Deployment:** the WP-AES-05 static research product is deployed at
+  `https://aether-simulator.pages.dev`; no connected-provider runtime is
+  deployed or claimed.
+- **Live acceptance:** the browser product’s local-only lifecycle journey
+  passed against an immutable hosted deployment on 2026-07-30. Connected
+  calibration remains not live accepted.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

@@ -1,4 +1,5 @@
-import { createHash } from "node:crypto";
+import { sha256 as digestSha256 } from "@noble/hashes/sha2.js";
+import { bytesToHex } from "@noble/hashes/utils.js";
 import { canonicalCompactJson } from "../canonical-json.mjs";
 
 const ID_NAMESPACE = /^[a-z][a-z0-9-]*$/;
@@ -6,7 +7,7 @@ const TWO_TO_52 = 4503599627370496;
 
 export function sha256(value) {
   const input = typeof value === "string" ? value : canonicalCompactJson(value);
-  return createHash("sha256").update(input, "utf8").digest("hex");
+  return bytesToHex(digestSha256(new TextEncoder().encode(input)));
 }
 
 export function stableId(namespace, value) {

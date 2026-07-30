@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Configure, run, inspect, replay, compare, and export deterministic synthetic Aether simulations."
+    />
+    <title>Aether Scenario Studio</title>
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="stylesheet" href="/app/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#studio">Skip to scenario studio</a>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Aether home">Aether</a>
+      <button class="command-pill" id="command-open" type="button" aria-haspopup="dialog">
+        <span aria-hidden="true">⌕</span>
+        <span>Jump to a view</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <nav aria-label="Primary">
+        <a href="#gallery">Scenarios</a>
+        <a href="#studio">Studio</a>
+        <a href="#boundaries">Research boundary</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="intro-title">
+        <div>
+          <p class="signal">DETERMINISTIC RESEARCH SIMULATOR</p>
+          <h1 id="intro-title">Run a fictional world. Inspect every cause.</h1>
+        </div>
+        <div class="intro-copy">
+          <p>
+            Configure synthetic enterprises, ecosystems, and economies. The same
+            version, scenario, and seed produce the same canonical artifact.
+          </p>
+          <div class="status-strip" aria-label="Repository status">
+            <span>Active research</span>
+            <span>Not production-ready</span>
+            <span>Non-authoritative</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <h2 id="gallery-title">Choose a proven scenario</h2>
+          <p>Only product depths implemented and tested in the shared kernel appear here.</p>
+        </div>
+        <div id="scenario-gallery" class="gallery-grid" role="list"></div>
+      </section>
+
+      <section id="studio" class="studio-shell" aria-labelledby="studio-title">
+        <div class="studio-heading">
+          <div>
+            <p class="signal signal-inverse">LOCAL WEB WORKER</p>
+            <h2 id="studio-title">Scenario studio</h2>
+          </div>
+          <p id="run-status" class="run-status" role="status" aria-live="polite">Ready</p>
+        </div>
+
+        <div class="studio-grid">
+          <form id="scenario-form" class="control-panel">
+            <fieldset>
+              <legend>World configuration</legend>
+              <label>
+                Product depth
+                <select id="depth" name="depth">
+                  <option value="enterprise">Enterprise</option>
+                  <option value="ecosystem">Ecosystem</option>
+                  <option value="economy">Economy</option>
+                </select>
+              </label>
+              <label>
+                Scenario or archetype
+                <select id="scenario" name="scenario"></select>
+              </label>
+              <div class="field-pair">
+                <label>
+                  Seed
+                  <input id="seed" name="seed" value="studio-seed-1" required />
+                </label>
+                <label>
+                  Scale
+                  <input id="scale" name="scale" type="number" min="1" value="1" required />
+                </label>
+              </div>
+              <div class="field-pair">
+                <label>
+                  Duration (ticks)
+                  <input id="duration" name="duration" type="number" min="1" value="80" required />
+                </label>
+                <label>
+                  Intervention amount
+                  <input id="intervention" name="intervention" type="number" value="12" />
+                </label>
+              </div>
+            </fieldset>
+            <div class="run-controls" aria-label="Simulation controls">
+              <button class="primary" type="submit" id="run">Run</button>
+              <button type="button" data-command="pause">Pause</button>
+              <button type="button" data-command="resume">Resume</button>
+              <button type="button" data-command="cancel">Cancel</button>
+              <button type="button" data-command="replay">Replay</button>
+              <button type="button" data-command="checkpoint">Checkpoint</button>
+              <button type="button" data-command="branch">Branch</button>
+              <button type="button" data-command="compare">Compare</button>
+            </div>
+            <p class="control-help">
+              No credentials, provider calls, cookies, or real personal data are used.
+            </p>
+          </form>
+
+          <section class="world-panel" aria-label="Simulation results">
+            <div id="metrics" class="metrics" aria-label="Run metrics"></div>
+            <div class="view-tabs" role="tablist" aria-label="Result views">
+              <button role="tab" aria-selected="true" data-view="graph">World graph</button>
+              <button role="tab" aria-selected="false" data-view="timeline">Event timeline</button>
+              <button role="tab" aria-selected="false" data-view="inspector">State inspector</button>
+              <button role="tab" aria-selected="false" data-view="lineage">PII lineage</button>
+              <button role="tab" aria-selected="false" data-view="exports">Exports</button>
+            </div>
+            <div id="result-view" class="result-view" tabindex="0">
+              <div class="empty-state">
+                <p>Run a scenario to create a local synthetic world.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="boundaries" class="boundaries" aria-labelledby="boundary-title">
+        <h2 id="boundary-title">Research boundaries stay visible</h2>
+        <dl>
+          <div><dt>Synthetic</dt><dd>No real personal data is included.</dd></div>
+          <div><dt>Experimental</dt><dd>Mechanisms use explicit simplified assumptions.</dd></div>
+          <div><dt>Deployed</dt><dd id="deployment-label">Static research deployment verified.</dd></div>
+          <div><dt>Live accepted</dt><dd>Local-only browser journey passed on the hosted build.</dd></div>
+          <div><dt>Authority</dt><dd>Outputs do not establish real-world compliance or policy truth.</dd></div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="statement-footer">
+      <p>Every result should be reproducible, inspectable, and honestly bounded.</p>
+      <div>
+        <span class="wordmark">Aether</span>
+        <span>Apache-2.0 · Active research</span>
+      </div>
+    </footer>
+
+    <div class="command-dialog" id="command-dialog" aria-hidden="true">
+      <button class="dialog-backdrop" type="button" data-dialog-close aria-label="Close navigation"></button>
+      <section role="dialog" aria-modal="true" aria-labelledby="command-title">
+        <label id="command-title" for="command-input">Jump to a studio view</label>
+        <input id="command-input" autocomplete="off" placeholder="Type graph, timeline, inspector, lineage, or exports" />
+        <div id="command-results" role="listbox"></div>
+        <p><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+      </section>
+    </div>
+
+    <script type="module" src="/app/main.mjs"></script>
+  </body>
+</html>

@@ -10,3 +10,8 @@ Revoke or rotate an exposed credential before sharing a redacted description.
 
 The maintainers will acknowledge supported reports on a best-effort research
 basis. There is no production service or operational service-level commitment.
+
+The static browser product has no upload, authentication, analytics, telemetry,
+provider, or server-side storage path. It uses same-origin content-security
+headers on compatible hosts. See `docs/THREAT_MODEL.md` for the implemented
+boundary and residual risks.

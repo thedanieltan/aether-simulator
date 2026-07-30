@@ -17,7 +17,9 @@ Before submitting a change:
    capacity, inventory, employment, invoice, workflow, and lineage invariants.
 7. Document compatibility, migration, dependency, and research-status impact.
 8. Run the same canonical command used by CI: `npm run verify:ci`.
-9. Confirm the contribution is yours to license under Apache-2.0.
+9. For browser changes, run `npm run test:e2e` and preserve keyboard,
+   responsive, reduced-motion, security-policy, and local-only boundaries.
+10. Confirm the contribution is yours to license under Apache-2.0.
 
 Do not add external credentials, provider account references, copied customer
 records, real personal data, private URLs, local absolute paths, or generated

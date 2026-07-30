@@ -10,7 +10,7 @@ without server rewrites.
 | `#/overview` | What is this product and what is available? | product map and status |
 | `#/design` | Which tested premise should I start from? | scenario selection |
 | `#/run` | How do I configure and execute a world? | run workspace |
-| `#/explore/<view>` | What happened and why? | graph, timeline, inspector, or lineage |
+| `#/explore/<view>` | What happened and why? | entities, graph, timeline, inspector, or lineage |
 | `#/compare` | What changed between branches? | run lifecycle; requires a result |
 | `#/export` | How do I reproduce or review this run? | export view; requires a result |
 | `#/boundary` | What must I not infer? | research boundaries |
@@ -28,6 +28,7 @@ flowchart TD
   Design --> Run["Run workspace"]
   Run --> Explore["Explore results"]
   Explore --> Graph["World graph"]
+  Explore --> Entities["Entity and citizen records"]
   Explore --> Timeline["Event timeline"]
   Explore --> State["State inspector"]
   Explore --> Lineage["Data lineage"]

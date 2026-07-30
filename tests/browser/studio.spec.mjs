@@ -12,6 +12,17 @@ test("complete local studio journey is deterministic and accessible", async ({ p
   const firstDigest = await page.locator(".metric").filter({ hasText: "Digest" }).locator("strong").textContent();
   await expect(page.locator(".graph")).toBeVisible();
 
+  await page.getByRole("tab", { name: "Entities" }).click();
+  await page.getByLabel("Entity type").selectOption("people");
+  await expect(page.locator(".entity-list-item").first()).toContainText("Synthetic");
+  await page.locator(".entity-list-item").first().click();
+  await expect(page.locator(".entity-detail")).toContainText(
+    "Role and relationship contexts",
+  );
+  await expect(page.locator(".entity-boundary")).toHaveText(
+    "Synthetic · non-authoritative",
+  );
+
   await page.getByRole("tab", { name: "Event timeline" }).click();
   await expect(page.locator(".timeline button").first()).toBeVisible();
   await page.locator(".timeline button").first().click();

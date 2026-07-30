@@ -5,6 +5,7 @@ export const initialStudioState = Object.freeze({
   session: null,
   error: null,
   selectedEventId: null,
+  selectedEntityId: null,
 });
 
 export function reduceStudioState(state, action) {
@@ -37,6 +38,8 @@ export function reduceStudioState(state, action) {
       return { ...state, activeView: action.view };
     case "event-selected":
       return { ...state, selectedEventId: action.eventId, activeView: "inspector" };
+    case "entity-selected":
+      return { ...state, selectedEntityId: action.entityId, activeView: "entities" };
     default:
       return state;
   }

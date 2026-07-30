@@ -43,7 +43,7 @@ The product should let a user move through one continuous reasoning loop:
 | Compare | Implemented after a run | deterministic branch comparison |
 | Export | Implemented after a run | canonical local artifact downloads |
 | Project workspace | Implemented in WP-AES-07 | local project lifecycle, recovery, import, and export |
-| Citizen and entity records | Planned for WP-AES-08 | unified identity and role context |
+| Citizen and entity records | Implemented in WP-AES-08 | unified synthetic identity, role context, event, lineage, and provenance view |
 | Visual scenario builder | Planned for WP-AES-09 | explicit model composition and validation |
 | Scenario laboratory | Planned for WP-AES-10 | experiment definitions and comparison sets |
 | Scale and runtime control | Planned for WP-AES-11 | bounded execution and progress |

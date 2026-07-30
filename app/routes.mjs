@@ -60,7 +60,14 @@ export const productRoutes = Object.freeze([
 ]);
 
 const routeById = new Map(productRoutes.map((route) => [route.id, route]));
-const viewIds = new Set(["graph", "timeline", "inspector", "lineage", "exports"]);
+const viewIds = new Set([
+  "entities",
+  "graph",
+  "timeline",
+  "inspector",
+  "lineage",
+  "exports",
+]);
 
 export function parseProductRoute(hash = "") {
   const parts = hash.replace(/^#\/?/, "").split("/").filter(Boolean);

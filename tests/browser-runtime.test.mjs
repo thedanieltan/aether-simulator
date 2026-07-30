@@ -96,6 +96,12 @@ test("studio state exposes valid failure, pause, resume, and cancellation contro
   });
   assert.equal(state.activeRoute, "explore");
   assert.equal(state.activeView, "timeline");
+  state = reduceStudioState(state, {
+    type: "entity-selected",
+    entityId: "person_synthetic",
+  });
+  assert.equal(state.selectedEntityId, "person_synthetic");
+  assert.equal(state.activeView, "entities");
   state = reduceStudioState(state, { type: "cancelled" });
   assert.equal(state.phase, "cancelled");
   assert.equal(state.activeRoute, "explore");

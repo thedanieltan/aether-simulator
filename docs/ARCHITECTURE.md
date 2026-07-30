@@ -176,7 +176,7 @@ flowchart LR
   Worker --> Builders["Public depth builders"]
   Builders --> Kernel["Shared deterministic kernel"]
   Kernel --> Artifact["Canonical world artifact"]
-  Artifact --> Views["Graph / timeline / inspector / lineage"]
+  Artifact --> Views["Entities / graph / timeline / inspector / lineage"]
   Artifact --> Lifecycle["Checkpoint / replay / branch / compare"]
   Artifact --> Downloads["Canonical local downloads"]
 ```
@@ -209,6 +209,26 @@ flowchart LR
 Project identifiers and revisions are workspace metadata. They do not enter the
 simulation kernel. Project files retain configuration and a last-run digest,
 not a generated world, and are never transmitted by the application.
+
+## Unified entity view
+
+`src/entities/unified.mjs` builds a deterministic index over existing kernel
+entities, relationships, ecosystem identity contexts, events, lineage facts,
+and provenance. It reuses every kernel identifier and does not mutate the
+world.
+
+```mermaid
+flowchart LR
+  World["Synthetic world"] --> Entities["Kernel entity collections"]
+  World --> Relations["Relationships"]
+  World --> Identity["Identity contexts"]
+  World --> Events["Events and lineage"]
+  Entities --> Index["Unified entity index"]
+  Relations --> Index
+  Identity --> Index
+  Events --> Index
+  Index --> Explorer["Citizen and entity explorer"]
+```
 
 ## Engineering quality gate
 

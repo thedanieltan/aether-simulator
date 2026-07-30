@@ -26,16 +26,18 @@ Repository recommendation: **active research**.
 - **Public browser product:** WP-AES-05 implemented, verified, reviewed, and
   integrated through the protected pull-request gate; deployment and live
   acceptance are recorded separately below.
-- **Product foundation:** WP-AES-06 implementation candidate adds public
+- **Product foundation:** WP-AES-06 is implemented, reviewed, merged through
+  all protected checks, deployed, and live accepted. It adds public
   requirements, information architecture, stable routes, product navigation,
-  and honest availability states. Integration remains subject to protected
-  continuous integration, review, deployment, and hosted acceptance.
+  and honest availability states.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
 - **Live acceptance:** the browser product’s local-only lifecycle journey
   passed against an immutable hosted deployment on 2026-07-30. Connected
   calibration remains not live accepted.
+- **WP-AES-06 live acceptance:** all six local-only browser product journeys
+  passed against `https://8d747300.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

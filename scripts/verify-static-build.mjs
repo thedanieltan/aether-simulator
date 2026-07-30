@@ -10,8 +10,8 @@ for (const name of required) {
   if (!(await stat(path)).isFile()) throw new Error(`static build missing ${name}`);
 }
 const html = await readFile(resolve(dist, "index.html"), "utf8");
-if (!html.includes("Aether Scenario Studio")) {
-  throw new Error("static build does not contain the studio title");
+if (!html.includes("Aether Enterprise Simulator")) {
+  throw new Error("static build does not contain the product title");
 }
 if (/https?:\/\//i.test(html)) {
   throw new Error("static build HTML contains an external runtime URL");

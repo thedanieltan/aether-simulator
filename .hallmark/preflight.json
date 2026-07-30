@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-30",
+  "framework": "Vite with browser-native ECMAScript modules",
+  "fontStack": [
+    "Space Grotesk",
+    "Inter",
+    "JetBrains Mono"
+  ],
+  "palette": "Cobalt OKLCH design tokens",
+  "spacing": "Four-point token scale",
+  "motion": "Short interface transitions with reduced-motion support",
+  "inspectedSources": [
+    "package.json",
+    "tokens.css",
+    "app/styles.css",
+    "index.html"
+  ]
+}

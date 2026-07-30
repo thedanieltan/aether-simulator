@@ -1,6 +1,6 @@
-# Public browser product
+# Aether Enterprise Simulator browser product
 
-The Aether Simulation Studio is a static browser application for configuring,
+The Aether Enterprise Simulator is a static browser application for orienting, configuring,
 running, inspecting, branching, comparing, and exporting deterministic
 synthetic worlds. It is a research interface over the same public kernel and
 scenario builders used by the command line.
@@ -27,6 +27,14 @@ database, or network provider is required.
 6. Download canonical scenario, event, world, checkpoint, comparison, or
    quarantined evidence artifacts.
 
+Stable static-host routes cover overview, design, run, explore, compare, export,
+and research boundaries. A product rail is available on larger screens, and a
+keyboard command navigator exposes the same destinations at every size.
+
+Project persistence, a visual model builder, semantic zoom into citizens,
+large-scale runtime controls, and advanced analysis are planned product work;
+the navigation does not present them as implemented.
+
 The pause control creates a deterministic checkpoint after the current
 synchronous run. It is not a claim of pre-emptive interruption inside a kernel
 tick. Cancel clears the active browser session and does not mutate external
@@ -39,4 +47,3 @@ fictional and synthetic. Outputs are experimental, non-authoritative, and do
 not establish real-world outcomes. The browser product does not accept uploads,
 connect to providers, or transmit simulation content. Connected calibration
 and provider performance remain unvalidated.
-

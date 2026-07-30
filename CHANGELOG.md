@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.0-alpha.1 - product foundation
+
+- Renamed the browser experience Aether Enterprise Simulator.
+- Added public product requirements, information architecture, and 1.0
+  work-package boundaries.
+- Added a stable route registry, desktop product rail, orientation index,
+  compact command navigator, and static-host-compatible deep links.
+- Distinguished available, post-run, and planned product areas without
+  overstating later capabilities.
+- Preserved the deterministic simulation lifecycle and added route, state,
+  browser, accessibility, and compact-layout acceptance coverage.
+
 ## 0.6.0 - public browser product
 
 - Added a static simulation studio for all three implemented product depths.

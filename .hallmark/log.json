@@ -5,5 +5,12 @@
     "theme": "Cobalt",
     "enrichment": "real simulation workspace",
     "brief": "Aether deterministic research scenario studio"
+  },
+  {
+    "date": "2026-07-30",
+    "macrostructure": "Index-First",
+    "theme": "Cobalt",
+    "enrichment": "none",
+    "brief": "Aether enterprise simulator product foundation"
   }
 ]

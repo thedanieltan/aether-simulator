@@ -6,6 +6,8 @@ export const initialStudioState = Object.freeze({
   error: null,
   selectedEventId: null,
   selectedEntityId: null,
+  selectedZoomEnterpriseId: null,
+  selectedZoomCitizenId: null,
 });
 
 export function reduceStudioState(state, action) {
@@ -40,6 +42,26 @@ export function reduceStudioState(state, action) {
       return { ...state, selectedEventId: action.eventId, activeView: "inspector" };
     case "entity-selected":
       return { ...state, selectedEntityId: action.entityId, activeView: "entities" };
+    case "zoom-world-selected":
+      return {
+        ...state,
+        selectedZoomEnterpriseId: null,
+        selectedZoomCitizenId: null,
+        activeView: "zoom",
+      };
+    case "zoom-enterprise-selected":
+      return {
+        ...state,
+        selectedZoomEnterpriseId: action.enterpriseId,
+        selectedZoomCitizenId: null,
+        activeView: "zoom",
+      };
+    case "zoom-citizen-selected":
+      return {
+        ...state,
+        selectedZoomCitizenId: action.citizenId,
+        activeView: "zoom",
+      };
     default:
       return state;
   }

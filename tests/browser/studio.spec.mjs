@@ -88,6 +88,28 @@ test("runtime control estimates work and cancellation replaces the in-flight wor
   );
 });
 
+test("semantic zoom reveals citizens inside a synthetic enterprise context", async ({ page }) => {
+  await page.goto("/#/run");
+  await page.locator("#depth").selectOption("economy");
+  await page.locator("#scenario").selectOption("stable-baseline");
+  await page.locator("#scale").fill("1");
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
+
+  await page.getByRole("tab", { name: "Semantic zoom" }).click();
+  await expect(page.getByRole("heading", { name: "Choose a synthetic enterprise" })).toBeVisible();
+  const enterprise = page.locator(".zoom-card[data-citizen-count='1']").first();
+  await expect(enterprise).toBeVisible();
+  await enterprise.click();
+  await expect(page.locator(".zoom-citizen").first()).toContainText("Fictional citizen");
+  await page.locator(".zoom-citizen").first().click();
+  await expect(page.locator(".zoom-context-boundary")).toContainText("Context inside");
+  await expect(page.locator(".entity-detail")).toContainText("Synthetic");
+  await expect(page.getByRole("navigation", { name: "Semantic zoom path" })).toContainText(
+    "Fictional citizen",
+  );
+});
+
 test("product shell supports stable routes and honest gated states", async ({ page }) => {
   await page.goto("/#/explore/timeline");
   await expect(page.locator("[data-route='explore']").first()).toHaveAttribute(

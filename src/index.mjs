@@ -88,6 +88,11 @@ export {
   findUnifiedEntity,
 } from "./entities/unified.mjs";
 export {
+  buildSemanticZoomModel,
+  resolveSemanticZoom,
+  SEMANTIC_ZOOM_CONTRACT,
+} from "./entities/semantic-zoom.mjs";
+export {
   BLUEPRINT_CONTRACT,
   compileScenarioBlueprint,
   createScenarioBlueprint,

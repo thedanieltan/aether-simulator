@@ -43,8 +43,8 @@ master-detail record shows synthetic status, identity, context count, referenced
 events, lineage count, counterpart labels, role, direction, status, and source
 attributes.
 
-This is the entity foundation for later semantic zoom. WP-AES-08 does not claim
-that the world graph can already zoom from economy to enterprise to citizen.
+This index is the entity foundation used by the semantic zoom projection. The
+projection adds navigation but no replacement identity or inferred context.
 
 ## Boundary
 

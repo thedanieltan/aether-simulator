@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.13.0-alpha.1 - semantic zoom
+
+- Added a deterministic world-to-enterprise-to-citizen projection over the
+  unified entity index.
+- Added a semantic zoom result view with stable breadcrumbs, organization
+  context, citizen role context, events, lineage, and synthetic boundaries.
+- Added cross-depth identity and browser acceptance proving that one citizen
+  remains one entity across declared enterprise contexts.
+
 ## 0.12.0-alpha.1 - runtime control
 
 - Added benchmark-grounded browser workload estimation and interactive safety

@@ -35,6 +35,10 @@ import {
 } from "./project-store.mjs";
 import { buildUnifiedEntityIndex } from "../src/entities/unified.mjs";
 import {
+  buildSemanticZoomModel,
+  resolveSemanticZoom,
+} from "../src/entities/semantic-zoom.mjs";
+import {
   compileScenarioBlueprint,
   createScenarioBlueprint,
   serializeScenarioBlueprint,
@@ -689,6 +693,153 @@ function renderEntities(session) {
   renderEntityList();
 }
 
+function renderSemanticZoom(session) {
+  const model = buildSemanticZoomModel(session.exported.world);
+  let selection;
+  try {
+    selection = resolveSemanticZoom(model, {
+      enterpriseId: studioState.selectedZoomEnterpriseId,
+      citizenId: studioState.selectedZoomCitizenId,
+    });
+  } catch {
+    selection = resolveSemanticZoom(model);
+  }
+  const byId = new Map(model.records.map((record) => [record.entity_id, record]));
+  const zoom = element("div", "semantic-zoom");
+  const trail = element("nav", "zoom-trail");
+  trail.setAttribute("aria-label", "Semantic zoom path");
+  const worldButton = element("button", "", "World");
+  worldButton.type = "button";
+  worldButton.addEventListener("click", () => updateState({ type: "zoom-world-selected" }));
+  trail.append(worldButton);
+  if (selection.enterprise) {
+    trail.append(element("span", "", "›"));
+    const enterpriseButton = element("button", "", selection.enterprise.label);
+    enterpriseButton.type = "button";
+    enterpriseButton.addEventListener("click", () =>
+      updateState({
+        type: "zoom-enterprise-selected",
+        enterpriseId: selection.enterprise.enterprise_id,
+      }));
+    trail.append(enterpriseButton);
+  }
+  if (selection.citizen) {
+    trail.append(
+      element("span", "", "›"),
+      element("strong", "", selection.citizen.label),
+    );
+  }
+  zoom.append(trail);
+
+  if (selection.level === "world") {
+    const heading = element("div", "zoom-heading");
+    heading.append(
+      element("p", "signal", "WORLD LEVEL"),
+      element("h3", "", "Choose a synthetic enterprise"),
+      element(
+        "p",
+        "empty-copy",
+        `${model.enterprises.length} organizations · `
+          + `${model.world.connected_citizen_count} of ${model.world.citizen_count} `
+          + "citizens have a declared enterprise context.",
+      ),
+    );
+    const grid = element("div", "zoom-grid");
+    for (const enterprise of model.enterprises) {
+      const button = element("button", "zoom-card");
+      button.type = "button";
+      button.dataset.enterpriseId = enterprise.enterprise_id;
+      button.dataset.citizenCount = String(enterprise.citizen_ids.length);
+      button.append(
+        element("span", "signal", enterprise.kind.toUpperCase()),
+        element("strong", "", enterprise.label),
+        element(
+          "span",
+          "",
+          `${enterprise.citizen_ids.length} declared citizen `
+            + `${enterprise.citizen_ids.length === 1 ? "context" : "contexts"}`,
+        ),
+      );
+      button.addEventListener("click", () =>
+        updateState({
+          type: "zoom-enterprise-selected",
+          enterpriseId: enterprise.enterprise_id,
+        }));
+      grid.append(button);
+    }
+    zoom.append(heading, grid);
+  } else if (selection.level === "enterprise") {
+    const enterprise = selection.enterprise;
+    const heading = element("div", "zoom-heading");
+    heading.append(
+      element("p", "signal", `ENTERPRISE LEVEL · ${enterprise.kind}`),
+      element("h3", "", enterprise.label),
+      element(
+        "p",
+        "empty-copy",
+        `${enterprise.citizen_ids.length} citizens · `
+          + `${enterprise.event_ids.length} referenced events · `
+          + `${enterprise.lineage_fact_ids.length} lineage facts`,
+      ),
+    );
+    const citizens = element("div", "zoom-grid");
+    if (!enterprise.citizen_ids.length) {
+      citizens.append(
+        element(
+          "p",
+          "empty-copy",
+          "No citizen has a declared relationship or identity context in this organization.",
+        ),
+      );
+    }
+    for (const citizenId of enterprise.citizen_ids) {
+      const citizen = byId.get(citizenId);
+      const relevantContexts = citizen.contexts.filter(
+        ({ counterpart_id: counterpartId }) =>
+          counterpartId === enterprise.enterprise_id);
+      const button = element("button", "zoom-card zoom-citizen");
+      button.type = "button";
+      button.dataset.citizenId = citizen.entity_id;
+      button.append(
+        element("span", "signal", "SYNTHETIC CITIZEN"),
+        element("strong", "", citizen.label),
+        element(
+          "span",
+          "",
+          relevantContexts.map(({ role, kind }) => role ?? kind).join(" · "),
+        ),
+      );
+      button.addEventListener("click", () =>
+        updateState({ type: "zoom-citizen-selected", citizenId }));
+      citizens.append(button);
+    }
+    zoom.append(heading, citizens);
+  } else {
+    const context = selection.citizen.contexts.filter(
+      ({ counterpart_id: counterpartId }) =>
+        counterpartId === selection.enterprise.enterprise_id);
+    const contextBoundary = element("section", "zoom-context-boundary");
+    contextBoundary.append(
+      element("strong", "", `Context inside ${selection.enterprise.label}`),
+      element(
+        "span",
+        "",
+        context.map(({ role, kind }) => role ?? kind).join(" · "),
+      ),
+      element(
+        "p",
+        "empty-copy",
+        "This view shows declared synthetic relationships only; it does not infer a real identity.",
+      ),
+    );
+    zoom.append(
+      contextBoundary,
+      renderEntityDetail(selection.citizen, { records: model.records }),
+    );
+  }
+  resultView.append(zoom);
+}
+
 function renderGraph(session) {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.classList.add("graph");
@@ -841,6 +992,7 @@ function render() {
   }
   const renderers = {
     entities: renderEntities,
+    zoom: renderSemanticZoom,
     graph: renderGraph,
     timeline: renderTimeline,
     inspector: renderInspector,
@@ -1072,7 +1224,7 @@ const commandItems = [
     hint: route.eyebrow,
     href: productRouteHref(route.id),
   })),
-  ...["entities", "graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
+  ...["entities", "zoom", "graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
     id: view,
     label: `${view[0].toUpperCase()}${view.slice(1)} view`,
     hint: "Result view",

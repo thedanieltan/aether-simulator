@@ -248,6 +248,27 @@ flowchart LR
 The blueprint is declarative JSON and cannot contain user code, provider
 configuration, or executable nodes.
 
+## Semantic zoom projection
+
+`src/entities/semantic-zoom.mjs` derives a deterministic navigation model from
+the unified entity index. It groups organizations at the world level and
+connects citizens only when an existing relationship or identity context names
+that organization.
+
+```mermaid
+flowchart LR
+  World["Synthetic world"] --> Index["Unified entity index"]
+  Index --> Organizations["Declared organizations"]
+  Index --> Citizens["Stable citizen records"]
+  Organizations --> Context{"Declared counterpart context"}
+  Citizens --> Context
+  Context --> Path["World → enterprise → citizen path"]
+```
+
+The projection never clones a citizen, infers a real identity, or invents a
+membership. A citizen can appear in several enterprise paths while retaining
+one kernel identifier and one unified record.
+
 ## Scenario laboratory
 
 ```mermaid

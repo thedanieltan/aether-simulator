@@ -137,6 +137,66 @@
               <p>Choose a product depth, then refine the deterministic inputs in the run workspace.</p>
             </div>
             <div id="scenario-gallery" class="gallery-grid" role="list"></div>
+            <section class="builder-shell" aria-labelledby="builder-title">
+              <div class="builder-heading">
+                <div>
+                  <p class="signal">VISUAL SCENARIO PIPELINE</p>
+                  <h3 id="builder-title">Build a supported world premise</h3>
+                </div>
+                <p>
+                  Every node compiles to the same validated run configuration.
+                  No scripts, hidden providers, or arbitrary graph shapes.
+                </p>
+              </div>
+              <div class="builder-grid">
+                <div>
+                  <ol id="blueprint-graph" class="blueprint-graph" aria-label="Scenario blueprint nodes"></ol>
+                  <p id="blueprint-status" class="project-status" role="status" aria-live="polite">
+                    Blueprint ready.
+                  </p>
+                </div>
+                <form id="blueprint-form" class="blueprint-inspector">
+                  <div class="project-editor-heading">
+                    <h4>Node configuration</h4>
+                    <span id="blueprint-contract">aether-scenario-blueprint.v1</span>
+                  </div>
+                  <label>
+                    Product depth
+                    <select id="blueprint-depth">
+                      <option value="enterprise">Enterprise</option>
+                      <option value="ecosystem">Ecosystem</option>
+                      <option value="economy">Economy</option>
+                    </select>
+                  </label>
+                  <label>
+                    Committed scenario
+                    <select id="blueprint-scenario"></select>
+                  </label>
+                  <div class="field-pair">
+                    <label>
+                      Population scale
+                      <input id="blueprint-scale" type="number" min="1" max="10000" value="1" required />
+                    </label>
+                    <label>
+                      Duration
+                      <input id="blueprint-duration" type="number" min="1" max="1000000" value="80" required />
+                    </label>
+                  </div>
+                  <label>
+                    Intervention value
+                    <input id="blueprint-intervention" type="number" value="12" required />
+                  </label>
+                  <label>
+                    Root seed
+                    <input id="blueprint-seed" maxlength="160" value="studio-seed-1" required />
+                  </label>
+                  <div class="project-actions">
+                    <button class="primary" id="blueprint-apply" type="submit">Apply to run</button>
+                    <button id="blueprint-export" type="button">Export blueprint</button>
+                  </div>
+                </form>
+              </div>
+            </section>
           </section>
 
           <section id="studio" class="studio-shell" aria-labelledby="studio-title" tabindex="-1">

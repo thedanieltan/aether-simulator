@@ -87,3 +87,10 @@ export {
   ENTITY_RECORD_CONTRACT,
   findUnifiedEntity,
 } from "./entities/unified.mjs";
+export {
+  BLUEPRINT_CONTRACT,
+  compileScenarioBlueprint,
+  createScenarioBlueprint,
+  serializeScenarioBlueprint,
+  validateScenarioBlueprint,
+} from "./scenarios/blueprint.mjs";

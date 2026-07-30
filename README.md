@@ -48,6 +48,8 @@ runs the same kernel locally in a Web Worker.
   digest-verified recovery, and validated project-file import and export.
 - A unified entity explorer for fictional citizens, households, organizations,
   institutions, systems, and assets, including role and relationship contexts.
+- A constrained visual scenario pipeline that validates and compiles premise,
+  population, time, intervention, and seed into the existing runtime.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -136,6 +138,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [information architecture](docs/INFORMATION_ARCHITECTURE.md),
 [local project workspace](docs/LOCAL_PROJECT_WORKSPACE.md),
 [unified entity model](docs/UNIFIED_ENTITY_MODEL.md),
+[visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

@@ -267,6 +267,75 @@ kbd { border: var(--rule-hair) solid var(--color-rule); border-radius: var(--rad
 .scenario-card strong { font: 600 var(--text-lg)/1.15 var(--font-display); letter-spacing: -0.025em; }
 .scenario-card span { color: var(--color-muted); }
 .scenario-card output { color: var(--color-accent); font-family: var(--font-mono); }
+.builder-shell {
+  display: grid;
+  gap: var(--space-xl);
+  padding-top: var(--space-3xl);
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+.builder-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+.builder-heading > p { max-width: 60ch; }
+.builder-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+.blueprint-graph {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.blueprint-node { position: relative; min-width: 0; }
+.blueprint-node:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: var(--z-base);
+  top: 1.5rem;
+  right: calc(-1 * var(--space-sm));
+  width: var(--space-lg);
+  border-top: var(--rule-hair) solid var(--color-accent);
+}
+.blueprint-node button {
+  position: relative;
+  z-index: var(--z-raised);
+  width: calc(100% - var(--space-xs));
+  min-height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-paper);
+  text-align: left;
+}
+.blueprint-node button:hover { background: var(--color-paper-2); }
+.blueprint-node button > span:last-child {
+  width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.blueprint-inspector {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
+}
+.blueprint-inspector > .project-editor-heading,
+.blueprint-inspector > .field-pair,
+.blueprint-inspector > .project-actions { grid-column: 1 / -1; }
+.blueprint-inspector > .field-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .studio-shell {
   background: var(--color-graphite);
   color: var(--color-paper-3);
@@ -443,6 +512,12 @@ label { display: grid; gap: var(--space-xs); font-size: var(--text-sm); color: v
   .result-view { min-height: 31rem; }
   .entity-explorer-body { grid-template-columns: minmax(12rem, 0.42fr) minmax(0, 1fr); }
   .entity-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .builder-grid { grid-template-columns: minmax(0, 1fr); }
+  .blueprint-graph { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
+  .blueprint-node button { width: 100%; min-height: 4.5rem; display: grid; grid-template-columns: 2.5rem minmax(8rem, 0.5fr) minmax(0, 1fr); align-items: center; }
+  .blueprint-node:not(:last-child)::after { top: auto; right: auto; bottom: calc(-1 * var(--space-xs)); left: var(--space-lg); width: 0; height: var(--space-xs); border-top: 0; border-left: var(--rule-hair) solid var(--color-accent); }
+  .blueprint-inspector { grid-template-columns: minmax(0, 1fr); }
+  .blueprint-inspector > * { grid-column: 1; }
 }
 @media (max-width: 40rem) {
   .product-shell { display: block; }
@@ -476,6 +551,8 @@ label { display: grid; gap: var(--space-xs); font-size: var(--text-sm); color: v
   .entity-boundary { justify-self: start; }
   .entity-context { grid-template-columns: minmax(0, 1fr); }
   .entity-context code { grid-column: 1; }
+  .blueprint-node button { grid-template-columns: 2rem minmax(0, 1fr); }
+  .blueprint-node button > span:last-child { grid-column: 2; }
 }
 .run-controls button, .view-tabs button, .command-pill, .rail-link, #command-results button { white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {

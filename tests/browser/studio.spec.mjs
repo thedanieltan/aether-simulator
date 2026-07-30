@@ -138,6 +138,42 @@ test("local project workspace survives reload and round-trips a project file", a
   );
 });
 
+test("visual scenario blueprint validates, exports, and compiles to the run workspace", async ({ page }) => {
+  await page.goto("/#/design");
+  await page.locator("#blueprint-depth").selectOption("economy");
+  await page.locator("#blueprint-scenario").selectOption("stable-baseline");
+  await page.locator("#blueprint-scale").fill("2");
+  await page.locator("#blueprint-duration").fill("120");
+  await page.locator("#blueprint-intervention").fill("20");
+  await page.locator("#blueprint-seed").fill("visual-blueprint-seed");
+  await expect(page.locator("#blueprint-status")).toContainText("valid");
+  await expect(page.locator(".blueprint-node")).toHaveCount(5);
+
+  await page.locator("[data-blueprint-node='population']").click();
+  await expect(page.locator("#blueprint-scale")).toBeFocused();
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Export blueprint" }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe(
+    "economy-stable-baseline.blueprint.json",
+  );
+
+  await page.locator("#blueprint-scale").fill("0");
+  await expect(page.getByRole("button", { name: "Apply to run" })).toBeDisabled();
+  await expect(page.locator("#blueprint-status")).toContainText("scale");
+  await page.locator("#blueprint-scale").fill("2");
+  await page.getByRole("button", { name: "Apply to run" }).click();
+
+  await expect(page).toHaveURL(/#\/run$/);
+  await expect(page.locator("#depth")).toHaveValue("economy");
+  await expect(page.locator("#scenario")).toHaveValue("stable-baseline");
+  await expect(page.locator("#scale")).toHaveValue("2");
+  await expect(page.locator("#duration")).toHaveValue("120");
+  await expect(page.locator("#intervention")).toHaveValue("20");
+  await expect(page.locator("#seed")).toHaveValue("visual-blueprint-seed");
+});
+
 for (const width of [320, 375, 414, 768]) {
   test(`studio has no horizontal overflow at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });

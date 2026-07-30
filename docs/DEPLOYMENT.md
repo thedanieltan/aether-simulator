@@ -25,6 +25,9 @@ An authenticated maintainer can deploy the accepted build with:
 npm run deploy:pages
 ```
 
+Deployment requires Node.js 22 or newer because the exact deployment CLI is
+newer than the simulator’s minimum Node.js runtime.
+
 The command does not belong in pull-request CI and no deployment credential is
 stored in the repository. A deployment is not live accepted until its exact
 revision has completed a representative browser workflow: load, run, inspect,

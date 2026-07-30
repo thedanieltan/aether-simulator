@@ -59,7 +59,7 @@
     "verify:public": "node scripts/verify-public-tree.mjs",
     "scan:sensitive": "node scripts/scan-sensitive-content.mjs",
     "verify:studio": "npm run build:studio && node scripts/verify-static-build.mjs",
-    "deploy:pages": "wrangler pages deploy dist --project-name aether-simulator",
+    "deploy:pages": "npx --yes wrangler@4.115.0 pages deploy dist --project-name aether-simulator",
     "verify": "npm run build && npm test && npm run validate:schemas && npm run validate:fixtures && npm run verify:studio && npm run verify:workflows && npm run verify:public && npm run scan:sensitive",
     "verify:ci": "npm run verify && npm run verify:fixtures:drift && npm run verify:validators:drift && npm run verify:package && npm audit --omit=dev --audit-level=high"
   },
@@ -80,7 +80,7 @@
     "@fontsource/space-grotesk": "5.3.0",
     "@playwright/test": "1.62.0",
     "axe-core": "4.12.1",
-    "vite": "8.1.5",
-    "wrangler": "4.115.0"
+    "esbuild": "0.28.1",
+    "vite": "8.1.5"
   }
 }

@@ -27,9 +27,9 @@ command after any update.
 | Package | Pinned version | Purpose | Licence |
 |---|---:|---|---|
 | Vite | 8.1.5 | Static browser build | MIT |
+| esbuild | 0.28.1 | Audited optional Vite transform peer pinned above the affected release range | MIT |
 | Playwright Test | 1.62.0 | Chromium journey and responsive acceptance | Apache-2.0 |
 | Axe Core | 4.12.1 | Automated WCAG A/AA analysis | MPL-2.0 |
-| Wrangler | 4.115.0 | Optional static Pages deployment | MIT OR Apache-2.0 |
 | Fontsource Inter | 5.3.0 | Local body-font assets | OFL-1.1 |
 | Fontsource Space Grotesk | 5.3.0 | Local display-font assets | OFL-1.1 |
 | Fontsource JetBrains Mono | 5.3.0 | Local data-font assets | OFL-1.1 |
@@ -41,4 +41,6 @@ distribution preserves package metadata and the lockfile; redistribution of
 dependency or font source must preserve applicable notices.
 
 The kernel has no network, database, provider SDK, telemetry, container, or
-credential dependency. The deployment CLI is not imported by runtime code.
+credential dependency. The optional deployment command invokes an exact
+Wrangler 4.115.0 release through `npx`; it is not installed, bundled, imported,
+or needed for build and test. Deployment requires Node.js 22 or newer.

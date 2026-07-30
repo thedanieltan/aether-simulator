@@ -13,7 +13,7 @@ proprietary notice, incompatible file-level licence, or proprietary source
 material identified by review.
 
 Direct runtime dependencies Ajv 8.20.0 and @noble/hashes 2.2.0 use MIT. Build
-and test tooling uses MIT, Apache-2.0, MPL-2.0, or dual MIT/Apache-2.0 terms.
+and test tooling uses MIT, Apache-2.0, or MPL-2.0 terms.
 Locally bundled Inter, Space Grotesk, and JetBrains Mono font assets use
 OFL-1.1. These terms are compatible with this repository’s Apache-2.0 source
 licence when their file-scoped and notice requirements are preserved. Axe Core

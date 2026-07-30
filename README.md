@@ -14,9 +14,9 @@ authority.
    employment, consumption, supply chains, finance, taxation, regulation,
    business formation, failure, and shocks.
 
-This repository implements the deterministic world kernel and a bounded
-enterprise-depth research scenario. Enterprise depth remains partial.
-Ecosystem and economy depth are not implemented.
+This repository implements the deterministic world kernel and configurable
+Enterprise Depth research scenarios. Ecosystem and economy depth are not
+implemented.
 
 ## What is implemented
 
@@ -26,15 +26,20 @@ Ecosystem and economy depth are not implemented.
   and namespaced random substreams.
 - Deterministic module lifecycle hooks, append-only events, projections,
   replay, checkpoint/resume, branching, and comparison.
-- A credential-free synthetic scenario with fictional entities, a cross-system
-  workflow, balances, metrics, and PII-lineage observations.
+- Five enterprise archetypes: professional services, SaaS, retail, logistics,
+  and manufacturing.
+- Stateful customer, employee, procurement, fulfilment, finance, data-lineage,
+  incident, remediation, and intervention journeys.
+- Enforced accounting, inventory, capacity, payroll, invoice, workflow, and
+  lineage invariants.
 - Deterministic migration from the public `aether-world.v0.1` fixture.
 - An optional evidence bridge that converts synthetic lineage observations into
   quarantined, facts-only, non-authoritative envelopes.
 
-Richer enterprise operations, ecosystem interactions, economy behavior, local
-OSS realism, and connected calibration remain future research. Connected
-provider performance is not universally validated.
+Cross-enterprise ecosystems, economy behavior, local OSS realism, and connected
+calibration remain future research. External customer and supplier entries in
+Enterprise Depth are boundary contexts, not independently simulated
+organizations. Connected-provider performance is not universally validated.
 
 ## Five-minute demonstration
 
@@ -44,7 +49,8 @@ required.
 ```bash
 npm ci
 npm run demo
-npm run verify
+npm run demo:enterprise
+npm run verify:ci
 ```
 
 The demonstration writes `fixtures/kernel-baseline.export.json` and
@@ -57,6 +63,7 @@ The CLI can also run individual lifecycle operations:
 node src/cli.mjs validate scenarios/kernel-baseline.json
 node src/cli.mjs run scenarios/kernel-baseline.json
 node src/cli.mjs checkpoint scenarios/kernel-baseline.json --tick 2
+node src/cli.mjs enterprise-run scenarios/enterprise/retail-order-to-cash.json
 ```
 
 Run `node src/cli.mjs help` for replay, branch, compare, and migrate examples.
@@ -65,8 +72,10 @@ Run `node src/cli.mjs help` for replay, branch, compare, and migrate examples.
 
 ```mermaid
 flowchart LR
-  Scenario["Validated scenario + root seed"] --> Kernel["Deterministic world kernel"]
-  Module["Registered research modules"] --> Kernel
+  Config["Enterprise config + archetype"] --> Builder["Scenario builder"]
+  Builder --> Scenario["Validated scenario + root seed"]
+  Scenario --> Kernel["Deterministic world kernel"]
+  Module["Enterprise operations module"] --> Kernel
   Kernel --> Events["Canonical append-only event log"]
   Events --> Projection["Projected world state"]
   Projection --> Export["Versioned canonical export"]
@@ -81,12 +90,12 @@ flowchart LR
 The committed scenarios and fixtures contain only fictional identifiers and
 synthetic records. No real personal data is included or accepted by the
 demonstration. Synthetic output does not establish real-world compliance.
-Provider-connected execution is not included. The baseline module demonstrates
-kernel mechanics; it is not a calibrated digital twin or a complete enterprise
-model.
+Provider-connected execution is not included. Enterprise models are explicit,
+simplified research assumptions rather than calibrated digital twins.
 
 Repository status: **active research**.
 
 See [architecture](docs/ARCHITECTURE.md),
+[CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.0 - Enterprise Depth research preview
+
+- Added configurable professional-services, SaaS, retail, logistics, and
+  manufacturing archetypes with materially distinct structures and economics.
+- Added nine stateful customer, employee, procurement, fulfilment, incident,
+  remediation, and intervention scenarios.
+- Added deterministic enterprise projections for workflows, double-entry
+  journals, invoices, payments, inventory, capacity, employment, data
+  lifecycle, incidents, outcomes, and causal chains.
+- Added formal enterprise configuration validation, CLI commands, canonical
+  fixtures, invariant tests, scale benchmarks, ADR, and acceptance evidence.
+- Extended run comparison with deterministic module-state differences.
+- Expanded CI into a read-only, SHA-pinned quality gate with minimum/current
+  Node.js coverage, Windows portability, deterministic fixture-drift checks,
+  package-boundary validation, dependency audit, and weekly dependency update
+  proposals.
+
 ## 0.2.0 - world-kernel research preview
 
 - Added versioned scenario, event, world, checkpoint, and export contracts.

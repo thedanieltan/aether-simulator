@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-manufacturing-employee-lifecycle",
+  "title": "Manufacturing employee lifecycle",
+  "description": "A fictional worker progresses from applicant through payroll, transfer, promotion, and departure.",
+  "archetype": "manufacturing",
+  "journey": "employee-lifecycle",
+  "seed": 52005,
+  "scale": 3,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "complete",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "Employment events are synthetic process states and not employment guidance."
+  ]
+}

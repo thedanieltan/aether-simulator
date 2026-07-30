@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/enterprise/aether-enterprise-config.v1.schema.json",
+  "title": "Aether configurable synthetic enterprise scenario",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "scenario_id",
+    "title",
+    "archetype",
+    "journey",
+    "seed",
+    "scale",
+    "options",
+    "limitations"
+  ],
+  "properties": {
+    "contract_version": { "const": "aether-enterprise-config.v1" },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "archetype": {
+      "enum": [
+        "professional-services",
+        "saas",
+        "retail",
+        "logistics",
+        "manufacturing"
+      ]
+    },
+    "journey": {
+      "enum": [
+        "customer-engagement",
+        "saas-lifecycle",
+        "order-to-cash",
+        "delivery-exception",
+        "employee-lifecycle",
+        "procurement-to-payment",
+        "outage-remediation",
+        "intervention-baseline"
+      ]
+    },
+    "seed": {
+      "oneOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "scale": { "type": "integer", "minimum": 1 },
+    "options": {
+      "type": "object",
+      "required": ["allow_backorders", "outcome"],
+      "properties": {
+        "allow_backorders": { "type": "boolean" },
+        "outcome": {
+          "enum": [
+            "complete",
+            "renew",
+            "churn",
+            "refund",
+            "failed-then-remediated"
+          ]
+        },
+        "failure_mode": {
+          "oneOf": [
+            {
+              "enum": [
+                "none",
+                "human-error",
+                "delayed-work",
+                "failed-approval",
+                "duplicate-entry",
+                "incorrect-data",
+                "misconfiguration",
+                "outage",
+                "control-failure"
+              ]
+            },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

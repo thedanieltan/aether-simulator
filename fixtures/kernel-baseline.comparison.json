@@ -42,6 +42,7 @@
   "contract_version": "aether-comparison.v1",
   "left_event_count": 4,
   "left_export_id": "export_23b7176755034c6a39321cdf1414dab8",
+  "module_state_differences": [],
   "right_event_count": 5,
   "right_export_id": "export_b687fe52e442f32d82a57b27e32314c4",
   "semantically_equal": false,

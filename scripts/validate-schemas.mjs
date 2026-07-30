@@ -3,7 +3,11 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   assertContract,
+  assertEnterpriseConfig,
   baselineOperationsModule,
+  buildEnterpriseScenario,
+  enterpriseConfigSchema,
+  enterpriseOperationsModule,
   registeredSchemas,
   SimulationKernel,
 } from "../src/index.mjs";
@@ -35,6 +39,41 @@ assertContract("export", exported);
 assertContract("checkpoint", checkpoint);
 for (const event of exported.world.event_log) assertContract("event", event);
 
+const enterpriseSchemaPath = resolve(
+  root,
+  "schemas",
+  "enterprise",
+  "aether-enterprise-config.v1.schema.json",
+);
+const committedEnterpriseSchema = JSON.parse(
+  await readFile(enterpriseSchemaPath, "utf8"),
+);
+if (
+  JSON.stringify(committedEnterpriseSchema) !==
+  JSON.stringify(enterpriseConfigSchema())
+) {
+  throw new Error("registered enterprise schema differs from the committed schema");
+}
+const enterpriseConfig = JSON.parse(
+  await readFile(
+    resolve(
+      root,
+      "scenarios",
+      "enterprise",
+      "professional-services-customer-engagement.json",
+    ),
+    "utf8",
+  ),
+);
+assertEnterpriseConfig(enterpriseConfig);
+const enterpriseScenario = buildEnterpriseScenario(enterpriseConfig);
+const enterpriseKernel = new SimulationKernel({
+  modules: [enterpriseOperationsModule],
+});
+enterpriseKernel.validateScenario(enterpriseScenario);
+const enterpriseExport = enterpriseKernel.run(enterpriseScenario);
+assertContract("export", enterpriseExport);
+
 process.stdout.write(
-  `Validated ${schemaNames.length} schemas and representative contracts.\n`,
+  `Validated ${schemaNames.length + 1} schemas and representative contracts.\n`,
 );

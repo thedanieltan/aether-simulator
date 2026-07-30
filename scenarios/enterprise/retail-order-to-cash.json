@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-retail-order-to-cash",
+  "title": "Retail order to cash",
+  "description": "A fictional order consumes inventory and fulfilment capacity before invoicing and payment.",
+  "archetype": "retail",
+  "journey": "order-to-cash",
+  "seed": 52003,
+  "scale": 2,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "complete",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "Tax, discounts, and payment-provider behavior are outside this scenario."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "contract_version": "aether-enterprise-config.v1",
+  "scenario_id": "enterprise-manufacturing-procurement",
+  "title": "Manufacturing procurement to payment",
+  "description": "A fictional supplier context is onboarded before ordering, receipt, invoice matching, and payment.",
+  "archetype": "manufacturing",
+  "journey": "procurement-to-payment",
+  "seed": 52006,
+  "scale": 2,
+  "options": {
+    "allow_backorders": false,
+    "outcome": "complete",
+    "failure_mode": "none"
+  },
+  "limitations": [
+    "The supplier is a boundary context rather than an independently simulated enterprise."
+  ]
+}

@@ -11,6 +11,7 @@ import {
   canonicalDownload,
   evidenceEnvelope,
   scenarioCatalog,
+  textDownload,
   workerRequest,
 } from "./adapter.mjs";
 import {
@@ -24,6 +25,14 @@ import {
   productRoutes,
   routeForView,
 } from "./routes.mjs";
+import {
+  ACTIVE_PROJECT_KEY,
+  createProjectDocument,
+  parseProjectFile,
+  ProjectRepository,
+  reviseProject,
+  serializeProject,
+} from "./project-store.mjs";
 
 const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
 const form = document.querySelector("#scenario-form");
@@ -38,13 +47,192 @@ const commandButtons = [...document.querySelectorAll("[data-command]")];
 const productNav = document.querySelector("#product-nav");
 const productIndex = document.querySelector("#product-index");
 const routeContext = document.querySelector("#route-context");
+const projectContext = document.querySelector("#project-context");
+const projectForm = document.querySelector("#project-form");
+const projectName = document.querySelector("#project-name");
+const projectDescription = document.querySelector("#project-description");
+const projectRevision = document.querySelector("#project-revision");
+const projectStatus = document.querySelector("#project-status");
+const projectList = document.querySelector("#project-list");
+const projectCount = document.querySelector("#project-count");
+const projectSave = document.querySelector("#project-save");
+const projectExport = document.querySelector("#project-export");
+const projectImport = document.querySelector("#project-import");
 let studioState = { ...initialStudioState };
+let projectRepository = null;
+let localProjects = [];
+let activeProject = null;
 
 function element(name, className, text) {
   const node = document.createElement(name);
   if (className) node.className = className;
   if (text !== undefined) node.textContent = text;
   return node;
+}
+
+function setProjectStatus(message, state = "default") {
+  projectStatus.textContent = message;
+  projectStatus.dataset.state = state;
+}
+
+function rememberActiveProject(projectId) {
+  try {
+    if (projectId) localStorage.setItem(ACTIVE_PROJECT_KEY, projectId);
+    else localStorage.removeItem(ACTIVE_PROJECT_KEY);
+  } catch {
+    setProjectStatus("The active project cannot be remembered in this browser.", "error");
+  }
+}
+
+function recalledActiveProject() {
+  try {
+    return localStorage.getItem(ACTIVE_PROJECT_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function applyProjectConfig(config) {
+  depthInput.value = config.depth;
+  populateScenarios();
+  if ([...scenarioInput.options].some(({ value }) => value === config.scenario)) {
+    scenarioInput.value = config.scenario;
+  } else {
+    throw new TypeError("the project references a scenario unavailable in this version");
+  }
+  form.querySelector("#seed").value = config.seed;
+  form.querySelector("#scale").value = String(config.scale);
+  form.querySelector("#duration").value = String(config.duration);
+  form.querySelector("#intervention").value = String(config.intervention);
+}
+
+function renderProjectEditor() {
+  const title = document.querySelector("#project-editor-title");
+  if (activeProject) {
+    title.textContent = "Project details";
+    projectName.value = activeProject.name;
+    projectDescription.value = activeProject.description;
+    projectRevision.textContent = `Revision ${activeProject.revision}`;
+    projectSave.textContent = "Save details";
+    projectExport.disabled = false;
+    projectContext.textContent = activeProject.name;
+  } else {
+    title.textContent = "Create a project";
+    projectName.value = "";
+    projectDescription.value = "";
+    projectRevision.textContent = "Not saved";
+    projectSave.textContent = "Create project";
+    projectExport.disabled = true;
+    projectContext.textContent = "No project open";
+  }
+}
+
+function renderProjectList() {
+  projectList.replaceChildren();
+  projectCount.textContent = `${localProjects.length} ${localProjects.length === 1 ? "project" : "projects"}`;
+  if (!localProjects.length) {
+    projectList.append(
+      element("p", "empty-copy", "No projects are stored in this browser."),
+    );
+    return;
+  }
+  for (const project of localProjects) {
+    const row = element("article", "project-row");
+    if (project.project_id === activeProject?.project_id) {
+      row.setAttribute("aria-current", "true");
+    }
+    const copy = element("div", "project-row-copy");
+    copy.append(
+      element("strong", "", project.name),
+      element(
+        "span",
+        "",
+        `${project.config.depth} · revision ${project.revision}`
+          + (project.last_run ? ` · ${project.last_run.digest.slice(0, 8)}` : ""),
+      ),
+    );
+    const actions = element("div", "project-row-actions");
+    const open = element("button", "", "Open");
+    open.type = "button";
+    open.addEventListener("click", () => openProject(project));
+    const remove = element("button", "", "Delete");
+    remove.type = "button";
+    remove.addEventListener("click", () => deleteProject(project));
+    actions.append(open, remove);
+    row.append(copy, actions);
+    projectList.append(row);
+  }
+}
+
+async function refreshProjects() {
+  localProjects = await projectRepository.list();
+  if (activeProject) {
+    activeProject = localProjects.find(
+      ({ project_id: projectId }) => projectId === activeProject.project_id,
+    ) ?? null;
+  }
+  renderProjectEditor();
+  renderProjectList();
+}
+
+async function storeProject(project, message) {
+  activeProject = await projectRepository.put(project);
+  rememberActiveProject(activeProject.project_id);
+  await refreshProjects();
+  setProjectStatus(message, "success");
+  return activeProject;
+}
+
+async function openProject(project, { restore = true } = {}) {
+  try {
+    activeProject = project;
+    rememberActiveProject(project.project_id);
+    applyProjectConfig(project.config);
+    renderProjectEditor();
+    renderProjectList();
+    setProjectStatus(`Opened ${project.name}.`, "success");
+    if (restore && project.last_run) {
+      setProjectStatus("Verifying the stored run against this simulator version.");
+      await execute("restore", { expectedDigest: project.last_run.digest });
+      if (studioState.phase !== "error") {
+        setProjectStatus("Project and last run restored locally.", "success");
+      }
+    }
+  } catch (error) {
+    setProjectStatus(error.message, "error");
+  }
+}
+
+async function deleteProject(project) {
+  if (!confirm(`Delete the local project “${project.name}”? This cannot be undone.`)) {
+    return;
+  }
+  try {
+    await projectRepository.delete(project.project_id);
+    if (activeProject?.project_id === project.project_id) {
+      activeProject = null;
+      rememberActiveProject(null);
+      await workerRequest(worker, "cancel");
+      updateState({ type: "cancelled" });
+    }
+    await refreshProjects();
+    setProjectStatus(`Deleted ${project.name} from this browser.`, "success");
+  } catch (error) {
+    setProjectStatus(error.message, "error");
+  }
+}
+
+async function saveActiveConfiguration() {
+  if (!activeProject || !projectRepository) return;
+  try {
+    const revised = reviseProject(activeProject, {
+      config: payload(),
+      last_run: null,
+    });
+    await storeProject(revised, "Project configuration saved locally.");
+  } catch (error) {
+    setProjectStatus(error.message, "error");
+  }
 }
 
 function updateState(action) {
@@ -339,9 +527,10 @@ function payload() {
   };
 }
 
-async function execute(command) {
+async function execute(command, overrides = {}) {
   const activePhases = {
     run: "running",
+    restore: "restoring",
     replay: "replaying",
     branch: "branching",
     compare: "comparing",
@@ -352,7 +541,8 @@ async function execute(command) {
   };
   updateState({ type: "command-started", command: activePhases[command] });
   try {
-    const session = await workerRequest(worker, command, payload());
+    const requestPayload = { ...payload(), ...overrides };
+    const session = await workerRequest(worker, command, requestPayload);
     if (command === "cancel") updateState({ type: "cancelled" });
     else {
       updateState({
@@ -360,6 +550,17 @@ async function execute(command) {
         phase: command === "pause" ? "paused" : "complete",
         session,
       });
+      if (command === "run" && activeProject && projectRepository) {
+        const completedRevision = activeProject.revision + 1;
+        const revised = reviseProject(activeProject, {
+          config: requestPayload,
+          last_run: {
+            digest: session.exported.digest,
+            completed_revision: completedRevision,
+          },
+        });
+        await storeProject(revised, "Run completed and project saved locally.");
+      }
     }
   } catch (error) {
     updateState({ type: "command-failed", error: error.message });
@@ -464,6 +665,96 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+projectForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!projectRepository) return;
+  try {
+    const details = {
+      name: projectName.value,
+      description: projectDescription.value,
+      config: payload(),
+    };
+    const project = activeProject
+      ? reviseProject(activeProject, details)
+      : createProjectDocument(details);
+    await storeProject(
+      project,
+      activeProject ? "Project details saved locally." : "Project created locally.",
+    );
+  } catch (error) {
+    setProjectStatus(error.message, "error");
+  }
+});
+
+document.querySelector("#project-new").addEventListener("click", async () => {
+  activeProject = null;
+  rememberActiveProject(null);
+  renderProjectEditor();
+  renderProjectList();
+  await workerRequest(worker, "cancel");
+  updateState({ type: "cancelled" });
+  projectName.focus();
+  setProjectStatus("Ready to create a new local project.");
+});
+
+projectExport.addEventListener("click", () => {
+  if (!activeProject) return;
+  const filename = activeProject.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "aether-project";
+  textDownload(
+    `${filename}.aether-project.json`,
+    serializeProject(activeProject),
+  );
+  setProjectStatus("Canonical project file prepared for download.", "success");
+});
+
+projectImport.addEventListener("change", async () => {
+  const [file] = projectImport.files;
+  if (!file || !projectRepository) return;
+  try {
+    const imported = parseProjectFile(await file.text());
+    const existing = await projectRepository.get(imported.project_id);
+    if (
+      existing
+      && !confirm(`Replace the local project “${existing.name}” with this imported revision?`)
+    ) {
+      setProjectStatus("Import cancelled.");
+      return;
+    }
+    const stored = await storeProject(imported, "Project imported into this browser.");
+    await openProject(stored);
+  } catch (error) {
+    setProjectStatus(error.message, "error");
+  } finally {
+    projectImport.value = "";
+  }
+});
+
+form.addEventListener("change", () => {
+  void saveActiveConfiguration();
+});
+
+async function initializeProjects() {
+  try {
+    projectRepository = new ProjectRepository();
+    await refreshProjects();
+    const activeId = recalledActiveProject();
+    const recalled = activeId
+      ? localProjects.find(({ project_id: projectId }) => projectId === activeId)
+      : null;
+    if (recalled) await openProject(recalled);
+    else setProjectStatus("Local workspace ready.");
+  } catch (error) {
+    projectRepository = null;
+    projectSave.disabled = true;
+    projectImport.disabled = true;
+    document.querySelector("#project-new").disabled = true;
+    setProjectStatus(`Local project storage unavailable: ${error.message}`, "error");
+  }
+}
+
 populateScenarios();
 populateGallery();
 populateProductNavigation();
@@ -472,3 +763,4 @@ if (!globalThis.location.hash) {
   globalThis.history.replaceState(null, "", productRouteHref("overview"));
 }
 applyProductRoute();
+void initializeProjects();

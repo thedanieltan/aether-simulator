@@ -79,6 +79,54 @@ test("product shell supports stable routes and honest gated states", async ({ pa
   await expect(page.getByRole("heading", { name: "Research boundaries stay visible" })).toBeVisible();
 });
 
+test("local project workspace survives reload and round-trips a project file", async ({ page }) => {
+  await page.goto("/#/projects");
+  await expect(page.locator("#project-status")).toHaveText("Local workspace ready.");
+  await page.getByLabel("Project name").fill("Fictional retailer study");
+  await page.getByLabel("Description").fill("Local deterministic project.");
+  await page.getByRole("button", { name: "Create project" }).click();
+  await expect(page.locator("#project-status")).toContainText("Project created");
+
+  await page.locator("#seed").fill("persisted-project-seed");
+  await page.locator("#seed").blur();
+  await expect(page.locator("#project-status")).toContainText("configuration saved");
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
+  const digest = await page.locator(".metric").filter({ hasText: "Digest" }).locator("strong").textContent();
+  await expect(page.locator("#project-status")).toContainText("project saved");
+
+  await page.reload();
+  await expect(page.locator("#project-status")).toContainText(
+    "Project and last run restored locally",
+    { timeout: 20_000 },
+  );
+  await expect(page.locator(".metric").filter({ hasText: "Digest" }).locator("strong")).toHaveText(digest);
+
+  await page.getByLabel("Project name").fill("Renamed fictional retailer");
+  await page.getByRole("button", { name: "Save details" }).click();
+  await expect(page.locator("#project-context")).toHaveText("Renamed fictional retailer");
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Export project" }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe(
+    "renamed-fictional-retailer.aether-project.json",
+  );
+  const projectPath = await download.path();
+
+  page.once("dialog", (dialog) => dialog.accept());
+  await page.getByRole("button", { name: "Delete" }).click();
+  await expect(page.locator("#project-count")).toHaveText("0 projects");
+
+  await page.locator("#project-import").setInputFiles(projectPath);
+  await expect(page.locator("#project-count")).toHaveText("1 project");
+  await expect(page.locator("#project-context")).toHaveText("Renamed fictional retailer");
+  await expect(page.locator("#project-status")).toContainText(
+    "Project and last run restored locally",
+    { timeout: 20_000 },
+  );
+});
+
 for (const width of [320, 375, 414, 768]) {
   test(`studio has no horizontal overflow at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });

@@ -43,7 +43,19 @@ export function reduceStudioState(state, action) {
 }
 
 export function commandEnabled(state, command) {
-  if (command === "run") return !["running", "replaying", "branching"].includes(state.phase);
+  if (command === "run") {
+    return ![
+      "running",
+      "restoring",
+      "replaying",
+      "branching",
+      "comparing",
+      "checkpointing",
+      "pausing",
+      "resuming",
+      "cancelling",
+    ].includes(state.phase);
+  }
   if (command === "cancel") return state.phase !== "idle";
   if (!state.session) return false;
   if (command === "resume") return state.phase === "paused" || Boolean(state.session.checkpoint);

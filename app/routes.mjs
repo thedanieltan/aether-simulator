@@ -7,6 +7,13 @@ export const productRoutes = Object.freeze([
     availability: "available",
   },
   {
+    id: "projects",
+    label: "Local projects",
+    eyebrow: "Organize",
+    target: "projects",
+    availability: "available",
+  },
+  {
     id: "design",
     label: "Scenario design",
     eyebrow: "Configure",

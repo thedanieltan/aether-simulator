@@ -38,7 +38,11 @@ export function workerRequest(worker, command, payload = {}) {
 }
 
 export function canonicalDownload(name, value) {
-  const blob = new Blob([`${JSON.stringify(value, null, 2)}\n`], {
+  textDownload(name, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+export function textDownload(name, text) {
+  const blob = new Blob([text], {
     type: "application/json",
   });
   const anchor = document.createElement("a");

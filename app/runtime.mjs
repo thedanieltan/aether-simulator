@@ -137,7 +137,7 @@ export class BrowserSimulationRuntime {
   #session = null;
 
   execute(command, payload = {}) {
-    if (command === "run") {
+    if (command === "run" || command === "restore") {
       const config = configure(payload);
       const engine = definition(payload.depth);
       const scenario = engine.build(config);
@@ -155,7 +155,18 @@ export class BrowserSimulationRuntime {
         branch: null,
         comparison: null,
       };
-      return summary(this.#session);
+      const restored = summary(this.#session);
+      if (
+        command === "restore"
+        && payload.expectedDigest
+        && restored.exported.digest !== payload.expectedDigest
+      ) {
+        this.#session = null;
+        throw new TypeError(
+          "stored project result does not match this simulator version; run it again",
+        );
+      }
+      return restored;
     }
     if (command === "cancel") {
       this.#session = null;

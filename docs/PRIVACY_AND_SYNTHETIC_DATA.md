@@ -14,8 +14,13 @@ logs, copied tickets, or provider state. The local checks reject common secret,
 identifier, address, path, and credential patterns, but human review remains
 required.
 
-The browser studio accepts no uploads and has no authentication, analytics,
-telemetry, provider connection, or server-side persistence. Simulation runs in
-a local Web Worker and exports are created locally as downloads. A user who
-modifies the application to ingest external data assumes responsibility for a
-new privacy and security boundary not covered by this release.
+The browser product has no authentication, analytics, telemetry, provider
+connection, or server-side persistence. Simulation runs in a local Web Worker,
+projects remain in browser storage, and exports are created locally as
+downloads. The only import is a bounded, versioned project configuration file;
+it is validated and never transmitted.
+
+Users must not put real personal data, confidential material, credentials, or
+provider data in project names, descriptions, seeds, or imported files. A user
+who modifies the application to ingest other external data assumes
+responsibility for a new privacy and security boundary not covered here.

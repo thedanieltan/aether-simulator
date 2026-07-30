@@ -184,9 +184,31 @@ flowchart LR
 The browser does not contain a second simulation engine. `app/runtime.mjs`
 adapts browser commands to the public builders and kernel, while the worker
 isolates synchronous simulation from the main thread. Static application code
-does not fetch providers, accept uploads, or persist server-side state.
+does not fetch providers or persist server-side state. The only imported format
+is a bounded, versioned local project document that references committed
+scenarios and is normalized through an exact allowlist.
 Ajv’s ten contract validators are generated as a standalone ESM module and
 checked for drift, avoiding runtime code generation under the content policy.
+
+## Local project workspace
+
+```mermaid
+flowchart LR
+  Editor["Project details + run configuration"] --> Contract["aether-project.v1 validation"]
+  Contract --> Local["Browser IndexedDB"]
+  Local --> Reload["Reload active project"]
+  Reload --> Worker["Re-run committed scenario"]
+  Worker --> Digest{"Digest matches?"}
+  Digest -->|Yes| Restore["Restore verified result"]
+  Digest -->|No| Reject["Fail closed"]
+  Contract --> File["Canonical project file"]
+  File --> Import["Bounded local import"]
+  Import --> Contract
+```
+
+Project identifiers and revisions are workspace metadata. They do not enter the
+simulation kernel. Project files retain configuration and a last-run digest,
+not a generated world, and are never transmitted by the application.
 
 ## Engineering quality gate
 

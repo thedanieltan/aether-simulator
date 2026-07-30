@@ -53,6 +53,29 @@ test("browser runtime checkpoint, replay, branch, compare, and cancellation work
   assert.throws(() => runtime.execute("replay"), /run a scenario first/);
 });
 
+test("browser runtime restores a saved project only when its digest still matches", () => {
+  const payload = {
+    depth: "enterprise",
+    scenario: "retail-intervention-baseline",
+    seed: "restore-project",
+    scale: 1,
+    duration: 80,
+  };
+  const original = new BrowserSimulationRuntime().execute("run", payload);
+  const restored = new BrowserSimulationRuntime().execute("restore", {
+    ...payload,
+    expectedDigest: original.exported.digest,
+  });
+  assert.equal(restored.exported.digest, original.exported.digest);
+  assert.throws(
+    () => new BrowserSimulationRuntime().execute("restore", {
+      ...payload,
+      expectedDigest: "0".repeat(64),
+    }),
+    /does not match this simulator version/,
+  );
+});
+
 test("studio state exposes valid failure, pause, resume, and cancellation controls", () => {
   let state = { ...initialStudioState };
   assert.equal(commandEnabled(state, "replay"), false);

@@ -44,6 +44,8 @@ runs the same kernel locally in a Web Worker.
 - A credential-free browser studio for configuration, local execution, graph
   and timeline inspection, replay, checkpoint/resume, branching, comparison,
   lineage review, and canonical export.
+- A versioned local project workspace with browser-only persistence,
+  digest-verified recovery, and validated project-file import and export.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -119,8 +121,9 @@ demonstration. Synthetic output does not establish real-world compliance.
 Provider-connected execution is not included. Enterprise models are explicit,
 simplified research assumptions rather than calibrated digital twins.
 Cross-boundary facts and cascade outcomes are also synthetic and
-non-authoritative. The browser studio has no upload, telemetry, authentication,
-or server-side persistence surface. Pause checkpoints a completed synchronous
+non-authoritative. The browser product has no telemetry, authentication, or
+server-side persistence surface. It accepts only a bounded local project JSON
+contract and does not transmit it. Pause checkpoints a completed synchronous
 run rather than interrupting an event reducer.
 
 Repository status: **active research**.
@@ -129,6 +132,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [browser product](docs/PUBLIC_PRODUCT.md),
 [product requirements](docs/PRODUCT_REQUIREMENTS.md),
 [information architecture](docs/INFORMATION_ARCHITECTURE.md),
+[local project workspace](docs/LOCAL_PROJECT_WORKSPACE.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

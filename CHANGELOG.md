@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.8.0-alpha.1 - local project workspace
+
+- Added the versioned `aether-project.v1` local project contract.
+- Added browser-only create, open, revise, delete, active-project recovery,
+  canonical export, and validated import.
+- Added automatic configuration persistence and digest-verified last-run
+  recovery without server storage.
+- Added project lifecycle, serialization, restoration, accessibility, and
+  browser round-trip acceptance coverage.
+- Updated the privacy and threat boundaries for local project metadata and
+  imported project files.
+
 ## 0.7.0-alpha.1 - product foundation
 
 - Renamed the browser experience Aether Enterprise Simulator.

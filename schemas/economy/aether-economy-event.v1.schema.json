@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/economy/aether-economy-event.v1.schema.json",
+  "title": "Aether synthetic economy event payload",
+  "type": "object",
+  "required": ["contract_version", "kind", "transaction_id", "entries", "facts", "assumptions"],
+  "properties": {
+    "contract_version": { "const": "aether-economy-event.v1" },
+    "kind": {
+      "enum": [
+        "business-formation", "employment", "production", "market-clearing",
+        "consumption", "wage", "supply-payment", "loan", "loan-repayment",
+        "interest", "tax", "public-transfer", "public-procurement",
+        "investment", "saving", "borrowing", "shock", "policy-change",
+        "restructuring", "default", "insolvency", "closure"
+      ]
+    },
+    "transaction_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_id", "account", "amount"],
+        "properties": {
+          "entity_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*_[a-f0-9]{32}$" },
+          "account": { "type": "string", "minLength": 1 },
+          "amount": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "facts": { "type": "object" },
+    "assumptions": {
+      "type": "object",
+      "required": ["synthetic", "authoritative"],
+      "properties": {
+        "synthetic": { "const": true },
+        "authoritative": { "const": false },
+        "mechanism": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

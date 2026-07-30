@@ -59,3 +59,25 @@ export {
   validateEcosystemInvariants,
 } from "./ecosystem/analysis.mjs";
 export { ecosystemOperationsModule } from "./modules/ecosystem-operations.mjs";
+export {
+  assertEconomyConfig,
+  assertEconomyEvent,
+  economyConfigSchema,
+  economyEventSchema,
+  validateEconomyConfig,
+  validateEconomyEvent,
+} from "./economy/validation.mjs";
+export {
+  buildEconomyIntervention,
+  buildEconomyScenario,
+  economyPartitionPlan,
+  economyScenarioMetadata,
+} from "./economy/scenario-builder.mjs";
+export {
+  compareEconomyRuns,
+  economyState,
+  runEconomy,
+  summarizeEconomyRun,
+  validateEconomyInvariants,
+} from "./economy/analysis.mjs";
+export { economyOperationsModule } from "./modules/economy-operations.mjs";

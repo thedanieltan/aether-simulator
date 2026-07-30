@@ -7,7 +7,7 @@ execution realism.
 |---|---|---|
 | Enterprise | One realistic synthetic enterprise | Implemented and tested as configurable research scenarios across five archetypes |
 | Ecosystem | Enterprises interacting with customers, vendors, workers, institutions, and service providers | Implemented and tested as contract-gated deterministic research scenarios |
-| Economy | Many enterprises and citizens interacting through markets, finance, taxation, regulation, formation, failure, and shocks | Unimplemented |
+| Economy | Many enterprises and citizens interacting through markets, finance, taxation, regulation, formation, failure, and shocks | Implemented and tested as an entity-derived deterministic research preview |
 
 Enterprise Depth includes stateful operational, workforce, financial,
 inventory, capacity, incident, and data-lineage journeys. Its assumptions remain
@@ -16,4 +16,7 @@ independent enterprises; their presence does not implement Ecosystem Depth.
 
 Ecosystem Depth separately composes independently simulated organizations,
 institutions, shared citizens, contracts, transactions, deliveries, record
-transfers, and causal cascades. Economy Depth remains unimplemented.
+transfers, and causal cascades. Economy Depth adds synthetic households, firms,
+banks, government, regulators, markets, formation, failure, policy, shocks, and
+event-derived aggregate metrics. Worker-parallel and calibrated execution
+remain unimplemented.

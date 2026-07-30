@@ -1,0 +1,9 @@
+{
+  "contract_version": "aether-economy-config.v1",
+  "scenario_id": "stable-baseline",
+  "scenario_kind": "stable-baseline",
+  "seed": "economy-stable-v1",
+  "scale": 2,
+  "periods": 4,
+  "partition_size": 1
+}

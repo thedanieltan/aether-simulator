@@ -15,8 +15,8 @@ authority.
    business formation, failure, and shocks.
 
 This repository implements the deterministic world kernel, configurable
-Enterprise Depth, and contract-gated Ecosystem Depth research scenarios.
-Economy Depth is not implemented.
+Enterprise Depth, contract-gated Ecosystem Depth, and entity-derived Economy
+Depth research scenarios.
 
 ## What is implemented
 
@@ -34,12 +34,15 @@ Economy Depth is not implemented.
   lineage invariants.
 - Deterministic multi-organization contracts, intermediated payments,
   deliveries, shared-citizen contexts, record transfers, and causal cascades.
+- Synthetic citizens, households, firms, nonprofits, banks, government,
+  regulators, markets, credit, taxation, public expenditure, shocks, formation,
+  failure, and event-derived aggregate metrics.
 - Deterministic migration from the public `aether-world.v0.1` fixture.
 - An optional evidence bridge that converts synthetic lineage observations into
   quarantined, facts-only, non-authoritative envelopes.
 
-Economy behavior, local OSS realism, and connected calibration remain future
-research. Enterprise-only customer and supplier entries remain boundary
+Worker-parallel execution, local OSS realism, and connected calibration remain
+future research. Enterprise-only customer and supplier entries remain boundary
 contexts; Ecosystem Depth scenarios independently simulate declared
 counterparties. Connected-provider performance is not universally validated.
 
@@ -53,6 +56,7 @@ npm ci
 npm run demo
 npm run demo:enterprise
 npm run demo:ecosystem
+npm run demo:economy
 npm run verify:ci
 ```
 
@@ -68,6 +72,7 @@ node src/cli.mjs run scenarios/kernel-baseline.json
 node src/cli.mjs checkpoint scenarios/kernel-baseline.json --tick 2
 node src/cli.mjs enterprise-run scenarios/enterprise/retail-order-to-cash.json
 node src/cli.mjs ecosystem-run scenarios/ecosystem/saas-service-network.json
+node src/cli.mjs economy-run scenarios/economy/stable-baseline.json
 ```
 
 Run `node src/cli.mjs help` for replay, branch, compare, and migrate examples.
@@ -79,7 +84,7 @@ flowchart LR
   Config["Enterprise config + archetype"] --> Builder["Scenario builder"]
   Builder --> Scenario["Validated scenario + root seed"]
   Scenario --> Kernel["Deterministic world kernel"]
-  Module["Enterprise operations module"] --> Kernel
+  Modules["Enterprise / ecosystem / economy modules"] --> Kernel
   Kernel --> Events["Canonical append-only event log"]
   Events --> Projection["Projected world state"]
   Projection --> Export["Versioned canonical export"]

@@ -5,13 +5,19 @@ import {
   assertContract,
   assertEcosystemConfig,
   assertEcosystemEvent,
+  assertEconomyConfig,
+  assertEconomyEvent,
   assertEnterpriseConfig,
   baselineOperationsModule,
   buildEnterpriseScenario,
   buildEcosystemScenario,
+  buildEconomyScenario,
   ecosystemConfigSchema,
   ecosystemEventSchema,
   ecosystemOperationsModule,
+  economyConfigSchema,
+  economyEventSchema,
+  economyOperationsModule,
   enterpriseConfigSchema,
   enterpriseOperationsModule,
   registeredSchemas,
@@ -127,6 +133,43 @@ for (const event of ecosystemExport.world.event_log) {
 }
 assertContract("export", ecosystemExport);
 
+const economySchemaDirectory = resolve(root, "schemas", "economy");
+const committedEconomyConfigSchema = JSON.parse(
+  await readFile(
+    resolve(economySchemaDirectory, "aether-economy-config.v1.schema.json"),
+    "utf8",
+  ),
+);
+const committedEconomyEventSchema = JSON.parse(
+  await readFile(
+    resolve(economySchemaDirectory, "aether-economy-event.v1.schema.json"),
+    "utf8",
+  ),
+);
+if (
+  JSON.stringify(committedEconomyConfigSchema) !==
+    JSON.stringify(economyConfigSchema()) ||
+  JSON.stringify(committedEconomyEventSchema) !==
+    JSON.stringify(economyEventSchema())
+) {
+  throw new Error("registered economy schemas differ from committed schemas");
+}
+const economyConfig = JSON.parse(
+  await readFile(
+    resolve(root, "scenarios", "economy", "stable-baseline.json"),
+    "utf8",
+  ),
+);
+assertEconomyConfig(economyConfig);
+const economyScenario = buildEconomyScenario(economyConfig);
+const economyKernel = new SimulationKernel({ modules: [economyOperationsModule] });
+economyKernel.validateScenario(economyScenario);
+const economyExport = economyKernel.run(economyScenario);
+for (const event of economyExport.world.event_log) {
+  if (event.event_type.startsWith("economy.")) assertEconomyEvent(event.payload);
+}
+assertContract("export", economyExport);
+
 process.stdout.write(
-  `Validated ${schemaNames.length + 3} schemas and representative contracts.\n`,
+  `Validated ${schemaNames.length + 5} schemas and representative contracts.\n`,
 );

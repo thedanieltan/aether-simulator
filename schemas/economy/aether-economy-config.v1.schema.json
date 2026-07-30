@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aether-simulator.invalid/schemas/economy/aether-economy-config.v1.schema.json",
+  "title": "Aether synthetic economy configuration",
+  "type": "object",
+  "required": ["contract_version", "scenario_id", "scenario_kind", "seed", "scale", "periods"],
+  "properties": {
+    "contract_version": { "const": "aether-economy-config.v1" },
+    "scenario_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$", "minLength": 1 },
+    "scenario_kind": {
+      "enum": [
+        "stable-baseline",
+        "demand-shock-recovery",
+        "supply-chain-shock",
+        "credit-tightening-default",
+        "policy-intervention-baseline",
+        "major-employer-failure",
+        "business-formation-failure"
+      ]
+    },
+    "seed": {
+      "oneOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "scale": { "type": "integer", "minimum": 1 },
+    "periods": { "type": "integer", "minimum": 3 },
+    "partition_size": { "type": "integer", "minimum": 1 }
+  },
+  "additionalProperties": false
+}

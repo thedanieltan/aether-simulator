@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.0 - Economy Depth research preview
+
+- Added an entity-derived synthetic economy on the shared deterministic kernel.
+- Added seven scenarios covering baseline activity, demand and supply shocks,
+  credit tightening, policy intervention, employer failure, and business
+  formation/failure.
+- Added reconciled household income, firm transactions, bank balance sheets,
+  taxation, public expenditure, employment, markets, credit, and aggregates.
+- Added deterministic partition-equivalence, replay, intervention, fixture,
+  CLI, benchmark, schema, ADR, and acceptance coverage.
+
 ## 0.4.0 - Ecosystem Depth research preview
 
 - Added contract-gated multi-organization simulation using the shared world

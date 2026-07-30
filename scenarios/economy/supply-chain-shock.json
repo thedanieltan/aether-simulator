@@ -1,0 +1,9 @@
+{
+  "contract_version": "aether-economy-config.v1",
+  "scenario_id": "supply-chain-shock",
+  "scenario_kind": "supply-chain-shock",
+  "seed": "economy-supply-v1",
+  "scale": 2,
+  "periods": 4,
+  "partition_size": 2
+}

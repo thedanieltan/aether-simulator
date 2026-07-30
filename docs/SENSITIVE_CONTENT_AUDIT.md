@@ -36,6 +36,12 @@ contracts, shared-citizen contexts, three full exports, intervention artifacts,
 cross-organization lineage, and benchmark documentation. All counterparties,
 identifiers, transactions, and cascade effects are fictional.
 
+The Economy Depth review covers all seven configurations, synthetic citizens,
+households, organizations, institutions, three full exports, intervention
+artifacts, transactions, bank and tax records, shocks, and benchmarks. Labels
+and identifiers remain fictional and generated; no real economic or personal
+records are included.
+
 Gitleaks and TruffleHog executables were not installed in the local environment,
 so they were not represented as completed checks. The repository's explicit
 scanner and public-tree policy both passed with zero findings. `npm audit

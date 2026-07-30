@@ -140,8 +140,22 @@ so partition size cannot change scenario or world output.
 
 ## Product-depth boundary
 
-Enterprise and Ecosystem Depth are implemented as configurable, tested research
-scenarios with explicit simplifications. Economy Depth is unimplemented.
+Enterprise, Ecosystem, and Economy Depth are implemented as configurable,
+tested research scenarios with explicit simplifications. Economy aggregates
+are derived from entity-level events:
+
+```mermaid
+flowchart LR
+  Entities["Citizens / households / firms / institutions"] --> Events["Counterparty events"]
+  Events --> Reconcile["Income / firms / banks / taxes"]
+  Reconcile --> Markets["Declared market clearing"]
+  Markets --> Metrics["Derived synthetic aggregates"]
+  Events --> Shock["Shock / policy / intervention"]
+  Shock --> Metrics
+```
+
+Partitioned construction is implemented without changing semantic output.
+Worker-parallel execution remains future engineering.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.
 

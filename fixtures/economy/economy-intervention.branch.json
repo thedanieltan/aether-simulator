@@ -1,0 +1,3067 @@
+{
+  "contract_version": "aether-export.v1",
+  "digest": "900568ece0aeb72b2352dc71401ebe85191b8db4c5c8dfa9b634b5618d41db5b",
+  "export_id": "export_458040761f799967d52c50fd2287ae33",
+  "scenario_digest": "afaf05bc9f4e7d7ffa150c19f36356c9aca4302cfb00e525ee5d200eebb995f8",
+  "world": {
+    "accounts": [
+      {
+        "attributes": {
+          "owner_id": "institution_2d5774b059d69e5874c5966e85624d2e"
+        },
+        "id": "account_0f8542a25b78a9546df44694905c5573",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+        },
+        "id": "account_1697bbdb5fb95ba27f11777a034dd953",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "institution_00b4aaa3608856fb960f12c761294429"
+        },
+        "id": "account_3464fbc20aefdb586898beb7fcef2bab",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+        },
+        "id": "account_356e62755d0a7d7e072fef79379faa13",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+        },
+        "id": "account_4714853e1d6ef089af3f93f065d29e25",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_04fef64f20f936454cdd3aba99209273"
+        },
+        "id": "account_5ea29b5636b92852ff769521860ad939",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_23ec7e498efdd23b175f49b489b6810d"
+        },
+        "id": "account_707689d2f7beeea26dd708579b66c864",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "person_8055dc01ec070218cf58ae3075fd14a4"
+        },
+        "id": "account_9ab91a43c550126a400eadc7b09f9553",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+        },
+        "id": "account_abeab48c7ab07021ea488fdca00d6f58",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+        },
+        "id": "account_b21bbf6099bea6875ae23e49fce7505f",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "institution_9ca621a3320ed67949b30e7fe9f4b5c6"
+        },
+        "id": "account_b936c13eb6c67c2fd370522be3cbca6a",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+        },
+        "id": "account_c3dd2ecd3e9b8d2788b1742f4a7a6326",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+        },
+        "id": "account_d46fe9d0b24256866eab31854258deae",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_6b4099718af522046588f20a968d8934"
+        },
+        "id": "account_d82bd447680b0d3db7e2b842e535496a",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "organization_b2a259341517949abfc330061918e62a"
+        },
+        "id": "account_d8f9c07820e91efb85d52a5a93ada395",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "institution_3dabcbc26e371373921992f77575e3dd"
+        },
+        "id": "account_dc370b9b86886a73530d25bc7dc67dc5",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+        },
+        "id": "account_e0a153e4b15dd5a6e7a9a5ba587510c2",
+        "kind": "cash-account"
+      },
+      {
+        "attributes": {
+          "owner_id": "person_15921ad27a27baff57694cf2702cb573"
+        },
+        "id": "account_f9e41726988c4ba15329308bbc1a7380",
+        "kind": "cash-account"
+      }
+    ],
+    "balances": [
+      {
+        "account_id": "account_f9e41726988c4ba15329308bbc1a7380",
+        "amount": 0,
+        "id": "balance_06b4a0730a0ff1833473f6a5b2f08719",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_d8f9c07820e91efb85d52a5a93ada395",
+        "amount": 1000,
+        "id": "balance_0dbb4fc639c195ce91860e05e9adcf9d",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_e0a153e4b15dd5a6e7a9a5ba587510c2",
+        "amount": 300,
+        "id": "balance_0efebcf5c89afa8856d6f21197a0e677",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_356e62755d0a7d7e072fef79379faa13",
+        "amount": 300,
+        "id": "balance_10113140d596bee43070bc7907df8bcf",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_c3dd2ecd3e9b8d2788b1742f4a7a6326",
+        "amount": 1000,
+        "id": "balance_16d07672e829c89faab42365358525c2",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_b936c13eb6c67c2fd370522be3cbca6a",
+        "amount": 50,
+        "id": "balance_369f89c0b1fbab7d97a86e9243deb399",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_b21bbf6099bea6875ae23e49fce7505f",
+        "amount": 500,
+        "id": "balance_497f634dd3a193baa62360719771b4b7",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_0f8542a25b78a9546df44694905c5573",
+        "amount": 50,
+        "id": "balance_510ec77853d25081f4061b69f820f682",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_707689d2f7beeea26dd708579b66c864",
+        "amount": 100,
+        "id": "balance_569aa18a68010b2a10ea1b8f1af34e54",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_4714853e1d6ef089af3f93f065d29e25",
+        "amount": 500,
+        "id": "balance_5dc1c5d750bef3c2afbb828130cff765",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_d46fe9d0b24256866eab31854258deae",
+        "amount": 500,
+        "id": "balance_662a2d79337880cb690b3185d2afd118",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_1697bbdb5fb95ba27f11777a034dd953",
+        "amount": 500,
+        "id": "balance_6c7bbeb369521513cf5fa1d9019c3c69",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_dc370b9b86886a73530d25bc7dc67dc5",
+        "amount": 0,
+        "id": "balance_8700b9e1d9f87f8f0275fc7cb83dac58",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_d82bd447680b0d3db7e2b842e535496a",
+        "amount": 100,
+        "id": "balance_8b8793a7a31d8c42597fd43693fd0690",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_3464fbc20aefdb586898beb7fcef2bab",
+        "amount": 0,
+        "id": "balance_b17e5f5e5300ce5216c6207016d3046d",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_5ea29b5636b92852ff769521860ad939",
+        "amount": 500,
+        "id": "balance_e900fb07342af19dbeb7a4a116c86093",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_abeab48c7ab07021ea488fdca00d6f58",
+        "amount": 500,
+        "id": "balance_edfdc022d8e8f724ba38c1ae27755f9d",
+        "resource": "synthetic-currency-unit"
+      },
+      {
+        "account_id": "account_9ab91a43c550126a400eadc7b09f9553",
+        "amount": 0,
+        "id": "balance_fc5e805133bfc96f870375f44b4ef492",
+        "resource": "synthetic-currency-unit"
+      }
+    ],
+    "branch": {
+      "branch_id": "branch_018f36d2f637ecbe492202b20b07e08f",
+      "intervention_digest": "55fd7e64455e92c20fbd81107a0a97d2dea33329dbe09f3db36cd1d9974da00a",
+      "parent_checkpoint_id": "checkpoint_fdcd482b4cf29c577cb7715c688592fc"
+    },
+    "clock": {
+      "current_tick": 80,
+      "end_tick": 80,
+      "start_tick": 0,
+      "tick_duration_ms": 86400000
+    },
+    "contract_version": "aether-world.v1",
+    "contracts": [
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_6c53e63a823d7638314c4adce9f4f55b",
+            "organization_77fd66357f0489e791bbe55f7ea9da42"
+          ],
+          "status": "active"
+        },
+        "id": "contract_1c43152c4be734c165a4e6061517bb85",
+        "kind": "supply-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "organization_77fd66357f0489e791bbe55f7ea9da42"
+          ],
+          "status": "active"
+        },
+        "id": "contract_212b8a479f55633995c4f27efe910d12",
+        "kind": "credit-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "person_8055dc01ec070218cf58ae3075fd14a4",
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          ],
+          "status": "active"
+        },
+        "id": "contract_2fb744b99cac86f707d4b7063bce31f8",
+        "kind": "employment-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "person_15921ad27a27baff57694cf2702cb573",
+            "organization_77fd66357f0489e791bbe55f7ea9da42"
+          ],
+          "status": "active"
+        },
+        "id": "contract_3c9e42338429f47554c52b6e45e610e6",
+        "kind": "employment-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_04fef64f20f936454cdd3aba99209273",
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          ],
+          "status": "active"
+        },
+        "id": "contract_41709f828999d6871e1eaed24f59b596",
+        "kind": "supply-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_b2a259341517949abfc330061918e62a",
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          ],
+          "status": "active"
+        },
+        "id": "contract_5851016eb96af854b41d37714c285d00",
+        "kind": "credit-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "institution_1cade5e3d3c717fea424c6fc114a707a"
+          ],
+          "rate_basis_points": 500
+        },
+        "id": "contract_99510a4ebb505bebb26226e1e129a0a2",
+        "kind": "generic-tax-contract"
+      },
+      {
+        "attributes": {
+          "party_ids": [
+            "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "institution_46246c8c76b4c51637cd62787be4f68d"
+          ],
+          "rate_basis_points": 500
+        },
+        "id": "contract_f843463f485fed1e3cc16815857225c1",
+        "kind": "generic-tax-contract"
+      }
+    ],
+    "entities": {
+      "assets": [],
+      "households": [
+        {
+          "attributes": {
+            "member_ids": [
+              "person_8055dc01ec070218cf58ae3075fd14a4"
+            ],
+            "synthetic": true
+          },
+          "id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+          "kind": "synthetic-household"
+        },
+        {
+          "attributes": {
+            "member_ids": [
+              "person_15921ad27a27baff57694cf2702cb573"
+            ],
+            "synthetic": true
+          },
+          "id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+          "kind": "synthetic-household"
+        }
+      ],
+      "institutions": [
+        {
+          "attributes": {
+            "clearing_rule": "minimum-of-declared-supply-and-demand",
+            "synthetic": true
+          },
+          "id": "institution_00b4aaa3608856fb960f12c761294429",
+          "kind": "market-institution"
+        },
+        {
+          "attributes": {
+            "jurisdiction": "fictional",
+            "synthetic": true
+          },
+          "id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+          "kind": "government"
+        },
+        {
+          "attributes": {
+            "mandate": "synthetic-market-stability",
+            "synthetic": true
+          },
+          "id": "institution_2d5774b059d69e5874c5966e85624d2e",
+          "kind": "regulator"
+        },
+        {
+          "attributes": {
+            "clearing_rule": "minimum-of-declared-supply-and-demand",
+            "synthetic": true
+          },
+          "id": "institution_3dabcbc26e371373921992f77575e3dd",
+          "kind": "market-institution"
+        },
+        {
+          "attributes": {
+            "jurisdiction": "fictional",
+            "synthetic": true
+          },
+          "id": "institution_46246c8c76b4c51637cd62787be4f68d",
+          "kind": "government"
+        },
+        {
+          "attributes": {
+            "mandate": "synthetic-market-stability",
+            "synthetic": true
+          },
+          "id": "institution_9ca621a3320ed67949b30e7fe9f4b5c6",
+          "kind": "regulator"
+        }
+      ],
+      "organizations": [
+        {
+          "attributes": {
+            "sector": "production",
+            "synthetic": true
+          },
+          "id": "organization_04fef64f20f936454cdd3aba99209273",
+          "kind": "firm"
+        },
+        {
+          "attributes": {
+            "sector": "community",
+            "synthetic": true
+          },
+          "id": "organization_23ec7e498efdd23b175f49b489b6810d",
+          "kind": "nonprofit"
+        },
+        {
+          "attributes": {
+            "sector": "community",
+            "synthetic": true
+          },
+          "id": "organization_6b4099718af522046588f20a968d8934",
+          "kind": "nonprofit"
+        },
+        {
+          "attributes": {
+            "sector": "production",
+            "synthetic": true
+          },
+          "id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+          "kind": "firm"
+        },
+        {
+          "attributes": {
+            "sector": "services",
+            "synthetic": true
+          },
+          "id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+          "kind": "firm"
+        },
+        {
+          "attributes": {
+            "sector": "financial-intermediation",
+            "synthetic": true
+          },
+          "id": "organization_b2a259341517949abfc330061918e62a",
+          "kind": "bank"
+        },
+        {
+          "attributes": {
+            "sector": "services",
+            "synthetic": true
+          },
+          "id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+          "kind": "firm"
+        },
+        {
+          "attributes": {
+            "sector": "financial-intermediation",
+            "synthetic": true
+          },
+          "id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+          "kind": "bank"
+        }
+      ],
+      "people": [
+        {
+          "attributes": {
+            "label": "Fictional citizen 1",
+            "synthetic": true
+          },
+          "id": "person_15921ad27a27baff57694cf2702cb573",
+          "kind": "synthetic-citizen"
+        },
+        {
+          "attributes": {
+            "label": "Fictional citizen 2",
+            "synthetic": true
+          },
+          "id": "person_8055dc01ec070218cf58ae3075fd14a4",
+          "kind": "synthetic-citizen"
+        }
+      ],
+      "systems": []
+    },
+    "event_log": [
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+        "event_id": "event_e66143648e3179d9c92551a717cdc334",
+        "event_type": "economy.business-formation",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "capital-contribution",
+              "amount": -100,
+              "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+            },
+            {
+              "account": "paid-in-capital",
+              "amount": 100,
+              "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+          },
+          "kind": "business-formation",
+          "transaction_id": "transaction_381741e0ef0dbf7b6ab1e8b7fb08c05f"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 1
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_04fef64f20f936454cdd3aba99209273",
+        "event_id": "event_7105b9ce803127e499ddf4366ea2b86a",
+        "event_type": "economy.business-formation",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "capital-contribution",
+              "amount": -100,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            },
+            {
+              "account": "paid-in-capital",
+              "amount": 100,
+              "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+          },
+          "kind": "business-formation",
+          "transaction_id": "transaction_4cabdcb174f44a29c170e39abcb3ec2b"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 1
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+        "event_id": "event_149492f46c1abd0997c99d392a7b8f1f",
+        "event_type": "economy.employment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "employer_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "employment_action": "hired",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "person_id": "person_15921ad27a27baff57694cf2702cb573"
+          },
+          "kind": "employment",
+          "transaction_id": "transaction_784edfba931f1bb76c1f14ac57672527"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 2
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+        "event_id": "event_550d7185e0c3770c8f04e01fe9c65afb",
+        "event_type": "economy.employment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "employer_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "employment_action": "hired",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "person_id": "person_8055dc01ec070218cf58ae3075fd14a4"
+          },
+          "kind": "employment",
+          "transaction_id": "transaction_c48c9c9a1f81c7cef45ac8b09df09582"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 2
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_eb7cba6dcd810a939863e41e4bbcc82e",
+        "event_type": "economy.loan",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "bank_asset_delta": 100,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "bank_liability_delta": 100,
+            "borrower_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "loan_id": "loan_c9eb0473caeab1205a108f9a59123186",
+            "principal": 100
+          },
+          "kind": "loan",
+          "transaction_id": "transaction_55e8727583ed487d7da2e53cf17ff158"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 3
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_9cac418ffda6c2b0a7aac7cf8098a2b9",
+        "event_type": "economy.loan",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "bank_asset_delta": 100,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_b2a259341517949abfc330061918e62a",
+            "bank_liability_delta": 100,
+            "borrower_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "loan_id": "loan_bddebcccec3dbd59aa3086c035a4ba9e",
+            "principal": 100
+          },
+          "kind": "loan",
+          "transaction_id": "transaction_a2beb83ce35f8457d024607610ee7dbe"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 3
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+        "event_id": "event_c8fcd065274617827b1cafa5b6d483b5",
+        "event_type": "economy.production",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+            "inventory_delta": 10,
+            "quantity": 10
+          },
+          "kind": "production",
+          "transaction_id": "transaction_7cb0a80dfdd078e9a1a6898f5ca1c346"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 4
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_04fef64f20f936454cdd3aba99209273",
+        "event_id": "event_56578de9b20999b091a38b121daa5c31",
+        "event_type": "economy.production",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+            "inventory_delta": 10,
+            "quantity": 10
+          },
+          "kind": "production",
+          "transaction_id": "transaction_5e72e3556fb33a1ffe42c15c630454c8"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 4
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": null,
+        "event_id": "event_4ef7c05fddb54c39fe7e880022954802",
+        "event_type": "economy.market-clearing",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "demand": 12,
+            "market_id": "institution_3dabcbc26e371373921992f77575e3dd",
+            "matched_quantity": 10,
+            "price": 8,
+            "supply": 10
+          },
+          "kind": "market-clearing",
+          "transaction_id": "transaction_07fa4043b564fbe9663fd1c4b0651670"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 5
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": null,
+        "event_id": "event_71da251fa25da3d822f14b681cbbafb8",
+        "event_type": "economy.market-clearing",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "demand": 12,
+            "market_id": "institution_00b4aaa3608856fb960f12c761294429",
+            "matched_quantity": 10,
+            "price": 8,
+            "supply": 10
+          },
+          "kind": "market-clearing",
+          "transaction_id": "transaction_de3365c02c5eee583891ad8983b14497"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 5
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+        "event_id": "event_62760fed89cbfdbca0bb13ec2129c38f",
+        "event_type": "economy.supply-payment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "inventory-purchase",
+              "amount": -40,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "sales-receipt",
+              "amount": 40,
+              "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+            }
+          ],
+          "facts": {
+            "counterparty_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+            "inventory_delta": -5,
+            "revenue": 40
+          },
+          "kind": "supply-payment",
+          "transaction_id": "transaction_dec1d8f9bf1194f1e2e38b17589e471a"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 6
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_04fef64f20f936454cdd3aba99209273",
+        "event_id": "event_af37426669df37c3bfbe1edb5adf9a75",
+        "event_type": "economy.supply-payment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "inventory-purchase",
+              "amount": -40,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "sales-receipt",
+              "amount": 40,
+              "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+            }
+          ],
+          "facts": {
+            "counterparty_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+            "inventory_delta": -5,
+            "revenue": 40
+          },
+          "kind": "supply-payment",
+          "transaction_id": "transaction_c04e2a02e22960970808641d88cfbb6f"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 6
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_788e68463912a7261456333e91a9f428",
+        "event_type": "economy.wage",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "wage-expense",
+              "amount": -50,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "wage-income",
+              "amount": 50,
+              "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+            }
+          ],
+          "facts": {
+            "expenditure": 50,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "income_amount": 50,
+            "income_source": "wages",
+            "person_id": "person_15921ad27a27baff57694cf2702cb573"
+          },
+          "kind": "wage",
+          "transaction_id": "transaction_a15acd47b28017e1f5a211e09c69414f"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 7
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_a23396f11ed95f4ba5a821f84fa630fe",
+        "event_type": "economy.wage",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "wage-expense",
+              "amount": -50,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "wage-income",
+              "amount": 50,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            }
+          ],
+          "facts": {
+            "expenditure": 50,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "income_amount": 50,
+            "income_source": "wages",
+            "person_id": "person_8055dc01ec070218cf58ae3075fd14a4"
+          },
+          "kind": "wage",
+          "transaction_id": "transaction_1f2282ddd14ea86008e7c7c3eec5d908"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 7
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_73d3f3644377d1699375879a7c693b85",
+        "event_type": "economy.consumption",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "consumption",
+              "amount": -30,
+              "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+            },
+            {
+              "account": "sales-receipt",
+              "amount": 30,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "inventory_delta": -3,
+            "quantity": 3,
+            "revenue": 30
+          },
+          "kind": "consumption",
+          "transaction_id": "transaction_a5ff78614167c43f171c07e621724ad3"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 8
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_7daa118d31f574055b2a592d9db2b773",
+        "event_type": "economy.consumption",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "consumption",
+              "amount": -30,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            },
+            {
+              "account": "sales-receipt",
+              "amount": 30,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "inventory_delta": -3,
+            "quantity": 3,
+            "revenue": 30
+          },
+          "kind": "consumption",
+          "transaction_id": "transaction_f759553d91be059ebe2cb183717fe98b"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 8
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_587734b4ac0f54f8947b4222f9c6096b",
+        "event_type": "economy.tax",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "tax-expense",
+              "amount": -10,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "tax-receipt",
+              "amount": 10,
+              "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+            }
+          ],
+          "facts": {
+            "expenditure": 10,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+            "tax_amount": 10,
+            "tax_id": "tax_1cbd1ccc29937cb190b5c5e830d3ba67",
+            "taxpayer_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+          },
+          "kind": "tax",
+          "transaction_id": "transaction_cf4f8ebbf48604e3bd928a1bd4594a5d"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 9
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_5c3e6f3de05f7576271fb65563de9a1d",
+        "event_type": "economy.tax",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "tax-expense",
+              "amount": -10,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "tax-receipt",
+              "amount": 10,
+              "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+            }
+          ],
+          "facts": {
+            "expenditure": 10,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+            "tax_amount": 10,
+            "tax_id": "tax_a2b11a7a67f0e8725a836361a5d287fc",
+            "taxpayer_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          },
+          "kind": "tax",
+          "transaction_id": "transaction_e7c30e48003a7261299e5d2848477597"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 9
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+        "event_id": "event_2c24de87c608a392a7597478cc687974",
+        "event_type": "economy.public-transfer",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "transfer-expenditure",
+              "amount": -5,
+              "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+            },
+            {
+              "account": "transfer-income",
+              "amount": 5,
+              "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+            }
+          ],
+          "facts": {
+            "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "income_amount": 5,
+            "income_source": "transfers",
+            "public_expenditure": 5
+          },
+          "kind": "public-transfer",
+          "transaction_id": "transaction_ee299fd489e79449a2fa6279839e064c"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 10
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+        "event_id": "event_855d5f8241db2935bfa7e38b602ad08c",
+        "event_type": "economy.public-transfer",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "transfer-expenditure",
+              "amount": -5,
+              "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+            },
+            {
+              "account": "transfer-income",
+              "amount": 5,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            }
+          ],
+          "facts": {
+            "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "income_amount": 5,
+            "income_source": "transfers",
+            "public_expenditure": 5
+          },
+          "kind": "public-transfer",
+          "transaction_id": "transaction_5fcc6e77a51a5cc70791141436c5a7a3"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 10
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_f591a239f1d2e008f8d9e0ab2f2afece",
+        "event_type": "economy.interest",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "interest-expense",
+              "amount": -2,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "interest-income",
+              "amount": 2,
+              "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+            }
+          ],
+          "facts": {
+            "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "expenditure": 2,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+          },
+          "kind": "interest",
+          "transaction_id": "transaction_c994250175ac12a33a156140997d0281"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 11
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_51131ac31a43cb97f215d0f384b47ed2",
+        "event_type": "economy.interest",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "interest-expense",
+              "amount": -2,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "interest-income",
+              "amount": 2,
+              "entity_id": "organization_b2a259341517949abfc330061918e62a"
+            }
+          ],
+          "facts": {
+            "bank_id": "organization_b2a259341517949abfc330061918e62a",
+            "expenditure": 2,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          },
+          "kind": "interest",
+          "transaction_id": "transaction_62ec511909ed361ceec32e4c6308d5f1"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 11
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_169adac77467e9a9f04449ff8cf62a56",
+        "event_type": "economy.loan-repayment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "principal-repayment",
+              "amount": -10,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "loan-collection",
+              "amount": 10,
+              "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+            }
+          ],
+          "facts": {
+            "bank_asset_delta": -10,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "bank_liability_delta": -10,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "loan_id": "loan_c9eb0473caeab1205a108f9a59123186",
+            "principal_repaid": 10
+          },
+          "kind": "loan-repayment",
+          "transaction_id": "transaction_565fc833d2ba965a474e2041807c9a41"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 12
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_5d2c4e48044b92d72a80c2f8fdb5e4ad",
+        "event_type": "economy.loan-repayment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "principal-repayment",
+              "amount": -10,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "loan-collection",
+              "amount": 10,
+              "entity_id": "organization_b2a259341517949abfc330061918e62a"
+            }
+          ],
+          "facts": {
+            "bank_asset_delta": -10,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_b2a259341517949abfc330061918e62a",
+            "bank_liability_delta": -10,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "loan_id": "loan_bddebcccec3dbd59aa3086c035a4ba9e",
+            "principal_repaid": 10
+          },
+          "kind": "loan-repayment",
+          "transaction_id": "transaction_774f7a06bc8e31ccea9db271669fe09e"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 12
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+        "event_id": "event_a5b6540ddd3fa0ff6951f8ed20153d9b",
+        "event_type": "economy.saving",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "saving",
+              "amount": -10,
+              "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+            },
+            {
+              "account": "deposit-funding",
+              "amount": 10,
+              "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+            }
+          ],
+          "facts": {
+            "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+          },
+          "kind": "saving",
+          "transaction_id": "transaction_583adc3410bb16bc04c5704f7cfc44a0"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 13
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+        "event_id": "event_96078c02c6f0f75b0b35c8392ffebd20",
+        "event_type": "economy.saving",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "saving",
+              "amount": -10,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            },
+            {
+              "account": "deposit-funding",
+              "amount": 10,
+              "entity_id": "organization_b2a259341517949abfc330061918e62a"
+            }
+          ],
+          "facts": {
+            "bank_id": "organization_b2a259341517949abfc330061918e62a",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+          },
+          "kind": "saving",
+          "transaction_id": "transaction_782d38e47bc7a2e6dca14c18c2dbf640"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 13
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_6b4099718af522046588f20a968d8934",
+        "event_id": "event_05b8b1c5ceb1052d6efb8683c6c594cf",
+        "event_type": "economy.public-procurement",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "procurement-expenditure",
+              "amount": -8,
+              "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+            },
+            {
+              "account": "service-revenue",
+              "amount": 8,
+              "entity_id": "organization_6b4099718af522046588f20a968d8934"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_6b4099718af522046588f20a968d8934",
+            "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+            "public_expenditure": 8,
+            "revenue": 8
+          },
+          "kind": "public-procurement",
+          "transaction_id": "transaction_1889c5cac637cf39b90ef9fc36f5d9e7"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 14
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_23ec7e498efdd23b175f49b489b6810d",
+        "event_id": "event_896edc58a8e49a327fb5760e0ff1ee61",
+        "event_type": "economy.public-procurement",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "procurement-expenditure",
+              "amount": -8,
+              "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+            },
+            {
+              "account": "service-revenue",
+              "amount": 8,
+              "entity_id": "organization_23ec7e498efdd23b175f49b489b6810d"
+            }
+          ],
+          "facts": {
+            "firm_id": "organization_23ec7e498efdd23b175f49b489b6810d",
+            "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+            "public_expenditure": 8,
+            "revenue": 8
+          },
+          "kind": "public-procurement",
+          "transaction_id": "transaction_76edced5dbc7f4c389b45df0d0598946"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 14
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_0d981e8938ae849c08c7bf4754e23a48",
+        "event_type": "economy.investment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "capital-expenditure",
+              "amount": -15,
+              "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            {
+              "account": "capital-goods-revenue",
+              "amount": 15,
+              "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+            }
+          ],
+          "facts": {
+            "capacity_delta": 2,
+            "expenditure": 15,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+          },
+          "kind": "investment",
+          "transaction_id": "transaction_de9b87af81e9b694a546e25c7edd6618"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 15
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_72af4de0a71507f3eefb885f4757d68d",
+        "event_type": "economy.investment",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "capital-expenditure",
+              "amount": -15,
+              "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            },
+            {
+              "account": "capital-goods-revenue",
+              "amount": 15,
+              "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+            }
+          ],
+          "facts": {
+            "capacity_delta": 2,
+            "expenditure": 15,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          },
+          "kind": "investment",
+          "transaction_id": "transaction_c4f48652fb94f354f2d12f46b91c7a35"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 15
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_d8860961daa220d8abd89787a50dcf6d",
+        "event_type": "economy.shock",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "capacity_delta": 0,
+            "demand_delta": 0,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "price_delta": 0,
+            "severity": 2,
+            "shock_kind": "tax-and-spending-change"
+          },
+          "kind": "shock",
+          "transaction_id": "transaction_04ebebbbc69fd8af81aabd7d57a5f42b"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 16
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_2835d11f2831530442cb0cd1e1f9fa69",
+        "event_type": "economy.shock",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "capacity_delta": 0,
+            "demand_delta": 0,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "price_delta": 0,
+            "severity": 2,
+            "shock_kind": "tax-and-spending-change"
+          },
+          "kind": "shock",
+          "transaction_id": "transaction_468d0fe13023b50b44aab08f8ab44d0e"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 16
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": null,
+        "event_id": "event_e3d7d701fb0d6d8f8e14882bf70d3f70",
+        "event_type": "economy.policy-change",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+            "policy_kind": "temporary-transfer-and-tax-adjustment"
+          },
+          "kind": "policy-change",
+          "transaction_id": "transaction_fe89fa8306ed2e9f6b2884886da429fb"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 17
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+        "event_id": "event_f51577a843827ed3c4927f7def9bd40f",
+        "event_type": "economy.policy-change",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "declared deterministic intervention",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [
+            {
+              "account": "intervention-expenditure",
+              "amount": -12,
+              "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+            },
+            {
+              "account": "intervention-receipt",
+              "amount": 12,
+              "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+            }
+          ],
+          "facts": {
+            "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "income_amount": 12,
+            "income_source": "transfers",
+            "policy_kind": "household-transfer",
+            "public_expenditure": 12
+          },
+          "kind": "policy-change",
+          "transaction_id": "transaction_84ab38940daa5cce136927a055e97fad"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "intervention",
+          "tier": "synthetic"
+        },
+        "tick": 17
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": null,
+        "event_id": "event_dc56301e89bdec9e7e8523024e77d79a",
+        "event_type": "economy.policy-change",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+            "policy_kind": "temporary-transfer-and-tax-adjustment"
+          },
+          "kind": "policy-change",
+          "transaction_id": "transaction_3bf248eafc4215325557182f4eac25a3"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 17
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+        "event_id": "event_8806eea2c12cf1cb8c41d756065f5cbb",
+        "event_type": "economy.restructuring",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "capacity_delta": 0,
+            "demand_delta": 3,
+            "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "status": "active"
+          },
+          "kind": "restructuring",
+          "transaction_id": "transaction_94d4020bb38bab32cf775a49b4e73367"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 18
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+        "event_id": "event_7c47bf878d000cdb0defaa40d87bc0f4",
+        "event_type": "economy.restructuring",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "capacity_delta": 0,
+            "demand_delta": 3,
+            "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+            "status": "active"
+          },
+          "kind": "restructuring",
+          "transaction_id": "transaction_2add4ef61b6b034c3fad09b5f62ebdb4"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 18
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+        "event_id": "event_3afbe1f037d774704e09863ce689b01a",
+        "event_type": "economy.borrowing",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "bank_asset_delta": 20,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+            "bank_liability_delta": 20,
+            "borrower_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+            "loan_id": "loan_819bb3e94f7813916e925a409062b44d",
+            "principal": 20
+          },
+          "kind": "borrowing",
+          "transaction_id": "transaction_48585b786b01de9fcddd0d2d40824694"
+        },
+        "priority": 0,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 23
+      },
+      {
+        "causes": [],
+        "contract_version": "aether-event.v1",
+        "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+        "event_id": "event_81e8d0963a08d30f1a41c96dcd952692",
+        "event_type": "economy.borrowing",
+        "module_id": "economy-operations",
+        "payload": {
+          "assumptions": {
+            "authoritative": false,
+            "mechanism": "deterministic declared counterparty transaction",
+            "synthetic": true
+          },
+          "contract_version": "aether-economy-event.v1",
+          "entries": [],
+          "facts": {
+            "bank_asset_delta": 20,
+            "bank_equity_delta": 0,
+            "bank_id": "organization_b2a259341517949abfc330061918e62a",
+            "bank_liability_delta": 20,
+            "borrower_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+            "loan_id": "loan_1bf26e3ab14988fd8504123927e04caf",
+            "principal": 20
+          },
+          "kind": "borrowing",
+          "transaction_id": "transaction_b94b250f1aeac76bd4f9af3e3a1972f7"
+        },
+        "priority": 1,
+        "provenance": {
+          "authoritative": false,
+          "origin": "scenario",
+          "tier": "synthetic"
+        },
+        "tick": 23
+      }
+    ],
+    "limitations": [
+      "Aggregate indicators derive only from synthetic entity-level events.",
+      "Market, policy, and behavioral mechanisms are simplified declared assumptions.",
+      "Outputs are not forecasts, investment guidance, or policy authority."
+    ],
+    "metrics": [],
+    "module_versions": {
+      "core": "1.0.0",
+      "economy-operations": "1.0.0"
+    },
+    "observations": [],
+    "projected_state": {
+      "event_count": 39,
+      "last_event_id": "event_81e8d0963a08d30f1a41c96dcd952692",
+      "module_state": {
+        "economy-operations": {
+          "agent_kinds": {
+            "household_8e7c4827058ea9bd9fab9911c9af409c": "household",
+            "household_e3f089db27cf0909feb1a8e6ab5d8dbe": "household",
+            "institution_00b4aaa3608856fb960f12c761294429": "market",
+            "institution_1cade5e3d3c717fea424c6fc114a707a": "government",
+            "institution_2d5774b059d69e5874c5966e85624d2e": "regulator",
+            "institution_3dabcbc26e371373921992f77575e3dd": "market",
+            "institution_46246c8c76b4c51637cd62787be4f68d": "government",
+            "institution_9ca621a3320ed67949b30e7fe9f4b5c6": "regulator",
+            "organization_04fef64f20f936454cdd3aba99209273": "firm",
+            "organization_23ec7e498efdd23b175f49b489b6810d": "nonprofit",
+            "organization_6b4099718af522046588f20a968d8934": "nonprofit",
+            "organization_6c53e63a823d7638314c4adce9f4f55b": "firm",
+            "organization_77fd66357f0489e791bbe55f7ea9da42": "firm",
+            "organization_b2a259341517949abfc330061918e62a": "bank",
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02": "firm",
+            "organization_e211ff528f0ad0f72ba41561e0975d14": "bank",
+            "person_15921ad27a27baff57694cf2702cb573": "citizen",
+            "person_8055dc01ec070218cf58ae3075fd14a4": "citizen"
+          },
+          "balances": {
+            "household_8e7c4827058ea9bd9fab9911c9af409c": 227,
+            "household_e3f089db27cf0909feb1a8e6ab5d8dbe": 215,
+            "institution_00b4aaa3608856fb960f12c761294429": 0,
+            "institution_1cade5e3d3c717fea424c6fc114a707a": 485,
+            "institution_2d5774b059d69e5874c5966e85624d2e": 50,
+            "institution_3dabcbc26e371373921992f77575e3dd": 0,
+            "institution_46246c8c76b4c51637cd62787be4f68d": 497,
+            "institution_9ca621a3320ed67949b30e7fe9f4b5c6": 50,
+            "organization_04fef64f20f936454cdd3aba99209273": 655,
+            "organization_23ec7e498efdd23b175f49b489b6810d": 108,
+            "organization_6b4099718af522046588f20a968d8934": 108,
+            "organization_6c53e63a823d7638314c4adce9f4f55b": 655,
+            "organization_77fd66357f0489e791bbe55f7ea9da42": 403,
+            "organization_b2a259341517949abfc330061918e62a": 1022,
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02": 403,
+            "organization_e211ff528f0ad0f72ba41561e0975d14": 1022,
+            "person_15921ad27a27baff57694cf2702cb573": 0,
+            "person_8055dc01ec070218cf58ae3075fd14a4": 0
+          },
+          "bank_balance_sheets": {
+            "organization_b2a259341517949abfc330061918e62a": {
+              "assets": 1110,
+              "equity": 200,
+              "liabilities": 910
+            },
+            "organization_e211ff528f0ad0f72ba41561e0975d14": {
+              "assets": 1110,
+              "equity": 200,
+              "liabilities": 910
+            }
+          },
+          "employment": {
+            "person_15921ad27a27baff57694cf2702cb573": "organization_77fd66357f0489e791bbe55f7ea9da42",
+            "person_8055dc01ec070218cf58ae3075fd14a4": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+          },
+          "firms": {
+            "organization_04fef64f20f936454cdd3aba99209273": {
+              "capacity": 20,
+              "demand": 10,
+              "expenditure": 0,
+              "inventory": 25,
+              "price": 8,
+              "revenue": 40,
+              "status": "active"
+            },
+            "organization_23ec7e498efdd23b175f49b489b6810d": {
+              "capacity": 5,
+              "demand": 2,
+              "expenditure": 0,
+              "inventory": 0,
+              "price": 1,
+              "revenue": 8,
+              "status": "active"
+            },
+            "organization_6b4099718af522046588f20a968d8934": {
+              "capacity": 5,
+              "demand": 2,
+              "expenditure": 0,
+              "inventory": 0,
+              "price": 1,
+              "revenue": 8,
+              "status": "active"
+            },
+            "organization_6c53e63a823d7638314c4adce9f4f55b": {
+              "capacity": 20,
+              "demand": 10,
+              "expenditure": 0,
+              "inventory": 25,
+              "price": 8,
+              "revenue": 40,
+              "status": "active"
+            },
+            "organization_77fd66357f0489e791bbe55f7ea9da42": {
+              "capacity": 17,
+              "demand": 15,
+              "expenditure": 77,
+              "inventory": 2,
+              "price": 12,
+              "revenue": 30,
+              "status": "active"
+            },
+            "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02": {
+              "capacity": 17,
+              "demand": 15,
+              "expenditure": 77,
+              "inventory": 2,
+              "price": 12,
+              "revenue": 30,
+              "status": "active"
+            }
+          },
+          "government_receipts": {
+            "tax_1cbd1ccc29937cb190b5c5e830d3ba67": 10,
+            "tax_a2b11a7a67f0e8725a836361a5d287fc": 10
+          },
+          "household_income": {
+            "household_8e7c4827058ea9bd9fab9911c9af409c": {
+              "transfers": 17,
+              "wages": 50
+            },
+            "household_e3f089db27cf0909feb1a8e6ab5d8dbe": {
+              "transfers": 5,
+              "wages": 50
+            }
+          },
+          "loans": {
+            "loan_1bf26e3ab14988fd8504123927e04caf": {
+              "bank_id": "organization_b2a259341517949abfc330061918e62a",
+              "borrower_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+              "outstanding": 20
+            },
+            "loan_819bb3e94f7813916e925a409062b44d": {
+              "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+              "borrower_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+              "outstanding": 20
+            },
+            "loan_bddebcccec3dbd59aa3086c035a4ba9e": {
+              "bank_id": "organization_b2a259341517949abfc330061918e62a",
+              "borrower_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+              "outstanding": 90
+            },
+            "loan_c9eb0473caeab1205a108f9a59123186": {
+              "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+              "borrower_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+              "outstanding": 90
+            }
+          },
+          "market_matches": {
+            "transaction_07fa4043b564fbe9663fd1c4b0651670": {
+              "demand": 12,
+              "market_id": "institution_3dabcbc26e371373921992f77575e3dd",
+              "matched_quantity": 10,
+              "price": 8,
+              "supply": 10
+            },
+            "transaction_de3365c02c5eee583891ad8983b14497": {
+              "demand": 12,
+              "market_id": "institution_00b4aaa3608856fb960f12c761294429",
+              "matched_quantity": 10,
+              "price": 8,
+              "supply": 10
+            }
+          },
+          "metrics": {
+            "closures": 0,
+            "consumption": 6,
+            "credit": 220,
+            "defaults": 0,
+            "employment": 2,
+            "formations": 2,
+            "market_volume": 20,
+            "production": 20,
+            "public_expenditure": 38,
+            "taxes": 20,
+            "unemployment": 0,
+            "wages": 100
+          },
+          "policies": [
+            {
+              "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+              "policy_kind": "temporary-transfer-and-tax-adjustment"
+            },
+            {
+              "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+              "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+              "income_amount": 12,
+              "income_source": "transfers",
+              "policy_kind": "household-transfer",
+              "public_expenditure": 12
+            },
+            {
+              "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+              "policy_kind": "temporary-transfer-and-tax-adjustment"
+            }
+          ],
+          "shocks": [
+            {
+              "capacity_delta": 0,
+              "demand_delta": 0,
+              "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+              "price_delta": 0,
+              "severity": 2,
+              "shock_kind": "tax-and-spending-change"
+            },
+            {
+              "capacity_delta": 0,
+              "demand_delta": 0,
+              "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+              "price_delta": 0,
+              "severity": 2,
+              "shock_kind": "tax-and-spending-change"
+            }
+          ],
+          "taxes": {
+            "tax_1cbd1ccc29937cb190b5c5e830d3ba67": {
+              "amount": 10,
+              "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+              "taxpayer_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+            },
+            "tax_a2b11a7a67f0e8725a836361a5d287fc": {
+              "amount": 10,
+              "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+              "taxpayer_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+            }
+          },
+          "transactions": {
+            "transaction_04ebebbbc69fd8af81aabd7d57a5f42b": {
+              "entries": [],
+              "event_id": "event_d8860961daa220d8abd89787a50dcf6d",
+              "facts": {
+                "capacity_delta": 0,
+                "demand_delta": 0,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "price_delta": 0,
+                "severity": 2,
+                "shock_kind": "tax-and-spending-change"
+              },
+              "kind": "shock"
+            },
+            "transaction_07fa4043b564fbe9663fd1c4b0651670": {
+              "entries": [],
+              "event_id": "event_4ef7c05fddb54c39fe7e880022954802",
+              "facts": {
+                "demand": 12,
+                "market_id": "institution_3dabcbc26e371373921992f77575e3dd",
+                "matched_quantity": 10,
+                "price": 8,
+                "supply": 10
+              },
+              "kind": "market-clearing"
+            },
+            "transaction_1889c5cac637cf39b90ef9fc36f5d9e7": {
+              "entries": [
+                {
+                  "account": "procurement-expenditure",
+                  "amount": -8,
+                  "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+                },
+                {
+                  "account": "service-revenue",
+                  "amount": 8,
+                  "entity_id": "organization_6b4099718af522046588f20a968d8934"
+                }
+              ],
+              "event_id": "event_05b8b1c5ceb1052d6efb8683c6c594cf",
+              "facts": {
+                "firm_id": "organization_6b4099718af522046588f20a968d8934",
+                "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+                "public_expenditure": 8,
+                "revenue": 8
+              },
+              "kind": "public-procurement"
+            },
+            "transaction_1f2282ddd14ea86008e7c7c3eec5d908": {
+              "entries": [
+                {
+                  "account": "wage-expense",
+                  "amount": -50,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "wage-income",
+                  "amount": 50,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                }
+              ],
+              "event_id": "event_a23396f11ed95f4ba5a821f84fa630fe",
+              "facts": {
+                "expenditure": 50,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "income_amount": 50,
+                "income_source": "wages",
+                "person_id": "person_8055dc01ec070218cf58ae3075fd14a4"
+              },
+              "kind": "wage"
+            },
+            "transaction_2add4ef61b6b034c3fad09b5f62ebdb4": {
+              "entries": [],
+              "event_id": "event_7c47bf878d000cdb0defaa40d87bc0f4",
+              "facts": {
+                "capacity_delta": 0,
+                "demand_delta": 3,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "status": "active"
+              },
+              "kind": "restructuring"
+            },
+            "transaction_381741e0ef0dbf7b6ab1e8b7fb08c05f": {
+              "entries": [
+                {
+                  "account": "capital-contribution",
+                  "amount": -100,
+                  "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+                },
+                {
+                  "account": "paid-in-capital",
+                  "amount": 100,
+                  "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+                }
+              ],
+              "event_id": "event_e66143648e3179d9c92551a717cdc334",
+              "facts": {
+                "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+              },
+              "kind": "business-formation"
+            },
+            "transaction_3bf248eafc4215325557182f4eac25a3": {
+              "entries": [],
+              "event_id": "event_dc56301e89bdec9e7e8523024e77d79a",
+              "facts": {
+                "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+                "policy_kind": "temporary-transfer-and-tax-adjustment"
+              },
+              "kind": "policy-change"
+            },
+            "transaction_468d0fe13023b50b44aab08f8ab44d0e": {
+              "entries": [],
+              "event_id": "event_2835d11f2831530442cb0cd1e1f9fa69",
+              "facts": {
+                "capacity_delta": 0,
+                "demand_delta": 0,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "price_delta": 0,
+                "severity": 2,
+                "shock_kind": "tax-and-spending-change"
+              },
+              "kind": "shock"
+            },
+            "transaction_48585b786b01de9fcddd0d2d40824694": {
+              "entries": [],
+              "event_id": "event_3afbe1f037d774704e09863ce689b01a",
+              "facts": {
+                "bank_asset_delta": 20,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+                "bank_liability_delta": 20,
+                "borrower_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "loan_id": "loan_819bb3e94f7813916e925a409062b44d",
+                "principal": 20
+              },
+              "kind": "borrowing"
+            },
+            "transaction_4cabdcb174f44a29c170e39abcb3ec2b": {
+              "entries": [
+                {
+                  "account": "capital-contribution",
+                  "amount": -100,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                },
+                {
+                  "account": "paid-in-capital",
+                  "amount": 100,
+                  "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+                }
+              ],
+              "event_id": "event_7105b9ce803127e499ddf4366ea2b86a",
+              "facts": {
+                "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+              },
+              "kind": "business-formation"
+            },
+            "transaction_55e8727583ed487d7da2e53cf17ff158": {
+              "entries": [],
+              "event_id": "event_eb7cba6dcd810a939863e41e4bbcc82e",
+              "facts": {
+                "bank_asset_delta": 100,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+                "bank_liability_delta": 100,
+                "borrower_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "loan_id": "loan_c9eb0473caeab1205a108f9a59123186",
+                "principal": 100
+              },
+              "kind": "loan"
+            },
+            "transaction_565fc833d2ba965a474e2041807c9a41": {
+              "entries": [
+                {
+                  "account": "principal-repayment",
+                  "amount": -10,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "loan-collection",
+                  "amount": 10,
+                  "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+                }
+              ],
+              "event_id": "event_169adac77467e9a9f04449ff8cf62a56",
+              "facts": {
+                "bank_asset_delta": -10,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+                "bank_liability_delta": -10,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "loan_id": "loan_c9eb0473caeab1205a108f9a59123186",
+                "principal_repaid": 10
+              },
+              "kind": "loan-repayment"
+            },
+            "transaction_583adc3410bb16bc04c5704f7cfc44a0": {
+              "entries": [
+                {
+                  "account": "saving",
+                  "amount": -10,
+                  "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+                },
+                {
+                  "account": "deposit-funding",
+                  "amount": 10,
+                  "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+                }
+              ],
+              "event_id": "event_a5b6540ddd3fa0ff6951f8ed20153d9b",
+              "facts": {
+                "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+              },
+              "kind": "saving"
+            },
+            "transaction_5e72e3556fb33a1ffe42c15c630454c8": {
+              "entries": [],
+              "event_id": "event_56578de9b20999b091a38b121daa5c31",
+              "facts": {
+                "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+                "inventory_delta": 10,
+                "quantity": 10
+              },
+              "kind": "production"
+            },
+            "transaction_5fcc6e77a51a5cc70791141436c5a7a3": {
+              "entries": [
+                {
+                  "account": "transfer-expenditure",
+                  "amount": -5,
+                  "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+                },
+                {
+                  "account": "transfer-income",
+                  "amount": 5,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                }
+              ],
+              "event_id": "event_855d5f8241db2935bfa7e38b602ad08c",
+              "facts": {
+                "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "income_amount": 5,
+                "income_source": "transfers",
+                "public_expenditure": 5
+              },
+              "kind": "public-transfer"
+            },
+            "transaction_62ec511909ed361ceec32e4c6308d5f1": {
+              "entries": [
+                {
+                  "account": "interest-expense",
+                  "amount": -2,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "interest-income",
+                  "amount": 2,
+                  "entity_id": "organization_b2a259341517949abfc330061918e62a"
+                }
+              ],
+              "event_id": "event_51131ac31a43cb97f215d0f384b47ed2",
+              "facts": {
+                "bank_id": "organization_b2a259341517949abfc330061918e62a",
+                "expenditure": 2,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+              },
+              "kind": "interest"
+            },
+            "transaction_76edced5dbc7f4c389b45df0d0598946": {
+              "entries": [
+                {
+                  "account": "procurement-expenditure",
+                  "amount": -8,
+                  "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+                },
+                {
+                  "account": "service-revenue",
+                  "amount": 8,
+                  "entity_id": "organization_23ec7e498efdd23b175f49b489b6810d"
+                }
+              ],
+              "event_id": "event_896edc58a8e49a327fb5760e0ff1ee61",
+              "facts": {
+                "firm_id": "organization_23ec7e498efdd23b175f49b489b6810d",
+                "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+                "public_expenditure": 8,
+                "revenue": 8
+              },
+              "kind": "public-procurement"
+            },
+            "transaction_774f7a06bc8e31ccea9db271669fe09e": {
+              "entries": [
+                {
+                  "account": "principal-repayment",
+                  "amount": -10,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "loan-collection",
+                  "amount": 10,
+                  "entity_id": "organization_b2a259341517949abfc330061918e62a"
+                }
+              ],
+              "event_id": "event_5d2c4e48044b92d72a80c2f8fdb5e4ad",
+              "facts": {
+                "bank_asset_delta": -10,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_b2a259341517949abfc330061918e62a",
+                "bank_liability_delta": -10,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "loan_id": "loan_bddebcccec3dbd59aa3086c035a4ba9e",
+                "principal_repaid": 10
+              },
+              "kind": "loan-repayment"
+            },
+            "transaction_782d38e47bc7a2e6dca14c18c2dbf640": {
+              "entries": [
+                {
+                  "account": "saving",
+                  "amount": -10,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                },
+                {
+                  "account": "deposit-funding",
+                  "amount": 10,
+                  "entity_id": "organization_b2a259341517949abfc330061918e62a"
+                }
+              ],
+              "event_id": "event_96078c02c6f0f75b0b35c8392ffebd20",
+              "facts": {
+                "bank_id": "organization_b2a259341517949abfc330061918e62a",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+              },
+              "kind": "saving"
+            },
+            "transaction_784edfba931f1bb76c1f14ac57672527": {
+              "entries": [],
+              "event_id": "event_149492f46c1abd0997c99d392a7b8f1f",
+              "facts": {
+                "employer_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "employment_action": "hired",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "person_id": "person_15921ad27a27baff57694cf2702cb573"
+              },
+              "kind": "employment"
+            },
+            "transaction_7cb0a80dfdd078e9a1a6898f5ca1c346": {
+              "entries": [],
+              "event_id": "event_c8fcd065274617827b1cafa5b6d483b5",
+              "facts": {
+                "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+                "inventory_delta": 10,
+                "quantity": 10
+              },
+              "kind": "production"
+            },
+            "transaction_84ab38940daa5cce136927a055e97fad": {
+              "entries": [
+                {
+                  "account": "intervention-expenditure",
+                  "amount": -12,
+                  "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+                },
+                {
+                  "account": "intervention-receipt",
+                  "amount": 12,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                }
+              ],
+              "event_id": "event_f51577a843827ed3c4927f7def9bd40f",
+              "facts": {
+                "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "income_amount": 12,
+                "income_source": "transfers",
+                "policy_kind": "household-transfer",
+                "public_expenditure": 12
+              },
+              "kind": "policy-change"
+            },
+            "transaction_94d4020bb38bab32cf775a49b4e73367": {
+              "entries": [],
+              "event_id": "event_8806eea2c12cf1cb8c41d756065f5cbb",
+              "facts": {
+                "capacity_delta": 0,
+                "demand_delta": 3,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "status": "active"
+              },
+              "kind": "restructuring"
+            },
+            "transaction_a15acd47b28017e1f5a211e09c69414f": {
+              "entries": [
+                {
+                  "account": "wage-expense",
+                  "amount": -50,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "wage-income",
+                  "amount": 50,
+                  "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+                }
+              ],
+              "event_id": "event_788e68463912a7261456333e91a9f428",
+              "facts": {
+                "expenditure": 50,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "income_amount": 50,
+                "income_source": "wages",
+                "person_id": "person_15921ad27a27baff57694cf2702cb573"
+              },
+              "kind": "wage"
+            },
+            "transaction_a2beb83ce35f8457d024607610ee7dbe": {
+              "entries": [],
+              "event_id": "event_9cac418ffda6c2b0a7aac7cf8098a2b9",
+              "facts": {
+                "bank_asset_delta": 100,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_b2a259341517949abfc330061918e62a",
+                "bank_liability_delta": 100,
+                "borrower_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "loan_id": "loan_bddebcccec3dbd59aa3086c035a4ba9e",
+                "principal": 100
+              },
+              "kind": "loan"
+            },
+            "transaction_a5ff78614167c43f171c07e621724ad3": {
+              "entries": [
+                {
+                  "account": "consumption",
+                  "amount": -30,
+                  "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+                },
+                {
+                  "account": "sales-receipt",
+                  "amount": 30,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                }
+              ],
+              "event_id": "event_73d3f3644377d1699375879a7c693b85",
+              "facts": {
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "inventory_delta": -3,
+                "quantity": 3,
+                "revenue": 30
+              },
+              "kind": "consumption"
+            },
+            "transaction_b94b250f1aeac76bd4f9af3e3a1972f7": {
+              "entries": [],
+              "event_id": "event_81e8d0963a08d30f1a41c96dcd952692",
+              "facts": {
+                "bank_asset_delta": 20,
+                "bank_equity_delta": 0,
+                "bank_id": "organization_b2a259341517949abfc330061918e62a",
+                "bank_liability_delta": 20,
+                "borrower_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "loan_id": "loan_1bf26e3ab14988fd8504123927e04caf",
+                "principal": 20
+              },
+              "kind": "borrowing"
+            },
+            "transaction_c04e2a02e22960970808641d88cfbb6f": {
+              "entries": [
+                {
+                  "account": "inventory-purchase",
+                  "amount": -40,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "sales-receipt",
+                  "amount": 40,
+                  "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+                }
+              ],
+              "event_id": "event_af37426669df37c3bfbe1edb5adf9a75",
+              "facts": {
+                "counterparty_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "firm_id": "organization_04fef64f20f936454cdd3aba99209273",
+                "inventory_delta": -5,
+                "revenue": 40
+              },
+              "kind": "supply-payment"
+            },
+            "transaction_c48c9c9a1f81c7cef45ac8b09df09582": {
+              "entries": [],
+              "event_id": "event_550d7185e0c3770c8f04e01fe9c65afb",
+              "facts": {
+                "employer_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "employment_action": "hired",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "person_id": "person_8055dc01ec070218cf58ae3075fd14a4"
+              },
+              "kind": "employment"
+            },
+            "transaction_c4f48652fb94f354f2d12f46b91c7a35": {
+              "entries": [
+                {
+                  "account": "capital-expenditure",
+                  "amount": -15,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "capital-goods-revenue",
+                  "amount": 15,
+                  "entity_id": "organization_04fef64f20f936454cdd3aba99209273"
+                }
+              ],
+              "event_id": "event_72af4de0a71507f3eefb885f4757d68d",
+              "facts": {
+                "capacity_delta": 2,
+                "expenditure": 15,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+              },
+              "kind": "investment"
+            },
+            "transaction_c994250175ac12a33a156140997d0281": {
+              "entries": [
+                {
+                  "account": "interest-expense",
+                  "amount": -2,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "interest-income",
+                  "amount": 2,
+                  "entity_id": "organization_e211ff528f0ad0f72ba41561e0975d14"
+                }
+              ],
+              "event_id": "event_f591a239f1d2e008f8d9e0ab2f2afece",
+              "facts": {
+                "bank_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+                "expenditure": 2,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+              },
+              "kind": "interest"
+            },
+            "transaction_cf4f8ebbf48604e3bd928a1bd4594a5d": {
+              "entries": [
+                {
+                  "account": "tax-expense",
+                  "amount": -10,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "tax-receipt",
+                  "amount": 10,
+                  "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+                }
+              ],
+              "event_id": "event_587734b4ac0f54f8947b4222f9c6096b",
+              "facts": {
+                "expenditure": 10,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+                "tax_amount": 10,
+                "tax_id": "tax_1cbd1ccc29937cb190b5c5e830d3ba67",
+                "taxpayer_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+              },
+              "kind": "tax"
+            },
+            "transaction_de3365c02c5eee583891ad8983b14497": {
+              "entries": [],
+              "event_id": "event_71da251fa25da3d822f14b681cbbafb8",
+              "facts": {
+                "demand": 12,
+                "market_id": "institution_00b4aaa3608856fb960f12c761294429",
+                "matched_quantity": 10,
+                "price": 8,
+                "supply": 10
+              },
+              "kind": "market-clearing"
+            },
+            "transaction_de9b87af81e9b694a546e25c7edd6618": {
+              "entries": [
+                {
+                  "account": "capital-expenditure",
+                  "amount": -15,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "capital-goods-revenue",
+                  "amount": 15,
+                  "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+                }
+              ],
+              "event_id": "event_0d981e8938ae849c08c7bf4754e23a48",
+              "facts": {
+                "capacity_delta": 2,
+                "expenditure": 15,
+                "firm_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+              },
+              "kind": "investment"
+            },
+            "transaction_dec1d8f9bf1194f1e2e38b17589e471a": {
+              "entries": [
+                {
+                  "account": "inventory-purchase",
+                  "amount": -40,
+                  "entity_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+                },
+                {
+                  "account": "sales-receipt",
+                  "amount": 40,
+                  "entity_id": "organization_6c53e63a823d7638314c4adce9f4f55b"
+                }
+              ],
+              "event_id": "event_62760fed89cbfdbca0bb13ec2129c38f",
+              "facts": {
+                "counterparty_id": "organization_77fd66357f0489e791bbe55f7ea9da42",
+                "firm_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+                "inventory_delta": -5,
+                "revenue": 40
+              },
+              "kind": "supply-payment"
+            },
+            "transaction_e7c30e48003a7261299e5d2848477597": {
+              "entries": [
+                {
+                  "account": "tax-expense",
+                  "amount": -10,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                },
+                {
+                  "account": "tax-receipt",
+                  "amount": 10,
+                  "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+                }
+              ],
+              "event_id": "event_5c3e6f3de05f7576271fb65563de9a1d",
+              "facts": {
+                "expenditure": 10,
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+                "tax_amount": 10,
+                "tax_id": "tax_a2b11a7a67f0e8725a836361a5d287fc",
+                "taxpayer_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+              },
+              "kind": "tax"
+            },
+            "transaction_ee299fd489e79449a2fa6279839e064c": {
+              "entries": [
+                {
+                  "account": "transfer-expenditure",
+                  "amount": -5,
+                  "entity_id": "institution_46246c8c76b4c51637cd62787be4f68d"
+                },
+                {
+                  "account": "transfer-income",
+                  "amount": 5,
+                  "entity_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+                }
+              ],
+              "event_id": "event_2c24de87c608a392a7597478cc687974",
+              "facts": {
+                "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+                "household_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe",
+                "income_amount": 5,
+                "income_source": "transfers",
+                "public_expenditure": 5
+              },
+              "kind": "public-transfer"
+            },
+            "transaction_f759553d91be059ebe2cb183717fe98b": {
+              "entries": [
+                {
+                  "account": "consumption",
+                  "amount": -30,
+                  "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+                },
+                {
+                  "account": "sales-receipt",
+                  "amount": 30,
+                  "entity_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+                }
+              ],
+              "event_id": "event_7daa118d31f574055b2a592d9db2b773",
+              "facts": {
+                "firm_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02",
+                "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+                "inventory_delta": -3,
+                "quantity": 3,
+                "revenue": 30
+              },
+              "kind": "consumption"
+            },
+            "transaction_fe89fa8306ed2e9f6b2884886da429fb": {
+              "entries": [],
+              "event_id": "event_e3d7d701fb0d6d8f8e14882bf70d3f70",
+              "facts": {
+                "government_id": "institution_46246c8c76b4c51637cd62787be4f68d",
+                "policy_kind": "temporary-transfer-and-tax-adjustment"
+              },
+              "kind": "policy-change"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "authoritative": false,
+      "external_credentials_used": false,
+      "origin": "deterministic-kernel",
+      "scenario_digest": "afaf05bc9f4e7d7ffa150c19f36356c9aca4302cfb00e525ee5d200eebb995f8",
+      "tier": "synthetic"
+    },
+    "relationships": [
+      {
+        "attributes": {
+          "from_id": "organization_6c53e63a823d7638314c4adce9f4f55b",
+          "to_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+        },
+        "id": "relationship_038ec0045a3952d135d2d015cdd2cec3",
+        "kind": "supplier-customer"
+      },
+      {
+        "attributes": {
+          "from_id": "organization_e211ff528f0ad0f72ba41561e0975d14",
+          "to_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+        },
+        "id": "relationship_4615975ff119904d417e7daad0e53adb",
+        "kind": "credit"
+      },
+      {
+        "attributes": {
+          "from_id": "organization_04fef64f20f936454cdd3aba99209273",
+          "to_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+        },
+        "id": "relationship_76e7fd3dac8276ba3bed961ce6a7f65d",
+        "kind": "supplier-customer"
+      },
+      {
+        "attributes": {
+          "from_id": "organization_b2a259341517949abfc330061918e62a",
+          "to_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+        },
+        "id": "relationship_bc9df166888a8207b7c2be43bcff2636",
+        "kind": "credit"
+      },
+      {
+        "attributes": {
+          "from_id": "person_8055dc01ec070218cf58ae3075fd14a4",
+          "to_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+        },
+        "id": "relationship_cacd49aab0bb22f3934be0bb15bcccc7",
+        "kind": "household-membership"
+      },
+      {
+        "attributes": {
+          "from_id": "person_15921ad27a27baff57694cf2702cb573",
+          "to_id": "organization_77fd66357f0489e791bbe55f7ea9da42"
+        },
+        "id": "relationship_e2cf3caa36bbeb607ec9bd256e2b2122",
+        "kind": "employment-market"
+      },
+      {
+        "attributes": {
+          "from_id": "person_15921ad27a27baff57694cf2702cb573",
+          "to_id": "household_e3f089db27cf0909feb1a8e6ab5d8dbe"
+        },
+        "id": "relationship_f4c03d57ded0f8ebef6be6d62dfaac22",
+        "kind": "household-membership"
+      },
+      {
+        "attributes": {
+          "from_id": "person_8055dc01ec070218cf58ae3075fd14a4",
+          "to_id": "organization_b7ef9c0a2ccf8ca81de7c736b9c06b02"
+        },
+        "id": "relationship_f74ba0344fa72369f915e006d273cb44",
+        "kind": "employment-market"
+      }
+    ],
+    "research_status": "research-preview",
+    "resources": [],
+    "scenario_contract_version": "aether-scenario.v1",
+    "scenario_id": "policy-intervention-baseline",
+    "seed": "economy-policy-v1",
+    "world_id": "world_887ca95addc60fcec1445f39f88a1499"
+  }
+}

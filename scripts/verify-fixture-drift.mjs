@@ -51,6 +51,7 @@ const before = await snapshot();
 run(process.execPath, ["scripts/demo.mjs"]);
 run(process.execPath, ["scripts/generate-enterprise-fixtures.mjs"]);
 run(process.execPath, ["scripts/generate-ecosystem-fixtures.mjs"]);
+run(process.execPath, ["scripts/generate-economy-fixtures.mjs"]);
 const after = await snapshot();
 const paths = [...new Set([...before.keys(), ...after.keys()])].sort();
 const changed = paths.filter((path) => before.get(path) !== after.get(path));

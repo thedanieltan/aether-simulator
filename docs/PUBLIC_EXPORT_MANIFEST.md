@@ -36,6 +36,11 @@ reviewers.
 | Cross-boundary reconciliation and causal analysis | `src/ecosystem/analysis.mjs` | Contract, payment, delivery, identity, lineage, and cascade tests |
 | Ecosystem scenarios, fixtures, and intervention | `scenarios/ecosystem/`, `fixtures/ecosystem/`, `scenarios/interventions/ecosystem-capacity-restoration.json` | Replay, branch, comparison, and fixture validation |
 | Ecosystem benchmarks | `scripts/benchmark-ecosystem.mjs`, `docs/ECOSYSTEM_BENCHMARKS.md` | Configurable scale profiles |
+| Economy configuration and event contracts | `schemas/economy/`, `src/economy/validation.mjs` | Formal schema and fail-closed tests |
+| Entity-derived economy mechanisms | `src/economy/scenario-builder.mjs`, `src/modules/economy-operations.mjs` | Seven deterministic scenarios |
+| Economy reconciliation and analysis | `src/economy/analysis.mjs` | Household, firm, bank, tax, aggregate, replay, and partition tests |
+| Economy scenarios, fixtures, and intervention | `scenarios/economy/`, `fixtures/economy/`, `scenarios/interventions/economy-household-transfer.json` | Fixture and lifecycle validation |
+| Economy benchmarks | `scripts/benchmark-economy.mjs`, `docs/ECONOMY_BENCHMARKS.md` | Configurable scale profiles |
 
 Private repository identifiers, internal source locations, commit hashes,
 branches, tags, authorship metadata, operational details, and private artifacts

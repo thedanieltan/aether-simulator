@@ -24,7 +24,11 @@ reproducible first-run path.
 
 ## Disposition
 
-Implemented locally on the work-package branch. Protected integration,
-deployment, and hosted acceptance must be recorded before this package is
-classified as live accepted.
+Integrated and live accepted on 2026-07-30.
 
+- Protected pull request: `#23`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://2df84918.aether-simulator.pages.dev`.
+- Hosted acceptance: thirteen Playwright journeys passed, including library
+  filtering, the guided run, and all previously accepted workflows.

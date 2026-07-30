@@ -23,16 +23,33 @@ export const scenarioCatalog = {
   ],
 };
 
-export function workerRequest(worker, command, payload = {}) {
+export function workerRequest(worker, command, payload = {}, options = {}) {
   const requestId = crypto.randomUUID();
   return new Promise((resolve, reject) => {
+    const cleanup = () => {
+      worker.removeEventListener("message", handle);
+      options.signal?.removeEventListener("abort", abort);
+    };
+    const abort = () => {
+      cleanup();
+      reject(new DOMException("The simulation was cancelled.", "AbortError"));
+    };
     const handle = (event) => {
       if (event.data.requestId !== requestId) return;
-      worker.removeEventListener("message", handle);
+      if (event.data.progress) {
+        options.onProgress?.(event.data.progress);
+        return;
+      }
+      cleanup();
       if (event.data.ok) resolve(event.data.result);
       else reject(new Error(event.data.error));
     };
+    if (options.signal?.aborted) {
+      abort();
+      return;
+    }
     worker.addEventListener("message", handle);
+    options.signal?.addEventListener("abort", abort, { once: true });
     worker.postMessage({ requestId, command, payload });
   });
 }

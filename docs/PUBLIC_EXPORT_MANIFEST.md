@@ -47,6 +47,7 @@ reviewers.
 | Unified citizen and entity view | `src/entities/unified.mjs`, `docs/UNIFIED_ENTITY_MODEL.md` | Cross-depth identity, context, determinism, and browser explorer tests |
 | Visual scenario blueprint | `src/scenarios/blueprint.mjs`, `docs/VISUAL_SCENARIO_BUILDER.md` | Topology, compilation, bounds, export, and browser builder tests |
 | Scenario laboratory | `src/experiments/laboratory.mjs`, `docs/SCENARIO_LABORATORY.md` | Fixed-baseline, variant, outcome, determinism, and browser experiment tests |
+| Browser runtime control | `app/runtime-control.mjs`, `app/adapter.mjs`, `app/worker.mjs`, `docs/RUNTIME_SCALE_AND_CONTROL.md` | Workload, envelope, progress, abort, worker replacement, and browser recovery tests |
 | CSP-compatible contract validation | `src/validation/standalone.mjs`, `scripts/generate-standalone-validators.mjs` | Ten-schema validator-drift gate |
 | Static-host security and routing | `public/`, `wrangler.toml`, `docs/THREAT_MODEL.md`, `docs/DEPLOYMENT.md` | Static-build and policy verification |
 | Browser accessibility | `app/`, `docs/ACCESSIBILITY.md` | Axe WCAG A/AA and responsive Playwright acceptance |

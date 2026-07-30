@@ -35,15 +35,22 @@ Stable static-host routes cover overview, design, run, explore, compare, export,
 and research boundaries. A product rail is available on larger screens, and a
 keyboard command navigator exposes the same destinations at every size.
 
-Local project persistence, digest-verified recovery, and validated project-file
-import and export are implemented. A visual model builder, semantic zoom into
-citizens, large-scale runtime controls, and advanced analysis are planned product work;
-the navigation does not present them as implemented.
+Local project persistence, digest-verified recovery, validated project-file
+import and export, the visual model builder, citizen/entity exploration, and
+browser runtime controls are implemented. Deeper semantic zoom and advanced
+analysis remain planned product work; the navigation does not present them as
+implemented.
 
 The pause control creates a deterministic checkpoint after the current
 synchronous run. It is not a claim of pre-emptive interruption inside a kernel
-tick. Cancel clears the active browser session and does not mutate external
-state.
+tick. Phase progress is intentionally coarse because the current kernel does
+not emit per-event progress. Cancel aborts the request, terminates the in-flight
+worker, and creates a fresh worker; it does not mutate external state.
+
+The browser enforces an interactive safety envelope grounded in the committed
+local benchmark observations. It is not a kernel or product ceiling. Larger
+configurations can be researched through the local CLI subject to host memory
+and execution time.
 
 ## Claim boundary
 

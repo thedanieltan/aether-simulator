@@ -265,6 +265,32 @@ The accepted laboratory family uses the economy policy-intervention scenario.
 All variants share depth, scenario, seed, scale, and duration; only the declared
 intervention varies.
 
+## Browser runtime control
+
+`app/runtime-control.mjs` derives a deterministic workload estimate from depth,
+scale, and duration. Its interactive envelope matches the largest committed
+benchmark observations: enterprise scale 100, ecosystem scale 10, and economy
+scale 25 at 80 logical ticks. These are browser safety boundaries, not limits
+in the kernel, scenario builders, benchmarks, or CLI.
+
+The worker reports request acceptance, synchronous kernel execution, and result
+validation as coarse phases. It cannot report event-level percentages while
+the synchronous kernel is running. Cancellation is therefore implemented at
+the process boundary: an `AbortSignal` settles the UI request, the active worker
+is terminated, and a new worker is created for the next operation.
+
+```mermaid
+flowchart LR
+  Inputs["Depth + scale + duration"] --> Estimate["Deterministic workload estimate"]
+  Estimate --> Envelope{"Inside observed browser envelope?"}
+  Envelope -->|No| CLI["Use local CLI"]
+  Envelope -->|Yes| Worker["Dedicated worker"]
+  Worker --> Phases["Coarse phase progress"]
+  Cancel["Cancel"] --> Abort["Abort request"]
+  Abort --> Terminate["Terminate worker"]
+  Terminate --> Replace["Create fresh worker"]
+```
+
 ## Engineering quality gate
 
 The minimum supported Node.js release runs the complete `npm run verify:ci`

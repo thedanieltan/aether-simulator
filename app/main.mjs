@@ -45,14 +45,26 @@ import {
   serializeExperiment,
   summarizeExperiment,
 } from "../src/experiments/laboratory.mjs";
+import {
+  assertBrowserWorkload,
+  estimateBrowserWorkload,
+} from "./runtime-control.mjs";
 
-const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
+function createRuntimeWorker() {
+  return new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
+}
+
+let worker = createRuntimeWorker();
 const form = document.querySelector("#scenario-form");
 const depthInput = document.querySelector("#depth");
 const scenarioInput = document.querySelector("#scenario");
 const resultView = document.querySelector("#result-view");
 const metrics = document.querySelector("#metrics");
 const status = document.querySelector("#run-status");
+const runProgress = document.querySelector("#run-progress");
+const runtimePhase = document.querySelector("#runtime-phase");
+const runtimeElapsed = document.querySelector("#runtime-elapsed");
+const runtimeEstimate = document.querySelector("#runtime-estimate");
 const gallery = document.querySelector("#scenario-gallery");
 const tabs = [...document.querySelectorAll("[data-view]")];
 const commandButtons = [...document.querySelectorAll("[data-command]")];
@@ -91,6 +103,9 @@ let projectRepository = null;
 let localProjects = [];
 let activeProject = null;
 let lastExperiment = null;
+let activeController = null;
+let elapsedTimer = null;
+let operationStartedAt = null;
 
 function element(name, className, text) {
   const node = document.createElement(name);
@@ -102,6 +117,71 @@ function element(name, className, text) {
 function setProjectStatus(message, state = "default") {
   projectStatus.textContent = message;
   projectStatus.dataset.state = state;
+}
+
+function setRuntimeProgress({ phase, value, detail }) {
+  runProgress.value = value;
+  runProgress.textContent = `${value}%`;
+  runtimePhase.textContent = `${phase}: ${detail}`;
+}
+
+function startElapsedClock() {
+  stopElapsedClock();
+  operationStartedAt = performance.now();
+  runtimeElapsed.textContent = "0.0 s";
+  elapsedTimer = setInterval(() => {
+    runtimeElapsed.textContent =
+      `${((performance.now() - operationStartedAt) / 1000).toFixed(1)} s`;
+  }, 100);
+}
+
+function stopElapsedClock() {
+  if (elapsedTimer) clearInterval(elapsedTimer);
+  elapsedTimer = null;
+  if (operationStartedAt !== null) {
+    runtimeElapsed.textContent =
+      `${((performance.now() - operationStartedAt) / 1000).toFixed(1)} s`;
+  }
+  operationStartedAt = null;
+}
+
+function updateWorkloadEstimate() {
+  try {
+    const estimate = estimateBrowserWorkload(payload());
+    const scaleInput = form.querySelector("#scale");
+    scaleInput.max = String(estimate.envelope.maximumScale);
+    runtimeEstimate.textContent =
+      `${estimate.band} · ~${estimate.estimatedEventUnits} relative event units · `
+      + `browser scale ≤ ${estimate.envelope.maximumScale}`
+      + (estimate.depth === "economy"
+        ? ` · duration ≤ ${estimate.envelope.maximumDuration}`
+        : "");
+  } catch (error) {
+    runtimeEstimate.textContent = error.message;
+  }
+}
+
+function cancelActiveOperation() {
+  if (!activeController) return false;
+  activeController.abort();
+  activeController = null;
+  worker.terminate();
+  worker = createRuntimeWorker();
+  stopElapsedClock();
+  setRuntimeProgress({
+    phase: "cancelled",
+    value: 0,
+    detail: "The in-flight worker was terminated. A fresh worker is ready.",
+  });
+  updateState({ type: "cancelled" });
+  return true;
+}
+
+async function controlledWorkerRequest(command, requestPayload, controller) {
+  return workerRequest(worker, command, requestPayload, {
+    signal: controller.signal,
+    onProgress: setRuntimeProgress,
+  });
 }
 
 function rememberActiveProject(projectId) {
@@ -134,6 +214,7 @@ function applyProjectConfig(config) {
   form.querySelector("#duration").value = String(config.duration);
   form.querySelector("#intervention").value = String(config.intervention);
   syncBlueprintFromRun();
+  updateWorkloadEstimate();
 }
 
 function renderProjectEditor() {
@@ -242,7 +323,7 @@ async function deleteProject(project) {
     if (activeProject?.project_id === project.project_id) {
       activeProject = null;
       rememberActiveProject(null);
-      await workerRequest(worker, "cancel");
+      if (!cancelActiveOperation()) await workerRequest(worker, "cancel");
       updateState({ type: "cancelled" });
     }
     await refreshProjects();
@@ -857,17 +938,21 @@ async function runExperiment() {
   experimentStatus.dataset.state = "default";
   experimentStatus.textContent = "Running fixed baseline locally.";
   updateState({ type: "command-started", command: "experimenting" });
+  const controller = new AbortController();
+  activeController = controller;
+  startElapsedClock();
   try {
-    const baseline = await workerRequest(worker, "run", definition.baseline);
+    assertBrowserWorkload(definition.baseline);
+    const baseline = await controlledWorkerRequest("run", definition.baseline, controller);
     const variants = [];
     for (const [index, variant] of definition.variants.entries()) {
       experimentStatus.textContent =
         `Running ${variant.label} (${index + 1} of ${definition.variants.length}).`;
       variants.push(
-        await workerRequest(worker, "branch", {
+        await controlledWorkerRequest("branch", {
           ...definition.baseline,
           intervention: variant.intervention,
-        }),
+        }, controller),
       );
     }
     lastExperiment = summarizeExperiment(definition, baseline, variants);
@@ -881,15 +966,23 @@ async function runExperiment() {
     experimentStatus.dataset.state = "success";
     experimentStatus.textContent = "Experiment complete. All variants share one baseline.";
   } catch (error) {
+    if (error.name === "AbortError") {
+      experimentStatus.dataset.state = "default";
+      experimentStatus.textContent = "Experiment cancelled. The local worker was replaced.";
+      return;
+    }
     updateState({ type: "command-failed", error: error.message });
     experimentStatus.dataset.state = "error";
     experimentStatus.textContent = error.message;
   } finally {
+    if (activeController === controller) activeController = null;
+    stopElapsedClock();
     experimentRun.disabled = false;
   }
 }
 
 async function execute(command, overrides = {}) {
+  if (command === "cancel" && cancelActiveOperation()) return;
   const activePhases = {
     run: "running",
     restore: "restoring",
@@ -902,9 +995,15 @@ async function execute(command, overrides = {}) {
     cancel: "cancelling",
   };
   updateState({ type: "command-started", command: activePhases[command] });
+  const controller = new AbortController();
+  activeController = controller;
+  startElapsedClock();
   try {
     const requestPayload = { ...payload(), ...overrides };
-    const session = await workerRequest(worker, command, requestPayload);
+    if (command === "run" || command === "restore") {
+      assertBrowserWorkload(requestPayload);
+    }
+    const session = await controlledWorkerRequest(command, requestPayload, controller);
     if (command === "cancel") updateState({ type: "cancelled" });
     else {
       updateState({
@@ -925,7 +1024,19 @@ async function execute(command, overrides = {}) {
       }
     }
   } catch (error) {
+    if (error.name === "AbortError") return;
     updateState({ type: "command-failed", error: error.message });
+    setRuntimeProgress({ phase: "error", value: 0, detail: error.message });
+  } finally {
+    if (activeController === controller) activeController = null;
+    stopElapsedClock();
+    if (studioState.phase === "complete" || studioState.phase === "paused") {
+      setRuntimeProgress({
+        phase: studioState.phase,
+        value: 100,
+        detail: "The deterministic result is ready.",
+      });
+    }
   }
 }
 
@@ -933,7 +1044,12 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   execute("run");
 });
-depthInput.addEventListener("change", populateScenarios);
+depthInput.addEventListener("change", () => {
+  populateScenarios();
+  updateWorkloadEstimate();
+});
+form.querySelector("#scale").addEventListener("input", updateWorkloadEstimate);
+form.querySelector("#duration").addEventListener("input", updateWorkloadEstimate);
 for (const button of commandButtons) {
   button.addEventListener("click", () => execute(button.dataset.command));
 }
@@ -1105,7 +1221,7 @@ document.querySelector("#project-new").addEventListener("click", async () => {
   rememberActiveProject(null);
   renderProjectEditor();
   renderProjectList();
-  await workerRequest(worker, "cancel");
+  if (!cancelActiveOperation()) await workerRequest(worker, "cancel");
   updateState({ type: "cancelled" });
   projectName.focus();
   setProjectStatus("Ready to create a new local project.");
@@ -1171,6 +1287,7 @@ async function initializeProjects() {
 }
 
 populateScenarios();
+updateWorkloadEstimate();
 populateBlueprintScenarios();
 populateGallery();
 syncBlueprintFromRun();

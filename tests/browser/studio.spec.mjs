@@ -64,6 +64,30 @@ test("complete local studio journey is deterministic and accessible", async ({ p
   expect(results.violations).toEqual([]);
 });
 
+test("runtime control estimates work and cancellation replaces the in-flight worker", async ({ page }) => {
+  await page.goto("/#/run");
+  await expect(page.locator("#runtime-estimate")).toContainText("browser scale ≤ 100");
+
+  await page.locator("#depth").selectOption("ecosystem");
+  await expect(page.locator("#scale")).toHaveAttribute("max", "10");
+  await page.locator("#scale").fill("10");
+  await expect(page.locator("#runtime-estimate")).toContainText("upper");
+
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("running");
+  await page.getByRole("button", { name: "Cancel" }).click();
+  await expect(page.locator("#run-status")).toHaveText("cancelled");
+  await expect(page.locator("#runtime-phase")).toContainText("worker was terminated");
+
+  await page.locator("#scale").fill("1");
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
+  await expect(page.locator("#run-progress")).toHaveJSProperty("value", 100);
+  await expect(page.locator("#runtime-phase")).toContainText(
+    "deterministic result is ready",
+  );
+});
+
 test("product shell supports stable routes and honest gated states", async ({ page }) => {
   await page.goto("/#/explore/timeline");
   await expect(page.locator("[data-route='explore']").first()).toHaveAttribute(

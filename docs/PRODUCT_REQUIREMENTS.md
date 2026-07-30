@@ -46,7 +46,7 @@ The product should let a user move through one continuous reasoning loop:
 | Citizen and entity records | Implemented in WP-AES-08 | unified synthetic identity, role context, event, lineage, and provenance view |
 | Visual scenario builder | Implemented in WP-AES-09 | constrained visual model composition, validation, compilation, and export |
 | Scenario laboratory | Implemented in WP-AES-10 | fixed-baseline economy experiment definitions, bounded variants, comparisons, and export |
-| Scale and runtime control | Planned for WP-AES-11 | bounded execution and progress |
+| Scale and runtime control | Implemented in WP-AES-11 | benchmark-grounded browser envelope, workload estimate, coarse progress, elapsed time, and worker termination |
 | Semantic zoom | Planned for WP-AES-12 | economy-to-enterprise-to-citizen exploration |
 | Analysis workspace | Planned for WP-AES-13 | measures, cohorts, causality, uncertainty |
 | Scenario library and onboarding | Planned for WP-AES-14 | discoverable examples and guided first run |

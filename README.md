@@ -52,6 +52,8 @@ runs the same kernel locally in a Web Worker.
   population, time, intervention, and seed into the existing runtime.
 - A bounded scenario laboratory for fixed-baseline synthetic intervention
   comparisons and canonical experiment-result export.
+- Benchmark-grounded browser workload estimates, accessible phase progress,
+  elapsed time, and cancellation that terminates and replaces active work.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -130,7 +132,9 @@ Cross-boundary facts and cascade outcomes are also synthetic and
 non-authoritative. The browser product has no telemetry, authentication, or
 server-side persistence surface. It accepts only a bounded local project JSON
 contract and does not transmit it. Pause checkpoints a completed synchronous
-run rather than interrupting an event reducer.
+run rather than interrupting an event reducer. Browser execution uses an
+observed interactive envelope; larger configurations remain available to the
+uncapped local kernel and CLI subject to host resources.
 
 Repository status: **active research**.
 
@@ -142,6 +146,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [unified entity model](docs/UNIFIED_ENTITY_MODEL.md),
 [visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
 [scenario laboratory](docs/SCENARIO_LABORATORY.md),
+[runtime scale and control](docs/RUNTIME_SCALE_AND_CONTROL.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.12.0-alpha.1 - runtime control
+
+- Added benchmark-grounded browser workload estimation and interactive safety
+  envelopes without imposing limits on the public kernel or CLI.
+- Added coarse worker phases, elapsed time, accessible progress, and
+  cancellation that terminates and replaces an in-flight worker.
+- Added estimator, request-abort, worker-recovery, and browser acceptance tests.
+- Documented the synchronous kernel boundary: progress is phase-level and pause
+  remains a completed-run checkpoint rather than mid-tick suspension.
+
 ## 0.11.0-alpha.1 - scenario laboratory
 
 - Added versioned synthetic experiment definitions and results.

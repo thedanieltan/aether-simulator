@@ -22,4 +22,25 @@ if (!lockManifest.packages?.[""]) {
   throw new Error("package-lock.json is missing its root package entry");
 }
 
+const rootPackage = lockManifest.packages[""];
+for (const field of ["dependencies", "devDependencies", "optionalDependencies"]) {
+  const expected = packageManifest[field] ?? {};
+  const actual = rootPackage[field] ?? {};
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    throw new Error(`package-lock.json root ${field} do not match package.json`);
+  }
+}
+
+for (const [packagePath, entry] of Object.entries(lockManifest.packages)) {
+  if (
+    packagePath.startsWith("../") ||
+    entry.resolved?.startsWith("file:") ||
+    entry.link === true
+  ) {
+    throw new Error(
+      `package-lock.json contains a prohibited local dependency at ${packagePath}`,
+    );
+  }
+}
+
 process.stdout.write("Locked npm manifest policy passed (lockfileVersion 3).\n");

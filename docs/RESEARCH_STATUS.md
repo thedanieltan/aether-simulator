@@ -55,9 +55,9 @@ Repository recommendation: **active research**.
   all protected checks, deployed, and live accepted. It adds deterministic
   descriptive measures, explicit cohorts, declared event ancestry, limitations,
   and canonical export.
-- **Scenario library and onboarding:** WP-AES-14 is implemented and locally
-  verified. It exposes all 16 committed browser scenarios and a tested guided
-  first run. Protected integration and hosted acceptance remain pending.
+- **Scenario library and onboarding:** WP-AES-14 is implemented, reviewed,
+  merged through all protected checks, deployed, and live accepted. It exposes
+  all 16 committed browser scenarios and a tested guided first run.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -87,6 +87,9 @@ Repository recommendation: **active research**.
 - **WP-AES-13 live acceptance:** all twelve browser journeys, including the
   bounded analysis workspace and export, passed against
   `https://b80d4b87.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-14 live acceptance:** all thirteen browser journeys, including the
+  complete scenario library and guided first run, passed against
+  `https://2df84918.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

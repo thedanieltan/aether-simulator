@@ -144,7 +144,7 @@ run rather than interrupting an event reducer. Browser execution uses an
 observed interactive envelope; larger configurations remain available to the
 uncapped local kernel and CLI subject to host resources.
 
-Repository status: **active research**.
+Repository status: **active research, 1.0.0 release candidate**.
 
 See [architecture](docs/ARCHITECTURE.md),
 [browser product](docs/PUBLIC_PRODUCT.md),
@@ -156,6 +156,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [analysis workspace](docs/ANALYSIS_WORKSPACE.md),
 [scenario library and onboarding](docs/SCENARIO_LIBRARY_AND_ONBOARDING.md),
 [reliability and packaging](docs/RELIABILITY_AND_PACKAGING.md),
+[standalone product acceptance](docs/PRODUCT_ACCEPTANCE.md),
 [visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
 [scenario laboratory](docs/SCENARIO_LABORATORY.md),
 [runtime scale and control](docs/RUNTIME_SCALE_AND_CONTROL.md),

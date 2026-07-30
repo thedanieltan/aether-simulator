@@ -58,10 +58,13 @@ Repository recommendation: **active research**.
 - **Scenario library and onboarding:** WP-AES-14 is implemented, reviewed,
   merged through all protected checks, deployed, and live accepted. It exposes
   all 16 committed browser scenarios and a tested guided first run.
-- **Reliability and packaging:** WP-AES-15 is implemented and locally verified.
-  It adds fail-fast worker recovery, manual reset, a portability matrix, and a
-  stronger redistributable package boundary. Protected integration and hosted
-  acceptance remain pending.
+- **Reliability and packaging:** WP-AES-15 is implemented, reviewed, merged
+  through all protected checks, deployed, and live accepted. It adds fail-fast
+  worker recovery, manual reset, a portability matrix, and a stronger
+  redistributable package boundary.
+- **Standalone product acceptance:** WP-AES-16 is implemented and locally
+  verified for the `1.0.0-rc.1` candidate. Protected integration, candidate
+  deployment, hosted acceptance, and the final local tag remain pending.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -94,6 +97,9 @@ Repository recommendation: **active research**.
 - **WP-AES-14 live acceptance:** all thirteen browser journeys, including the
   complete scenario library and guided first run, passed against
   `https://2df84918.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-15 live acceptance:** all thirteen browser journeys, including
+  explicit worker reset, passed against
+  `https://85a82a63.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

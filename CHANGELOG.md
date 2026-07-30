@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0-rc.1 - standalone product acceptance candidate
+
+- Completed WP-AES-06 through WP-AES-16 for the standalone local research
+  product.
+- Added a machine-checked product acceptance contract covering routes,
+  committed scenarios, work-package records, and claim boundaries.
+- Recorded full deterministic, package, portability, browser, security, and
+  hosted acceptance evidence.
+- Kept production readiness, connected providers, calibration, and real-world
+  authority outside the release-candidate claim.
+
 ## 0.16.0-alpha.1 - reliability and packaging
 
 - Added fail-fast handling for worker crashes and unreadable worker messages.

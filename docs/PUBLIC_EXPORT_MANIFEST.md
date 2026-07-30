@@ -49,6 +49,7 @@ reviewers.
 | Descriptive analysis projection | `src/analysis/workspace.mjs`, `docs/ANALYSIS_WORKSPACE.md` | Determinism, synthetic boundary, measures, cohorts, interpretation, route, export, and browser tests |
 | Scenario library and guided run | `src/scenarios/library.mjs`, `docs/SCENARIO_LIBRARY_AND_ONBOARDING.md` | Catalog coverage, identity uniqueness, filters, guided configuration, browser run, and responsive tests |
 | Reliability and release boundary | `app/adapter.mjs`, `scripts/verify-package.mjs`, `docs/RELIABILITY_AND_PACKAGING.md` | Worker error, unreadable message, abort, reset, Node matrix, Windows, package content, and browser tests |
+| Standalone product acceptance | `scripts/verify-product-acceptance.mjs`, `docs/PRODUCT_ACCEPTANCE.md` | Version, route, scenario, work-package, claim-boundary, complete CI, and hosted-browser gates |
 | Visual scenario blueprint | `src/scenarios/blueprint.mjs`, `docs/VISUAL_SCENARIO_BUILDER.md` | Topology, compilation, bounds, export, and browser builder tests |
 | Scenario laboratory | `src/experiments/laboratory.mjs`, `docs/SCENARIO_LABORATORY.md` | Fixed-baseline, variant, outcome, determinism, and browser experiment tests |
 | Browser runtime control | `app/runtime-control.mjs`, `app/adapter.mjs`, `app/worker.mjs`, `docs/RUNTIME_SCALE_AND_CONTROL.md` | Workload, envelope, progress, abort, worker replacement, and browser recovery tests |

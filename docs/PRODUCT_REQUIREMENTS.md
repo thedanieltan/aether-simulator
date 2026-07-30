@@ -51,7 +51,7 @@ The product should let a user move through one continuous reasoning loop:
 | Analysis workspace | Implemented in WP-AES-13 | descriptive measures, explicit cohorts, declared event ancestry, and uncertainty boundary |
 | Scenario library and onboarding | Implemented in WP-AES-14 | complete committed catalog, filters, honest empty state, and guided first run |
 | Reliability and packaging | Implemented in WP-AES-15 | worker failure recovery, portability matrix, and verified release boundary |
-| Release acceptance | Planned for WP-AES-16 | complete product-level acceptance record |
+| Release acceptance | Implemented in WP-AES-16 | machine-checked standalone product acceptance record |
 
 ## Cross-cutting requirements
 

@@ -26,7 +26,11 @@ enterprise, while preserving one stable identity and declared contexts.
 
 ## Disposition
 
-Implemented locally on the work-package branch. Protected integration,
-deployment, and hosted acceptance must be recorded before this package is
-classified as live accepted.
+Integrated and live accepted on 2026-07-30.
 
+- Protected pull request: `#19`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://a13fd0a5.aether-simulator.pages.dev`.
+- Hosted acceptance: eleven Playwright journeys passed, including the
+  world-to-enterprise-to-citizen path and all previously accepted workflows.

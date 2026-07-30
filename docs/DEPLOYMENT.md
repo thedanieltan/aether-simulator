@@ -68,3 +68,7 @@ and the complete existing browser acceptance suite.
 The WP-AES-09 visual scenario builder was independently accepted at
 `https://6d4d4576.aether-simulator.pages.dev` with blueprint validation,
 export, exact compilation, and the complete existing browser suite.
+
+The WP-AES-10 scenario laboratory was independently accepted at
+`https://2a84cbfa.aether-simulator.pages.dev` with fixed-baseline variant
+execution, result export, and the complete existing browser suite.

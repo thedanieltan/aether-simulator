@@ -41,9 +41,9 @@ Repository recommendation: **active research**.
   through all protected checks, deployed, and live accepted. It provides a
   constrained, validated five-node blueprint that compiles to the existing
   runtime.
-- **Scenario laboratory:** WP-AES-10 implementation candidate provides one
-  fixed-baseline, intervention-only economy comparison family. Integration
-  remains subject to the protected release gate.
+- **Scenario laboratory:** WP-AES-10 is implemented, reviewed, merged through
+  all protected checks, deployed, and live accepted for one fixed-baseline,
+  intervention-only economy comparison family.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -61,6 +61,9 @@ Repository recommendation: **active research**.
 - **WP-AES-09 live acceptance:** all eight browser journeys, including visual
   blueprint export and compilation, passed against
   `https://6d4d4576.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-10 live acceptance:** all nine browser journeys, including the
+  bounded scenario laboratory, passed against
+  `https://2a84cbfa.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

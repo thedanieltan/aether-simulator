@@ -32,5 +32,16 @@ Arbitrary graph shapes, scripts, plugins, and provider nodes are excluded.
 
 ## Disposition
 
-Implementation candidate. Protected continuous integration, review, merge,
-deployment, and hosted acceptance are required before integration is recorded.
+Integrated and live accepted on 2026-07-30.
+
+- Protected pull request: `#13`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://6d4d4576.aether-simulator.pages.dev`.
+- Hosted acceptance: eight Playwright journeys passed, including blueprint
+  validation, invalid-state gating, export, exact run compilation, projects,
+  entity inspection, deterministic lifecycle, accessibility, and compact
+  widths.
+- The deployed response retained the restrictive security policy.
+
+Arbitrary executable graph nodes remain outside this acceptance.

@@ -37,9 +37,10 @@ Repository recommendation: **active research**.
 - **Unified entity model:** WP-AES-08 is implemented, reviewed, merged through
   all protected checks, deployed, and live accepted. It provides deterministic
   cross-depth entity records and a browser citizen/entity explorer.
-- **Visual scenario builder:** WP-AES-09 implementation candidate provides a
+- **Visual scenario builder:** WP-AES-09 is implemented, reviewed, merged
+  through all protected checks, deployed, and live accepted. It provides a
   constrained, validated five-node blueprint that compiles to the existing
-  runtime. Integration remains subject to the protected release gate.
+  runtime.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -54,6 +55,9 @@ Repository recommendation: **active research**.
 - **WP-AES-08 live acceptance:** all seven browser journeys, including entity
   and citizen inspection, passed against
   `https://2a626224.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-09 live acceptance:** all eight browser journeys, including visual
+  blueprint export and compilation, passed against
+  `https://6d4d4576.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

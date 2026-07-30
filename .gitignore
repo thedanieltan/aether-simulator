@@ -1,5 +1,8 @@
 node_modules/
 dist/
+playwright-report/
+test-results/
+.wrangler/
 .DS_Store
 *.log
 *.tmp

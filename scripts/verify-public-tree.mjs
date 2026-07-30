@@ -7,24 +7,34 @@ const allowedTopLevel = new Set([
   ".git",
   ".gitattributes",
   ".github",
+  ".hallmark",
   ".gitignore",
+  ".npmrc",
   "CHANGELOG.md",
   "CODE_OF_CONDUCT.md",
   "CONTRIBUTING.md",
   "LICENSE",
   "README.md",
+  ".npmrc",
   "SECURITY.md",
   "docs",
+  "app",
   "examples",
   "fixtures",
+  "index.html",
   "package-lock.json",
   "package.json",
   "packages",
+  "playwright.config.mjs",
+  "public",
   "scenarios",
   "schemas",
   "scripts",
   "src",
   "tests",
+  "tokens.css",
+  "vite.config.mjs",
+  "wrangler.toml",
 ]);
 const required = [
   "README.md",
@@ -51,14 +61,20 @@ const required = [
   "docs/ECOSYSTEM_BENCHMARKS.md",
   "docs/ECONOMY_DEPTH.md",
   "docs/ECONOMY_BENCHMARKS.md",
+  "docs/PUBLIC_PRODUCT.md",
+  "docs/THREAT_MODEL.md",
+  "docs/ACCESSIBILITY.md",
+  "docs/DEPLOYMENT.md",
   "docs/adr/ADR-0001-world-kernel.md",
   "docs/adr/ADR-0002-enterprise-depth-modules.md",
   "docs/adr/ADR-0003-ecosystem-boundaries.md",
   "docs/adr/ADR-0004-entity-derived-economy.md",
+  "docs/adr/ADR-0005-browser-worker-studio.md",
   "docs/work-packages/WP-AES-01-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-02-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-03-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-04-ACCEPTANCE.md",
+  "docs/work-packages/WP-AES-05-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
   ".github/dependabot.yml",
 ];
@@ -82,7 +98,14 @@ async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const results = [];
   for (const entry of entries) {
-    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    if (
+      entry.name === ".git" ||
+      entry.name === "node_modules" ||
+      entry.name === "dist" ||
+      entry.name === ".wrangler" ||
+      entry.name === "playwright-report" ||
+      entry.name === "test-results"
+    ) continue;
     const path = resolve(directory, entry.name);
     const stat = await lstat(path);
     if (stat.isSymbolicLink()) throw new Error(`symbolic link is not allowed: ${path}`);
@@ -94,7 +117,13 @@ async function walk(directory) {
 
 const topLevel = await readdir(root);
 for (const entry of topLevel) {
-  if (entry === "node_modules") continue;
+  if (
+    entry === "node_modules" ||
+    entry === "dist" ||
+    entry === ".wrangler" ||
+    entry === "playwright-report" ||
+    entry === "test-results"
+  ) continue;
   if (!allowedTopLevel.has(entry)) throw new Error(`unexpected top-level entry: ${entry}`);
 }
 

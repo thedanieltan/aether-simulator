@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0 - public browser product
+
+- Added a static simulation studio for all three implemented product depths.
+- Reused the public kernel and builders inside a local Web Worker.
+- Added run, pause/checkpoint, resume, replay, cancel, branch, compare,
+  inspection, lineage, and canonical export workflows.
+- Added browser parity, Chromium lifecycle, Axe accessibility, responsive,
+  static-build, and workflow-policy acceptance.
+- Added static-host security headers, deployment guidance, a threat model, and
+  browser architecture evidence.
+- Added drift-checked standalone validators so the page and worker retain a
+  strict content policy without dynamic evaluation.
+
 ## 0.5.0 - Economy Depth research preview
 
 - Added an entity-derived synthetic economy on the shared deterministic kernel.

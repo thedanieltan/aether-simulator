@@ -1,6 +1,6 @@
 {
   "name": "aether-simulator",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Deterministic synthetic-world research simulator",
   "type": "module",
   "private": false,
@@ -12,19 +12,24 @@
     "./evidence-bridge": "./packages/evidence-bridge/src/index.mjs"
   },
   "files": [
+    "app/",
     "docs/",
     "examples/",
     "fixtures/",
+    "index.html",
     "packages/evidence-bridge/",
     "scenarios/",
     "schemas/",
-    "src/"
+    "src/",
+    "tokens.css"
   ],
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:studio": "vite build",
+    "preview:studio": "vite preview",
     "cli": "node src/cli.mjs",
     "demo": "node scripts/demo.mjs",
     "demo:enterprise": "node scripts/demo-enterprise.mjs",
@@ -36,21 +41,28 @@
     "test:enterprise": "node --test tests/enterprise-depth.test.mjs",
     "test:ecosystem": "node --test tests/ecosystem-depth.test.mjs",
     "test:economy": "node --test tests/economy-depth.test.mjs",
+    "test:browser": "node --test tests/browser-runtime.test.mjs",
+    "test:e2e": "playwright test",
     "fixtures:enterprise": "node scripts/generate-enterprise-fixtures.mjs",
     "fixtures:ecosystem": "node scripts/generate-ecosystem-fixtures.mjs",
     "fixtures:economy": "node scripts/generate-economy-fixtures.mjs",
+    "generate:validators": "node scripts/generate-standalone-validators.mjs",
     "benchmark:enterprise": "node scripts/benchmark-enterprise.mjs",
     "benchmark:ecosystem": "node scripts/benchmark-ecosystem.mjs",
     "benchmark:economy": "node scripts/benchmark-economy.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",
     "validate:schemas": "node scripts/validate-schemas.mjs",
     "verify:fixtures:drift": "node scripts/verify-fixture-drift.mjs",
+    "verify:validators:drift": "node scripts/generate-standalone-validators.mjs --check",
     "verify:package": "node scripts/verify-package.mjs",
+    "verify:lockfile": "node scripts/verify-lockfile.mjs",
     "verify:workflows": "node scripts/verify-workflows.mjs",
     "verify:public": "node scripts/verify-public-tree.mjs",
     "scan:sensitive": "node scripts/scan-sensitive-content.mjs",
-    "verify": "npm run build && npm test && npm run validate:schemas && npm run validate:fixtures && npm run verify:workflows && npm run verify:public && npm run scan:sensitive",
-    "verify:ci": "npm run verify && npm run verify:fixtures:drift && npm run verify:package && npm audit --omit=dev --audit-level=high"
+    "verify:studio": "npm run build:studio && node scripts/verify-static-build.mjs",
+    "deploy:pages": "npx --yes wrangler@4.115.0 pages deploy dist --project-name aether-simulator",
+    "verify": "npm run build && npm test && npm run validate:schemas && npm run validate:fixtures && npm run verify:studio && npm run verify:workflows && npm run verify:public && npm run scan:sensitive",
+    "verify:ci": "npm run verify && npm run verify:fixtures:drift && npm run verify:validators:drift && npm run verify:package && npm audit --omit=dev --audit-level=high"
   },
   "keywords": [
     "simulation",
@@ -60,6 +72,16 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
+    "@noble/hashes": "2.2.0",
     "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/space-grotesk": "5.3.0",
+    "@playwright/test": "1.62.0",
+    "axe-core": "4.12.1",
+    "esbuild": "0.28.1",
+    "vite": "8.1.5"
   }
 }

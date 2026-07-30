@@ -1,6 +1,6 @@
 # Sensitive-content audit
 
-Audit date: 2026-07-28.
+Audit date: 2026-07-30.
 
 Scope: every public source, schema, scenario, fixture, JSON, YAML, Markdown,
 test, script, package manifest, and workflow file in the release candidate.
@@ -41,6 +41,13 @@ households, organizations, institutions, three full exports, intervention
 artifacts, transactions, bank and tax records, shocks, and benchmarks. Labels
 and identifiers remain fictional and generated; no real economic or personal
 records are included.
+
+The browser-product review covers application source, generated production
+HTML, CSS, JavaScript and font assets, Web Worker messages, static-host headers,
+downloads, package metadata, browser tests, and deployment configuration. The
+runtime has no upload, credential, analytics, telemetry, provider, private URL,
+or server-storage surface. Browser exports retain synthetic and
+non-authoritative labels.
 
 Gitleaks and TruffleHog executables were not installed in the local environment,
 so they were not represented as completed checks. The repository's explicit

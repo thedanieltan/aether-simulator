@@ -159,11 +159,33 @@ Worker-parallel execution remains future engineering.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.
 
+## Browser studio
+
+```mermaid
+flowchart LR
+  Form["Committed scenario + explicit controls"] --> Adapter["Browser adapter"]
+  Adapter --> Worker["Module Web Worker"]
+  Worker --> Builders["Public depth builders"]
+  Builders --> Kernel["Shared deterministic kernel"]
+  Kernel --> Artifact["Canonical world artifact"]
+  Artifact --> Views["Graph / timeline / inspector / lineage"]
+  Artifact --> Lifecycle["Checkpoint / replay / branch / compare"]
+  Artifact --> Downloads["Canonical local downloads"]
+```
+
+The browser does not contain a second simulation engine. `app/runtime.mjs`
+adapts browser commands to the public builders and kernel, while the worker
+isolates synchronous simulation from the main thread. Static application code
+does not fetch providers, accept uploads, or persist server-side state.
+Ajv’s ten contract validators are generated as a standalone ESM module and
+checked for drift, avoiding runtime code generation under the content policy.
+
 ## Engineering quality gate
 
 The minimum supported Node.js release runs the complete `npm run verify:ci`
 gate: deterministic acceptance, formal contracts, fixture validation and
 regeneration, repository and workflow policy, sensitive-content scanning,
 package-boundary validation, and dependency audit. Additional jobs exercise
-current Node.js releases and Windows portability. Actions use read-only
-permissions and commit-pinned dependencies. See `docs/CI_CD.md`.
+current Node.js releases, Windows portability, and a complete Chromium studio
+journey. Actions use read-only permissions and commit-pinned dependencies. See
+`docs/CI_CD.md`.

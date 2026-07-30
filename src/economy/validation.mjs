@@ -1,22 +1,9 @@
-import { readFileSync } from "node:fs";
-import Ajv2020 from "ajv/dist/2020.js";
-
-const configSchema = JSON.parse(
-  readFileSync(
-    new URL("../../schemas/economy/aether-economy-config.v1.schema.json", import.meta.url),
-    "utf8",
-  ),
-);
-const eventSchema = JSON.parse(
-  readFileSync(
-    new URL("../../schemas/economy/aether-economy-event.v1.schema.json", import.meta.url),
-    "utf8",
-  ),
-);
-const ajv = new Ajv2020({ allErrors: true, strict: true, validateFormats: false });
-const configValidator = ajv.compile(configSchema);
-const eventValidator = ajv.compile(eventSchema);
-
+import {
+  economyConfig as configValidator,
+  economyEvent as eventValidator,
+} from "../validation/standalone.mjs";
+import configSchema from "../../schemas/economy/aether-economy-config.v1.schema.json" with { type: "json" };
+import eventSchema from "../../schemas/economy/aether-economy-event.v1.schema.json" with { type: "json" };
 function result(validator, value) {
   const valid = validator(value);
   return {

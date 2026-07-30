@@ -10,18 +10,23 @@ The repository uses one read-only GitHub Actions workflow:
 | `runtime (node 22)` | Ubuntu | Canonical deterministic acceptance |
 | `runtime (node 24)` | Ubuntu | Canonical deterministic acceptance |
 | `portability (windows, node 20)` | Windows | Canonical deterministic acceptance |
+| `browser studio (chromium)` | Ubuntu, Chromium | Static build, complete lifecycle journey, replay equality, accessibility, and responsive acceptance |
 
 `npm run verify:ci` is the canonical CI-parity command. Contributors must run
 it locally before requesting review. The runtime and portability jobs run the
 same `npm run verify` acceptance command used within that gate.
+Browser contributors must also run `npm run test:e2e` after installing the
+Playwright Chromium runtime.
 
 ## Workflow security
 
 - Workflow permissions are read-only.
 - Action dependencies are pinned to full commit SHAs.
 - Checkout does not persist GitHub credentials.
-- Dependency installation uses the committed lockfile and disables lifecycle
-  scripts.
+- Every runner asserts that the committed npm lockfile is version 3 and matches
+  the package identity before dependency installation.
+- Dependency installation runs from the explicit workspace directory and
+  disables lifecycle scripts.
 - Pull requests run with `pull_request`, never `pull_request_target`.
 - Concurrent runs for an obsolete revision are cancelled.
 - Every job has a timeout.
@@ -34,18 +39,19 @@ public-tree content.
 
 ## Deployment boundary
 
-There is no continuous-deployment workflow in the current research packages.
-No hosted product or runtime has been implemented, accepted, or authorized for
-deployment. Deployment automation belongs to the public-product work package
-and must add environment protection, immutable build provenance, deployment
-smoke tests, and rollback evidence before it can be treated as a CD gate.
+There is no credential-bearing continuous-deployment workflow. The accepted
+static artifact can be deployed manually with the documented Pages command;
+provider credentials remain outside GitHub Actions and the repository.
+Implementation, protected integration, deployment, and live acceptance are
+recorded separately in the work-package acceptance evidence.
 
 ## Platform enforcement
 
-The `main` branch requires all four runner-backed checks with strict
+The `main` branch requires the four established runner-backed checks with strict
 up-to-date-branch enforcement. Changes must use a pull request, conversations
 must be resolved, history must remain linear, administrators are included, and
-force pushes and branch deletion are disabled.
+force pushes and branch deletion are disabled. The browser check is an
+additional pull-request gate; it does not replace or weaken those protections.
 
 The initial private-repository run could not allocate runners because of the
 account billing/spending state. After public visibility was enabled, the same

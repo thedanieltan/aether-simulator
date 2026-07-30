@@ -12,11 +12,13 @@ The retained implementation contains no copied third-party dataset,
 proprietary notice, incompatible file-level licence, or proprietary source
 material identified by review.
 
-The sole direct production dependency is Ajv 8.20.0 under MIT. Its locked
-transitive packages use MIT or BSD-3-Clause. These permissive licences are
-compatible with Apache-2.0. Preserve their notices when redistributing bundled
-dependency source; normal source distribution can rely on package metadata and
-the lockfile inventory. Details are recorded in `docs/DEPENDENCIES.md`.
+Direct runtime dependencies Ajv 8.20.0 and @noble/hashes 2.2.0 use MIT. Build
+and test tooling uses MIT, Apache-2.0, or MPL-2.0 terms.
+Locally bundled Inter, Space Grotesk, and JetBrains Mono font assets use
+OFL-1.1. These terms are compatible with this repository’s Apache-2.0 source
+licence when their file-scoped and notice requirements are preserved. Axe Core
+is test-only and is not shipped in the browser bundle. Details and attribution
+requirements are recorded in `docs/DEPENDENCIES.md`.
 
 Publication still assumes the repository owner has authority to license every
 original contribution. This is an ownership confirmation, not evidence of a

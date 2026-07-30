@@ -62,6 +62,8 @@ const required = [
   "docs/ECONOMY_DEPTH.md",
   "docs/ECONOMY_BENCHMARKS.md",
   "docs/PUBLIC_PRODUCT.md",
+  "docs/PRODUCT_REQUIREMENTS.md",
+  "docs/INFORMATION_ARCHITECTURE.md",
   "docs/THREAT_MODEL.md",
   "docs/ACCESSIBILITY.md",
   "docs/DEPLOYMENT.md",
@@ -75,6 +77,7 @@ const required = [
   "docs/work-packages/WP-AES-03-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-04-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-05-ACCEPTANCE.md",
+  "docs/work-packages/WP-AES-06-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
   ".github/dependabot.yml",
 ];

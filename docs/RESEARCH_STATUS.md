@@ -4,7 +4,7 @@ Repository recommendation: **active research**.
 
 | Classification | Capability or finding |
 |---|---|
-| Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a local browser simulation studio |
+| Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a routed local browser simulation product |
 | Tested | 67 Node tests covering kernel determinism and lifecycle, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; five Playwright browser journeys cover lifecycle, accessibility, and responsive behavior |
 | Partially implemented | All product-depth models use explicit simplified research assumptions; partitioned construction is deterministic, while worker-parallel and calibrated behavior are excluded |
 | Planned | Larger scenario corpus; worker-parallel deterministic execution; local OSS realism; connected calibration |
@@ -26,6 +26,10 @@ Repository recommendation: **active research**.
 - **Public browser product:** WP-AES-05 implemented, verified, reviewed, and
   integrated through the protected pull-request gate; deployment and live
   acceptance are recorded separately below.
+- **Product foundation:** WP-AES-06 implementation candidate adds public
+  requirements, information architecture, stable routes, product navigation,
+  and honest availability states. Integration remains subject to protected
+  continuous integration, review, deployment, and hosted acceptance.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.

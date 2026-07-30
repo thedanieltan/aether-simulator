@@ -159,6 +159,14 @@ Worker-parallel execution remains future engineering.
 Technical execution choices are named deterministic execution mode, local OSS
 realism mode, and connected calibration mode; they are not product depths.
 
+## Product shell
+
+`app/routes.mjs` is the single registry for browser product destinations. It
+drives the desktop rail, orientation index, keyboard command navigator,
+static-host-compatible hash deep links, and active-route state. Routes select
+existing simulation surfaces; they do not introduce a second runtime or imply
+that later project, builder, scale, zoom, or analysis work is complete.
+
 ## Browser studio
 
 ```mermaid

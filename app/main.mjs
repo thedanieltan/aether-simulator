@@ -18,6 +18,12 @@ import {
   initialStudioState,
   reduceStudioState,
 } from "./state.mjs";
+import {
+  parseProductRoute,
+  productRouteHref,
+  productRoutes,
+  routeForView,
+} from "./routes.mjs";
 
 const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
 const form = document.querySelector("#scenario-form");
@@ -29,6 +35,9 @@ const status = document.querySelector("#run-status");
 const gallery = document.querySelector("#scenario-gallery");
 const tabs = [...document.querySelectorAll("[data-view]")];
 const commandButtons = [...document.querySelectorAll("[data-command]")];
+const productNav = document.querySelector("#product-nav");
+const productIndex = document.querySelector("#product-index");
+const routeContext = document.querySelector("#route-context");
 let studioState = { ...initialStudioState };
 
 function element(name, className, text) {
@@ -49,7 +58,63 @@ function updateState(action) {
     button.dataset.state = studioState.phase === button.dataset.command ? "loading" : "default";
   }
   document.querySelector("#run").disabled = !commandEnabled(studioState, "run");
+  updateProductNavigation();
   render();
+}
+
+function routeAvailability(route) {
+  if (route.availability === "available") return "Available";
+  return studioState.session ? "Available" : "Requires a completed run";
+}
+
+function populateProductNavigation() {
+  productNav.replaceChildren();
+  productIndex.replaceChildren();
+  for (const [index, route] of productRoutes.entries()) {
+    const railLink = element("a", "rail-link");
+    railLink.href = productRouteHref(route.id);
+    railLink.dataset.route = route.id;
+    railLink.append(
+      element("span", "", route.eyebrow),
+      element("strong", "", route.label),
+    );
+    productNav.append(railLink);
+
+    const item = element("li", "product-index-item");
+    const link = element("a");
+    link.href = productRouteHref(route.id);
+    link.dataset.route = route.id;
+    link.append(
+      element("span", "index-number", String(index + 1).padStart(2, "0")),
+      element("strong", "", route.label),
+      element("span", "index-purpose", route.eyebrow),
+      element("span", "index-status", routeAvailability(route)),
+    );
+    item.append(link);
+    productIndex.append(item);
+  }
+}
+
+function updateProductNavigation() {
+  const route = productRoutes.find(({ id }) => id === studioState.activeRoute)
+    ?? productRoutes[0];
+  routeContext.textContent = `${route.eyebrow} / ${route.label}`;
+  for (const link of document.querySelectorAll("[data-route]")) {
+    const active = link.dataset.route === route.id;
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+    const statusNode = link.querySelector(".index-status");
+    const linkedRoute = productRoutes.find(({ id }) => id === link.dataset.route);
+    if (statusNode && linkedRoute) statusNode.textContent = routeAvailability(linkedRoute);
+  }
+}
+
+function applyProductRoute({ focus = false } = {}) {
+  const route = parseProductRoute(globalThis.location.hash);
+  updateState({ type: "route-selected", route: route.id, view: route.view });
+  const target = document.querySelector(`#${route.target}`);
+  target?.scrollIntoView({ behavior: focus ? "smooth" : "auto", block: "start" });
+  if (focus) target?.focus({ preventScroll: true });
 }
 
 function populateScenarios() {
@@ -79,7 +144,7 @@ function populateGallery() {
       depthInput.value = depth;
       populateScenarios();
       scenarioInput.value = scenario;
-      document.querySelector("#studio").scrollIntoView({ behavior: "smooth" });
+      globalThis.location.hash = productRouteHref("run");
       form.querySelector("#seed").focus();
     });
     gallery.append(button);
@@ -312,6 +377,8 @@ for (const button of commandButtons) {
 for (const tab of tabs) {
   tab.addEventListener("click", () => {
     updateState({ type: "view-selected", view: tab.dataset.view });
+    globalThis.history.replaceState(null, "", routeForView(tab.dataset.view));
+    applyProductRoute();
     resultView.focus();
   });
 }
@@ -319,47 +386,63 @@ for (const tab of tabs) {
 const dialog = document.querySelector("#command-dialog");
 const commandInput = document.querySelector("#command-input");
 const commandResults = document.querySelector("#command-results");
-const commandViews = ["graph", "timeline", "inspector", "lineage", "exports"];
+const commandItems = [
+  ...productRoutes.map((route) => ({
+    id: route.id,
+    label: route.label,
+    hint: route.eyebrow,
+    href: productRouteHref(route.id),
+  })),
+  ...["graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
+    id: view,
+    label: `${view[0].toUpperCase()}${view.slice(1)} view`,
+    hint: "Result view",
+    href: routeForView(view),
+    view,
+  })),
+];
 let commandIndex = 0;
 
 function renderCommands() {
   const filter = commandInput.value.trim().toLowerCase();
-  const visible = commandViews.filter((view) => view.includes(filter));
+  const visible = commandItems.filter(({ id, label, hint }) =>
+    `${id} ${label} ${hint}`.toLowerCase().includes(filter),
+  );
   commandIndex = Math.min(commandIndex, Math.max(visible.length - 1, 0));
   commandResults.replaceChildren();
-  visible.forEach((view, index) => {
-    const button = element("button", "", `Open ${view}`);
+  visible.forEach((item, index) => {
+    const button = element("button");
     button.type = "button";
-    button.dataset.viewTarget = view;
+    button.append(
+      element("strong", "", item.label),
+      element("span", "", item.hint),
+    );
     button.setAttribute("role", "option");
     button.setAttribute("aria-selected", String(index === commandIndex));
-    button.addEventListener("click", () => openView(view));
+    button.addEventListener("click", () => openCommandItem(item));
     commandResults.append(button);
   });
 }
 
 function openDialog() {
-  dialog.classList.add("is-open");
-  dialog.setAttribute("aria-hidden", "false");
   commandInput.value = "";
   renderCommands();
+  if (!dialog.open) dialog.showModal();
   commandInput.focus();
 }
 
 function closeDialog() {
-  dialog.classList.remove("is-open");
-  dialog.setAttribute("aria-hidden", "true");
+  dialog.close();
   document.querySelector("#command-open").focus();
 }
 
-function openView(view) {
-  updateState({ type: "view-selected", view });
+function openCommandItem(item) {
   closeDialog();
-  document.querySelector("#studio").scrollIntoView({ behavior: "smooth" });
+  globalThis.location.hash = item.href;
+  applyProductRoute({ focus: true });
 }
 
 document.querySelector("#command-open").addEventListener("click", openDialog);
-document.querySelector("[data-dialog-close]").addEventListener("click", closeDialog);
 commandInput.addEventListener("input", renderCommands);
 commandInput.addEventListener("keydown", (event) => {
   const visible = [...commandResults.querySelectorAll("button")];
@@ -378,24 +461,14 @@ document.addEventListener("keydown", (event) => {
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
     event.preventDefault();
     openDialog();
-  } else if (event.key === "Escape" && dialog.classList.contains("is-open")) {
-    closeDialog();
-  } else if (event.key === "Tab" && dialog.classList.contains("is-open")) {
-    const focusable = [...dialog.querySelectorAll("input, button")].filter(
-      (node) => !node.disabled,
-    );
-    const first = focusable[0];
-    const last = focusable.at(-1);
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
   }
 });
 
 populateScenarios();
 populateGallery();
-updateState({ type: "view-selected", view: "graph" });
+populateProductNavigation();
+globalThis.addEventListener("hashchange", () => applyProductRoute({ focus: true }));
+if (!globalThis.location.hash) {
+  globalThis.history.replaceState(null, "", productRouteHref("overview"));
+}
+applyProductRoute();

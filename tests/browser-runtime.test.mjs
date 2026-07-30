@@ -66,6 +66,14 @@ test("studio state exposes valid failure, pause, resume, and cancellation contro
   assert.equal(commandEnabled(state, "resume"), true);
   state = reduceStudioState(state, { type: "command-failed", error: "synthetic failure" });
   assert.equal(state.error, "synthetic failure");
+  state = reduceStudioState(state, {
+    type: "route-selected",
+    route: "explore",
+    view: "timeline",
+  });
+  assert.equal(state.activeRoute, "explore");
+  assert.equal(state.activeView, "timeline");
   state = reduceStudioState(state, { type: "cancelled" });
   assert.equal(state.phase, "cancelled");
+  assert.equal(state.activeRoute, "explore");
 });

@@ -42,6 +42,7 @@ reviewers.
 | Economy scenarios, fixtures, and intervention | `scenarios/economy/`, `fixtures/economy/`, `scenarios/interventions/economy-household-transfer.json` | Fixture and lifecycle validation |
 | Economy benchmarks | `scripts/benchmark-economy.mjs`, `docs/ECONOMY_BENCHMARKS.md` | Configurable scale profiles |
 | Browser simulation studio | `index.html`, `app/`, `tokens.css`, `vite.config.mjs` | Browser parity and Playwright lifecycle tests |
+| Product requirements, routes, and navigation | `docs/PRODUCT_REQUIREMENTS.md`, `docs/INFORMATION_ARCHITECTURE.md`, `app/routes.mjs`, `app/state.mjs` | Route, reducer, deep-link, keyboard, and responsive browser tests |
 | CSP-compatible contract validation | `src/validation/standalone.mjs`, `scripts/generate-standalone-validators.mjs` | Ten-schema validator-drift gate |
 | Static-host security and routing | `public/`, `wrangler.toml`, `docs/THREAT_MODEL.md`, `docs/DEPLOYMENT.md` | Static-build and policy verification |
 | Browser accessibility | `app/`, `docs/ACCESSIBILITY.md` | Axe WCAG A/AA and responsive Playwright acceptance |

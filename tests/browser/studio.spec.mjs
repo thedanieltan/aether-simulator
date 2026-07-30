@@ -5,7 +5,7 @@ test("complete local studio journey is deterministic and accessible", async ({ p
   await page.addInitScript({ content: axe.source });
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Run a fictional world",
+    "Model a fictional enterprise",
   );
   await page.getByRole("button", { name: "Run", exact: true }).click();
   await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
@@ -38,7 +38,7 @@ test("complete local studio journey is deterministic and accessible", async ({ p
 
   await page.keyboard.press("Control+K");
   await expect(page.getByRole("dialog")).toBeVisible();
-  await page.getByPlaceholder(/Type graph/).fill("lineage");
+  await page.getByPlaceholder(/Type overview/).fill("lineage");
   await page.keyboard.press("Enter");
   await expect(page.getByRole("tab", { name: "PII lineage" })).toHaveAttribute(
     "aria-selected",
@@ -51,6 +51,32 @@ test("complete local studio journey is deterministic and accessible", async ({ p
     }),
   );
   expect(results.violations).toEqual([]);
+});
+
+test("product shell supports stable routes and honest gated states", async ({ page }) => {
+  await page.goto("/#/explore/timeline");
+  await expect(page.locator("[data-route='explore']").first()).toHaveAttribute(
+    "aria-current",
+    "page",
+  );
+  await expect(page.getByRole("tab", { name: "Event timeline" })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
+  await expect(page.getByText("Requires a completed run").first()).toBeVisible();
+
+  await page.locator("[data-route='design']").first().click();
+  await expect(page).toHaveURL(/#\/design$/);
+  await expect(page.locator("[data-route='design']").first()).toHaveAttribute(
+    "aria-current",
+    "page",
+  );
+
+  await page.keyboard.press("Control+K");
+  await page.getByPlaceholder(/Type overview/).fill("research boundary");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/#\/boundary$/);
+  await expect(page.getByRole("heading", { name: "Research boundaries stay visible" })).toBeVisible();
 });
 
 for (const width of [320, 375, 414, 768]) {

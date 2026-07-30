@@ -1,4 +1,4 @@
-# Aether Simulator
+# Aether Enterprise Simulator
 
 Aether is research software for building deterministic, fictional enterprise
 worlds. It supports reproducible simulation, testing, and research. It is not
@@ -16,8 +16,8 @@ authority.
 
 This repository implements the deterministic world kernel, configurable
 Enterprise Depth, contract-gated Ecosystem Depth, and entity-derived Economy
-Depth research scenarios. It also includes a static browser studio that runs
-the same kernel locally in a Web Worker.
+Depth research scenarios. It also includes a routed static browser product that
+runs the same kernel locally in a Web Worker.
 
 ## What is implemented
 
@@ -88,8 +88,8 @@ npm run build:studio
 npm run preview:studio
 ```
 
-Open the printed local URL, select a scenario, and choose **Run synthetic
-world**. The browser product requires no account, credential, Docker service,
+Open the printed local URL, select a scenario, and choose **Run**. The browser
+product requires no account, credential, Docker service,
 or external provider.
 
 ## Architecture
@@ -127,6 +127,8 @@ Repository status: **active research**.
 
 See [architecture](docs/ARCHITECTURE.md),
 [browser product](docs/PUBLIC_PRODUCT.md),
+[product requirements](docs/PRODUCT_REQUIREMENTS.md),
+[information architecture](docs/INFORMATION_ARCHITECTURE.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

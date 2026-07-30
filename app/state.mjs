@@ -1,5 +1,6 @@
 export const initialStudioState = Object.freeze({
   phase: "idle",
+  activeRoute: "overview",
   activeView: "graph",
   session: null,
   error: null,
@@ -20,7 +21,18 @@ export function reduceStudioState(state, action) {
     case "command-failed":
       return { ...state, phase: "error", error: action.error };
     case "cancelled":
-      return { ...initialStudioState, activeView: state.activeView, phase: "cancelled" };
+      return {
+        ...initialStudioState,
+        activeRoute: state.activeRoute,
+        activeView: state.activeView,
+        phase: "cancelled",
+      };
+    case "route-selected":
+      return {
+        ...state,
+        activeRoute: action.route,
+        activeView: action.view ?? state.activeView,
+      };
     case "view-selected":
       return { ...state, activeView: action.view };
     case "event-selected":

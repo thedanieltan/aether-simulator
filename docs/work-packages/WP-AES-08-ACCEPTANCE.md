@@ -38,5 +38,15 @@ Graph-based semantic zoom remains WP-AES-12.
 
 ## Disposition
 
-Implementation candidate. Protected continuous integration, review, merge,
-deployment, and hosted acceptance are required before integration is recorded.
+Integrated and live accepted on 2026-07-30.
+
+- Protected pull request: `#11`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://2a626224.aether-simulator.pages.dev`.
+- Hosted acceptance: seven Playwright journeys passed, including citizen
+  filtering, entity detail, role context, local project recovery, deterministic
+  lifecycle, accessibility, and compact widths.
+- The deployed response retained the restrictive security policy.
+
+Semantic zoom remains outside this acceptance and is tracked separately.

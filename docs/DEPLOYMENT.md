@@ -60,3 +60,7 @@ and the required response security policy.
 The WP-AES-07 local project workspace was independently accepted at
 `https://e3f1a871.aether-simulator.pages.dev` with seven hosted browser
 journeys, including a project export/delete/import round trip.
+
+The WP-AES-08 unified entity model was independently accepted at
+`https://2a626224.aether-simulator.pages.dev` with citizen/entity inspection
+and the complete existing browser acceptance suite.

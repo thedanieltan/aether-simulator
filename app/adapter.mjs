@@ -1,27 +1,9 @@
-export const scenarioCatalog = {
-  enterprise: [
-    ["professional-services-customer-engagement", "Professional services"],
-    ["saas-customer-lifecycle", "Software service"],
-    ["retail-intervention-baseline", "Retail"],
-    ["logistics-delivery-exception", "Logistics"],
-    ["manufacturing-production-order", "Manufacturing"],
-  ],
-  ecosystem: [
-    ["saas-service-network", "Service network"],
-    ["retail-supply-network", "Retail supply network"],
-    ["vendor-outage-cascade", "Vendor outage cascade"],
-    ["cross-organization-data-request", "Cross-organization data request"],
-    ["ecosystem-intervention-baseline", "Capacity intervention"],
-  ],
-  economy: [
-    ["stable-baseline", "Stable baseline"],
-    ["demand-shock-recovery", "Demand shock and recovery"],
-    ["supply-chain-shock", "Supply-chain shock"],
-    ["credit-tightening-default", "Credit tightening and default"],
-    ["policy-intervention-baseline", "Policy intervention"],
-    ["major-employer-failure", "Major employer failure"],
-  ],
-};
+import {
+  scenarioCatalogFromLibrary,
+  scenarioLibrary,
+} from "../src/scenarios/library.mjs";
+
+export const scenarioCatalog = scenarioCatalogFromLibrary(scenarioLibrary);
 
 export function workerRequest(worker, command, payload = {}, options = {}) {
   const requestId = crypto.randomUUID();

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.15.0-alpha.1 - scenario library and onboarding
+
+- Added a versioned library for all 16 committed browser scenarios with
+  synthetic status, summaries, tags, and stable runtime identifiers.
+- Added depth and text filtering, honest empty states, and a tested
+  five-minute guided enterprise run.
+- Removed the duplicate hand-maintained browser catalog in favor of the shared
+  library projection.
+
 ## 0.14.0-alpha.1 - analysis workspace
 
 - Added deterministic descriptive measures, entity cohorts, event-kind counts,

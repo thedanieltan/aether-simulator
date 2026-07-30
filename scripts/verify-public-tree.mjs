@@ -65,6 +65,7 @@ const required = [
   "docs/LOCAL_PROJECT_WORKSPACE.md",
   "docs/UNIFIED_ENTITY_MODEL.md",
   "docs/SEMANTIC_ZOOM.md",
+  "docs/ANALYSIS_WORKSPACE.md",
   "docs/VISUAL_SCENARIO_BUILDER.md",
   "docs/SCENARIO_LABORATORY.md",
   "docs/RUNTIME_SCALE_AND_CONTROL.md",
@@ -90,6 +91,7 @@ const required = [
   "docs/work-packages/WP-AES-10-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-11-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-12-ACCEPTANCE.md",
+  "docs/work-packages/WP-AES-13-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
   ".github/dependabot.yml",
 ];

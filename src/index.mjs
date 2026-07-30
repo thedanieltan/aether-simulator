@@ -106,3 +106,7 @@ export {
   serializeExperiment,
   summarizeExperiment,
 } from "./experiments/laboratory.mjs";
+export {
+  ANALYSIS_CONTRACT,
+  analyzeSyntheticWorld,
+} from "./analysis/workspace.mjs";

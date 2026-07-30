@@ -49,6 +49,7 @@ import {
   serializeExperiment,
   summarizeExperiment,
 } from "../src/experiments/laboratory.mjs";
+import { analyzeSyntheticWorld } from "../src/analysis/workspace.mjs";
 import {
   assertBrowserWorkload,
   estimateBrowserWorkload,
@@ -840,6 +841,112 @@ function renderSemanticZoom(session) {
   resultView.append(zoom);
 }
 
+function analysisTable(headings, rows) {
+  const wrap = element("div", "table-wrap");
+  const table = element("table", "experiment-table");
+  const head = element("thead");
+  const headingRow = element("tr");
+  for (const heading of headings) headingRow.append(element("th", "", heading));
+  head.append(headingRow);
+  const body = element("tbody");
+  for (const values of rows) {
+    const row = element("tr");
+    for (const value of values) row.append(element("td", "", String(value)));
+    body.append(row);
+  }
+  table.append(head, body);
+  wrap.append(table);
+  return wrap;
+}
+
+function renderAnalysis(session) {
+  const analysis = analyzeSyntheticWorld(session.exported);
+  const workspace = element("div", "analysis-workspace");
+  const heading = element("div", "analysis-heading");
+  heading.append(
+    element("p", "signal", "DESCRIPTIVE RUN ANALYSIS"),
+    element("h3", "", "Inspect what this synthetic run emitted"),
+    element("p", "empty-copy", analysis.interpretation.statement),
+  );
+  const exportButton = element("button", "", "Download analysis.json");
+  exportButton.type = "button";
+  exportButton.addEventListener("click", () =>
+    canonicalDownload("analysis.json", analysis));
+  heading.append(exportButton);
+
+  const measureGrid = element("section", "analysis-measures");
+  measureGrid.setAttribute("aria-label", "Descriptive measures");
+  for (const [label, value] of Object.entries(analysis.measures)) {
+    const card = element("article");
+    card.append(
+      element("span", "", label.replaceAll("_", " ")),
+      element("strong", "", String(value)),
+    );
+    measureGrid.append(card);
+  }
+
+  const cohorts = element("section", "analysis-section");
+  cohorts.append(
+    element("h4", "", "Explicit entity cohorts"),
+    element(
+      "p",
+      "empty-copy",
+      "Cohorts group emitted entities by collection and declared kind.",
+    ),
+    analysisTable(
+      ["Collection", "Declared kind", "Count"],
+      analysis.cohorts.map(({ collection, kind, count }) => [
+        collection,
+        kind,
+        count,
+      ]),
+    ),
+  );
+
+  const ancestry = element("section", "analysis-section");
+  ancestry.append(
+    element("h4", "", "Declared event ancestry"),
+    element(
+      "p",
+      "empty-copy",
+      analysis.declared_event_ancestry.length
+        ? `${analysis.declared_event_ancestry.length} explicit event links.`
+        : "This run emitted no explicit event ancestry links.",
+    ),
+  );
+  if (analysis.declared_event_ancestry.length) {
+    ancestry.append(
+      analysisTable(
+        ["Cause event", "Effect event", "Resolved"],
+        analysis.declared_event_ancestry.map(
+          ({ cause_event_id: cause, effect_event_id: effect, resolved }) => [
+            cause.slice(0, 20),
+            effect.slice(0, 20),
+            resolved ? "yes" : "no",
+          ],
+        ),
+      ),
+    );
+  }
+
+  const uncertainty = element("section", "analysis-boundary");
+  uncertainty.append(
+    element("h4", "", "Uncertainty and claim boundary"),
+    element(
+      "p",
+      "",
+      "No statistical uncertainty, calibration, prediction, or real-world causal effect is estimated.",
+    ),
+  );
+  const limitations = element("ul");
+  for (const limitation of analysis.interpretation.limitations) {
+    limitations.append(element("li", "", limitation));
+  }
+  uncertainty.append(limitations);
+  workspace.append(heading, measureGrid, cohorts, ancestry, uncertainty);
+  resultView.append(workspace);
+}
+
 function renderGraph(session) {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.classList.add("graph");
@@ -993,6 +1100,7 @@ function render() {
   const renderers = {
     entities: renderEntities,
     zoom: renderSemanticZoom,
+    analysis: renderAnalysis,
     graph: renderGraph,
     timeline: renderTimeline,
     inspector: renderInspector,
@@ -1224,7 +1332,7 @@ const commandItems = [
     hint: route.eyebrow,
     href: productRouteHref(route.id),
   })),
-  ...["entities", "zoom", "graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
+  ...["entities", "zoom", "analysis", "graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
     id: view,
     label: `${view[0].toUpperCase()}${view.slice(1)} view`,
     hint: "Result view",

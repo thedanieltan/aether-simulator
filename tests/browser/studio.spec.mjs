@@ -110,6 +110,24 @@ test("semantic zoom reveals citizens inside a synthetic enterprise context", asy
   );
 });
 
+test("analysis workspace separates descriptions from uncertainty and causal claims", async ({ page }) => {
+  await page.goto("/#/run");
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
+  await page.getByRole("tab", { name: "Analysis" }).click();
+  await expect(page.getByRole("heading", {
+    name: "Inspect what this synthetic run emitted",
+  })).toBeVisible();
+  await expect(page.locator(".analysis-measures")).toContainText("events");
+  await expect(page.getByRole("heading", { name: "Explicit entity cohorts" })).toBeVisible();
+  await expect(page.locator(".analysis-boundary")).toContainText(
+    "No statistical uncertainty",
+  );
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download analysis.json" }).click();
+  expect((await downloadPromise).suggestedFilename()).toBe("analysis.json");
+});
+
 test("product shell supports stable routes and honest gated states", async ({ page }) => {
   await page.goto("/#/explore/timeline");
   await expect(page.locator("[data-route='explore']").first()).toHaveAttribute(

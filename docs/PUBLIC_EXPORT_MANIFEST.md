@@ -46,6 +46,7 @@ reviewers.
 | Local project lifecycle | `app/project-store.mjs`, `docs/LOCAL_PROJECT_WORKSPACE.md` | Project contract, serialization, recovery, and browser round-trip tests |
 | Unified citizen and entity view | `src/entities/unified.mjs`, `docs/UNIFIED_ENTITY_MODEL.md` | Cross-depth identity, context, determinism, and browser explorer tests |
 | Semantic zoom projection | `src/entities/semantic-zoom.mjs`, `docs/SEMANTIC_ZOOM.md` | World, enterprise, citizen-path, shared-identity, route, and browser zoom tests |
+| Descriptive analysis projection | `src/analysis/workspace.mjs`, `docs/ANALYSIS_WORKSPACE.md` | Determinism, synthetic boundary, measures, cohorts, interpretation, route, export, and browser tests |
 | Visual scenario blueprint | `src/scenarios/blueprint.mjs`, `docs/VISUAL_SCENARIO_BUILDER.md` | Topology, compilation, bounds, export, and browser builder tests |
 | Scenario laboratory | `src/experiments/laboratory.mjs`, `docs/SCENARIO_LABORATORY.md` | Fixed-baseline, variant, outcome, determinism, and browser experiment tests |
 | Browser runtime control | `app/runtime-control.mjs`, `app/adapter.mjs`, `app/worker.mjs`, `docs/RUNTIME_SCALE_AND_CONTROL.md` | Workload, envelope, progress, abort, worker replacement, and browser recovery tests |

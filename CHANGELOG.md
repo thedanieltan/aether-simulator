@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.14.0-alpha.1 - analysis workspace
+
+- Added deterministic descriptive measures, entity cohorts, event-kind counts,
+  and declared event-ancestry projection.
+- Added an analysis route, browser workspace, visible interpretation boundary,
+  and canonical analysis export.
+- Added tests that reject authoritative inputs and prevent statistical,
+  calibrated, predictive, or real-world causal claims.
+
 ## 0.13.0-alpha.1 - semantic zoom
 
 - Added a deterministic world-to-enterprise-to-citizen projection over the

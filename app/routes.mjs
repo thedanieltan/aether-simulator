@@ -43,6 +43,14 @@ export const productRoutes = Object.freeze([
     view: "graph",
   },
   {
+    id: "analysis",
+    label: "Analysis workspace",
+    eyebrow: "Describe",
+    target: "studio",
+    availability: "after-run",
+    view: "analysis",
+  },
+  {
     id: "compare",
     label: "Compare branches",
     eyebrow: "Evaluate",
@@ -70,6 +78,7 @@ const routeById = new Map(productRoutes.map((route) => [route.id, route]));
 const viewIds = new Set([
   "entities",
   "zoom",
+  "analysis",
   "graph",
   "timeline",
   "inspector",
@@ -93,7 +102,7 @@ export function productRouteHref(routeId, view) {
 }
 
 export function routeForView(view) {
-  return view === "exports"
-    ? productRouteHref("export")
-    : productRouteHref("explore", view);
+  if (view === "exports") return productRouteHref("export");
+  if (view === "analysis") return productRouteHref("analysis");
+  return productRouteHref("explore", view);
 }

@@ -11,7 +11,7 @@ const requiredFragments = [
   "push:",
   "workflow_dispatch:",
   "permissions:\n  contents: read",
-  "working-directory: ${{ github.workspace }}",
+  "working-directory: .",
   "cancel-in-progress: true",
   "npm run verify:lockfile",
   "npm ci --ignore-scripts",

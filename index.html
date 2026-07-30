@@ -35,6 +35,7 @@
             <span>Enterprise simulator</span>
           </div>
           <p id="route-context">Overview</p>
+          <p id="project-context">No project open</p>
           <button class="command-pill" id="command-open" type="button" aria-haspopup="dialog">
             <span aria-hidden="true">Go</span>
             <span>Go to a product area</span>
@@ -73,6 +74,58 @@
               </p>
             </div>
             <ol id="product-index" class="product-index"></ol>
+          </section>
+
+          <section id="projects" class="project-workspace" aria-labelledby="projects-title" tabindex="-1">
+            <div class="section-heading">
+              <div>
+                <p class="signal">LOCAL PROJECT WORKSPACE</p>
+                <h2 id="projects-title">Keep a world without sending it anywhere</h2>
+              </div>
+              <p>
+                Projects stay in this browser. Configuration and the last
+                verified run digest can be reopened after a reload.
+              </p>
+            </div>
+            <div class="project-grid">
+              <form id="project-form" class="project-editor">
+                <div class="project-editor-heading">
+                  <h3 id="project-editor-title">Create a project</h3>
+                  <span id="project-revision">Not saved</span>
+                </div>
+                <label>
+                  Project name
+                  <input id="project-name" name="project-name" maxlength="100" required />
+                </label>
+                <label>
+                  Description
+                  <textarea id="project-description" name="project-description" maxlength="500" rows="4"></textarea>
+                </label>
+                <div class="project-actions">
+                  <button class="primary" id="project-save" type="submit">Create project</button>
+                  <button id="project-new" type="button">New project</button>
+                  <button id="project-export" type="button" disabled>Export project</button>
+                  <label class="file-action" for="project-import">Import project</label>
+                  <input id="project-import" type="file" accept="application/json,.json" />
+                </div>
+                <p class="control-help">
+                  Use fictional metadata only. Never enter personal data,
+                  credentials, confidential material, or provider data.
+                </p>
+                <p id="project-status" class="project-status" role="status" aria-live="polite">
+                  Loading local workspace…
+                </p>
+              </form>
+              <section class="project-list-panel" aria-labelledby="project-list-title">
+                <div>
+                  <h3 id="project-list-title">Local projects</h3>
+                  <span id="project-count">0 projects</span>
+                </div>
+                <div id="project-list" class="project-list">
+                  <p class="empty-copy">No projects are stored in this browser.</p>
+                </div>
+              </section>
+            </div>
           </section>
 
           <section id="gallery" class="gallery" aria-labelledby="gallery-title" tabindex="-1">

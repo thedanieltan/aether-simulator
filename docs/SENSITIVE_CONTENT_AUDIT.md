@@ -45,8 +45,9 @@ records are included.
 The browser-product review covers application source, generated production
 HTML, CSS, JavaScript and font assets, Web Worker messages, static-host headers,
 downloads, package metadata, browser tests, and deployment configuration. The
-runtime has no upload, credential, analytics, telemetry, provider, private URL,
-or server-storage surface. Browser exports retain synthetic and
+runtime has no credential, analytics, telemetry, provider, private URL, or
+server-storage surface. Its local project-file import is bounded, versioned,
+allowlisted, and never transmitted. Browser exports retain synthetic and
 non-authoritative labels.
 
 Gitleaks and TruffleHog executables were not installed in the local environment,

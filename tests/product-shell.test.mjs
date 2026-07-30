@@ -11,7 +11,7 @@ test("product routes have unique stable identifiers and resolvable targets", () 
   assert.equal(new Set(productRoutes.map(({ id }) => id)).size, productRoutes.length);
   assert.deepEqual(
     productRoutes.map(({ id }) => id),
-    ["overview", "design", "run", "explore", "compare", "export", "boundary"],
+    ["overview", "projects", "design", "run", "explore", "compare", "export", "boundary"],
   );
   for (const route of productRoutes) {
     assert.equal(parseProductRoute(productRouteHref(route.id)).id, route.id);

@@ -31,8 +31,9 @@ Stable static-host routes cover overview, design, run, explore, compare, export,
 and research boundaries. A product rail is available on larger screens, and a
 keyboard command navigator exposes the same destinations at every size.
 
-Project persistence, a visual model builder, semantic zoom into citizens,
-large-scale runtime controls, and advanced analysis are planned product work;
+Local project persistence, digest-verified recovery, and validated project-file
+import and export are implemented. A visual model builder, semantic zoom into
+citizens, large-scale runtime controls, and advanced analysis are planned product work;
 the navigation does not present them as implemented.
 
 The pause control creates a deterministic checkpoint after the current
@@ -44,6 +45,8 @@ state.
 
 Every displayed person, organization, account, event, and measurement is
 fictional and synthetic. Outputs are experimental, non-authoritative, and do
-not establish real-world outcomes. The browser product does not accept uploads,
-connect to providers, or transmit simulation content. Connected calibration
-and provider performance remain unvalidated.
+not establish real-world outcomes. The browser product accepts only the
+versioned local project-file contract; it does not transmit project or
+simulation content or connect to providers. Users must keep project metadata
+fictional and non-sensitive. Connected calibration and provider performance
+remain unvalidated.

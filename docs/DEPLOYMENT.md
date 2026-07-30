@@ -64,3 +64,7 @@ journeys, including a project export/delete/import round trip.
 The WP-AES-08 unified entity model was independently accepted at
 `https://2a626224.aether-simulator.pages.dev` with citizen/entity inspection
 and the complete existing browser acceptance suite.
+
+The WP-AES-09 visual scenario builder was independently accepted at
+`https://6d4d4576.aether-simulator.pages.dev` with blueprint validation,
+export, exact compilation, and the complete existing browser suite.

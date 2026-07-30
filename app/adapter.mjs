@@ -10,6 +10,8 @@ export function workerRequest(worker, command, payload = {}, options = {}) {
   return new Promise((resolve, reject) => {
     const cleanup = () => {
       worker.removeEventListener("message", handle);
+      worker.removeEventListener("error", fail);
+      worker.removeEventListener("messageerror", failMessage);
       options.signal?.removeEventListener("abort", abort);
     };
     const abort = () => {
@@ -26,11 +28,21 @@ export function workerRequest(worker, command, payload = {}, options = {}) {
       if (event.data.ok) resolve(event.data.result);
       else reject(new Error(event.data.error));
     };
+    const fail = (event) => {
+      cleanup();
+      reject(new Error(event.message || "The local simulation worker failed."));
+    };
+    const failMessage = () => {
+      cleanup();
+      reject(new Error("The local simulation worker returned an unreadable message."));
+    };
     if (options.signal?.aborted) {
       abort();
       return;
     }
     worker.addEventListener("message", handle);
+    worker.addEventListener("error", fail);
+    worker.addEventListener("messageerror", failMessage);
     options.signal?.addEventListener("abort", abort, { once: true });
     worker.postMessage({ requestId, command, payload });
   });

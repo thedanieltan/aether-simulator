@@ -190,6 +190,19 @@ function cancelActiveOperation() {
   return true;
 }
 
+function resetRuntimeWorker() {
+  if (cancelActiveOperation()) return;
+  worker.terminate();
+  worker = createRuntimeWorker();
+  stopElapsedClock();
+  setRuntimeProgress({
+    phase: "reset",
+    value: 0,
+    detail: "A fresh local worker is ready. The previous session was discarded.",
+  });
+  updateState({ type: "cancelled" });
+}
+
 async function controlledWorkerRequest(command, requestPayload, controller) {
   return workerRequest(worker, command, requestPayload, {
     signal: controller.signal,
@@ -1336,6 +1349,7 @@ depthInput.addEventListener("change", () => {
 });
 form.querySelector("#scale").addEventListener("input", updateWorkloadEstimate);
 form.querySelector("#duration").addEventListener("input", updateWorkloadEstimate);
+document.querySelector("#runtime-reset").addEventListener("click", resetRuntimeWorker);
 for (const button of commandButtons) {
   button.addEventListener("click", () => execute(button.dataset.command));
 }

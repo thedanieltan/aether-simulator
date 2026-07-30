@@ -54,6 +54,11 @@ local benchmark observations. It is not a kernel or product ceiling. Larger
 configurations can be researched through the local CLI subject to host memory
 and execution time.
 
+Worker crashes, message-decoding failures, and user cancellation fail visibly.
+The user can replace the local worker and discard its transient session without
+reloading the application. Local project records remain in browser storage and
+can be reopened independently.
+
 ## Claim boundary
 
 Every displayed person, organization, account, event, and measurement is

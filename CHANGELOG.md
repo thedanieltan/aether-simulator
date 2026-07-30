@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0-alpha.1 - reliability and packaging
+
+- Added fail-fast handling for worker crashes and unreadable worker messages.
+- Added an explicit local-worker reset and recovery state.
+- Strengthened the package boundary to require public product modules and
+  boundary documentation while excluding transient and repository-only trees.
+- Added focused crash, message-error, reset, and package acceptance coverage.
+
 ## 0.15.0-alpha.1 - scenario library and onboarding
 
 - Added a versioned library for all 16 committed browser scenarios with

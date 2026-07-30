@@ -33,5 +33,14 @@ real-world policy validity.
 
 ## Disposition
 
-Implementation candidate. Protected continuous integration, review, merge,
-deployment, and hosted acceptance are required before integration is recorded.
+Integrated and live accepted on 2026-07-30.
+
+- Protected pull request: `#15`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://2a84cbfa.aether-simulator.pages.dev`.
+- Hosted acceptance: nine Playwright journeys passed, including the fixed
+  baseline, two declared variants, comparison boundary, result export, and all
+  previously accepted product workflows.
+
+Only the documented economy experiment family is live accepted.

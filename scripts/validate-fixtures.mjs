@@ -8,18 +8,23 @@ import {
 import {
   baselineOperationsModule,
   buildEcosystemScenario,
+  buildEconomyIntervention,
+  buildEconomyScenario,
   buildEnterpriseScenario,
   canonicalJson,
   compareEnterpriseRuns,
   compareEcosystemRuns,
+  compareEconomyRuns,
   compareRuns,
   enterpriseOperationsModule,
   ecosystemOperationsModule,
+  economyOperationsModule,
   ecosystemScenarioMetadata,
   migrateLegacyWorld,
   SimulationKernel,
   summarizeEnterpriseRun,
   summarizeEcosystemRun,
+  summarizeEconomyRun,
 } from "../src/index.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -264,4 +269,77 @@ for (const [name, value] of Object.entries({
 }
 process.stdout.write(
   `Validated ${ecosystemScenarioNames.length} ecosystem scenarios, ${fullEcosystemFixtures.size} full exports, and intervention lifecycle fixtures.\n`,
+);
+
+const economyScenarioDirectory = resolve(root, "scenarios", "economy");
+const economyFixtureDirectory = resolve(fixtureDirectory, "economy");
+const economyScenarioNames = (await readdir(economyScenarioDirectory))
+  .filter((name) => name.endsWith(".json"))
+  .sort();
+const fullEconomyFixtures = new Set([
+  "stable-baseline.json",
+  "supply-chain-shock.json",
+  "major-employer-failure.json",
+]);
+const economyKernel = new SimulationKernel({ modules: [economyOperationsModule] });
+const economySummary = [];
+for (const name of economyScenarioNames) {
+  const config = JSON.parse(
+    await readFile(resolve(economyScenarioDirectory, name), "utf8"),
+  );
+  const scenario = buildEconomyScenario(config);
+  const exported = economyKernel.run(scenario);
+  economySummary.push(summarizeEconomyRun(config, exported));
+  if (fullEconomyFixtures.has(name)) {
+    const committed = await readFile(
+      resolve(economyFixtureDirectory, name.replace(".json", ".export.json")),
+      "utf8",
+    );
+    if (canonicalJson(exported) !== committed) {
+      throw new Error(`${name} economy export fixture is not reproducible`);
+    }
+  }
+}
+const committedEconomySummary = await readFile(
+  resolve(economyFixtureDirectory, "acceptance-summary.json"),
+  "utf8",
+);
+if (canonicalJson(economySummary) !== committedEconomySummary) {
+  throw new Error("economy acceptance summary is not reproducible");
+}
+const economyConfig = JSON.parse(
+  await readFile(
+    resolve(economyScenarioDirectory, "policy-intervention-baseline.json"),
+    "utf8",
+  ),
+);
+const economyScenario = buildEconomyScenario(economyConfig);
+const economyCheckpoint = economyKernel.checkpoint(economyScenario, 16);
+const economyBaseline = economyKernel.run(economyScenario);
+const economyIntervention = buildEconomyIntervention(
+  economyConfig,
+  { tick: 17, transfer: 12 },
+);
+const economyBranch = economyKernel.branch(
+  economyScenario,
+  economyCheckpoint,
+  economyIntervention,
+);
+const economyComparison = compareEconomyRuns(
+  economyBaseline,
+  economyBranch,
+  { transfer: 12, mechanism: "declared household transfer" },
+);
+for (const [name, value] of Object.entries({
+  "economy-intervention.checkpoint.json": economyCheckpoint,
+  "economy-intervention.branch.json": economyBranch,
+  "economy-intervention.comparison.json": economyComparison,
+})) {
+  const committed = await readFile(resolve(economyFixtureDirectory, name), "utf8");
+  if (canonicalJson(value) !== committed) {
+    throw new Error(`${name} is not reproducible`);
+  }
+}
+process.stdout.write(
+  `Validated ${economyScenarioNames.length} economy scenarios, ${fullEconomyFixtures.size} full exports, and intervention lifecycle fixtures.\n`,
 );

@@ -1,0 +1,41 @@
+{
+  "interventions": [
+    {
+      "causes": [],
+      "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+      "event_type": "economy.policy-change",
+      "module_id": "economy-operations",
+      "payload": {
+        "assumptions": {
+          "authoritative": false,
+          "mechanism": "declared deterministic intervention",
+          "synthetic": true
+        },
+        "contract_version": "aether-economy-event.v1",
+        "entries": [
+          {
+            "account": "intervention-expenditure",
+            "amount": -12,
+            "entity_id": "institution_1cade5e3d3c717fea424c6fc114a707a"
+          },
+          {
+            "account": "intervention-receipt",
+            "amount": 12,
+            "entity_id": "household_8e7c4827058ea9bd9fab9911c9af409c"
+          }
+        ],
+        "facts": {
+          "government_id": "institution_1cade5e3d3c717fea424c6fc114a707a",
+          "household_id": "household_8e7c4827058ea9bd9fab9911c9af409c",
+          "income_amount": 12,
+          "income_source": "transfers",
+          "policy_kind": "household-transfer",
+          "public_expenditure": 12
+        },
+        "kind": "policy-change",
+        "transaction_id": "transaction_84ab38940daa5cce136927a055e97fad"
+      },
+      "tick": 17
+    }
+  ]
+}

@@ -15,13 +15,17 @@ import { assertContract } from "./kernel/validation.mjs";
 import { baselineOperationsModule } from "./modules/baseline-operations.mjs";
 import {
   assertEcosystemConfig,
+  assertEconomyConfig,
   assertEnterpriseConfig,
+  buildEconomyScenario,
   buildEcosystemScenario,
   buildEnterpriseScenario,
   ecosystemOperationsModule,
+  economyOperationsModule,
   enterpriseOperationsModule,
   listEnterpriseArchetypes,
   validateEnterpriseInvariants,
+  validateEconomyInvariants,
 } from "./index.mjs";
 
 const kernel = new SimulationKernel({ modules: [baselineOperationsModule] });
@@ -30,6 +34,9 @@ const enterpriseKernel = new SimulationKernel({
 });
 const ecosystemKernel = new SimulationKernel({
   modules: [enterpriseOperationsModule, ecosystemOperationsModule],
+});
+const economyKernel = new SimulationKernel({
+  modules: [economyOperationsModule],
 });
 
 function usage() {
@@ -48,6 +55,8 @@ Usage:
   aether enterprise-run <enterprise-config.json> [--output <file>]
   aether ecosystem-validate <ecosystem-config.json>
   aether ecosystem-run <ecosystem-config.json> [--output <file>]
+  aether economy-validate <economy-config.json>
+  aether economy-run <economy-config.json> [--output <file>]
 `;
 }
 
@@ -170,6 +179,38 @@ async function execute(argv) {
     }
     const scenario = buildEcosystemScenario(await readJson(positional[0]));
     await emit(ecosystemKernel.run(scenario), options.output);
+    return;
+  }
+
+  if (command === "economy-validate") {
+    if (positional.length !== 1) {
+      throw new TypeError("economy-validate requires one economy config");
+    }
+    const config = await readJson(positional[0]);
+    assertEconomyConfig(config);
+    const scenario = buildEconomyScenario(config);
+    economyKernel.validateScenario(scenario);
+    await emit({
+      valid: true,
+      contract_version: config.contract_version,
+      scenario_contract_version: scenario.contract_version,
+      scenario_kind: config.scenario_kind,
+      scale: config.scale,
+    });
+    return;
+  }
+
+  if (command === "economy-run") {
+    if (positional.length !== 1) {
+      throw new TypeError("economy-run requires one economy config");
+    }
+    const config = await readJson(positional[0]);
+    const exported = economyKernel.run(buildEconomyScenario(config));
+    const invariants = validateEconomyInvariants(exported);
+    if (!invariants.valid) {
+      throw new TypeError(`economy invariant failure: ${invariants.errors.join("; ")}`);
+    }
+    await emit(exported, options.output);
     return;
   }
 

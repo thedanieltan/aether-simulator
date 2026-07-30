@@ -21,6 +21,12 @@ const ecosystemConfig = resolve(
   "ecosystem",
   "saas-service-network.json",
 );
+const economyConfig = resolve(
+  root,
+  "scenarios",
+  "economy",
+  "stable-baseline.json",
+);
 
 function run(args) {
   return execFileSync(process.execPath, [cli, ...args], {
@@ -111,5 +117,20 @@ test("CLI validates and runs ecosystem scenarios", async () => {
   assert.equal(exported.world.provenance.authoritative, false);
   assert.ok(
     exported.world.projected_state.module_state["ecosystem-operations"],
+  );
+});
+
+test("CLI validates and runs economy scenarios", async () => {
+  const validation = JSON.parse(run(["economy-validate", economyConfig]));
+  assert.equal(validation.valid, true);
+  assert.equal(validation.scenario_kind, "stable-baseline");
+  const directory = await mkdtemp(resolve(tmpdir(), "aether-economy-cli-"));
+  const output = resolve(directory, "economy-run.json");
+  run(["economy-run", economyConfig, "--output", output]);
+  const exported = JSON.parse(await readFile(output, "utf8"));
+  assert.equal(exported.world.provenance.authoritative, false);
+  assert.equal(
+    exported.world.projected_state.module_state["economy-operations"].metrics.employment,
+    2,
   );
 });

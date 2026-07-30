@@ -1,0 +1,133 @@
+{
+  "assumptions": {
+    "authoritative": false,
+    "declared_intervention": {
+      "mechanism": "declared household transfer",
+      "transfer": 12
+    },
+    "synthetic": true
+  },
+  "balance_differences": [],
+  "collection_counts": {
+    "left": {
+      "accounts": 18,
+      "assets": 0,
+      "balances": 18,
+      "contracts": 8,
+      "households": 2,
+      "institutions": 6,
+      "metrics": 0,
+      "observations": 0,
+      "organizations": 8,
+      "people": 2,
+      "relationships": 8,
+      "resources": 0,
+      "systems": 0
+    },
+    "right": {
+      "accounts": 18,
+      "assets": 0,
+      "balances": 18,
+      "contracts": 8,
+      "households": 2,
+      "institutions": 6,
+      "metrics": 0,
+      "observations": 0,
+      "organizations": 8,
+      "people": 2,
+      "relationships": 8,
+      "resources": 0,
+      "systems": 0
+    }
+  },
+  "contract_version": "aether-comparison.v1",
+  "economy_state_equal": false,
+  "left_event_count": 38,
+  "left_export_id": "export_7ef21ebcc5131546c03b4d99a6119ee0",
+  "module_state_differences": [
+    {
+      "left_digest": "76c4f566762372543ea5793d28d719f750065677b44890d18e5d6e45506adcce",
+      "module_id": "economy-operations",
+      "right_digest": "bae71f1e30a293201fd0764c399b73839cbebeff8b59ece73fd949cd1200c7d2",
+      "semantically_equal": false
+    }
+  ],
+  "observed_synthetic_outcomes": [
+    {
+      "baseline": 0,
+      "difference": 0,
+      "intervention": 0,
+      "metric": "closures"
+    },
+    {
+      "baseline": 6,
+      "difference": 0,
+      "intervention": 6,
+      "metric": "consumption"
+    },
+    {
+      "baseline": 220,
+      "difference": 0,
+      "intervention": 220,
+      "metric": "credit"
+    },
+    {
+      "baseline": 0,
+      "difference": 0,
+      "intervention": 0,
+      "metric": "defaults"
+    },
+    {
+      "baseline": 2,
+      "difference": 0,
+      "intervention": 2,
+      "metric": "employment"
+    },
+    {
+      "baseline": 2,
+      "difference": 0,
+      "intervention": 2,
+      "metric": "formations"
+    },
+    {
+      "baseline": 20,
+      "difference": 0,
+      "intervention": 20,
+      "metric": "market_volume"
+    },
+    {
+      "baseline": 20,
+      "difference": 0,
+      "intervention": 20,
+      "metric": "production"
+    },
+    {
+      "baseline": 26,
+      "difference": 12,
+      "intervention": 38,
+      "metric": "public_expenditure"
+    },
+    {
+      "baseline": 20,
+      "difference": 0,
+      "intervention": 20,
+      "metric": "taxes"
+    },
+    {
+      "baseline": 0,
+      "difference": 0,
+      "intervention": 0,
+      "metric": "unemployment"
+    },
+    {
+      "baseline": 100,
+      "difference": 0,
+      "intervention": 100,
+      "metric": "wages"
+    }
+  ],
+  "right_event_count": 39,
+  "right_export_id": "export_458040761f799967d52c50fd2287ae33",
+  "semantically_equal": false,
+  "shared_event_count": 33
+}

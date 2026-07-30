@@ -323,6 +323,10 @@ the synchronous kernel is running. Cancellation is therefore implemented at
 the process boundary: an `AbortSignal` settles the UI request, the active worker
 is terminated, and a new worker is created for the next operation.
 
+Worker `error` and `messageerror` events reject their matching request and
+remove all listeners. Manual reset uses the same replacement boundary and
+discards only transient simulation state; project persistence is independent.
+
 ```mermaid
 flowchart LR
   Inputs["Depth + scale + duration"] --> Estimate["Deterministic workload estimate"]

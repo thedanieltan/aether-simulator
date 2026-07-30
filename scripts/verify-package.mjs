@@ -31,6 +31,13 @@ const required = [
   "package.json",
   "src/cli.mjs",
   "src/index.mjs",
+  "src/analysis/workspace.mjs",
+  "src/entities/semantic-zoom.mjs",
+  "src/scenarios/library.mjs",
+  "app/runtime-control.mjs",
+  "index.html",
+  "docs/PRODUCT_REQUIREMENTS.md",
+  "docs/PRIVACY_AND_SYNTHETIC_DATA.md",
   "schemas/kernel/aether-world.v1.schema.json",
   "scenarios/kernel-baseline.json",
 ];
@@ -38,7 +45,17 @@ for (const path of required) {
   if (!files.has(path)) throw new Error(`package is missing required file: ${path}`);
 }
 
-const forbiddenPrefixes = [".github/", "tests/", "scripts/", "node_modules/"];
+const forbiddenPrefixes = [
+  ".git/",
+  ".github/",
+  ".wrangler/",
+  "dist/",
+  "playwright-report/",
+  "test-results/",
+  "tests/",
+  "scripts/",
+  "node_modules/",
+];
 for (const path of files) {
   if (forbiddenPrefixes.some((prefix) => path.startsWith(prefix))) {
     throw new Error(`package contains repository-only file: ${path}`);

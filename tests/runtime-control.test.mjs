@@ -101,3 +101,16 @@ test("worker request aborts immediately and ignores later worker output", async 
   });
 });
 
+test("worker request rejects worker crashes and unreadable messages", async () => {
+  const crashedWorker = new FakeWorker();
+  const crashed = workerRequest(crashedWorker, "run");
+  const crash = new Event("error");
+  Object.defineProperty(crash, "message", { value: "synthetic worker crash" });
+  crashedWorker.dispatchEvent(crash);
+  await assert.rejects(crashed, /synthetic worker crash/);
+
+  const unreadableWorker = new FakeWorker();
+  const unreadable = workerRequest(unreadableWorker, "run");
+  unreadableWorker.dispatchEvent(new Event("messageerror"));
+  await assert.rejects(unreadable, /unreadable message/);
+});

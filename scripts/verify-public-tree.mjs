@@ -67,6 +67,7 @@ const required = [
   "docs/SEMANTIC_ZOOM.md",
   "docs/ANALYSIS_WORKSPACE.md",
   "docs/SCENARIO_LIBRARY_AND_ONBOARDING.md",
+  "docs/RELIABILITY_AND_PACKAGING.md",
   "docs/VISUAL_SCENARIO_BUILDER.md",
   "docs/SCENARIO_LABORATORY.md",
   "docs/RUNTIME_SCALE_AND_CONTROL.md",
@@ -94,6 +95,7 @@ const required = [
   "docs/work-packages/WP-AES-12-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-13-ACCEPTANCE.md",
   "docs/work-packages/WP-AES-14-ACCEPTANCE.md",
+  "docs/work-packages/WP-AES-15-ACCEPTANCE.md",
   ".github/workflows/ci.yml",
   ".github/dependabot.yml",
 ];

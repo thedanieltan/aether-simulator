@@ -86,6 +86,9 @@ test("runtime control estimates work and cancellation replaces the in-flight wor
   await expect(page.locator("#runtime-phase")).toContainText(
     "deterministic result is ready",
   );
+  await page.getByRole("button", { name: "Reset local worker" }).click();
+  await expect(page.locator("#run-status")).toHaveText("cancelled");
+  await expect(page.locator("#runtime-phase")).toContainText("fresh local worker");
 });
 
 test("semantic zoom reveals citizens inside a synthetic enterprise context", async ({ page }) => {

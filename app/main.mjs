@@ -33,6 +33,7 @@ import {
   reviseProject,
   serializeProject,
 } from "./project-store.mjs";
+import { buildUnifiedEntityIndex } from "../src/entities/unified.mjs";
 
 const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
 const form = document.querySelector("#scenario-form");
@@ -355,6 +356,144 @@ function renderMetrics(session) {
   }
 }
 
+function renderEntityDetail(record, index) {
+  const detail = element("article", "entity-detail");
+  const heading = element("div", "entity-detail-heading");
+  const title = element("div");
+  title.append(
+    element("p", "signal", `${record.entity_type.toUpperCase()} · ${record.kind}`),
+    element("h3", "", record.label),
+  );
+  const boundary = element("span", "entity-boundary", "Synthetic · non-authoritative");
+  heading.append(title, boundary);
+  detail.append(heading);
+
+  const facts = element("dl", "entity-facts");
+  const values = [
+    ["Entity ID", record.entity_id],
+    ["Role contexts", record.contexts.length],
+    ["Referenced events", record.event_ids.length],
+    ["Lineage facts", record.lineage_fact_ids.length],
+  ];
+  for (const [label, value] of values) {
+    const item = element("div");
+    item.append(element("dt", "", label), element("dd", "", String(value)));
+    facts.append(item);
+  }
+  detail.append(facts);
+
+  const contextHeading = element("h4", "", "Role and relationship contexts");
+  detail.append(contextHeading);
+  if (!record.contexts.length) {
+    detail.append(element("p", "empty-copy", "No declared contexts for this entity."));
+  } else {
+    const contexts = element("div", "entity-contexts");
+    const byId = new Map(index.records.map((item) => [item.entity_id, item]));
+    for (const context of record.contexts) {
+      const item = element("section", "entity-context");
+      const counterpart = byId.get(context.counterpart_id);
+      item.append(
+        element("strong", "", context.role ?? context.kind),
+        element(
+          "span",
+          "",
+          `${context.direction} · ${counterpart?.label ?? context.counterpart_id}`,
+        ),
+      );
+      if (context.status) item.append(element("span", "", `status: ${context.status}`));
+      item.append(element("code", "", context.context_id));
+      contexts.append(item);
+    }
+    detail.append(contexts);
+  }
+
+  const attributes = element("details", "entity-attributes");
+  attributes.append(
+    element("summary", "", "Synthetic source attributes"),
+    element("pre", "json-view", JSON.stringify(record.attributes, null, 2)),
+  );
+  detail.append(attributes);
+  return detail;
+}
+
+function renderEntities(session) {
+  const index = buildUnifiedEntityIndex(session.exported.world);
+  const explorer = element("div", "entity-explorer");
+  const controls = element("div", "entity-controls");
+  const searchLabel = element("label");
+  searchLabel.append(
+    element("span", "", "Find an entity"),
+  );
+  const search = element("input");
+  search.type = "search";
+  search.placeholder = "Search fictional labels, kinds, or IDs";
+  searchLabel.append(search);
+  const typeLabel = element("label");
+  typeLabel.append(element("span", "", "Entity type"));
+  const type = element("select");
+  for (const [value, label] of [
+    ["all", `All (${index.records.length})`],
+    ["people", `Citizens and people (${index.counts.people})`],
+    ["households", `Households (${index.counts.households})`],
+    ["organizations", `Organizations (${index.counts.organizations})`],
+    ["institutions", `Institutions (${index.counts.institutions})`],
+    ["systems", `Systems (${index.counts.systems})`],
+    ["assets", `Assets (${index.counts.assets})`],
+  ]) {
+    const option = element("option", "", label);
+    option.value = value;
+    type.append(option);
+  }
+  typeLabel.append(type);
+  controls.append(searchLabel, typeLabel);
+
+  const body = element("div", "entity-explorer-body");
+  const list = element("div", "entity-list");
+  list.setAttribute("aria-label", "Synthetic entities");
+  const detailHost = element("div", "entity-detail-host");
+  body.append(list, detailHost);
+  explorer.append(controls, body);
+  resultView.append(explorer);
+
+  function renderEntityList() {
+    const query = search.value.trim().toLowerCase();
+    const visible = index.records.filter((record) =>
+      (type.value === "all" || record.collection === type.value)
+      && `${record.label} ${record.kind} ${record.entity_id}`.toLowerCase().includes(query));
+    list.replaceChildren();
+    if (!visible.length) {
+      list.append(element("p", "empty-copy", "No entities match this local filter."));
+    }
+    const selected = visible.find(
+      ({ entity_id: entityId }) => entityId === studioState.selectedEntityId,
+    ) ?? visible[0] ?? index.records.find(
+      ({ entity_id: entityId }) => entityId === studioState.selectedEntityId,
+    ) ?? index.records[0];
+    for (const record of visible) {
+      const button = element("button", "entity-list-item");
+      button.type = "button";
+      button.dataset.entityId = record.entity_id;
+      button.setAttribute(
+        "aria-pressed",
+        String(record.entity_id === selected?.entity_id),
+      );
+      button.append(
+        element("strong", "", record.label),
+        element("span", "", `${record.entity_type} · ${record.contexts.length} contexts`),
+      );
+      button.addEventListener("click", () =>
+        updateState({ type: "entity-selected", entityId: record.entity_id }));
+      list.append(button);
+    }
+    detailHost.replaceChildren();
+    if (selected) detailHost.append(renderEntityDetail(selected, index));
+  }
+
+  search.addEventListener("input", renderEntityList);
+  type.addEventListener("change", renderEntityList);
+  renderEntityList();
+}
+
 function renderGraph(session) {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.classList.add("graph");
@@ -506,6 +645,7 @@ function render() {
     return;
   }
   const renderers = {
+    entities: renderEntities,
     graph: renderGraph,
     timeline: renderTimeline,
     inspector: renderInspector,
@@ -594,7 +734,7 @@ const commandItems = [
     hint: route.eyebrow,
     href: productRouteHref(route.id),
   })),
-  ...["graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
+  ...["entities", "graph", "timeline", "inspector", "lineage", "exports"].map((view) => ({
     id: view,
     label: `${view[0].toUpperCase()}${view.slice(1)} view`,
     hint: "Result view",

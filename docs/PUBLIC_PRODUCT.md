@@ -22,6 +22,7 @@ database, or network provider is required.
 2. Set the seed, scale, duration, and intervention value.
 3. Run the world locally in a Web Worker.
 4. Inspect its graph, causal timeline, projected state, and lineage facts.
+   Use the Entities view to inspect fictional citizens and their role contexts.
 5. Create a checkpoint, replay it, branch with an intervention, and compare the
    results.
 6. Download canonical scenario, event, world, checkpoint, comparison, or

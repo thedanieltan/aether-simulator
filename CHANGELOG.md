@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.0-alpha.1 - unified citizen and entity model
+
+- Added deterministic unified records for people, households, organizations,
+  institutions, systems, and assets.
+- Preserved existing kernel identity while adding role, relationship, event,
+  lineage, and provenance views.
+- Added enterprise worker role context, shared-citizen multi-role context, and
+  economy household and employment contexts.
+- Added a filterable browser entity explorer with explicit synthetic and
+  non-authoritative status.
+- Added cross-depth determinism, identity, role-context, and browser acceptance
+  tests.
+
 ## 0.8.0-alpha.1 - local project workspace
 
 - Added the versioned `aether-project.v1` local project contract.

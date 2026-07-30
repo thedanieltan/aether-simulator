@@ -5,7 +5,7 @@ Repository recommendation: **active research**.
 | Classification | Capability or finding |
 |---|---|
 | Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a routed local browser simulation product |
-| Tested | 73 Node tests covering kernel determinism and lifecycle, project contracts and recovery, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; seven Playwright browser journeys cover lifecycle, local project round trips, accessibility, and responsive behavior |
+| Tested | 78 Node tests covering kernel determinism and lifecycle, project contracts and recovery, unified cross-depth entity contexts, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; seven Playwright browser journeys cover lifecycle, entity exploration, local project round trips, accessibility, and responsive behavior |
 | Partially implemented | All product-depth models use explicit simplified research assumptions; partitioned construction is deterministic, while worker-parallel and calibrated behavior are excluded |
 | Planned | Larger scenario corpus; worker-parallel deterministic execution; local OSS realism; connected calibration |
 | Rejected | Real personal data, external credentials, implicit authority, provider state in deterministic core, and arbitrary product scale caps |
@@ -34,6 +34,9 @@ Repository recommendation: **active research**.
   through all protected checks, deployed, and live accepted. It provides
   browser-only project persistence, digest-verified recovery, canonical import
   and export, and explicit deletion.
+- **Unified entity model:** WP-AES-08 implementation candidate provides
+  deterministic cross-depth entity records and a browser citizen/entity
+  explorer. Integration remains subject to the protected release gate.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.

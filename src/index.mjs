@@ -81,3 +81,9 @@ export {
   validateEconomyInvariants,
 } from "./economy/analysis.mjs";
 export { economyOperationsModule } from "./modules/economy-operations.mjs";
+export {
+  buildUnifiedEntityIndex,
+  ENTITY_INDEX_CONTRACT,
+  ENTITY_RECORD_CONTRACT,
+  findUnifiedEntity,
+} from "./entities/unified.mjs";

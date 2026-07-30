@@ -44,10 +44,10 @@ Repository recommendation: **active research**.
 - **Scenario laboratory:** WP-AES-10 is implemented, reviewed, merged through
   all protected checks, deployed, and live accepted for one fixed-baseline,
   intervention-only economy comparison family.
-- **Runtime scale and control:** WP-AES-11 is implemented and locally verified.
-  It adds benchmark-grounded browser envelopes, workload estimation, coarse
-  worker phases, elapsed time, and cancellation by worker replacement.
-  Protected integration and hosted acceptance remain pending.
+- **Runtime scale and control:** WP-AES-11 is implemented, reviewed, merged
+  through all protected checks, deployed, and live accepted. It adds
+  benchmark-grounded browser envelopes, workload estimation, coarse worker
+  phases, elapsed time, and cancellation by worker replacement.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -68,6 +68,9 @@ Repository recommendation: **active research**.
 - **WP-AES-10 live acceptance:** all nine browser journeys, including the
   bounded scenario laboratory, passed against
   `https://2a84cbfa.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-11 live acceptance:** all ten browser journeys, including in-flight
+  worker termination and recovery, passed against
+  `https://26b514d2.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

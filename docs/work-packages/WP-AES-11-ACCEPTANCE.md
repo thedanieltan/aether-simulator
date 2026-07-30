@@ -31,7 +31,12 @@ mid-tick pause, so the interface does not claim either capability.
 
 ## Disposition
 
-Implemented locally on the work-package branch. Protected integration,
-deployment, and hosted acceptance must be recorded before this package is
-classified as live accepted.
+Integrated and live accepted on 2026-07-30.
 
+- Protected pull request: `#17`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://26b514d2.aether-simulator.pages.dev`.
+- Hosted acceptance: ten Playwright journeys passed, including real in-flight
+  cancellation, worker replacement, a successful recovery run, and all
+  previously accepted product workflows.

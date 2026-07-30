@@ -42,12 +42,11 @@ smoke tests, and rollback evidence before it can be treated as a CD gate.
 
 ## Platform enforcement
 
-The checks are designed to be required before merge. GitHub branch protection
-and repository rulesets are unavailable for this private repository on its
-current plan. Until the plan or visibility supports those controls, the owner
-must keep pull requests in draft or unmerged state whenever any check is
-missing or failing.
+The `main` branch requires all four runner-backed checks with strict
+up-to-date-branch enforcement. Changes must use a pull request, conversations
+must be resolved, history must remain linear, administrators are included, and
+force pushes and branch deletion are disabled.
 
-GitHub-hosted jobs also require an account able to start Actions runners.
-Account billing or spending-limit failures prevent hosted verification from
-running and cannot be repaired in repository code.
+The initial private-repository run could not allocate runners because of the
+account billing/spending state. After public visibility was enabled, the same
+revision completed all Ubuntu and Windows jobs successfully on 2026-07-30.

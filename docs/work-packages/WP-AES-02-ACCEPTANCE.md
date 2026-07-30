@@ -53,8 +53,8 @@ acceptance are excluded.
 - Integration: pending draft-PR review and merge.
 - Deployment: not performed.
 - Live acceptance: not performed.
-- Hosted CI: account billing/spending configuration must permit the workflow;
-  local canonical verification remains mandatory.
+- Hosted CI: all required Ubuntu Node.js 20, 22, and 24 checks and the Windows
+  Node.js 20 portability check passed on 2026-07-30.
 
 ## CI/CD gate
 
@@ -65,6 +65,6 @@ dependency audit, repository policy, and sensitive-content scanning. The exact
 local parity command is `npm run verify:ci`.
 
 Continuous deployment is intentionally absent because this work package has no
-deployed product or live-acceptance target. Private-repository branch
-protection is unavailable on the current repository plan, so the owner must
-not merge while any check is missing or failing.
+deployed product or live-acceptance target. The protected `main` branch
+requires all four runner-backed checks, an up-to-date branch, pull-request
+integration, conversation resolution, and linear history.

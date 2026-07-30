@@ -56,3 +56,7 @@ execution; it is not connected-provider or operational-service acceptance.
 The WP-AES-06 product foundation was independently accepted at
 `https://8d747300.aether-simulator.pages.dev` with six hosted browser journeys
 and the required response security policy.
+
+The WP-AES-07 local project workspace was independently accepted at
+`https://e3f1a871.aether-simulator.pages.dev` with seven hosted browser
+journeys, including a project export/delete/import round trip.

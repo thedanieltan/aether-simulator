@@ -38,6 +38,19 @@ requires an actual completed run.
 
 ## Disposition
 
-Implementation candidate. Protected continuous integration, review, merge,
-deployment, and hosted acceptance are required before this work package is
-recorded as integrated.
+Integrated and live accepted on 2026-07-30.
+
+- Protected pull request: `#7`.
+- Required checks: acceptance on Node.js 20, runtime on Node.js 22 and 24,
+  Windows portability, and Chromium browser studio all passed.
+- Immutable deployment:
+  `https://8d747300.aether-simulator.pages.dev`.
+- Hosted acceptance: six Playwright journeys passed, covering deterministic
+  lifecycle behavior, route navigation, Axe accessibility, and 320, 375, 414,
+  and 768 pixel widths.
+- Response policy: restrictive content, permission, referrer, framing, and
+  MIME-sniffing headers were present.
+
+This acceptance covers the local deterministic browser product only. Planned
+standalone product work and all external integrations remain outside this
+acceptance boundary.

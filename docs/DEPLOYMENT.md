@@ -42,7 +42,8 @@ Deleting user data is not required because the static product has no server-side
 data store.
 
 Current deployment and live-acceptance state is recorded in
-`docs/RESEARCH_STATUS.md` and the WP-AES-05 acceptance record.
+`docs/RESEARCH_STATUS.md` and the current browser work-package acceptance
+record.
 
 ## Accepted public target
 
@@ -51,3 +52,7 @@ The static research deployment is available at
 completed the full Playwright workflow, replay equality, Axe analysis, and
 responsive checks. This acceptance covers only local deterministic browser
 execution; it is not connected-provider or operational-service acceptance.
+
+The WP-AES-06 product foundation was independently accepted at
+`https://8d747300.aether-simulator.pages.dev` with six hosted browser journeys
+and the required response security policy.

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.11.0-alpha.1 - scenario laboratory
+
+- Added versioned synthetic experiment definitions and results.
+- Added a fixed economy policy baseline with two to eight bounded intervention
+  variants.
+- Added sequential branch execution, event and outcome differences, semantic
+  equality, branch digests, and canonical result export.
+- Added a browser laboratory with an explicit non-causal interpretation
+  boundary.
+- Added experiment design, determinism, validation, and browser acceptance
+  tests.
+
 ## 0.10.0-alpha.1 - visual scenario builder
 
 - Added the constrained `aether-scenario-blueprint.v1` contract.

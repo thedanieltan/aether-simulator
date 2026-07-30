@@ -10,6 +10,7 @@ without server rewrites.
 | `#/overview` | What is this product and what is available? | product map and status |
 | `#/design` | Which tested premise should I start from? | scenario selection |
 | `#/run` | How do I configure and execute a world? | run workspace |
+| `#/lab` | How do declared interventions differ from one fixed baseline? | scenario laboratory |
 | `#/explore/<view>` | What happened and why? | entities, graph, timeline, inspector, or lineage |
 | `#/compare` | What changed between branches? | run lifecycle; requires a result |
 | `#/export` | How do I reproduce or review this run? | export view; requires a result |
@@ -27,6 +28,7 @@ flowchart TD
   Overview["Overview and product map"] --> Design["Scenario design"]
   Design --> Run["Run workspace"]
   Run --> Explore["Explore results"]
+  Run --> Lab["Scenario laboratory"]
   Explore --> Graph["World graph"]
   Explore --> Entities["Entity and citizen records"]
   Explore --> Timeline["Event timeline"]

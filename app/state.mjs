@@ -57,6 +57,7 @@ export function commandEnabled(state, command) {
       "pausing",
       "resuming",
       "cancelling",
+      "experimenting",
     ].includes(state.phase);
   }
   if (command === "cancel") return state.phase !== "idle";

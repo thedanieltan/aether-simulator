@@ -26,6 +26,8 @@ database, or network provider is required.
    Use the Entities view to inspect fictional citizens and their role contexts.
 5. Create a checkpoint, replay it, branch with an intervention, and compare the
    results.
+   For the accepted economy policy scenario, use the laboratory to compare
+   several declared interventions against one fixed baseline.
 6. Download canonical scenario, event, world, checkpoint, comparison, or
    quarantined evidence artifacts.
 

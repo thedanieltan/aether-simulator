@@ -94,3 +94,10 @@ export {
   serializeScenarioBlueprint,
   validateScenarioBlueprint,
 } from "./scenarios/blueprint.mjs";
+export {
+  createExperimentDefinition,
+  EXPERIMENT_CONTRACT,
+  EXPERIMENT_RESULT_CONTRACT,
+  serializeExperiment,
+  summarizeExperiment,
+} from "./experiments/laboratory.mjs";

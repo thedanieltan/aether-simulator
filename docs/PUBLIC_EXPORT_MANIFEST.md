@@ -46,6 +46,7 @@ reviewers.
 | Local project lifecycle | `app/project-store.mjs`, `docs/LOCAL_PROJECT_WORKSPACE.md` | Project contract, serialization, recovery, and browser round-trip tests |
 | Unified citizen and entity view | `src/entities/unified.mjs`, `docs/UNIFIED_ENTITY_MODEL.md` | Cross-depth identity, context, determinism, and browser explorer tests |
 | Visual scenario blueprint | `src/scenarios/blueprint.mjs`, `docs/VISUAL_SCENARIO_BUILDER.md` | Topology, compilation, bounds, export, and browser builder tests |
+| Scenario laboratory | `src/experiments/laboratory.mjs`, `docs/SCENARIO_LABORATORY.md` | Fixed-baseline, variant, outcome, determinism, and browser experiment tests |
 | CSP-compatible contract validation | `src/validation/standalone.mjs`, `scripts/generate-standalone-validators.mjs` | Ten-schema validator-drift gate |
 | Static-host security and routing | `public/`, `wrangler.toml`, `docs/THREAT_MODEL.md`, `docs/DEPLOYMENT.md` | Static-build and policy verification |
 | Browser accessibility | `app/`, `docs/ACCESSIBILITY.md` | Axe WCAG A/AA and responsive Playwright acceptance |

@@ -336,6 +336,26 @@ kbd { border: var(--rule-hair) solid var(--color-rule); border-radius: var(--rad
 .blueprint-inspector > .field-pair,
 .blueprint-inspector > .project-actions { grid-column: 1 / -1; }
 .blueprint-inspector > .field-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.laboratory { padding: var(--space-3xl) clamp(var(--space-md), 6vw, var(--space-3xl)); background: var(--color-paper-2); }
+.laboratory-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.62fr) minmax(0, 1.38fr);
+  gap: var(--space-lg);
+  padding-top: var(--space-xl);
+}
+.experiment-results {
+  min-width: 0;
+  padding: var(--space-lg);
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
+}
+.experiment-summary { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+.experiment-summary span { padding-left: var(--space-xs); border-left: var(--space-3xs) solid var(--color-accent); font: var(--text-xs)/1.4 var(--font-mono); }
+.table-wrap { max-width: 100%; overflow: auto; margin-top: var(--space-md); }
+.experiment-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.experiment-table th, .experiment-table td { padding: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); text-align: left; white-space: nowrap; }
+.experiment-table th { color: var(--color-muted); font-size: var(--text-xs); }
+.experiment-table td:last-child { font-family: var(--font-mono); }
 .studio-shell {
   background: var(--color-graphite);
   color: var(--color-paper-3);
@@ -513,6 +533,7 @@ label { display: grid; gap: var(--space-xs); font-size: var(--text-sm); color: v
   .entity-explorer-body { grid-template-columns: minmax(12rem, 0.42fr) minmax(0, 1fr); }
   .entity-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .builder-grid { grid-template-columns: minmax(0, 1fr); }
+  .laboratory-grid { grid-template-columns: minmax(0, 1fr); }
   .blueprint-graph { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
   .blueprint-node button { width: 100%; min-height: 4.5rem; display: grid; grid-template-columns: 2.5rem minmax(8rem, 0.5fr) minmax(0, 1fr); align-items: center; }
   .blueprint-node:not(:last-child)::after { top: auto; right: auto; bottom: calc(-1 * var(--space-xs)); left: var(--space-lg); width: 0; height: var(--space-xs); border-top: 0; border-left: var(--rule-hair) solid var(--color-accent); }
@@ -527,7 +548,7 @@ label { display: grid; gap: var(--space-xs); font-size: var(--text-sm); color: v
   .topbar > p { display: none; }
   .command-pill { width: 2.75rem; padding: 0; justify-content: center; }
   .command-pill span:not(:first-child), .command-pill kbd { display: none; }
-  .intro, .orientation, .project-workspace, .gallery, .studio-shell, .boundaries, .statement-footer { padding-inline: clamp(var(--space-md), 4vw, var(--space-lg)); }
+  .intro, .orientation, .project-workspace, .gallery, .laboratory, .studio-shell, .boundaries, .statement-footer { padding-inline: clamp(var(--space-md), 4vw, var(--space-lg)); }
   h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
   .gallery-grid, .field-pair, .boundaries dl { grid-template-columns: minmax(0, 1fr); }
   .scenario-card, .scenario-card:nth-child(2n), .scenario-card:nth-child(3n) { border-right: 0; min-height: 11rem; }

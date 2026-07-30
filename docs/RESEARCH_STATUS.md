@@ -5,7 +5,7 @@ Repository recommendation: **active research**.
 | Classification | Capability or finding |
 |---|---|
 | Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a routed local browser simulation product |
-| Tested | 81 Node tests covering kernel determinism and lifecycle, project contracts and recovery, visual blueprint compilation, unified cross-depth entity contexts, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; eight Playwright browser journeys cover lifecycle, visual building, entity exploration, local project round trips, accessibility, and responsive behavior |
+| Tested | 84 Node tests covering kernel determinism and lifecycle, project contracts and recovery, visual blueprint compilation, fixed-baseline experiments, unified cross-depth entity contexts, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; nine Playwright browser journeys cover lifecycle, scenario experiments, visual building, entity exploration, local project round trips, accessibility, and responsive behavior |
 | Partially implemented | All product-depth models use explicit simplified research assumptions; partitioned construction is deterministic, while worker-parallel and calibrated behavior are excluded |
 | Planned | Larger scenario corpus; worker-parallel deterministic execution; local OSS realism; connected calibration |
 | Rejected | Real personal data, external credentials, implicit authority, provider state in deterministic core, and arbitrary product scale caps |
@@ -41,6 +41,9 @@ Repository recommendation: **active research**.
   through all protected checks, deployed, and live accepted. It provides a
   constrained, validated five-node blueprint that compiles to the existing
   runtime.
+- **Scenario laboratory:** WP-AES-10 implementation candidate provides one
+  fixed-baseline, intervention-only economy comparison family. Integration
+  remains subject to the protected release gate.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.

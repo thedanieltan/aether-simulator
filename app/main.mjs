@@ -45,6 +45,11 @@ import {
   validateScenarioBlueprint,
 } from "../src/scenarios/blueprint.mjs";
 import {
+  filterScenarioLibrary,
+  guidedFirstRun,
+  scenarioLibrary,
+} from "../src/scenarios/library.mjs";
+import {
   createExperimentDefinition,
   serializeExperiment,
   summarizeExperiment,
@@ -71,6 +76,9 @@ const runtimePhase = document.querySelector("#runtime-phase");
 const runtimeElapsed = document.querySelector("#runtime-elapsed");
 const runtimeEstimate = document.querySelector("#runtime-estimate");
 const gallery = document.querySelector("#scenario-gallery");
+const libraryDepth = document.querySelector("#library-depth");
+const librarySearch = document.querySelector("#library-search");
+const libraryStatus = document.querySelector("#library-status");
 const tabs = [...document.querySelectorAll("[data-view]")];
 const commandButtons = [...document.querySelectorAll("[data-command]")];
 const productNav = document.querySelector("#product-nav");
@@ -516,22 +524,40 @@ function syncBlueprintFromRun() {
 
 function populateGallery() {
   gallery.replaceChildren();
-  const cards = [
-    ["enterprise", "retail-intervention-baseline", "Enterprise", "One fictional retailer with inventory, finance, workflow, and lineage."],
-    ["ecosystem", "vendor-outage-cascade", "Ecosystem", "Declared organizations linked by contracts and a traceable vendor cascade."],
-    ["economy", "stable-baseline", "Economy", "Entity-level households, firms, banks, government, markets, and aggregates."],
-  ];
-  for (const [depth, scenario, title, copy] of cards) {
+  const entries = filterScenarioLibrary({
+    depth: libraryDepth.value,
+    query: librarySearch.value,
+  }, scenarioLibrary);
+  libraryStatus.textContent =
+    `${entries.length} of ${scenarioLibrary.entries.length} committed scenarios`;
+  if (!entries.length) {
+    gallery.append(
+      element("p", "empty-copy", "No committed scenario matches this filter."),
+    );
+    return;
+  }
+  for (const entry of entries) {
     const button = element("button", "scenario-card");
     button.type = "button";
     button.setAttribute("role", "listitem");
-    button.append(element("output", "", `${depth.toUpperCase()} DEPTH`));
-    button.append(element("strong", "", title));
-    button.append(element("span", "", copy));
+    button.dataset.depth = entry.depth;
+    button.dataset.scenario = entry.scenario_id;
+    button.append(
+      element(
+        "output",
+        "",
+        `${entry.depth.toUpperCase()} DEPTH`
+          + (entry.recommended ? " · RECOMMENDED" : ""),
+      ),
+      element("strong", "", entry.label),
+      element("span", "", entry.summary),
+      element("small", "", entry.tags.join(" · ")),
+    );
     button.addEventListener("click", () => {
-      depthInput.value = depth;
+      depthInput.value = entry.depth;
       populateScenarios();
-      scenarioInput.value = scenario;
+      scenarioInput.value = entry.scenario_id;
+      updateWorkloadEstimate();
       syncBlueprintFromRun();
       globalThis.location.hash = productRouteHref("run");
       form.querySelector("#seed").focus();
@@ -1406,6 +1432,13 @@ document.addEventListener("keydown", (event) => {
 blueprintDepth.addEventListener("change", () => {
   populateBlueprintScenarios();
   renderBlueprint();
+});
+libraryDepth.addEventListener("change", populateGallery);
+librarySearch.addEventListener("input", populateGallery);
+document.querySelector("#guided-start").addEventListener("click", () => {
+  applyProjectConfig(guidedFirstRun);
+  globalThis.location.hash = productRouteHref("run");
+  form.querySelector("#run").focus();
 });
 blueprintForm.addEventListener("input", (event) => {
   if (event.target !== blueprintDepth) renderBlueprint();

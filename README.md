@@ -58,6 +58,8 @@ runs the same kernel locally in a Web Worker.
   the stable citizen records with declared contexts inside it.
 - A descriptive analysis workspace for emitted measures, explicit cohorts,
   declared event ancestry, limitations, and canonical analysis export.
+- A filterable library of all 16 committed scenarios and a five-minute guided
+  first run using a small fictional retailer.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -150,6 +152,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [unified entity model](docs/UNIFIED_ENTITY_MODEL.md),
 [semantic zoom](docs/SEMANTIC_ZOOM.md),
 [analysis workspace](docs/ANALYSIS_WORKSPACE.md),
+[scenario library and onboarding](docs/SCENARIO_LIBRARY_AND_ONBOARDING.md),
 [visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
 [scenario laboratory](docs/SCENARIO_LABORATORY.md),
 [runtime scale and control](docs/RUNTIME_SCALE_AND_CONTROL.md),

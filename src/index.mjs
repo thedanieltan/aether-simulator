@@ -100,6 +100,13 @@ export {
   validateScenarioBlueprint,
 } from "./scenarios/blueprint.mjs";
 export {
+  filterScenarioLibrary,
+  guidedFirstRun,
+  SCENARIO_LIBRARY_CONTRACT,
+  scenarioCatalogFromLibrary,
+  scenarioLibrary,
+} from "./scenarios/library.mjs";
+export {
   createExperimentDefinition,
   EXPERIMENT_CONTRACT,
   EXPERIMENT_RESULT_CONTRACT,

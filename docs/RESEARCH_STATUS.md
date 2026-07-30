@@ -5,7 +5,7 @@ Repository recommendation: **active research**.
 | Classification | Capability or finding |
 |---|---|
 | Implemented | Versioned world kernel plus Enterprise, Ecosystem, and Economy Depth research previews; enterprise archetypes; contract-gated ecosystems; entity-derived households, firms, banks, government, markets, credit, tax, shocks, interventions, CLI, migration, optional evidence normalization, and a routed local browser simulation product |
-| Tested | 92 Node tests covering kernel determinism and lifecycle, project contracts and recovery, visual blueprint compilation, fixed-baseline experiments, unified cross-depth entity contexts, semantic zoom paths, descriptive analysis, browser workload and abort control, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; twelve Playwright browser journeys cover lifecycle, cancellation recovery, semantic zoom, analysis, scenario experiments, visual building, entity exploration, local project round trips, accessibility, and responsive behavior |
+| Tested | 94 Node tests covering kernel determinism and lifecycle, project contracts and recovery, visual blueprint compilation, fixed-baseline experiments, unified cross-depth entity contexts, semantic zoom paths, descriptive analysis, scenario-library coverage, browser workload and abort control, nine enterprise, seven ecosystem, seven economy scenarios, browser parity and state control, accounting and reconciliation, identity and mutation boundaries, aggregates, fixtures, policy, and sensitive scanning; thirteen Playwright browser journeys cover lifecycle, cancellation recovery, semantic zoom, analysis, library onboarding, scenario experiments, visual building, entity exploration, local project round trips, accessibility, and responsive behavior |
 | Partially implemented | All product-depth models use explicit simplified research assumptions; partitioned construction is deterministic, while worker-parallel and calibrated behavior are excluded |
 | Planned | Larger scenario corpus; worker-parallel deterministic execution; local OSS realism; connected calibration |
 | Rejected | Real personal data, external credentials, implicit authority, provider state in deterministic core, and arbitrary product scale caps |
@@ -55,6 +55,9 @@ Repository recommendation: **active research**.
   all protected checks, deployed, and live accepted. It adds deterministic
   descriptive measures, explicit cohorts, declared event ancestry, limitations,
   and canonical export.
+- **Scenario library and onboarding:** WP-AES-14 is implemented and locally
+  verified. It exposes all 16 committed browser scenarios and a tested guided
+  first run. Protected integration and hosted acceptance remain pending.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.

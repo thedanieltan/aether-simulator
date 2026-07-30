@@ -128,6 +128,23 @@ test("analysis workspace separates descriptions from uncertainty and causal clai
   expect((await downloadPromise).suggestedFilename()).toBe("analysis.json");
 });
 
+test("scenario library filtering and guided first run use committed local scenarios", async ({ page }) => {
+  await page.goto("/#/design");
+  await expect(page.locator("#library-status")).toContainText("16 of 16");
+  await page.locator("#library-depth").selectOption("economy");
+  await page.locator("#library-search").fill("credit");
+  await expect(page.locator("#library-status")).toContainText("1 of 16");
+  await expect(page.locator(".scenario-card")).toContainText("Credit tightening");
+
+  await page.getByRole("button", { name: "Configure guided run" }).click();
+  await expect(page).toHaveURL(/#\/run$/);
+  await expect(page.locator("#depth")).toHaveValue("enterprise");
+  await expect(page.locator("#scenario")).toHaveValue("retail-intervention-baseline");
+  await expect(page.locator("#seed")).toHaveValue("guided-enterprise-1");
+  await page.getByRole("button", { name: "Run", exact: true }).click();
+  await expect(page.locator("#run-status")).toHaveText("complete", { timeout: 20_000 });
+});
+
 test("product shell supports stable routes and honest gated states", async ({ page }) => {
   await page.goto("/#/explore/timeline");
   await expect(page.locator("[data-route='explore']").first()).toHaveAttribute(

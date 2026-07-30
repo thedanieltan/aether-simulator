@@ -248,6 +248,18 @@ flowchart LR
 The blueprint is declarative JSON and cannot contain user code, provider
 configuration, or executable nodes.
 
+## Scenario library
+
+`src/scenarios/library.mjs` is the browser catalog source of truth. Its
+`aether-scenario-library.v1` entries map every displayed card to one committed
+depth and scenario identifier. The runtime select catalog is derived from the
+same entries, preventing a discoverable example from drifting away from an
+executable scenario.
+
+Filtering is a pure local projection. The guided first run is a frozen,
+version-controlled configuration that resolves through the same runtime form;
+it does not bypass validation or introduce a separate execution path.
+
 ## Semantic zoom projection
 
 `src/entities/semantic-zoom.mjs` derives a deterministic navigation model from

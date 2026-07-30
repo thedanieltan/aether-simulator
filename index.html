@@ -136,6 +136,38 @@
               </div>
               <p>Choose a product depth, then refine the deterministic inputs in the run workspace.</p>
             </div>
+            <section class="guided-run" aria-labelledby="guided-run-title">
+              <div>
+                <p class="signal">FIVE-MINUTE FIRST RUN</p>
+                <h3 id="guided-run-title">Start with one fictional retailer</h3>
+                <p>
+                  Configure a small tested world, run it locally, inspect a
+                  citizen context, then download its deterministic artifact.
+                </p>
+              </div>
+              <ol>
+                <li>Run the configured world.</li>
+                <li>Open Semantic zoom.</li>
+                <li>Export the world artifact.</li>
+              </ol>
+              <button class="primary" id="guided-start" type="button">Configure guided run</button>
+            </section>
+            <div class="library-controls">
+              <label>
+                Library depth
+                <select id="library-depth">
+                  <option value="all">All product depths</option>
+                  <option value="enterprise">Enterprise</option>
+                  <option value="ecosystem">Ecosystem</option>
+                  <option value="economy">Economy</option>
+                </select>
+              </label>
+              <label>
+                Search scenarios
+                <input id="library-search" type="search" placeholder="Search shocks, retail, lineage…" />
+              </label>
+            </div>
+            <p id="library-status" class="project-status" role="status" aria-live="polite"></p>
             <div id="scenario-gallery" class="gallery-grid" role="list"></div>
             <section class="builder-shell" aria-labelledby="builder-title">
               <div class="builder-heading">

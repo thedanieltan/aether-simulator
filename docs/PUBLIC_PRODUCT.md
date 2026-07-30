@@ -40,7 +40,8 @@ import and export, the visual model builder, citizen/entity exploration, and
 browser runtime controls, and world-to-enterprise-to-citizen semantic zoom are
 implemented. The analysis workspace describes emitted measures, cohorts, and
 declared event ancestry while keeping statistical uncertainty and causal-effect
-estimation explicitly unavailable.
+estimation explicitly unavailable. All committed browser scenarios are exposed
+through one filterable library, with a guided credential-free first run.
 
 The pause control creates a deterministic checkpoint after the current
 synchronous run. It is not a claim of pre-emptive interruption inside a kernel

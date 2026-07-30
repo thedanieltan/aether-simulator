@@ -47,11 +47,10 @@ recorded separately in the work-package acceptance evidence.
 
 ## Platform enforcement
 
-The `main` branch requires the four established runner-backed checks with strict
+The `main` branch requires all five runner-backed checks with strict
 up-to-date-branch enforcement. Changes must use a pull request, conversations
 must be resolved, history must remain linear, administrators are included, and
-force pushes and branch deletion are disabled. The browser check is an
-additional pull-request gate; it does not replace or weaken those protections.
+force pushes and branch deletion are disabled.
 
 The initial private-repository run could not allocate runners because of the
 account billing/spending state. After public visibility was enabled, the same

@@ -34,9 +34,9 @@ Repository recommendation: **active research**.
   through all protected checks, deployed, and live accepted. It provides
   browser-only project persistence, digest-verified recovery, canonical import
   and export, and explicit deletion.
-- **Unified entity model:** WP-AES-08 implementation candidate provides
-  deterministic cross-depth entity records and a browser citizen/entity
-  explorer. Integration remains subject to the protected release gate.
+- **Unified entity model:** WP-AES-08 is implemented, reviewed, merged through
+  all protected checks, deployed, and live accepted. It provides deterministic
+  cross-depth entity records and a browser citizen/entity explorer.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -48,6 +48,9 @@ Repository recommendation: **active research**.
 - **WP-AES-07 live acceptance:** all seven browser journeys, including the
   local project round trip, passed against
   `https://e3f1a871.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-08 live acceptance:** all seven browser journeys, including entity
+  and citizen inspection, passed against
+  `https://2a626224.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

@@ -40,6 +40,11 @@ import {
   serializeScenarioBlueprint,
   validateScenarioBlueprint,
 } from "../src/scenarios/blueprint.mjs";
+import {
+  createExperimentDefinition,
+  serializeExperiment,
+  summarizeExperiment,
+} from "../src/experiments/laboratory.mjs";
 
 const worker = new Worker(new URL("./worker.mjs", import.meta.url), { type: "module" });
 const form = document.querySelector("#scenario-form");
@@ -76,10 +81,16 @@ const blueprintSeed = document.querySelector("#blueprint-seed");
 const blueprintStatus = document.querySelector("#blueprint-status");
 const blueprintApply = document.querySelector("#blueprint-apply");
 const blueprintExport = document.querySelector("#blueprint-export");
+const experimentForm = document.querySelector("#experiment-form");
+const experimentStatus = document.querySelector("#experiment-status");
+const experimentResults = document.querySelector("#experiment-results");
+const experimentRun = document.querySelector("#experiment-run");
+const experimentExport = document.querySelector("#experiment-export");
 let studioState = { ...initialStudioState };
 let projectRepository = null;
 let localProjects = [];
 let activeProject = null;
+let lastExperiment = null;
 
 function element(name, className, text) {
   const node = document.createElement(name);
@@ -770,6 +781,114 @@ function payload() {
   };
 }
 
+function experimentDefinition() {
+  return createExperimentDefinition({
+    name: document.querySelector("#experiment-name").value,
+    seed: document.querySelector("#experiment-seed").value,
+    scale: Number(document.querySelector("#experiment-scale").value),
+    duration: Number(document.querySelector("#experiment-duration").value),
+    variants: [
+      {
+        variant_id: "variant-a",
+        label: "Variant A",
+        intervention: Number(document.querySelector("#experiment-a").value),
+      },
+      {
+        variant_id: "variant-b",
+        label: "Variant B",
+        intervention: Number(document.querySelector("#experiment-b").value),
+      },
+    ],
+  });
+}
+
+function renderExperimentResult(result) {
+  experimentResults.replaceChildren();
+  const summary = element("div", "experiment-summary");
+  summary.append(
+    element("span", "", `Baseline ${result.baseline_digest.slice(0, 8)}`),
+    element("span", "", `${result.results.length} declared variants`),
+    element("span", "", "Synthetic comparison"),
+  );
+  const tableWrap = element("div", "table-wrap");
+  const table = element("table", "experiment-table");
+  const head = element("thead");
+  const headingRow = element("tr");
+  for (const label of [
+    "Variant",
+    "Intervention",
+    "Public expenditure Δ",
+    "Event Δ",
+    "Branch digest",
+  ]) {
+    headingRow.append(element("th", "", label));
+  }
+  head.append(headingRow);
+  const body = element("tbody");
+  for (const variant of result.results) {
+    const row = element("tr");
+    row.append(
+      element("td", "", variant.label),
+      element("td", "", String(variant.intervention)),
+      element(
+        "td",
+        "",
+        String(variant.outcomes.public_expenditure?.difference ?? "not emitted"),
+      ),
+      element("td", "", String(variant.event_count_difference)),
+      element("td", "", variant.branch_digest.slice(0, 8)),
+    );
+    body.append(row);
+  }
+  table.append(head, body);
+  tableWrap.append(table);
+  const boundary = element(
+    "p",
+    "control-help",
+    "Differences are synthetic model outputs, not real-world causal estimates.",
+  );
+  experimentResults.append(summary, tableWrap, boundary);
+}
+
+async function runExperiment() {
+  const definition = experimentDefinition();
+  experimentRun.disabled = true;
+  experimentExport.disabled = true;
+  experimentStatus.dataset.state = "default";
+  experimentStatus.textContent = "Running fixed baseline locally.";
+  updateState({ type: "command-started", command: "experimenting" });
+  try {
+    const baseline = await workerRequest(worker, "run", definition.baseline);
+    const variants = [];
+    for (const [index, variant] of definition.variants.entries()) {
+      experimentStatus.textContent =
+        `Running ${variant.label} (${index + 1} of ${definition.variants.length}).`;
+      variants.push(
+        await workerRequest(worker, "branch", {
+          ...definition.baseline,
+          intervention: variant.intervention,
+        }),
+      );
+    }
+    lastExperiment = summarizeExperiment(definition, baseline, variants);
+    renderExperimentResult(lastExperiment);
+    updateState({
+      type: "command-completed",
+      phase: "complete",
+      session: variants.at(-1),
+    });
+    experimentExport.disabled = false;
+    experimentStatus.dataset.state = "success";
+    experimentStatus.textContent = "Experiment complete. All variants share one baseline.";
+  } catch (error) {
+    updateState({ type: "command-failed", error: error.message });
+    experimentStatus.dataset.state = "error";
+    experimentStatus.textContent = error.message;
+  } finally {
+    experimentRun.disabled = false;
+  }
+}
+
 async function execute(command, overrides = {}) {
   const activePhases = {
     run: "running",
@@ -947,6 +1066,17 @@ blueprintExport.addEventListener("click", () => {
   } catch (error) {
     setBlueprintStatus(error.message, "error");
   }
+});
+
+experimentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  void runExperiment();
+});
+experimentExport.addEventListener("click", () => {
+  if (!lastExperiment) return;
+  textDownload("aether-experiment-results.json", serializeExperiment(lastExperiment));
+  experimentStatus.dataset.state = "success";
+  experimentStatus.textContent = "Canonical experiment results prepared for download.";
 });
 
 projectForm.addEventListener("submit", async (event) => {

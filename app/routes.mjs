@@ -28,6 +28,13 @@ export const productRoutes = Object.freeze([
     availability: "available",
   },
   {
+    id: "lab",
+    label: "Scenario laboratory",
+    eyebrow: "Experiment",
+    target: "laboratory",
+    availability: "available",
+  },
+  {
     id: "explore",
     label: "Explore results",
     eyebrow: "Inspect",

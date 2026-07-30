@@ -199,6 +199,69 @@
             </section>
           </section>
 
+          <section id="laboratory" class="laboratory" aria-labelledby="laboratory-title" tabindex="-1">
+            <div class="section-heading">
+              <div>
+                <p class="signal">SCENARIO LABORATORY</p>
+                <h2 id="laboratory-title">Hold the world still. Vary one intervention.</h2>
+              </div>
+              <p>
+                The laboratory currently supports the tested synthetic economy
+                policy scenario. Seed, scale, and duration remain fixed.
+              </p>
+            </div>
+            <div class="laboratory-grid">
+              <form id="experiment-form" class="blueprint-inspector">
+                <div class="project-editor-heading">
+                  <h3>Experiment definition</h3>
+                  <span>aether-experiment.v1</span>
+                </div>
+                <label>
+                  Experiment name
+                  <input id="experiment-name" value="Household transfer comparison" maxlength="100" required />
+                </label>
+                <label>
+                  Fixed root seed
+                  <input id="experiment-seed" value="laboratory-seed-1" maxlength="160" required />
+                </label>
+                <div class="field-pair">
+                  <label>
+                    Scale
+                    <input id="experiment-scale" type="number" min="1" max="10000" value="1" required />
+                  </label>
+                  <label>
+                    Duration
+                    <input id="experiment-duration" type="number" min="60" max="1000000" value="80" required />
+                  </label>
+                </div>
+                <label>
+                  Variant A intervention
+                  <input id="experiment-a" type="number" value="8" required />
+                </label>
+                <label>
+                  Variant B intervention
+                  <input id="experiment-b" type="number" value="20" required />
+                </label>
+                <div class="project-actions">
+                  <button class="primary" id="experiment-run" type="submit">Run experiment</button>
+                  <button id="experiment-export" type="button" disabled>Export results</button>
+                </div>
+                <p id="experiment-status" class="project-status" role="status" aria-live="polite">
+                  Ready for a local synthetic experiment.
+                </p>
+              </form>
+              <section class="experiment-results" aria-labelledby="experiment-results-title">
+                <div class="project-editor-heading">
+                  <h3 id="experiment-results-title">Comparison set</h3>
+                  <span>Synthetic · non-authoritative</span>
+                </div>
+                <div id="experiment-results">
+                  <p class="empty-copy">Run the experiment to compare its declared variants.</p>
+                </div>
+              </section>
+            </div>
+          </section>
+
           <section id="studio" class="studio-shell" aria-labelledby="studio-title" tabindex="-1">
             <div class="studio-heading">
               <div>

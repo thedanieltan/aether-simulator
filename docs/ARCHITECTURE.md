@@ -248,6 +248,23 @@ flowchart LR
 The blueprint is declarative JSON and cannot contain user code, provider
 configuration, or executable nodes.
 
+## Scenario laboratory
+
+```mermaid
+flowchart LR
+  Definition["Fixed baseline + declared variants"] --> Baseline["One deterministic run"]
+  Baseline --> Checkpoint["Shared checkpoint"]
+  Checkpoint --> A["Variant A branch"]
+  Checkpoint --> B["Variant B branch"]
+  A --> Compare["Synthetic outcome comparison"]
+  B --> Compare
+  Compare --> Result["Versioned experiment result"]
+```
+
+The accepted laboratory family uses the economy policy-intervention scenario.
+All variants share depth, scenario, seed, scale, and duration; only the declared
+intervention varies.
+
 ## Engineering quality gate
 
 The minimum supported Node.js release runs the complete `npm run verify:ci`

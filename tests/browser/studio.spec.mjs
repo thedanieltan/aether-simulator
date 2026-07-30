@@ -174,6 +174,29 @@ test("visual scenario blueprint validates, exports, and compiles to the run work
   await expect(page.locator("#seed")).toHaveValue("visual-blueprint-seed");
 });
 
+test("scenario laboratory runs a fixed baseline and exports bounded variants", async ({ page }) => {
+  await page.goto("/#/lab");
+  await expect(page.getByRole("heading", { name: "Hold the world still" })).toBeVisible();
+  await page.locator("#experiment-a").fill("8");
+  await page.locator("#experiment-b").fill("20");
+  await page.getByRole("button", { name: "Run experiment" }).click();
+  await expect(page.locator("#experiment-status")).toContainText(
+    "Experiment complete",
+    { timeout: 30_000 },
+  );
+  await expect(page.locator(".experiment-table tbody tr")).toHaveCount(2);
+  await expect(page.locator(".experiment-table tbody tr").nth(0)).toContainText("8");
+  await expect(page.locator(".experiment-table tbody tr").nth(1)).toContainText("20");
+  await expect(page.locator(".experiment-results")).toContainText(
+    "not real-world causal estimates",
+  );
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Export results" }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("aether-experiment-results.json");
+});
+
 for (const width of [320, 375, 414, 768]) {
   test(`studio has no horizontal overflow at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });

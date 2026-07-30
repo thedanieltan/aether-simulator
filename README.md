@@ -50,6 +50,8 @@ runs the same kernel locally in a Web Worker.
   institutions, systems, and assets, including role and relationship contexts.
 - A constrained visual scenario pipeline that validates and compiles premise,
   population, time, intervention, and seed into the existing runtime.
+- A bounded scenario laboratory for fixed-baseline synthetic intervention
+  comparisons and canonical experiment-result export.
 
 Worker-parallel execution, local OSS realism, and connected calibration remain
 future research. Enterprise-only customer and supplier entries remain boundary
@@ -139,6 +141,7 @@ See [architecture](docs/ARCHITECTURE.md),
 [local project workspace](docs/LOCAL_PROJECT_WORKSPACE.md),
 [unified entity model](docs/UNIFIED_ENTITY_MODEL.md),
 [visual scenario builder](docs/VISUAL_SCENARIO_BUILDER.md),
+[scenario laboratory](docs/SCENARIO_LABORATORY.md),
 [CI/CD quality gate](docs/CI_CD.md),
 [research status](docs/RESEARCH_STATUS.md), and the
 [public export manifest](docs/PUBLIC_EXPORT_MANIFEST.md).

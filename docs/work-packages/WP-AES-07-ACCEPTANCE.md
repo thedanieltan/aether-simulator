@@ -37,5 +37,16 @@ contain world artifacts.
 
 ## Disposition
 
-Implementation candidate. Protected continuous integration, review, merge,
-deployment, and hosted acceptance are required before integration is recorded.
+Integrated and live accepted on 2026-07-30.
+
+- Protected pull request: `#9`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://e3f1a871.aether-simulator.pages.dev`.
+- Hosted acceptance: seven Playwright journeys passed, including the complete
+  project create, save, run, reload, digest recovery, rename, export, delete,
+  and import round trip.
+- The deployed response retained the restrictive security policy.
+
+This acceptance covers local single-browser projects only. Server sync,
+collaboration, accounts, and external integrations remain outside scope.

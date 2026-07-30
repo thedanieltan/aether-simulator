@@ -30,10 +30,10 @@ Repository recommendation: **active research**.
   all protected checks, deployed, and live accepted. It adds public
   requirements, information architecture, stable routes, product navigation,
   and honest availability states.
-- **Local project workspace:** WP-AES-07 implementation candidate provides
+- **Local project workspace:** WP-AES-07 is implemented, reviewed, merged
+  through all protected checks, deployed, and live accepted. It provides
   browser-only project persistence, digest-verified recovery, canonical import
-  and export, and explicit deletion. Integration remains subject to the
-  protected release gate.
+  and export, and explicit deletion.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -42,6 +42,9 @@ Repository recommendation: **active research**.
   calibration remains not live accepted.
 - **WP-AES-06 live acceptance:** all six local-only browser product journeys
   passed against `https://8d747300.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-07 live acceptance:** all seven browser journeys, including the
+  local project round trip, passed against
+  `https://e3f1a871.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

@@ -28,7 +28,11 @@ real-world causal effect is estimated. Event ancestry is model-declared.
 
 ## Disposition
 
-Implemented locally on the work-package branch. Protected integration,
-deployment, and hosted acceptance must be recorded before this package is
-classified as live accepted.
+Integrated and live accepted on 2026-07-30.
 
+- Protected pull request: `#21`.
+- All five required acceptance, runtime, portability, and browser checks passed.
+- Immutable deployment:
+  `https://b80d4b87.aether-simulator.pages.dev`.
+- Hosted acceptance: twelve Playwright journeys passed, including descriptive
+  analysis, interpretation boundaries, export, and all accepted workflows.

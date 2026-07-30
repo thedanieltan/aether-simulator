@@ -51,10 +51,10 @@ Repository recommendation: **active research**.
 - **Semantic zoom:** WP-AES-12 is implemented, reviewed, merged through all
   protected checks, deployed, and live accepted. It adds a deterministic
   world-to-enterprise-to-citizen path over declared contexts.
-- **Analysis workspace:** WP-AES-13 is implemented and locally verified. It
-  adds deterministic descriptive measures, explicit cohorts, declared event
-  ancestry, limitations, and canonical export. Protected integration and
-  hosted acceptance remain pending.
+- **Analysis workspace:** WP-AES-13 is implemented, reviewed, merged through
+  all protected checks, deployed, and live accepted. It adds deterministic
+  descriptive measures, explicit cohorts, declared event ancestry, limitations,
+  and canonical export.
 - **Deployment:** the WP-AES-05 static research product is deployed at
   `https://aether-simulator.pages.dev`; no connected-provider runtime is
   deployed or claimed.
@@ -81,6 +81,9 @@ Repository recommendation: **active research**.
 - **WP-AES-12 live acceptance:** all eleven browser journeys, including
   world-to-enterprise-to-citizen semantic zoom, passed against
   `https://a13fd0a5.aether-simulator.pages.dev` on 2026-07-30.
+- **WP-AES-13 live acceptance:** all twelve browser journeys, including the
+  bounded analysis workspace and export, passed against
+  `https://b80d4b87.aether-simulator.pages.dev` on 2026-07-30.
 
 This is research software. It is not production-ready, a compliance product,
 or a legal or regulatory authority. No real personal data is included.

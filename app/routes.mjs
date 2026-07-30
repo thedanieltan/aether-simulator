@@ -69,6 +69,7 @@ export const productRoutes = Object.freeze([
 const routeById = new Map(productRoutes.map((route) => [route.id, route]));
 const viewIds = new Set([
   "entities",
+  "zoom",
   "graph",
   "timeline",
   "inspector",

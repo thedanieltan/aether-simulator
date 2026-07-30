@@ -25,7 +25,9 @@ test("route parser supports result deep links and fails safely to overview", () 
   );
   assert.equal(parseProductRoute("#/explore/not-a-view").view, "graph");
   assert.equal(parseProductRoute("#/explore/entities").view, "entities");
+  assert.equal(parseProductRoute("#/explore/zoom").view, "zoom");
   assert.equal(parseProductRoute("#/unknown").id, "overview");
   assert.equal(routeForView("lineage"), "#/explore/lineage");
+  assert.equal(routeForView("zoom"), "#/explore/zoom");
   assert.equal(routeForView("exports"), "#/export");
 });

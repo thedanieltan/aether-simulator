@@ -37,9 +37,9 @@ keyboard command navigator exposes the same destinations at every size.
 
 Local project persistence, digest-verified recovery, validated project-file
 import and export, the visual model builder, citizen/entity exploration, and
-browser runtime controls are implemented. Deeper semantic zoom and advanced
-analysis remain planned product work; the navigation does not present them as
-implemented.
+browser runtime controls, and world-to-enterprise-to-citizen semantic zoom are
+implemented. Advanced analysis remains planned product work; the navigation
+does not present it as implemented.
 
 The pause control creates a deterministic checkpoint after the current
 synchronous run. It is not a claim of pre-emptive interruption inside a kernel

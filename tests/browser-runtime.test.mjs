@@ -102,6 +102,20 @@ test("studio state exposes valid failure, pause, resume, and cancellation contro
   });
   assert.equal(state.selectedEntityId, "person_synthetic");
   assert.equal(state.activeView, "entities");
+  state = reduceStudioState(state, {
+    type: "zoom-enterprise-selected",
+    enterpriseId: "organization_synthetic",
+  });
+  assert.equal(state.selectedZoomEnterpriseId, "organization_synthetic");
+  assert.equal(state.activeView, "zoom");
+  state = reduceStudioState(state, {
+    type: "zoom-citizen-selected",
+    citizenId: "person_synthetic",
+  });
+  assert.equal(state.selectedZoomCitizenId, "person_synthetic");
+  state = reduceStudioState(state, { type: "zoom-world-selected" });
+  assert.equal(state.selectedZoomEnterpriseId, null);
+  assert.equal(state.selectedZoomCitizenId, null);
   state = reduceStudioState(state, { type: "cancelled" });
   assert.equal(state.phase, "cancelled");
   assert.equal(state.activeRoute, "explore");

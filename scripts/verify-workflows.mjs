@@ -12,7 +12,7 @@ const requiredFragments = [
   "workflow_dispatch:",
   "permissions:\n  contents: read",
   "cancel-in-progress: true",
-  "npm ci --ignore-scripts",
+  'npm --prefix "${{ github.workspace }}" ci --ignore-scripts',
   "npm run verify:ci",
   "npm run verify",
   "runs-on: windows-latest",
